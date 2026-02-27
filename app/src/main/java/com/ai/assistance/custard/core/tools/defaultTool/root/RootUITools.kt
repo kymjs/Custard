@@ -8,7 +8,7 @@ import com.ai.assistance.custard.core.tools.SimplifiedUINode
 import com.ai.assistance.custard.core.tools.StringResultData
 import com.ai.assistance.custard.core.tools.UIActionResultData
 import com.ai.assistance.custard.core.tools.UIPageResultData
-import com.ai.assistance.custard.core.tools.defaultTool.admin.AdminUITools
+import com.ai.assistance.custard.core.tools.defaultTool.debugger.DebuggerUITools
 import com.ai.assistance.custard.core.tools.system.AndroidShellExecutor
 import com.ai.assistance.custard.data.model.AITool
 import com.ai.assistance.custard.data.model.ToolParameter
@@ -24,7 +24,7 @@ import org.xmlpull.v1.XmlPullParserFactory
  * Root-level UI tools that use shell commands (uiautomator, input) for robust UI automation.
  * This implementation is modeled after DebuggerUITools but operates without accessibility fallbacks.
  */
-open class RootUITools(context: Context) : AdminUITools(context) {
+open class RootUITools(context: Context) : DebuggerUITools(context) {
 
     companion object {
         private const val TAG = "RootUITools"

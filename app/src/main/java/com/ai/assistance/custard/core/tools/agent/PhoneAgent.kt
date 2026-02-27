@@ -76,7 +76,6 @@ private fun resolvePrivilegedExecutionState(
 
     var isAdbOrHigher = when (preferredLevel) {
         AndroidPermissionLevel.DEBUGGER,
-        AndroidPermissionLevel.ADMIN,
         AndroidPermissionLevel.ROOT -> true
         else -> false
     }

@@ -151,7 +151,6 @@ fun PermissionLevelCard(
                 val icon =
                         when (displayedPermissionLevel) {
                             AndroidPermissionLevel.STANDARD -> Icons.Default.Shield
-                            AndroidPermissionLevel.ADMIN -> Icons.Default.Shield
                             AndroidPermissionLevel.DEBUGGER -> Icons.Default.Shield
                             AndroidPermissionLevel.ROOT -> Icons.Default.Lock
                             null -> Icons.Default.Shield // 默认使用标准图标
@@ -234,11 +233,11 @@ fun PermissionLevelCard(
                                     )
                     ) {
                         Text(
-                            text = stringResource(R.string.set_as_current_level), 
+                            text = stringResource(R.string.set_as_current_level),
                             fontSize = 12.sp,
                             textAlign = TextAlign.Center,
                             modifier = Modifier.fillMaxWidth()
-                        ) 
+                        )
                      }
                 } else {
                     Row(
@@ -302,29 +301,6 @@ fun PermissionLevelCard(
                                 isCurrentlyDisplayed = true,
                                 content = {
                                     StandardPermissionSection(
-                                            hasStoragePermission = hasStoragePermission,
-                                            hasOverlayPermission = hasOverlayPermission,
-                                            hasBatteryOptimizationExemption =
-                                                    hasBatteryOptimizationExemption,
-                                            hasLocationPermission = hasLocationPermission,
-                                            isCustardTerminalInstalled = isCustardTerminalInstalled,
-                                            onStoragePermissionClick = onStoragePermissionClick,
-                                            onOverlayPermissionClick = onOverlayPermissionClick,
-                                            onBatteryOptimizationClick = onBatteryOptimizationClick,
-                                            onLocationPermissionClick = onLocationPermissionClick,
-                                            onCustardTerminalClick = onCustardTerminalClick
-                                    )
-                                }
-                        )
-                    }
-                    AndroidPermissionLevel.ADMIN -> {
-                        PermissionSectionContainer(
-                                isActive =
-                                        preferredPermissionLevel.value ==
-                                                AndroidPermissionLevel.ADMIN,
-                                isCurrentlyDisplayed = true,
-                                content = {
-                                    AdminPermissionSection(
                                             hasStoragePermission = hasStoragePermission,
                                             hasOverlayPermission = hasOverlayPermission,
                                             hasBatteryOptimizationExemption =
@@ -1235,8 +1211,6 @@ private fun getPermissionLevelDescription(level: AndroidPermissionLevel): String
     return when (level) {
         AndroidPermissionLevel.STANDARD ->
                 stringResource(id = R.string.permission_level_standard_full_desc)
-        AndroidPermissionLevel.ADMIN ->
-                stringResource(id = R.string.permission_level_admin_full_desc)
         AndroidPermissionLevel.DEBUGGER ->
                 stringResource(id = R.string.permission_level_debugger_full_desc)
         AndroidPermissionLevel.ROOT -> stringResource(id = R.string.permission_level_root_full_desc)
@@ -1251,7 +1225,6 @@ private fun PermissionLevelVisualDescription(level: AndroidPermissionLevel) {
                 when (level) {
                     AndroidPermissionLevel.STANDARD ->
                             stringResource(R.string.permission_level_standard)
-                    AndroidPermissionLevel.ADMIN -> stringResource(R.string.permission_level_admin)
                     AndroidPermissionLevel.DEBUGGER ->
                             stringResource(R.string.permission_level_debugger)
                     AndroidPermissionLevel.ROOT -> stringResource(R.string.permission_level_root)
@@ -1270,8 +1243,6 @@ private fun PermissionLevelVisualDescription(level: AndroidPermissionLevel) {
                 when (level) {
                     AndroidPermissionLevel.STANDARD ->
                             stringResource(R.string.permission_level_standard_desc)
-                    AndroidPermissionLevel.ADMIN ->
-                            stringResource(R.string.permission_level_admin_desc)
                     AndroidPermissionLevel.DEBUGGER ->
                             stringResource(R.string.permission_level_debugger_desc)
                     AndroidPermissionLevel.ROOT ->
@@ -1298,17 +1269,15 @@ private fun FeatureGrid(level: AndroidPermissionLevel) {
         // 在这里定义不同权限级别支持的功能
         val features =
                 listOf(
-                        context.getString(R.string.feature_overlay_window) to isFeatureSupported(level, true, true, true, true, true),
-                        context.getString(R.string.feature_file_operations) to isFeatureSupported(level, true, true, true, true, true),
-                        "Android/data" to isFeatureSupported(level, false, false, true, true, true),
-                        "data/data" to isFeatureSupported(level, false, false, false, false, true),
-                        context.getString(R.string.feature_screen_auto_click) to isFeatureSupported(level, false, true, true, true, true),
-                        context.getString(R.string.feature_system_permission_modification) to isFeatureSupported(level, false, false, false, true, true),
-                        context.getString(R.string.feature_termux_support) to isFeatureSupported(level, true, true, true, true, true),
-                        context.getString(R.string.feature_run_js) to
-                                (level == AndroidPermissionLevel.DEBUGGER ||
-                                        level == AndroidPermissionLevel.ROOT),
-                        context.getString(R.string.feature_plugin_market_mcp) to isFeatureSupported(level, true, true, true, true, true)
+                        context.getString(R.string.feature_overlay_window) to isFeatureSupported(level, true,   true, true),
+                        context.getString(R.string.feature_file_operations) to isFeatureSupported(level, true,   true, true),
+                        "Android/data" to isFeatureSupported(level, false,   true, true),
+                        "data/data" to isFeatureSupported(level, false,   false, true),
+                        context.getString(R.string.feature_screen_auto_click) to isFeatureSupported(level, false,   true, true),
+                        context.getString(R.string.feature_system_permission_modification) to isFeatureSupported(level, false,   true, true),
+                        context.getString(R.string.feature_termux_support) to isFeatureSupported(level, true,   true, true),
+                        context.getString(R.string.feature_run_js) to (level == AndroidPermissionLevel.DEBUGGER || level == AndroidPermissionLevel.ROOT),
+                        context.getString(R.string.feature_plugin_market_mcp) to isFeatureSupported(level, true,   true, true)
                 )
 
         // 每行3个功能项
@@ -1346,14 +1315,11 @@ private fun FeatureGrid(level: AndroidPermissionLevel) {
 private fun isFeatureSupported(
         level: AndroidPermissionLevel?,
         inStandard: Boolean,
-        inAccessibility: Boolean,
-        inAdmin: Boolean,
         inDebugger: Boolean,
         inRoot: Boolean
 ): Boolean {
     return when (level) {
         AndroidPermissionLevel.STANDARD -> inStandard
-        AndroidPermissionLevel.ADMIN -> inAdmin
         AndroidPermissionLevel.DEBUGGER -> inDebugger
         AndroidPermissionLevel.ROOT -> inRoot
         null -> inStandard

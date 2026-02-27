@@ -25,7 +25,6 @@ class AndroidShellExecutor {
             return when (level) {
                 AndroidPermissionLevel.STANDARD -> "STANDARD"
                 AndroidPermissionLevel.DEBUGGER -> "DEBUGGER"
-                AndroidPermissionLevel.ADMIN -> "ADMIN"
                 AndroidPermissionLevel.ROOT -> "ROOT"
             }
         }

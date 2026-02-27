@@ -32,7 +32,6 @@ class ShellExecutorFactory {
             val executor =
                     when (permissionLevel) {
                         AndroidPermissionLevel.ROOT -> RootShellExecutor(context)
-                        AndroidPermissionLevel.ADMIN -> AdminShellExecutor(context)
                         AndroidPermissionLevel.DEBUGGER -> DebuggerShellExecutor(context)
                         AndroidPermissionLevel.STANDARD -> StandardShellExecutor(context)
                     }
@@ -59,7 +58,6 @@ class ShellExecutorFactory {
             val levels =
                     listOf(
                             AndroidPermissionLevel.ROOT,
-                            AndroidPermissionLevel.ADMIN,
                             AndroidPermissionLevel.DEBUGGER,
                             AndroidPermissionLevel.STANDARD
                     )

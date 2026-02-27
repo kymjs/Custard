@@ -1,16 +1,14 @@
 package com.ai.assistance.custard.core.tools.system
 
 /**
- * 定义工具权限的五个层级
+ * 定义工具权限的层级
  * - STANDARD: 基础权限，不需要特殊权限
  * - ROOT: 需要root权限
- * - ADMIN: 需要设备管理员权限
  * - DEBUGGER: 调试和开发用途的权限
  */
 enum class AndroidPermissionLevel {
     STANDARD,      // 普通应用权限
     DEBUGGER,      // 调试权限
-    ADMIN,         // 管理员权限  
     ROOT;          // Root权限
 
     companion object {
@@ -23,7 +21,6 @@ enum class AndroidPermissionLevel {
             return when(value?.uppercase()) {
                 "STANDARD" -> STANDARD
                 "DEBUGGER" -> DEBUGGER
-                "ADMIN" -> ADMIN
                 "ROOT" -> ROOT
                 else -> STANDARD // 默认为最低权限
             }
