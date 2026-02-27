@@ -31,6 +31,7 @@ int string close_session 0x0
 int string collapse 0x0
 int string confirm 0x0
 int string confirm_delete_session 0x0
+int string custard_required 0x0
 int string delete 0x0
 int string delete_session_message 0x0
 int string delete_source 0x0
@@ -88,7 +89,6 @@ int string openssh_missing_desc 0x0
 int string openssh_missing_title 0x0
 int string openssh_remote_component 0x0
 int string openssh_remote_install 0x0
-int string operit_required 0x0
 int string package_go_desc 0x0
 int string package_go_name 0x0
 int string package_gradle_desc 0x0

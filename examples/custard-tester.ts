@@ -1,7 +1,7 @@
 /**
- * OperIT AI Tool Tester
+ * Custard AI Tool Tester
  * 
- * This script tests all available tools in the OperIT system as documented in tools.md.
+ * This script tests all available tools in the Custard system as documented in tools.md.
  * It validates each tool's functionality and the structure of its return values.
  * 
  * How to run:
@@ -125,7 +125,7 @@ function printUIHierarchy(node: SimplifiedUINode, indent: string = ""): void {
  * Main test runner function that organizes and executes all test categories
  */
 async function runTests(params: { testType?: string } = {}): Promise<void> {
-    console.log("Starting OperIT Tool Tester...");
+    console.log("Starting Custard Tool Tester...");
     console.log("Parameters:", params);
 
     const results: TestResults = {};
@@ -233,7 +233,7 @@ async function runTests(params: { testType?: string } = {}): Promise<void> {
         const summaryText = `Overall: ${successCount}/${totalTests} tests passed in ${duration / 1000}s`;
         console.log(`\n${summaryText}`);
 
-        console.log("\nOperIT Tool Tester completed!");
+        console.log("\nCustard Tool Tester completed!");
 
         // Return results
         complete({
@@ -261,7 +261,7 @@ async function testQueryMemory(results: TestResults): Promise<void> {
     try {
         console.log("\nTesting query_memory...");
         const queryResult = await toolCall("query_memory", {
-            query: "how to use OperIT tools"
+            query: "how to use Custard tools"
         });
 
         // Validate the result (queryResult is a string)
@@ -416,7 +416,7 @@ async function testListFiles(results: TestResults): Promise<void> {
 async function testWriteFile(results: TestResults): Promise<void> {
     try {
         console.log("\nTesting write_file...");
-        const testContent = "This is a test file created by the OperIT tool tester.\nTest timestamp: " + new Date().toISOString();
+        const testContent = "This is a test file created by the Custard tool tester.\nTest timestamp: " + new Date().toISOString();
         const testPath = "/sdcard/custard_test_file.txt";
 
         const writeResult = await toolCall("write_file", {
@@ -465,7 +465,7 @@ async function testReadFile(results: TestResults): Promise<void> {
         console.log(`Content preview: ${fileData.content.substring(0, 100)}...`);
 
         // Verify the content contains expected test data
-        const containsTestMarker = fileData.content.includes("test file created by the OperIT tool tester");
+        const containsTestMarker = fileData.content.includes("test file created by the Custard tool tester");
         console.log(`Content verification: ${containsTestMarker ? "✅ Matched" : "❌ Failed"}`);
 
         results["read_file"] = {
@@ -867,7 +867,7 @@ async function testShareFile(results: TestResults): Promise<void> {
         const testFilePath = "/sdcard/custard_test_file.txt";
         const shareResult = await toolCall("share_file", {
             path: testFilePath,
-            title: "OperIT Test Share"
+            title: "Custard Test Share"
         });
 
         // Validate the result
@@ -950,7 +950,7 @@ async function testWebSearch(results: TestResults): Promise<void> {
     try {
         console.log("\nTesting visit_web...");
 
-        const url = "https://www.baidu.com/s?wd=OperIT+AI+automation+tools";
+        const url = "https://www.baidu.com/s?wd=Custard+AI+automation+tools";
         const searchResult = await toolCall("visit_web", {
             url: url
         });
@@ -1737,7 +1737,7 @@ async function testSetInputText(results: TestResults): Promise<void> {
             console.log(`Current text: ${(inputField as SimplifiedUINode).text || "(empty)"}`);
 
             // Try to set text
-            const testText = "OperIT Test Input " + Date.now();
+            const testText = "Custard Test Input " + Date.now();
             console.log(`\nSetting text to: "${testText}"`);
 
             const inputResult = await toolCall("set_input_text", {

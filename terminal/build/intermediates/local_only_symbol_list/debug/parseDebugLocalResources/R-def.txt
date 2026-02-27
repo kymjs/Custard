@@ -33,6 +33,7 @@ string close_session
 string collapse
 string confirm
 string confirm_delete_session
+string custard_required
 string delete
 string delete_session_message
 string delete_source
@@ -90,7 +91,6 @@ string openssh_missing_desc
 string openssh_missing_title
 string openssh_remote_component
 string openssh_remote_install
-string operit_required
 string package_go_desc
 string package_go_name
 string package_gradle_desc

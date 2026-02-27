@@ -32,6 +32,7 @@
     <string name="collapse">Collapse</string>
     <string name="confirm">Confirm</string>
     <string name="confirm_delete_session">Confirm Delete Session</string>
+    <string name="custard_required">Custard Required</string>
     <string name="delete">Delete</string>
     <string name="delete_session_message">Are you sure you want to delete session \"%s\"?\n\nThis action cannot be undone and all data in the session will be permanently lost.</string>
     <string name="delete_source">Delete</string>
@@ -89,7 +90,6 @@
     <string name="openssh_missing_title">OpenSSH Server Missing</string>
     <string name="openssh_remote_component">✓ Remote Server: sshfs</string>
     <string name="openssh_remote_install">  → Execute on remote server:</string>
-    <string name="operit_required">Operit_temp Required</string>
     <string name="package_go_desc">Go programming language</string>
     <string name="package_go_name">Go</string>
     <string name="package_gradle_desc">Modern build automation tool</string>
@@ -115,7 +115,7 @@
     <string name="package_uv_desc">An extremely fast Python package installer written in Rust</string>
     <string name="package_uv_name">uv</string>
     <string name="project_address_title">Project Repository</string>
-    <string name="project_name">AAswordman/Operit_tempTerminal</string>
+    <string name="project_name">AAswordman/CustardTerminal</string>
     <string name="refresh_size">Refresh</string>
     <string name="refresh_size_calculating">Calculating…</string>
     <string name="reset_confirm">Confirm Reset</string>
