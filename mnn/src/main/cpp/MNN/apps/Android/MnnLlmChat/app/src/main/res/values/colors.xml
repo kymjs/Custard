@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#329BEA</color>
+    <color name="purple_700">#FFBB86FC</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="color_darker_blue">#1168aa</color>
+    <color name="color_white">#FFFFFFFF</color>
+    <color name="black">#000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorPurpleLight">#4B5980</color>
+    <color name="colorPurpleDark">#3F4A68</color>
+    <color name="colorAccent">#3bb5ee</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorTextBlack">#333333</color>
+    <color name="colorTextInfo">#9b9b9b</color>
+    <color name="colorGreen">#A5DE40</color>
+    <color name="mainBlue">#3bb5ee</color>
+    <color name="color_background">#FFFFFF</color>
+    <color name="color_foreground">@android:color/black</color>
+    <bool name="is_day_mode">true</bool>
+    <bool name="is_night_mode">false</bool>
+    <color name="app_theme_color">#329BEA</color>
+
+    <color name="my_color_surface">#FFFFFF</color>
+    <color name="my_color_surface_variant">#EEEEEE</color>
+    <color name="color_on_surface_variant">#666666</color>
+
+    <color name="color_disabled">#888888</color>
+    <color name="label_color">#6699CC</color>
+    <color name="foreground_color">#000000</color>
+
+    <color name="pinned_overlay_color">#EEEEEE</color>
+    
+    <!-- UED颜色 -->
+    <color name="ued_blue">#2E97F2</color>
+    <color name="ued_blue_light">#F4F9FF</color>
+    <color name="label_not_selected">#F1F1F1</color>
+    <color name="accentColor">#4252B6</color>
+    
+    <!-- Segment Control Colors -->
+    <color name="segment_control_background">#F5F5F5</color>
+    <color name="segment_control_border">#E0E0E0</color>
+    <color name="segment_control_selected_background">#329BEA</color>
+    <color name="segment_control_selected_text">#FFFFFF</color>
+    <color name="segment_control_normal_text">#666666</color>
+    
+    <!-- Message background -->
+    <color name="message_background">#FFF3E0</color>
+    
+    <!-- Benchmark Result Card Colors -->
+    <color name="benchmark_result_card_background">#F5F5F5</color>
+    <color name="benchmark_result_sub_card_background">#FFFFFF</color>
+    <color name="benchmark_result_text_primary">#000000</color>
+    <color name="benchmark_result_text_secondary">#666666</color>
+
+    <!-- Chip -->
+    <color name="chip_background">#e8f1ff</color>
+    
+    <!-- Benchmark Performance Metric Colors -->
+    <color name="benchmark_gradient_start">#667eea</color>
+    <color name="benchmark_gradient_end">#764ba2</color>
+    <color name="benchmark_warning">#f59e0b</color>
+    <color name="benchmark_success">#10b981</color>
+    <color name="benchmark_error">#ef4444</color>
+    <color name="benchmark_secondary">#6b7280</color>
+    <color name="benchmark_light">#f8fafc</color>
+    <color name="benchmark_card_bg">#FFFFFF</color>
+    <color name="benchmark_card_border">#E0E0E0</color>
+    <color name="benchmark_accent">#6366f1</color>
+</resources>

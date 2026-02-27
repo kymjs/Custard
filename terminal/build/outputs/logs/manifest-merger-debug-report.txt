@@ -1,0 +1,53 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:2:1-26:12
+	package
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:3:5-49
+		INJECTED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:6:22-76
+application
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:8:5-25:19
+provider#com.ai.assistance.custard.terminal.provider.UbuntuDocumentsProvider
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:10:9-19:20
+	android:grantUriPermissions
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:12:13-77
+	android:exported
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:13:13-36
+	android:permission
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:15:13-69
+	android:name
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:11:13-61
+intent-filter#action:name:android.content.action.DOCUMENTS_PROVIDER
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:16:13-18:29
+action#android.content.action.DOCUMENTS_PROVIDER
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:17:17-84
+	android:name
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:17:25-81
+service#com.ai.assistance.custard.terminal.service.TerminalService
+ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:21:9-24:40
+	android:enabled
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:23:13-35
+	android:exported
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:22:13-52
+uses-sdk
+INJECTED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml
+INJECTED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml

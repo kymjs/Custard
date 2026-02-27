@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SetupScreen -->
+    <string name="setup_title">Environment Setup</string>
+    <string name="setup_subtitle">Select development environments and tools to install (parallel installation supported)</string>
+    <string name="skip">Skip</string>
+    <string name="start_setup">Start Setup</string>
+    <string name="select_all">Select All</string>
+    <string name="expand">Expand</string>
+    <string name="collapse">Collapse</string>
+    <string name="installed">Installed</string>
+    <string name="operit_required">Operit Required</string>
+    
+    <!-- Dialog -->
+    <string name="setup_dialog_title">Notice</string>
+    <string name="setup_dialog_message">The environment setup is about to begin, which may take some time. Please try to keep the app in foreground or floating window mode to ensure smooth configuration.\n\nIf the configuration is interrupted unexpectedly, don\'t worry. The next time you return to this page to start configuration, it will automatically continue from the previous progress.</string>
+    <string name="dialog_confirm">I Understand</string>
+    <string name="dialog_cancel">Cancel</string>
+    
+    <!-- Package Categories -->
+    <string name="category_nodejs_name">Node.js Environment</string>
+    <string name="category_nodejs_desc">Node.js and frontend development environment</string>
+    <string name="category_python_name">Python Environment</string>
+    <string name="category_python_desc">Python development environment</string>
+    <string name="category_java_name">Java Environment</string>
+    <string name="category_java_desc">Java development environment</string>
+    <string name="category_rust_name">Rust (Cargo) Environment</string>
+    <string name="category_rust_desc">Rust development environment and package manager</string>
+    <string name="category_go_name">Go Environment</string>
+    <string name="category_go_desc">Go programming language environment</string>
+    <string name="category_ssh_name">SSH Tools</string>
+    <string name="category_ssh_desc">SSH client and password authentication tools</string>
+    
+    <!-- Package Items -->
+    <string name="package_nodejs_name">Node.js</string>
+    <string name="package_nodejs_desc">JavaScript runtime</string>
+    <string name="package_pnpm_name">PNPM</string>
+    <string name="package_pnpm_desc">Fast package manager and TypeScript</string>
+    <string name="package_python_link_name">Python Link</string>
+    <string name="package_python_link_desc">Link python command to python3</string>
+    <string name="package_python_venv_name">Virtual Environment</string>
+    <string name="package_python_venv_desc">Python virtual environment support</string>
+    <string name="package_python_pip_name">Pip</string>
+    <string name="package_python_pip_desc">Python package manager</string>
+    <string name="package_uv_name">uv</string>
+    <string name="package_uv_desc">An extremely fast Python package installer written in Rust</string>
+    <string name="package_openjdk_name">OpenJDK 17</string>
+    <string name="package_openjdk_desc">Java 17 development environment</string>
+    <string name="package_gradle_name">Gradle</string>
+    <string name="package_gradle_desc">Modern build automation tool</string>
+    <string name="package_rust_name">Rust &amp; Cargo</string>
+    <string name="package_rust_desc">Install Rust toolchain via rustup</string>
+    <string name="package_go_name">Go</string>
+    <string name="package_go_desc">Go programming language</string>
+    <string name="package_ssh_client_name">SSH Client</string>
+    <string name="package_ssh_client_desc">SSH connection client</string>
+    <string name="package_sshpass_name">sshpass</string>
+    <string name="package_sshpass_desc">SSH password authentication tool</string>
+    
+    <!-- SettingsScreen -->
+    <string name="settings_title">Settings</string>
+    <string name="back">Back</string>
+    
+    <!-- FTP Server Section -->
+    <string name="ftp_server_title">FTP File Server</string>
+    <string name="ftp_server_stopping">Stopping…</string>
+    <string name="ftp_server_stop">Stop</string>
+    <string name="ftp_server_start">Start</string>
+    <string name="ftp_server_tip">💡 Tip: Use an FTP client to connect to the above address to access the Ubuntu file system</string>
+    <string name="ftp_server_suggestion">📱 Suggestion: Enable floating window mode to keep the app running and ensure FTP service availability</string>
+    
+    <!-- Storage Management Section -->
+    <string name="storage_management_title">Storage Management</string>
+    <string name="ubuntu_environment_size">Ubuntu Environment Size: %s</string>
+    <string name="refresh_size_calculating">Calculating…</string>
+    <string name="refresh_size">Refresh</string>
+    <string name="reset_environment">Reset</string>
+    
+    <!-- Project Section -->
+    <string name="project_address_title">Project Repository</string>
+    <string name="project_name">AAswordman/OperitTerminal</string>
+    <string name="visit_project">Visit</string>
+    <string name="check_updates">Check</string>
+    <string name="update_now">Update</string>
+    
+    <!-- Reset Environment Dialog -->
+    <string name="reset_dialog_title">⚠️ Dangerous Operation</string>
+    <string name="reset_dialog_description">This operation will completely delete the Ubuntu virtual environment, including:</string>
+    <string name="reset_dialog_item1">• All installed software packages</string>
+    <string name="reset_dialog_item2">• User data and configuration files</string>
+    <string name="reset_dialog_item3">• System files and environment settings</string>
+    <string name="reset_dialog_warning">After the operation, the Ubuntu environment will need to be reinitialized, which may take several minutes.</string>
+    <string name="reset_dialog_ftp_warning">The FTP server will also be stopped. Are you sure you want to continue?</string>
+    <string name="reset_confirm">Confirm Reset</string>
+    
+    <!-- SettingsViewModel -->
+    <string name="cache_size_default">Click to refresh</string>
+    <string name="update_status_default">Click to check updates</string>
+    <string name="ftp_server_not_running">FTP server not running</string>
+    <string name="cache_calculating">Calculating…</string>
+    <string name="cache_calculation_cancelled">Calculation cancelled</string>
+    <string name="cache_calculation_failed">Calculation failed</string>
+    <string name="environment_resetting">Resetting environment…</string>
+    <string name="environment_reset_complete">Environment reset (restart required)</string>
+    <string name="environment_reset_failed">Reset failed: %s</string>
+    <string name="checking_updates">Checking for updates…</string>
+    <string name="update_available">Update available: %1$s (current: %2$s)</string>
+    <string name="up_to_date">Up to date (%s)</string>
+    <string name="update_check_failed">Check failed: %s</string>
+    <string name="ftp_server_starting">Starting FTP server…</string>
+    <string name="ftp_server_start_failed_env">Start failed (ensure Ubuntu environment is initialized)</string>
+    <string name="ftp_server_start_failed">Start failed: %s</string>
+    <string name="ftp_server_stopping_progress">Stopping FTP server…</string>
+    <string name="ftp_server_stopped">FTP server stopped</string>
+    <string name="ftp_server_stop_failed">Stop failed</string>
+    <string name="ftp_server_stop_failed_with_error">Stop failed: %s</string>
+    
+    <!-- TerminalHome -->
+    <string name="confirm_delete_session">Confirm Delete Session</string>
+    <string name="delete_session_message">Are you sure you want to delete session \"%s\"?\n\nThis action cannot be undone and all data in the session will be permanently lost.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_session">New Session</string>
+    <string name="close_session">Close Session</string>
+    <string name="executing">Executing…</string>
+    <string name="interrupt_key">Ctrl+C</string>
+    <string name="interrupt">Interrupt</string>
+    <string name="environment_setup">Environment Setup</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Additional new strings -->
+    <string name="initializing">Initializing...</string>
+    <string name="new_version_found">New version found: %1$s</string>
+    <string name="update_check_failed_short">Update check failed</string>
+    <string name="cannot_open_browser">Cannot open browser</string>
+    <string name="ftp_server_running_info">FTP Server Running\nAddress: %1$s:%2$s\nUsername: %3$s\nPassword: %4$s\nRoot Directory: Ubuntu File System</string>
+    <string name="unknown_session">Unknown Session</string>
+    
+    <!-- SSH Tools Check -->
+    <string name="ssh_tools_missing_title">SSH Tools Not Installed</string>
+    <string name="ssh_tools_missing_message">Enabling SSH connection requires the following tools:\n\n• ssh - SSH client\n• sshpass - SSH password authentication tool\n\n Please go to the "Environment Setup" page to install SSH tools.</string>
+    <string name="go_to_setup">Go to Setup</string>
+    <string name="checking_ssh_tools">Checking SSH tools...</string>
+    
+    <!-- Shared TMP Settings -->
+    <string name="shared_tmp_title">Shared Temporary Directory</string>
+    <string name="shared_tmp_enabled_desc">Enabled - Android and Ubuntu share /tmp directory</string>
+    <string name="shared_tmp_disabled_desc">Disabled - Ubuntu uses separate /tmp directory</string>
+    <string name="shared_tmp_note">Note: Some devices may experience compatibility issues in shared mode. Try disabling this option if errors occur</string>
+
+    <string name="chroot_mode_title">chroot Mode</string>
+    <string name="chroot_mode_enabled_desc">Enabled - Start Ubuntu via chroot (Root required)</string>
+    <string name="chroot_mode_disabled_desc">Disabled - Start Ubuntu via proot</string>
+    <string name="chroot_mode_note">Note: chroot mode mounts /proc, /sys, /dev (including /dev/pts) into the Ubuntu environment. Root users, please use with caution. This mode requires a rooted device and root permission granted to this app, otherwise startup may fail</string>
+    
+    <!-- SSH Settings -->
+    <string name="ssh_enable_title">Enable SSH Connection</string>
+    <string name="ssh_use_remote_desc">Using remote SSH terminal</string>
+    <string name="ssh_use_local_desc">Using local terminal</string>
+    <string name="ssh_reverse_mount_enabled"> Reverse Mount Enabled</string>
+    <string name="ssh_reverse_mount_desc">Remote can access local files via ~/storage and ~/sdcard</string>
+    <string name="ssh_config_required">Please configure SSH connection first</string>
+    <string name="openssh_missing_title">OpenSSH Server Missing</string>
+    <string name="openssh_missing_desc">Enabling reverse mount requires the following components:</string>
+    <string name="openssh_local_component">✓ Local (Android): openssh-server</string>
+    <string name="openssh_go_to_install">  → Go to Environment Setup to install</string>
+    <string name="openssh_remote_component">✓ Remote Server: sshfs</string>
+    <string name="openssh_remote_install">  → Execute on remote server:</string>
+    <string name="openssh_install_ubuntu_cmd">     apt install sshfs  # Ubuntu/Debian</string>
+    <string name="openssh_install_centos_cmd">     yum install fuse-sshfs  # CentOS/RHEL</string>
+    <string name="openssh_install_button">Install openssh-server</string>
+    
+    <!-- Font Settings -->
+    <string name="font_settings_title">Terminal Font Settings</string>
+    <string name="font_size_title">Font Size</string>
+    <string name="target_fps_title">Render Frame Rate</string>
+    <string name="font_path_title">Font File Path</string>
+    <string name="font_name_title">System Font Name</string>
+    <string name="font_not_set">Not set (using default font)</string>
+    <string name="font_reset_default">Reset to Default</string>
+    <string name="font_size_dialog_title">Set Font Size</string>
+    <string name="font_size_label">Font Size (sp)</string>
+    <string name="target_fps_dialog_title">Set Render Frame Rate</string>
+    <string name="target_fps_label">Target Frame Rate (FPS)</string>
+    <string name="target_fps_hint">Range: 15-120. Recommended: 30-60. Higher values are smoother but use more power.</string>
+    <string name="font_path_dialog_title">Set Font File Path</string>
+    <string name="font_path_label">Font File Path</string>
+    <string name="font_path_hint">Leave empty to use default font</string>
+    <string name="font_name_dialog_title">Set System Font Name</string>
+    <string name="font_name_label">System Font Name</string>
+    <string name="font_name_placeholder">e.g.: monospace, serif, sans-serif</string>
+    <string name="font_name_hint">Leave empty to use default font. Common values: monospace, serif, sans-serif</string>
+
+    <!-- Virtual Keyboard Settings -->
+    <string name="virtual_keyboard_settings_title">Virtual Keyboard Settings</string>
+    <string name="virtual_keyboard_custom_title">Customize Two Rows</string>
+    <string name="virtual_keyboard_dialog_title">Edit Two Keyboard Rows</string>
+    <string name="virtual_keyboard_reset_default">Reset Default</string>
+    <string name="virtual_keyboard_row_one">Row 1</string>
+    <string name="virtual_keyboard_row_two">Row 2</string>
+    <string name="virtual_keyboard_key_label">Display Text</string>
+    <string name="virtual_keyboard_key_value">Send Value</string>
+    <string name="virtual_keyboard_action_send">Send</string>
+    <string name="virtual_keyboard_action_ctrl">CTRL</string>
+    <string name="virtual_keyboard_action_alt">ALT</string>
+    <string name="virtual_keyboard_value_hint">Escape sequences: \\e (ESC), \\t (Tab), \\n, \\r, \\\\.</string>
+    
+    <!-- Source Management -->
+    <string name="source_management_title">Software Source Management</string>
+    <string name="source_current">Current Source: %s</string>
+    <string name="select_source_title">Select %s Source</string>
+    
+    <!-- Common Actions -->
+    <string name="confirm">Confirm</string>
+    <string name="add">Add</string>
+    <string name="delete_source">Delete</string>
+    <string name="add_custom_source_title">Add Custom %s Source</string>
+    <string name="source_name_label">Source Name</string>
+    <string name="source_url_label">Source URL</string>
+</resources> 

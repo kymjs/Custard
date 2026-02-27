@@ -1,0 +1,8 @@
+{
+    "Train": true,
+    "Optimizor": {
+        "OnlyUpdateOps":[],
+        "NoUpdateOps":[],
+        "type": "SGD"
+    }
+}

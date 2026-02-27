@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "toolpkg_id": "com.operit.windows_bundle",
+  "version": "0.2.0",
+  "display_name": {
+    "zh": "Windows 工具包",
+    "en": "Windows Bundle"
+  },
+  "description": {
+    "zh": "Windows 一键配置与控制工具包",
+    "en": "Windows one-click setup and control bundle"
+  },
+  "subpackages": [
+    {
+      "id": "windows_control",
+      "entry": "packages/windows_control.js"
+    }
+  ],
+  "ui_modules": [
+    {
+      "id": "windows_setup",
+      "runtime": "compose_dsl",
+      "entry": "ui/windows_setup/index.ui.js",
+      "title": {
+        "zh": "Windows 一键配置",
+        "en": "Windows Quick Setup"
+      },
+      "permissions": [
+        "tool.call",
+        "resource.read"
+      ],
+      "show_in_package_manager": true
+    }
+  ],
+  "resources": [
+    {
+      "key": "pc_agent_zip",
+      "path": "resources/pc_agent/custard-pc-agent.zip",
+      "mime": "application/zip"
+    }
+  ]
+}
