@@ -12,9 +12,9 @@ import com.ai.assistance.custard.data.model.TavernCharacterCard
 import com.ai.assistance.custard.data.model.TavernCharacterData
 import com.ai.assistance.custard.R
 import com.ai.assistance.custard.data.model.TavernExtensions
-import com.ai.assistance.custard.data.model.OperitTavernExtension
-import com.ai.assistance.custard.data.model.OperitAttachedTagPayload
-import com.ai.assistance.custard.data.model.OperitCharacterCardPayload
+import com.ai.assistance.custard.data.model.CustardTavernExtension
+import com.ai.assistance.custard.data.model.CustardAttachedTagPayload
+import com.ai.assistance.custard.data.model.CustardCharacterCardPayload
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonElement
@@ -61,7 +61,7 @@ class CharacterCardManager private constructor(private val context: Context) {
         // 默认角色卡ID
         const val DEFAULT_CHARACTER_CARD_ID = "default_character"
 
-        const val DEFAULT_CHARACTER_NAME = "Operit"
+        const val DEFAULT_CHARACTER_NAME = "Custard"
         
         @Volatile
         private var INSTANCE: CharacterCardManager? = null
@@ -341,7 +341,7 @@ class CharacterCardManager private constructor(private val context: Context) {
             // We should migrate their existing theme settings to the default character card.
             AppLogger.d("CharacterCardManager", "First initialization detected. Migrating current theme to default character card.")
             userPreferencesManager.copyCurrentThemeToCharacterCard(DEFAULT_CHARACTER_CARD_ID)
-            userPreferencesManager.saveAiAvatarForCharacterCard(DEFAULT_CHARACTER_CARD_ID, "file:///android_asset/operit.png")
+            userPreferencesManager.saveAiAvatarForCharacterCard(DEFAULT_CHARACTER_CARD_ID, "file:///android_asset/custard.png")
         }
         
         // 确保系统标签存在
@@ -354,7 +354,7 @@ class CharacterCardManager private constructor(private val context: Context) {
             setupDefaultCharacterCard(preferences, DEFAULT_CHARACTER_CARD_ID)
         }
         // 同时也重置头像和主题
-        userPreferencesManager.saveAiAvatarForCharacterCard(DEFAULT_CHARACTER_CARD_ID, "file:///android_asset/operit.png")
+        userPreferencesManager.saveAiAvatarForCharacterCard(DEFAULT_CHARACTER_CARD_ID, "file:///android_asset/custard.png")
     }
     
     private fun setupDefaultCharacterCard(preferences: MutablePreferences, id: String) {
@@ -396,7 +396,7 @@ class CharacterCardManager private constructor(private val context: Context) {
     }
 
     data class CharacterCardsBackupFile(
-        val schema: String = "operit_character_cards_backup_v1",
+        val schema: String = "custard_character_cards_backup_v1",
         val version: Int = 1,
         val exportedAt: Long = System.currentTimeMillis(),
         val characterCards: List<CharacterCard> = emptyList(),
@@ -584,38 +584,38 @@ class CharacterCardManager private constructor(private val context: Context) {
                 }
             }
 
-            val operitPayload = tavernCard.data.extensions?.operit
-                ?.takeIf { it.schema == "operit_character_card_v1" }
+            val custardPayload = tavernCard.data.extensions?.custard
+                ?.takeIf { it.schema == "custard_character_card_v1" }
                 ?.character_card
 
-            val importedOperitTags = if (operitPayload != null) {
-                importOrReuseOperitTags(operitPayload.attachedTags)
+            val importedCustardTags = if (custardPayload != null) {
+                importOrReuseCustardTags(custardPayload.attachedTags)
             } else {
                 ImportedTagResult(emptyMap(), emptyList())
             }
 
-            val characterCard = if (operitPayload != null) {
+            val characterCard = if (custardPayload != null) {
                 CharacterCard(
                     id = "",
-                    name = operitPayload.name,
-                    description = operitPayload.description,
-                    characterSetting = operitPayload.characterSetting,
-                    openingStatement = operitPayload.openingStatement,
-                    otherContent = operitPayload.otherContent,
-                    attachedTagIds = if (operitPayload.attachedTagIds.isNotEmpty()) {
+                    name = custardPayload.name,
+                    description = custardPayload.description,
+                    characterSetting = custardPayload.characterSetting,
+                    openingStatement = custardPayload.openingStatement,
+                    otherContent = custardPayload.otherContent,
+                    attachedTagIds = if (custardPayload.attachedTagIds.isNotEmpty()) {
                         remapAttachedTagIds(
-                            sourceIds = operitPayload.attachedTagIds,
-                            idMap = importedOperitTags.idMap
+                            sourceIds = custardPayload.attachedTagIds,
+                            idMap = importedCustardTags.idMap
                         )
                     } else {
-                        if (importedOperitTags.importedIds.isNotEmpty()) {
-                            importedOperitTags.importedIds
+                        if (importedCustardTags.importedIds.isNotEmpty()) {
+                            importedCustardTags.importedIds
                         } else {
-                            importedOperitTags.idMap.values.distinct()
+                            importedCustardTags.idMap.values.distinct()
                         }
                     },
-                    advancedCustomPrompt = operitPayload.advancedCustomPrompt,
-                    marks = operitPayload.marks,
+                    advancedCustomPrompt = custardPayload.advancedCustomPrompt,
+                    marks = custardPayload.marks,
                     isDefault = false,
                     createdAt = System.currentTimeMillis(),
                     updatedAt = System.currentTimeMillis()
@@ -657,8 +657,8 @@ class CharacterCardManager private constructor(private val context: Context) {
             }
             val tagNames = attachedTags.map { it.name }
 
-            val operitExt = OperitTavernExtension(
-                character_card = OperitCharacterCardPayload(
+            val custardExt = CustardTavernExtension(
+                character_card = CustardCharacterCardPayload(
                     name = card.name,
                     description = card.description,
                     characterSetting = card.characterSetting,
@@ -666,7 +666,7 @@ class CharacterCardManager private constructor(private val context: Context) {
                     otherContent = card.otherContent,
                     attachedTagIds = card.attachedTagIds,
                     attachedTags = attachedTags.map { tag ->
-                        OperitAttachedTagPayload(
+                        CustardAttachedTagPayload(
                             id = tag.id,
                             name = tag.name,
                             description = tag.description,
@@ -698,7 +698,7 @@ class CharacterCardManager private constructor(private val context: Context) {
                     tags = tagNames,
                     creator = "",
                     character_version = "",
-                    extensions = TavernExtensions(operit = operitExt),
+                    extensions = TavernExtensions(custard = custardExt),
                     character_book = null
                 )
             )
@@ -811,7 +811,7 @@ class CharacterCardManager private constructor(private val context: Context) {
         val importedIds: List<String>
     )
 
-    private suspend fun importOrReuseOperitTags(exportedTags: List<OperitAttachedTagPayload>): ImportedTagResult {
+    private suspend fun importOrReuseCustardTags(exportedTags: List<CustardAttachedTagPayload>): ImportedTagResult {
         val idMap = mutableMapOf<String, String>()
         val importedIds = mutableListOf<String>()
         exportedTags.forEach { exportedTag ->

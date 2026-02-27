@@ -470,7 +470,7 @@
     <string name="danger_zone">Danger Zone</string>
     <string name="chat_statistics">Chat Statistics</string>
     <string name="current_chats">Currently %1$d chat records</string>
-    <string name="backup_location">Backup files are saved in the \"Download/Operit\" folder</string>
+    <string name="backup_location">Backup files are saved in the \"Download/Custard\" folder</string>
     <string name="faq_backup">FAQ</string>
     
     <!-- Terminal Screen -->
@@ -496,7 +496,7 @@
     <string name="about_developer">Developer: &lt;a href="https://github.com/AAswordman"&gt;AAswordman&lt;/a&gt;</string>
     <string name="about_contact">Contact Us: aaswordsman@foxmail.com</string>
     <string name="about_website">&lt;a href="https://github.com/kymjs/Custard"&gt;GitHub: https://github.com/kymjs/Custard&lt;/a&gt;</string>
-    <string name="about_copyright">© 2025 - 2026 Operit. All Rights Reserved.</string>
+    <string name="about_copyright">© 2025 - 2026 Custard. All Rights Reserved.</string>
     <string name="star_on_github">Star on GitHub</string>
     <string name="update_log">Update Log</string>
     <string name="app_logo_description">App Logo</string>
@@ -567,7 +567,7 @@
     
     <!-- Plugin Loading Screen -->
     <string name="plugin_skip">Skip</string>
-    <string name="plugin_app_name">OPERIT</string>
+    <string name="plugin_app_name">CUSTARD</string>
     <string name="plugin_status">Started: %1$d / %2$d</string>
     <string name="plugin_loading_status_title">Plugin Loading Status</string>
     <string name="plugin_loading_success">Loading successful</string>
@@ -931,7 +931,7 @@
     <string name="copy_path">Copy Path</string>
     <string name="path_copied_to_clipboard">Path copied to clipboard</string>
     <string name="open_file_manager">Open File Manager</string>
-    <string name="navigate_to_external_files">Please navigate to Android/data/com.ai.assistance.operit/files/packages directory</string>
+    <string name="navigate_to_external_files">Please navigate to Android/data/com.ai.assistance.custard/files/packages directory</string>
     <string name="package_js_only">Only JavaScript (.js) and ToolPkg (.toolpkg) files are supported</string>
     <string name="pkg_toolpkg_subpackages">ToolPkg Subpackages</string>
     <string name="pkg_toolpkg_version">Version: %1$s</string>
@@ -990,10 +990,10 @@
     <string name="agreement_title">User Agreement and Privacy Policy</string>
     <string name="agreement_subtitle">Please read and agree to the following terms before use.</string>
     <string name="agreement_human_readable_title">Plain Language Version (Not a legal document)</string>
-    <string name="agreement_human_readable_content">Like you, we don\'t like long and tedious agreements. Simply put:\n\nOperitAI is a free and open-source software. Its automation features are powerful, so please use them only for personal learning and daily assistance, not for any commercial or prohibited purposes.\n\nYou are responsible for all your actions. We are not responsible for any extensions you add or modifications you make to the software.\n\nRegarding privacy: Your voice processing is done locally on your device, which is secure. AI chat data is sent directly to the AI service provider, and we do not handle it.</string>
+    <string name="agreement_human_readable_content">Like you, we don\'t like long and tedious agreements. Simply put:\n\nCustardAI is a free and open-source software. Its automation features are powerful, so please use them only for personal learning and daily assistance, not for any commercial or prohibited purposes.\n\nYou are responsible for all your actions. We are not responsible for any extensions you add or modifications you make to the software.\n\nRegarding privacy: Your voice processing is done locally on your device, which is secure. AI chat data is sent directly to the AI service provider, and we do not handle it.</string>
     <string name="agreement_serious_title">Formal Legal Agreement</string>
     <string name="agreement_serious_content"><![CDATA[
-        <p>Welcome to OperitAI. This software is modified and distributed under the terms of the GNU Lesser General Public License, version 3 (LGPLv3).</p>
+        <p>Welcome to CustardAI. This software is modified and distributed under the terms of the GNU Lesser General Public License, version 3 (LGPLv3).</p>
         <p><b>1. No Warranty</b><br>This software is provided "as is" without any warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. The entire risk as to the quality and performance of the software is with you.</p>
         <p><b>2. Limitation of Liability</b><br>In no event unless required by applicable law or agreed to in writing will any contributor be liable to you for damages, including any general, special, incidental, or consequential damages arising out of the use or inability to use the software. <b>Furthermore, the development team is not responsible for any consequences arising from user-installed extension packages (such as MCPs) or from modifications made to this software.</b></p>
         <p><b>3. User Responsibility and Usage Restrictions</b><br>You are fully responsible for any operations conducted through this software and for all their consequences. You agree to use this software for lawful and proper personal purposes and agree that:<br>
@@ -1237,7 +1237,7 @@
     <string name="overlay_permission">Overlay Permission</string>
     <string name="battery_optimization">Battery Optimization Exemption</string>
     <string name="location_permission">Location Permission</string>
-    <string name="operit_terminal">Custard Terminal</string>
+    <string name="custard_terminal">Custard Terminal</string>
     
     <!-- Permission Level Descriptions -->
     <string name="permission_level_standard">Standard Permission</string>
@@ -2947,7 +2947,7 @@
 
     <!-- Workspace Project Types (Project templates) -->
     <string name="workspace_project_blank_title">Blank Workspace</string>
-    <string name="workspace_project_blank_description">This is a blank workspace with only basic directory structure. You can edit .operit/config.json to configure project type, server, and commands, such as: server.enabled, preview.type, commands, etc.</string>
+    <string name="workspace_project_blank_description">This is a blank workspace with only basic directory structure. You can edit .custard/config.json to configure project type, server, and commands, such as: server.enabled, preview.type, commands, etc.</string>
     <string name="workspace_project_web_title">Web Project</string>
     <string name="workspace_project_web_description">HTML/CSS/JavaScript web development with local server enabled</string>
     <string name="workspace_project_node_title">Node.js Project</string>
@@ -2974,7 +2974,7 @@
     <string name="workspace_close_preview">Close Preview</string>
     <string name="workspace_project_suffix">Project</string>
     <string name="workspace_click_buttons_below">Click buttons below to execute commands</string>
-    <string name="workspace_no_commands_configured">No commands configured\n\nYou can add command button configurations in .operit/config.json</string>
+    <string name="workspace_no_commands_configured">No commands configured\n\nYou can add command button configurations in .custard/config.json</string>
     <string name="workspace_path_label">Workspace Path</string>
 
     <!-- Workspace Commands (Command labels) -->
@@ -3766,9 +3766,9 @@
     <string name="import_color_qr">Import Color QR</string>
     <string name="scan_color_qr">Scan Color QR</string>
     <string name="tavern_json">Tavern JSON</string>
-    <string name="export_tavern_json_desc">Export as .json and save to Download/Operit/exports</string>
+    <string name="export_tavern_json_desc">Export as .json and save to Download/Custard/exports</string>
     <string name="tavern_png">Tavern PNG</string>
-    <string name="export_tavern_png_desc">Export as image importable to Tavern and save to Download/Operit/exports</string>
+    <string name="export_tavern_png_desc">Export as image importable to Tavern and save to Download/Custard/exports</string>
     <string name="image_read_error">Cannot read image</string>
     <string name="image_parse_error">Cannot parse image</string>
     <string name="color_qr_not_recognized">Cannot recognize color QR code</string>
@@ -3780,17 +3780,17 @@
     <string name="delete_tag_confirm">Are you sure you want to delete tag "%1$s"? This action cannot be undone.</string>
 
     <!-- CustardTerminal Wizard Card -->
-    <string name="operit_terminal_wizard_title">CustardTerminal Setup Wizard</string>
-    <string name="operit_terminal_not_installed">CustardTerminal not installed</string>
-    <string name="operit_terminal_update_available">CustardTerminal update available</string>
-    <string name="operit_terminal_up_to_date">CustardTerminal is up to date</string>
-    <string name="operit_terminal_install_description">CustardTerminal is a powerful terminal application that provides a complete Linux environment and package management capabilities. We need to install this application first.</string>
-    <string name="operit_terminal_install_button">Install CustardTerminal</string>
-    <string name="operit_terminal_update_description">A new version of CustardTerminal is available. It is recommended to update for better features and compatibility.</string>
-    <string name="operit_terminal_release_notes">Release Notes: %1$s</string>
-    <string name="operit_terminal_update_button">Update CustardTerminal</string>
-    <string name="operit_terminal_latest_description">Congratulations! You have installed the latest version of CustardTerminal and can start using its powerful terminal features.</string>
-    <string name="operit_terminal_open_button">Open CustardTerminal</string>
+    <string name="custard_terminal_wizard_title">CustardTerminal Setup Wizard</string>
+    <string name="custard_terminal_not_installed">CustardTerminal not installed</string>
+    <string name="custard_terminal_update_available">CustardTerminal update available</string>
+    <string name="custard_terminal_up_to_date">CustardTerminal is up to date</string>
+    <string name="custard_terminal_install_description">CustardTerminal is a powerful terminal application that provides a complete Linux environment and package management capabilities. We need to install this application first.</string>
+    <string name="custard_terminal_install_button">Install CustardTerminal</string>
+    <string name="custard_terminal_update_description">A new version of CustardTerminal is available. It is recommended to update for better features and compatibility.</string>
+    <string name="custard_terminal_release_notes">Release Notes: %1$s</string>
+    <string name="custard_terminal_update_button">Update CustardTerminal</string>
+    <string name="custard_terminal_latest_description">Congratulations! You have installed the latest version of CustardTerminal and can start using its powerful terminal features.</string>
+    <string name="custard_terminal_open_button">Open CustardTerminal</string>
 
     <!-- Function Types -->
     <string name="function_type_translation">Translation Function</string>
@@ -3994,7 +3994,7 @@
     <string name="mcp_issue_body_title_tech_info">## Technical Info</string>
     <string name="mcp_issue_body_tech_platform">- **Platform:** Custard MCP Market</string>
     <string name="mcp_issue_body_tech_publish_time">- **Published at:** %1$s</string>
-    <string name="mcp_issue_body_footer_note">*This Issue was generated automatically by Operit*</string>
+    <string name="mcp_issue_body_footer_note">*This Issue was generated automatically by Custard*</string>
 
     <string name="mcp_publish_body_section_plugin_info">## 📋 Plugin Info</string>
     <string name="mcp_publish_body_label_description">**Description:** %1$s</string>
@@ -4211,7 +4211,7 @@
     <string name="default_assistant_guide_step2_detail_android12">Android 12+: Settings → Apps → Default apps → Digital assistant app → Default digital assistant app</string>
     
     <!-- Step 3 -->
-    <string name="default_assistant_guide_step3_title">Select Operit</string>
+    <string name="default_assistant_guide_step3_title">Select Custard</string>
     <string name="default_assistant_guide_step3_desc">Choose Custard AI from the assistant app list</string>
     <string name="default_assistant_guide_step3_detail1">• Find \"Custard AI\" in the available assistant apps list</string>
     <string name="default_assistant_guide_step3_detail2">• Tap to select, and the system will set Custard as the default assistant</string>
@@ -4221,7 +4221,7 @@
     <string name="default_assistant_guide_step4_title">Test Voice Assistant</string>
     <string name="default_assistant_guide_step4_desc">After setup, test if it can be launched normally</string>
     <string name="default_assistant_guide_step4_detail1">• Long-press the Home button (home screen button) should invoke Custard voice assistant</string>
-    <string name="default_assistant_guide_step4_detail2">• If voice wake-up is supported, saying \"Hey Google\" or your device\'s designated wake word may also trigger Operit</string>
+    <string name="default_assistant_guide_step4_detail2">• If voice wake-up is supported, saying \"Hey Google\" or your device\'s designated wake word may also trigger Custard</string>
     
     <!-- Troubleshooting -->
     <string name="default_assistant_guide_troubleshooting_title">Having Problems?</string>
@@ -4663,7 +4663,7 @@
     <string name="backup_faq_why">Why backup data?</string>
     <string name="backup_faq_why_answer">Backing up chat history prevents important content loss when the app is uninstalled or data is lost. Regular backups are a good habit!</string>
     <string name="backup_faq_where">Where are exported files saved?</string>
-    <string name="backup_faq_where_answer">Exported backup files are saved in the \"Download/Operit\" folder on your phone, with filenames containing the data type, date and time.</string>
+    <string name="backup_faq_where_answer">Exported backup files are saved in the \"Download/Custard\" folder on your phone, with filenames containing the data type, date and time.</string>
     <string name="backup_faq_duplicate">Will importing create duplicate data?</string>
     <string name="backup_faq_duplicate_answer">The system uses record IDs to determine duplicates. Records with the same ID will be updated rather than duplicated. Records with different IDs will be added as new entries.</string>
     
@@ -4682,8 +4682,8 @@
     <!-- Import Format Selection -->
     <string name="backup_select_import_format">Select Import Format</string>
     <string name="backup_import_format_hint">Please select the chat history format to import:</string>
-    <string name="backup_format_operit">Custard JSON (Recommended)</string>
-    <string name="backup_format_operit_desc">Native format of this app, preserves all data completely</string>
+    <string name="backup_format_custard">Custard JSON (Recommended)</string>
+    <string name="backup_format_custard_desc">Native format of this app, preserves all data completely</string>
     <string name="backup_format_chatgpt">ChatGPT</string>
     <string name="backup_format_chatgpt_desc">OpenAI ChatGPT conversations.json export format</string>
     <string name="backup_format_chatbox">ChatBox</string>
@@ -4698,7 +4698,7 @@
 
     <string name="backup_character_cards_title">Character Cards</string>
     <string name="backup_character_cards_subtitle">Backup and restore character card settings</string>
-    <string name="backup_character_cards_current_count">Currently %1$d character card(s). Exported files will be saved in the "Download/Operit" folder.</string>
+    <string name="backup_character_cards_current_count">Currently %1$d character card(s). Exported files will be saved in the "Download/Custard" folder.</string>
     <string name="backup_character_card_count">Character Cards</string>
     <string name="backup_character_card_files">Character Cards</string>
 
@@ -4855,7 +4855,7 @@
     <string name="logcat_cannot_open_output_stream">Cannot open output stream</string>
     <string name="logcat_mediestore_save_failed">MediaStore save failed: %1$s</string>
     <string name="logcat_cannot_create_download_dir">Cannot create download directory</string>
-    <string name="logcat_cannot_create_operit_dir">Cannot create custard directory</string>
+    <string name="logcat_cannot_create_custard_dir">Cannot create custard directory</string>
     <string name="logcat_file_create_failed">File creation failed or is empty</string>
     <string name="logcat_filesystem_save_failed">Filesystem save failed: %1$s</string>
 
@@ -6205,7 +6205,7 @@
     <string name="chat_summarize_generation_failed">Summary generation failed: %1$s</string>
 
     <!-- AIForegroundService (新增) -->
-    <string name="service_operit_running">Custard is running</string>
+    <string name="service_custard_running">Custard is running</string>
     <string name="service_chat_complete_reminder">Chat completion reminder</string>
     <string name="service_keep_background">Keep Custard running in the background.</string>
     <string name="service_notify_when_complete">Notify you when the conversation is complete.</string>
@@ -6689,7 +6689,7 @@
     <string name="windows_one_click_title">Windows Control One-Click Setup</string>
     <string name="windows_one_click_subtitle">Share the bundled PC agent package to your Windows computer and run it, then save HTTP agent settings here to enable the windows_control package.</string>
     <string name="windows_one_click_step1_title">Step 1: Export and share PC agent</string>
-    <string name="windows_one_click_step1_desc">This exports the built-in custard-pc-agent ZIP into /sdcard/Download/Operit/cleanOnExit and opens the system share sheet.</string>
+    <string name="windows_one_click_step1_desc">This exports the built-in custard-pc-agent ZIP into /sdcard/Download/Custard/cleanOnExit and opens the system share sheet.</string>
     <string name="windows_one_click_step1_button">Export and Share ZIP</string>
     <string name="windows_one_click_exporting">Preparing ZIP...</string>
     <string name="windows_one_click_step1_success">Written to cleanOnExit and shared: %1$s</string>

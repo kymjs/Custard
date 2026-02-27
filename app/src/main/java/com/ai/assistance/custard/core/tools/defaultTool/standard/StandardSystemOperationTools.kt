@@ -33,7 +33,7 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import java.io.File
-import com.ai.assistance.custard.services.notification.OperitNotificationStore
+import com.ai.assistance.custard.services.notification.CustardNotificationStore
 import com.ai.assistance.custard.R
 
 /** 提供系统级操作的工具类 包括系统设置修改、应用安装和卸载等 这些操作需要用户明确授权 */
@@ -566,7 +566,7 @@ open class StandardSystemOperationTools(private val context: Context) {
         }
 
         return try {
-            val notifications = OperitNotificationStore.snapshot(
+            val notifications = CustardNotificationStore.snapshot(
                 limit = limit,
                 includeOngoing = includeOngoing
             )

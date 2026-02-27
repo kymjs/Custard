@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.sp
 import com.ai.assistance.custard.R
 
 @Composable
-fun OperitTerminalWizardCard(
+fun CustardTerminalWizardCard(
     isPnpmInstalled: Boolean,
     isPipInstalled: Boolean,
     isEnvironmentReady: Boolean,

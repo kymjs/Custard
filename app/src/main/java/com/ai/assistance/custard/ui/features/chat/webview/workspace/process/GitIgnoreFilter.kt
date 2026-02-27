@@ -11,7 +11,7 @@ object GitIgnoreFilter {
     private const val TAG = "GitIgnoreFilter"
 
     // 默认需要排除的目录（即使 .gitignore 中没有）
-    private val DEFAULT_EXCLUDES = setOf("backup", ".backup", ".operit")
+    private val DEFAULT_EXCLUDES = setOf("backup", ".backup", ".custard")
 
     fun defaultRules(): List<String> = DEFAULT_EXCLUDES.toList()
 

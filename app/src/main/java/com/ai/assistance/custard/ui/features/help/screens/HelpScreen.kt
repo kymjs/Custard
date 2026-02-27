@@ -32,9 +32,9 @@ fun HelpScreen(onBackPressed: () -> Unit = {}) {
     var isLoading by remember { mutableStateOf(true) }
     val helpUrls = remember {
         listOf(
-            "https://operit.aaswordsman.org",
-            "https://operit.dev.tc",
-            "https://aaswordman.github.io/OperitWeb/"
+            "https://custard.aaswordsman.org",
+            "https://custard.dev.tc",
+            "https://aaswordman.github.io/CustardWeb/"
         )
     }
     var currentUrlIndex by remember { mutableStateOf(0) }

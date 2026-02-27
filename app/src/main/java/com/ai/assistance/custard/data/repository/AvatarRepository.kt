@@ -288,7 +288,7 @@ class GltfPersistenceDelegate : AvatarPersistenceDelegate {
 
         val modelCandidates = directory.listFiles { file ->
             file.isFile &&
-                !file.name.startsWith(".operit_", ignoreCase = true) &&
+                !file.name.startsWith(".custard_", ignoreCase = true) &&
                 (file.extension.equals("glb", ignoreCase = true) || file.extension.equals("gltf", ignoreCase = true))
         }?.sortedWith(
             compareBy<File> { !it.extension.equals("glb", ignoreCase = true) }

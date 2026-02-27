@@ -308,11 +308,11 @@ fun ImportFormatDialog(
                 )
 
                 ImportFormatOption(
-                    format = ChatFormat.OPERIT,
-                    title = stringResource(R.string.backup_format_operit),
-                    description = stringResource(R.string.backup_format_operit_desc),
-                    selected = selectedFormat == ChatFormat.OPERIT,
-                    onClick = { onFormatSelected(ChatFormat.OPERIT) }
+                    format = ChatFormat.CUSTARD,
+                    title = stringResource(R.string.backup_format_custard),
+                    description = stringResource(R.string.backup_format_custard_desc),
+                    selected = selectedFormat == ChatFormat.CUSTARD,
+                    onClick = { onFormatSelected(ChatFormat.CUSTARD) }
                 )
 
                 ImportFormatOption(

@@ -237,7 +237,7 @@
       "parameters": [
         { "name": "owner", "description": { "zh": "仓库 owner（默认 octocat）", "en": "Repository owner (default: octocat)." }, "type": "string", "required": false },
         { "name": "repo", "description": { "zh": "仓库名（默认 Hello-World）", "en": "Repository name (default: Hello-World)." }, "type": "string", "required": false },
-        { "name": "query", "description": { "zh": "搜索关键词（默认 operit）", "en": "Search keyword (default: operit)." }, "type": "string", "required": false }
+        { "name": "query", "description": { "zh": "搜索关键词（默认 custard）", "en": "Search keyword (default: custard)." }, "type": "string", "required": false }
       ]
     }
   ]
@@ -277,7 +277,7 @@ async function main(params) {
     try {
         const owner = String((params === null || params === void 0 ? void 0 : params.owner) || 'octocat');
         const repo = String((params === null || params === void 0 ? void 0 : params.repo) || 'Hello-World');
-        const query = String((params === null || params === void 0 ? void 0 : params.query) || 'operit');
+        const query = String((params === null || params === void 0 ? void 0 : params.query) || 'custard');
         const path = String((params === null || params === void 0 ? void 0 : params.path) || 'README.md');
         const enableWrite = (params === null || params === void 0 ? void 0 : params.enable_write) === true;
         const baseUrl = (0, api_1.getBaseUrl)();
@@ -412,16 +412,16 @@ async function main(params) {
         }
         else {
             const ts = Date.now();
-            const testBranch = `operit-test-${ts}`;
-            const testPath = `operit_test_${ts}.txt`;
+            const testBranch = `custard-test-${ts}`;
+            const testPath = `custard_test_${ts}.txt`;
             const baseBranch = (results.get_repository.ok ? (_c = results.get_repository.data) === null || _c === void 0 ? void 0 : _c.default_branch : undefined) || 'main';
             results.create_branch = await run('create_branch', async () => (0, branches_1.createBranch)({ owner, repo, new_branch: testBranch, from_branch: baseBranch }));
             results.create_or_update_file = await run('create_or_update_file', async () => (0, contents_1.createOrUpdateFile)({
                 owner,
                 repo,
                 path: testPath,
-                message: `operit test create file ${ts}`,
-                content: `operit github tools self-test ${ts}`,
+                message: `custard test create file ${ts}`,
+                content: `custard github tools self-test ${ts}`,
                 content_encoding: 'utf-8',
                 branch: testBranch
             }));
@@ -429,8 +429,8 @@ async function main(params) {
                 owner,
                 repo,
                 path: testPath,
-                message: `operit test patch file ${ts}`,
-                patch: `[START-REPLACE]\n[OLD]\noperit github tools self-test ${ts}\n[/OLD]\n[NEW]\noperit github tools self-test ${ts} (patched)\n[/NEW]\n[END-REPLACE]`,
+                message: `custard test patch file ${ts}`,
+                patch: `[START-REPLACE]\n[OLD]\ncustard github tools self-test ${ts}\n[/OLD]\n[NEW]\ncustard github tools self-test ${ts} (patched)\n[/NEW]\n[END-REPLACE]`,
                 branch: testBranch
             }));
             results.delete_file = await run('delete_file', async () => {
@@ -440,20 +440,20 @@ async function main(params) {
                 if (!sha) {
                     throw new Error('Cannot infer sha from create_or_update_file response; pass sha explicitly if needed.');
                 }
-                return (0, contents_1.deleteFile)({ owner, repo, path: testPath, message: `operit test delete file ${ts}`, branch: testBranch, sha });
+                return (0, contents_1.deleteFile)({ owner, repo, path: testPath, message: `custard test delete file ${ts}`, branch: testBranch, sha });
             });
             const canIssue = Boolean(token) && issueNumber !== undefined;
             if (!token) {
                 writeSkipped('create_issue', 'Skipped: GITHUB_TOKEN missing (required for write operation).');
             }
             else {
-                results.create_issue = await run('create_issue', async () => (0, issues_1.createIssue)({ owner, repo, title: `operit self-test issue ${ts}`, body: `created by operit github tools self-test ${ts}` }));
+                results.create_issue = await run('create_issue', async () => (0, issues_1.createIssue)({ owner, repo, title: `custard self-test issue ${ts}`, body: `created by custard github tools self-test ${ts}` }));
             }
             if (!canIssue) {
                 writeSkipped('comment_issue', 'Skipped: need GITHUB_TOKEN and issue_number (or at least one issue from list_issues).');
             }
             else {
-                results.comment_issue = await run('comment_issue', async () => (0, issues_1.commentIssue)({ owner, repo, issue_number: issueNumber, body: `operit self-test comment ${ts}` }));
+                results.comment_issue = await run('comment_issue', async () => (0, issues_1.commentIssue)({ owner, repo, issue_number: issueNumber, body: `custard self-test comment ${ts}` }));
             }
             const prHead = (params === null || params === void 0 ? void 0 : params.pr_head) ? String(params.pr_head) : '';
             const prBase = (params === null || params === void 0 ? void 0 : params.pr_base) ? String(params.pr_base) : '';
@@ -464,7 +464,7 @@ async function main(params) {
                 writeSkipped('create_pull_request', 'Skipped: pr_head/pr_base not provided (required to create PR).');
             }
             else {
-                results.create_pull_request = await run('create_pull_request', async () => (0, pulls_1.createPullRequest)({ owner, repo, title: `operit self-test PR ${ts}`, head: prHead, base: prBase, body: `created by operit self-test ${ts}` }));
+                results.create_pull_request = await run('create_pull_request', async () => (0, pulls_1.createPullRequest)({ owner, repo, title: `custard self-test PR ${ts}`, head: prHead, base: prBase, body: `created by custard self-test ${ts}` }));
             }
             if (!token) {
                 writeSkipped('merge_pull_request', 'Skipped: GITHUB_TOKEN missing (required for write operation).');

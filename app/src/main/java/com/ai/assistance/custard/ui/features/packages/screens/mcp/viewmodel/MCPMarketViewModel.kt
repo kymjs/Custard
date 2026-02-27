@@ -197,7 +197,7 @@ class MCPMarketViewModel(
     companion object {
         private const val TAG = "MCPMarketViewModel"
         private const val MARKET_REPO_OWNER = "AAswordman"
-        private const val MARKET_REPO_NAME = "OperitMCPMarket"
+        private const val MARKET_REPO_NAME = "CustardMCPMarket"
         private const val MCP_PLUGIN_LABEL = "mcp-plugin"
         private const val MARKET_PAGE_SIZE = 50
     }
@@ -1002,13 +1002,13 @@ class MCPMarketViewModel(
             try {
                 val json = Json { ignoreUnknownKeys = true; prettyPrint = false }
                 val metadataJson = json.encodeToString(metadata)
-                appendLine("<!-- operit-mcp-json: $metadataJson -->")
+                appendLine("<!-- custard-mcp-json: $metadataJson -->")
             } catch (e: Exception) {
                 AppLogger.e(TAG, "Failed to serialize MCP metadata", e)
             }
 
             // 软件解析版本号标记
-            appendLine("<!-- operit-parser-version: $version -->")
+            appendLine("<!-- custard-parser-version: $version -->")
             appendLine()
 
             appendLine(context.getString(R.string.mcp_publish_body_section_plugin_info))
@@ -1103,7 +1103,7 @@ class MCPMarketViewModel(
      * 解析隐藏在Issue Body中的MCP元数据JSON
      */
     private fun parseMCPMetadata(body: String): MCPMetadata? {
-        val prefix = "<!-- operit-mcp-json: "
+        val prefix = "<!-- custard-mcp-json: "
         val start = body.indexOf(prefix)
         if (start < 0) return null
 

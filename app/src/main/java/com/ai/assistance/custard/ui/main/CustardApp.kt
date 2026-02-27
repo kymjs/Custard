@@ -35,7 +35,7 @@ import com.ai.assistance.custard.ui.common.NavItem
 import com.ai.assistance.custard.ui.features.announcement.RemoteAnnouncementDialog
 import com.ai.assistance.custard.ui.main.layout.PhoneLayout
 import com.ai.assistance.custard.ui.main.layout.TabletLayout
-import com.ai.assistance.custard.ui.main.screens.OperitRouter
+import com.ai.assistance.custard.ui.main.screens.CustardRouter
 import com.ai.assistance.custard.ui.main.screens.Screen
 import com.ai.assistance.custard.util.NetworkUtils
 import kotlinx.coroutines.delay
@@ -53,7 +53,7 @@ val LocalTopBarActions = compositionLocalOf<(@Composable (RowScope.() -> Unit)) 
 data class NavGroup(@StringRes val titleResId: Int, val items: List<NavItem>)
 
 @Composable
-fun OperitApp(initialNavItem: NavItem = NavItem.AiChat, toolHandler: AIToolHandler? = null) {
+fun CustardApp(initialNavItem: NavItem = NavItem.AiChat, toolHandler: AIToolHandler? = null) {
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -64,7 +64,7 @@ fun OperitApp(initialNavItem: NavItem = NavItem.AiChat, toolHandler: AIToolHandl
     // Navigation state - using a custom back stack
     var selectedItem by remember { mutableStateOf(initialNavItem) }
     var currentScreen by remember {
-        mutableStateOf(OperitRouter.getScreenForNavItem(initialNavItem))
+        mutableStateOf(CustardRouter.getScreenForNavItem(initialNavItem))
     }
     val backStack = remember { mutableStateListOf<Screen>() }
 

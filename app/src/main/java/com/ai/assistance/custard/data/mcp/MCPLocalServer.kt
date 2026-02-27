@@ -41,7 +41,7 @@ import kotlinx.serialization.Serializable
  * - 官方MCP配置格式的读写
  * - 插件配置管理
  * - 服务器状态管理
- * - 统一存储在下载/Operit/mcp_plugins目录
+ * - 统一存储在下载/Custard/mcp_plugins目录
  */
 class MCPLocalServer private constructor(private val context: Context) {
     companion object {

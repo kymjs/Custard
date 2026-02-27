@@ -43,7 +43,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.input.pointer.pointerInput
-import com.ai.assistance.custard.desktop.ui.theme.OperitDesktopTheme
+import com.ai.assistance.custard.desktop.ui.theme.CustardDesktopTheme
 import androidx.core.graphics.drawable.toBitmap
 import kotlinx.coroutines.launch
 
@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            OperitDesktopTheme {
+            CustardDesktopTheme {
                 DesktopScreen()
             }
         }
@@ -66,7 +66,7 @@ private data class DesktopApp(
     val launchCount: Int
 )
 
-private const val PREFS_NAME = "operit_desktop_prefs"
+private const val PREFS_NAME = "custard_desktop_prefs"
 private const val KEY_PREFIX_LAUNCH_COUNT = "launch_count_"
 
 private fun getLaunchCount(context: Context, packageName: String): Int {
@@ -211,7 +211,7 @@ private fun launchApp(context: Context, packageName: String) {
 @Preview(showBackground = true)
 @Composable
 fun DesktopScreenPreview() {
-    OperitDesktopTheme {
+    CustardDesktopTheme {
         DesktopScreen()
     }
 }

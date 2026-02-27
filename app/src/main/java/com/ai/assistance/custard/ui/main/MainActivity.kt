@@ -47,7 +47,7 @@ import com.ai.assistance.custard.ui.features.permission.screens.PermissionGuideS
 import com.ai.assistance.custard.ui.features.startup.screens.PluginLoadingScreenWithState
 import com.ai.assistance.custard.ui.features.startup.screens.PluginLoadingState
 import com.ai.assistance.custard.ui.features.startup.screens.LocalPluginLoadingState
-import com.ai.assistance.custard.ui.theme.OperitTheme
+import com.ai.assistance.custard.ui.theme.CustardTheme
 import com.ai.assistance.custard.ui.common.displays.VirtualDisplayOverlay
 import com.ai.assistance.custard.util.AnrMonitor
 import com.ai.assistance.custard.util.LocaleUtils
@@ -679,7 +679,7 @@ class MainActivity : ComponentActivity() {
     // ======== 设置应用内容 ========
     private fun setAppContent() {
         setContent {
-            OperitTheme {
+            CustardTheme {
                 Box {
                     // 如果初始化检查未完成，则显示一个占位符，避免在检查完成前显示不完整的界面
                     if (!initialChecksDone) {
@@ -733,7 +733,7 @@ class MainActivity : ComponentActivity() {
                             
                             CompositionLocalProvider(LocalPluginLoadingState provides pluginLoadingState) {
                                 // 主应用界面 (始终存在于底层)
-                                OperitApp(
+                                CustardApp(
                                         initialNavItem =
                                                 when {
                                                     showPreferencesGuide -> NavItem.UserPreferencesGuide
@@ -877,7 +877,7 @@ class MainActivity : ComponentActivity() {
         return refreshRate
     }
 
-    /** 清理临时文件目录 删除Download/Operit/cleanOnExit目录中的所有文件 */
+    /** 清理临时文件目录 删除Download/Custard/cleanOnExit目录中的所有文件 */
     private fun cleanTemporaryFiles() {
         lifecycleScope.launch {
             try {

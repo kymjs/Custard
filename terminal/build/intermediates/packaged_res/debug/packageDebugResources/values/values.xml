@@ -89,7 +89,7 @@
     <string name="openssh_missing_title">缺少 OpenSSH Server</string>
     <string name="openssh_remote_component">✓ 远程服务器：sshfs</string>
     <string name="openssh_remote_install">  → 在远程服务器执行：</string>
-    <string name="operit_required">Operit 必须</string>
+    <string name="operit_required">Operit_temp 必须</string>
     <string name="package_go_desc">Go 编程语言</string>
     <string name="package_go_name">Go</string>
     <string name="package_gradle_desc">现代化的构建自动化工具</string>
@@ -115,7 +115,7 @@
     <string name="package_uv_desc">一个用 Rust 编写的极速 Python 包安装器</string>
     <string name="package_uv_name">uv</string>
     <string name="project_address_title">项目地址</string>
-    <string name="project_name">AAswordman/OperitTerminal</string>
+    <string name="project_name">AAswordman/Operit_tempTerminal</string>
     <string name="refresh_size">刷新</string>
     <string name="refresh_size_calculating">计算中…</string>
     <string name="reset_confirm">确定重置</string>

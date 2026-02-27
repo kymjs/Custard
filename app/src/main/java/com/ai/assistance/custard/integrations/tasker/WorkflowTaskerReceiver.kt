@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 /**
  * BroadcastReceiver for receiving workflow trigger requests from Tasker
  * 
- * This receiver allows Tasker to trigger Operit workflows via broadcasts.
+ * This receiver allows Tasker to trigger Custard workflows via broadcasts.
  */
 class WorkflowTaskerReceiver : BroadcastReceiver() {
 

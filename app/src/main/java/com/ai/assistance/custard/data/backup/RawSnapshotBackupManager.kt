@@ -34,7 +34,7 @@ object RawSnapshotBackupManager {
     private const val TAG = "RawSnapshotBackup"
     private const val FORMAT_VERSION = 1
 
-    private const val ZIP_PREFIX = "operit_raw_snapshot_"
+    private const val ZIP_PREFIX = "custard_raw_snapshot_"
 
     private const val ENTRY_MANIFEST = "manifest.json"
     private const val ENTRY_PAYLOAD_PREFIX = "payload/"

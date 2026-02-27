@@ -1,4 +1,4 @@
-module operit-go-project
+module custard-go-project
 
 go 1.21
 

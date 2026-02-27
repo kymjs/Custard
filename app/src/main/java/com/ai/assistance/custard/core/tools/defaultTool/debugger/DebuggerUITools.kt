@@ -382,7 +382,7 @@ open class DebuggerUITools(context: Context) : AccessibilityUITools(context) {
             AppLogger.d(TAG, "Setting text to clipboard and pasting via ADB: $text")
             withContext(Dispatchers.Main) {
                 val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                val clip = ClipData.newPlainText("operit_input", text)
+                val clip = ClipData.newPlainText("custard_input", text)
                 clipboard.setPrimaryClip(clip)
             }
 

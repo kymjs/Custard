@@ -153,8 +153,8 @@ class ShizukuDemoViewModel(application: Application) : AndroidViewModel(applicat
         stateManager.toggleShizukuWizard()
     }
 
-    fun toggleOperitTerminalWizard() {
-        stateManager.toggleOperitTerminalWizard()
+    fun toggleCustardTerminalWizard() {
+        stateManager.toggleCustardTerminalWizard()
     }
 
     fun toggleRootWizard() {

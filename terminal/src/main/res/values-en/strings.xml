@@ -9,7 +9,7 @@
     <string name="expand">Expand</string>
     <string name="collapse">Collapse</string>
     <string name="installed">Installed</string>
-    <string name="operit_required">Operit Required</string>
+    <string name="custard_required">Custard Required</string>
     
     <!-- Dialog -->
     <string name="setup_dialog_title">Notice</string>
@@ -78,7 +78,7 @@
     
     <!-- Project Section -->
     <string name="project_address_title">Project Repository</string>
-    <string name="project_name">AAswordman/OperitTerminal</string>
+    <string name="project_name">AAswordman/CustardTerminal</string>
     <string name="visit_project">Visit</string>
     <string name="check_updates">Check</string>
     <string name="update_now">Update</string>

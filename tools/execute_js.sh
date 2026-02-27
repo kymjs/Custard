@@ -60,15 +60,15 @@ else
 fi
 
 # Create target directory
-TARGET_DIR="/sdcard/Android/data/com.ai.assistance.operit/js_temp"
+TARGET_DIR="/sdcard/Android/data/com.ai.assistance.custard/js_temp"
 echo "Creating directory on device..."
 adb -s "$DEVICE_SERIAL" shell "mkdir -p $TARGET_DIR" 2>/dev/null
 
 # Check if directory creation succeeded, try alternative methods if not
 if [ $? -ne 0 ]; then
     echo "Standard mkdir failed, trying alternative method..."
-    adb -s "$DEVICE_SERIAL" shell "mkdir /sdcard/Android/data/com.ai.assistance.operit" 2>/dev/null
-    adb -s "$DEVICE_SERIAL" shell "mkdir /sdcard/Android/data/com.ai.assistance.operit/js_temp" 2>/dev/null
+    adb -s "$DEVICE_SERIAL" shell "mkdir /sdcard/Android/data/com.ai.assistance.custard" 2>/dev/null
+    adb -s "$DEVICE_SERIAL" shell "mkdir /sdcard/Android/data/com.ai.assistance.custard/js_temp" 2>/dev/null
 fi
 
 # Get file name and target path
@@ -89,8 +89,8 @@ ESCAPED_PARAMS=$(echo "$PARAMS" | sed 's/"/\\"/g')
 
 # Send broadcast to execute script
 echo "Executing function $FUNCTION_NAME on device $DEVICE_SERIAL..."
-adb -s "$DEVICE_SERIAL" shell am broadcast -a com.ai.assistance.operit.EXECUTE_JS \
-    -n com.ai.assistance.operit/.tools.javascript.ScriptExecutionReceiver \
+adb -s "$DEVICE_SERIAL" shell am broadcast -a com.ai.assistance.custard.EXECUTE_JS \
+    -n com.ai.assistance.custard/.tools.javascript.ScriptExecutionReceiver \
     --include-stopped-packages \
     --es file_path "$TARGET_FILE" \
     --es function_name "$FUNCTION_NAME" \

@@ -99,7 +99,7 @@ def _request_json(url: str, token: str, ctx: ssl.SSLContext) -> tuple[list, dict
     req = urllib.request.Request(url, method="GET")
     req.add_header("Accept", "application/vnd.github+json")
     req.add_header("X-GitHub-Api-Version", "2022-11-28")
-    req.add_header("User-Agent", "OperitTools/1.0 (list_issues.py)")
+    req.add_header("User-Agent", "CustardTools/1.0 (list_issues.py)")
     if token:
         req.add_header("Authorization", f"Bearer {token}")
 

@@ -93,7 +93,7 @@ object SkillIssueParser {
         val candidate = paragraphs.firstOrNull { p ->
             p.length >= 6 &&
                 !p.startsWith("{") &&
-                !p.contains("operit-", ignoreCase = true)
+                !p.contains("custard-", ignoreCase = true)
         }
 
         return candidate?.take(300)?.trim().orEmpty()
@@ -154,7 +154,7 @@ object SkillIssueParser {
     }
 
     private fun parseSkillMetadata(body: String): SkillMetadata? {
-        val prefix = "<!-- operit-skill-json: "
+        val prefix = "<!-- custard-skill-json: "
         val start = body.indexOf(prefix)
         if (start < 0) return null
 

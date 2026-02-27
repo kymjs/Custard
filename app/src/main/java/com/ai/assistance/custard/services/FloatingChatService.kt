@@ -355,7 +355,7 @@ class FloatingChatService : Service(), FloatingWindowCallback {
                 wakeLock =
                         powerManager.newWakeLock(
                                 PowerManager.PARTIAL_WAKE_LOCK,
-                                "OperitApp:FloatingChatServiceWakeLock"
+                                "CustardApp:FloatingChatServiceWakeLock"
                         )
                 wakeLock?.setReferenceCounted(false)
             }

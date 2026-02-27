@@ -386,7 +386,7 @@ def print_report(analysis: Dict):
     print(f"[DONE] Results saved to: {output_file.absolute()}")
 
 def main():
-    root_dir = Path('D:\\Code\\prog\\assistance\\app\\src\\main\\java\\com\\ai\\assistance\\operit')
+    root_dir = Path('D:\\Code\\prog\\assistance\\app\\src\\main\\java\\com\\ai\\assistance\\custard')
 
     if not root_dir.exists():
         print(f"[ERROR] Directory does not exist: {root_dir}")

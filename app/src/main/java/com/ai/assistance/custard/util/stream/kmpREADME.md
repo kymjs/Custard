@@ -39,7 +39,7 @@
 使用 `kmpPattern` DSL 可以轻松创建一个模式。例如，匹配字符串 "abc":
 
 ```kotlin
-import com.ai.assistance.operit.util.stream.kmpPattern
+import com.ai.assistance.custard.util.stream.kmpPattern
 
 val pattern = kmpPattern {
     literal("abc")
@@ -51,7 +51,7 @@ val pattern = kmpPattern {
 使用 `StreamKmpGraphBuilder` 从模式构建图，然后使用 `processText` 方法在文本中查找所有匹配项的位置。
 
 ```kotlin
-import com.ai.assistance.operit.util.stream.StreamKmpGraphBuilder
+import com.ai.assistance.custard.util.stream.StreamKmpGraphBuilder
 
 val builder = StreamKmpGraphBuilder()
 val graph = builder.build(pattern)

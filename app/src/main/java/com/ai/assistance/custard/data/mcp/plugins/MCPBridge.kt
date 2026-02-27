@@ -205,7 +205,7 @@ class MCPBridge private constructor(private val context: Context) {
             appContext = context.applicationContext
             return withContext(Dispatchers.IO) {
                 try {
-                    // 1. 首先将桥接器从assets复制到sdcard/Download/Operit/bridge目录
+                    // 1. 首先将桥接器从assets复制到sdcard/Download/Custard/bridge目录
                     val publicBridgeDir = CustardPaths.bridgeDir()
 
                     // 复制打包后的 index.js 到公共目录（已包含所有依赖）

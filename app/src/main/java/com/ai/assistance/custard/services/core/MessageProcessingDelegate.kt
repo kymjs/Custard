@@ -476,7 +476,7 @@ class MessageProcessingDelegate(
                 val currentRoleName = try {
                     characterCardManager.getCharacterCardFlow(effectiveRoleCardId).first().name
                 } catch (e: Exception) {
-                    "Operit" // 默认角色名
+                    "Custard" // 默认角色名
                 }
 
                 // 获取当前使用的provider和model信息
@@ -698,7 +698,7 @@ class MessageProcessingDelegate(
                     val currentRoleName = try {
                         characterCardManager.getCharacterCardFlow(roleCardId).first().name
                     } catch (e: Exception) {
-                        "Operit" // 默认角色名
+                        "Custard" // 默认角色名
                     }
 
                     // 获取当前使用的provider和model信息（在finally块内重新获取）

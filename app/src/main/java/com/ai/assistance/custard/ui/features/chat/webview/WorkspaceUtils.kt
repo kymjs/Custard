@@ -69,7 +69,7 @@ fun getWorkspacePath(context: Context, chatId: String): String {
 
 /**
  * 获取旧的工作区路径（外部存储）
- * 路径: /sdcard/Download/Operit/workspace/{chatId}
+ * 路径: /sdcard/Download/Custard/workspace/{chatId}
  */
 fun getLegacyWorkspacePath(chatId: String): String {
     return CustardPaths.workspacePathSdcard(chatId)
@@ -631,7 +631,7 @@ private fun copyTemplateFilesRecursive(assetManager: android.content.res.AssetMa
 }
 
 private fun createProjectConfigIfNeeded(context: Context, workspaceDir: File, projectType: ProjectType) {
-    // 创建 .operit 目录和 config.json
+    // 创建 .custard 目录和 config.json
     val custardDir = File(workspaceDir, ".custard")
     if (!custardDir.exists()) {
         custardDir.mkdirs()

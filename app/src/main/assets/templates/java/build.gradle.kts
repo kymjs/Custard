@@ -3,7 +3,7 @@ plugins {
     id("application")
 }
 
-group = "com.operit.app"
+group = "com.custard.app"
 version = "1.0.0"
 
 java {
@@ -28,7 +28,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("com.operit.app.Main")
+    mainClass.set("com.custard.app.Main")
 }
 
 tasks.test {
@@ -37,7 +37,7 @@ tasks.test {
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "com.operit.app.Main"
+        attributes["Main-Class"] = "com.custard.app.Main"
     }
     
     // Create a fat JAR with dependencies

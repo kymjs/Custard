@@ -36,7 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.ai.assistance.custard.R
 import com.ai.assistance.custard.ui.main.MainActivity
-import com.ai.assistance.custard.ui.theme.OperitTheme
+import com.ai.assistance.custard.ui.theme.CustardTheme
 import kotlinx.coroutines.launch
 import java.io.File
 import java.io.FileOutputStream
@@ -55,7 +55,7 @@ class CrashReportActivity : ComponentActivity() {
         val stackTrace = intent.getStringExtra(EXTRA_STACK_TRACE) ?: "No stack trace available."
 
         AppLogger.e("CrashReportActivity", "stackTrace: $stackTrace")
-        setContent { OperitTheme { CrashReportScreen(stackTrace = stackTrace) } }
+        setContent { CustardTheme { CrashReportScreen(stackTrace = stackTrace) } }
     }
 }
 
@@ -176,7 +176,7 @@ private fun copyToClipboard(context: Context, text: String) {
 private fun exportToFile(context: Context, text: String) {
     try {
         val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-        val errorDir = File(downloadsDir, "Operit/error")
+        val errorDir = File(downloadsDir, "Custard/error")
         if (!errorDir.exists()) {
             errorDir.mkdirs()
         }

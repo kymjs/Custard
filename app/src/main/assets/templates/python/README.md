@@ -1,6 +1,6 @@
-# Operit Python 项目
+# Custard Python 项目
 
-这是一个使用 Operit 创建的 Python 项目。
+这是一个使用 Custard 创建的 Python 项目。
 
 ## 快速开始（推荐使用虚拟环境）
 
@@ -34,7 +34,7 @@
 - `main.py` - 主程序入口
 - `requirements.txt` - Python 依赖列表
 - `venv/` - 虚拟环境目录（创建后）
-- `.operit/config.json` - Operit 工作区配置
+- `.custard/config.json` - Custard 工作区配置
 
 ## 虚拟环境说明
 

@@ -70,7 +70,7 @@ const ExtendedHttpTools = (function () {
 
         const contentStr = typeof result?.content === "string" ? result.content : "";
         if (contentStr.length > MAX_INLINE_HTTP_RESPONSE_CHARS) {
-            await Tools.Files.mkdir(OPERIT_CLEAN_ON_EXIT_DIR, true);
+            await Tools.Files.mkdir(CUSTARD_CLEAN_ON_EXIT_DIR, true);
 
             const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
             const rand = Math.floor(Math.random() * 1_000_000);
@@ -81,7 +81,7 @@ const ExtendedHttpTools = (function () {
             else if (ct.includes("html")) ext = "html";
             else if (ct.includes("xml")) ext = "xml";
 
-            const filePath = `${OPERIT_CLEAN_ON_EXIT_DIR}/http_response_${timestamp}_${rand}.${ext}`;
+            const filePath = `${CUSTARD_CLEAN_ON_EXIT_DIR}/http_response_${timestamp}_${rand}.${ext}`;
             await Tools.Files.write(filePath, contentStr, false);
 
             const resultMeta = {
@@ -100,7 +100,7 @@ const ExtendedHttpTools = (function () {
                 data: {
                     result: resultMeta,
                     content_saved_to: filePath,
-                    operit_clean_on_exit_dir: OPERIT_CLEAN_ON_EXIT_DIR,
+                    custard_clean_on_exit_dir: CUSTARD_CLEAN_ON_EXIT_DIR,
                 },
             };
         }

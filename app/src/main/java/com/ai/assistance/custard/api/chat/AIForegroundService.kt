@@ -719,7 +719,7 @@ class AIForegroundService : Service() {
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channelName = getString(R.string.service_operit_running)
+            val channelName = getString(R.string.service_custard_running)
             val replyChannelName = getString(R.string.service_chat_complete_reminder)
             val serviceChannel =
                     NotificationChannel(
@@ -1243,7 +1243,7 @@ class AIForegroundService : Service() {
         val wakeListeningSuspendedSnapshot = wakeListeningSuspendedForIme || wakeListeningSuspendedForExternalRecording || wakeListeningSuspendedForFloatingFullscreen
         val title =
             if (isAiBusy) {
-                characterName ?: getString(R.string.service_operit_running)
+                characterName ?: getString(R.string.service_custard_running)
             } else {
                 if (wakeListeningEnabledSnapshot) {
                     if (wakeListeningSuspendedSnapshot) {
@@ -1252,12 +1252,12 @@ class AIForegroundService : Service() {
                         getString(R.string.service_running_wake_listening)
                     }
                 } else {
-                    getString(R.string.service_operit_running)
+                    getString(R.string.service_custard_running)
                 }
             }
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(title)
-            .setContentText(getString(R.string.service_operit_running))
+            .setContentText(getString(R.string.service_custard_running))
             .setSmallIcon(android.R.drawable.ic_dialog_info)
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .setOngoing(true) // 使通知不可被用户清除

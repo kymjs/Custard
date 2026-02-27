@@ -5,5 +5,5 @@
 # You can create your own GitHub OAuth App here:
 # https://github.com/settings/developers
 
-# The callback URL should be operit://github-oauth-callback
+# The callback URL should be custard://github-oauth-callback
 GITHUB_CLIENT_ID="YOUR_OWN_GITHUB_CLIENT_ID_HERE"

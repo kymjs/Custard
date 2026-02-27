@@ -2,7 +2,7 @@ package com.ai.assistance.custard.core.tools.javascript
 
 internal fun buildComposeDslContextBridgeDefinition(): String {
     return """
-        var OperitComposeDslRuntime = (function() {
+        var CustardComposeDslRuntime = (function() {
             function cloneObject(input) {
                 if (!input || typeof input !== 'object' || Array.isArray(input)) {
                     return {};

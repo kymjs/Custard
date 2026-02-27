@@ -66,8 +66,8 @@ const openaiDraw = (function () {
     const DEFAULT_MODEL = "gpt-image-1";
     // Android 实际路径为 /sdcard/Download，对应系统中文名“下载”
     const DOWNLOAD_ROOT = "/sdcard/Download";
-    const OPERIT_DIR = `${DOWNLOAD_ROOT}/Operit`;
-    const DRAWS_DIR = `${OPERIT_DIR}/draws`;
+    const CUSTARD_DIR = `${DOWNLOAD_ROOT}/Custard`;
+    const DRAWS_DIR = `${CUSTARD_DIR}/draws`;
     function getApiKey() {
         const apiKey = getEnv("OPENAI_API_KEY");
         if (!apiKey) {
@@ -120,7 +120,7 @@ const openaiDraw = (function () {
         return `${base}_${timestamp}`;
     }
     async function ensureDirectories() {
-        const dirs = [DOWNLOAD_ROOT, OPERIT_DIR, DRAWS_DIR];
+        const dirs = [DOWNLOAD_ROOT, CUSTARD_DIR, DRAWS_DIR];
         for (const dir of dirs) {
             try {
                 const result = await Tools.Files.mkdir(dir);

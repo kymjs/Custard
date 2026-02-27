@@ -232,7 +232,7 @@ class MemoryDocumentsProvider : DocumentsProvider() {
                 DocumentsContract.Root.FLAG_SUPPORTS_IS_CHILD
         )
         row.add(DocumentsContract.Root.COLUMN_ICON, android.R.drawable.ic_menu_info_details)
-        row.add(DocumentsContract.Root.COLUMN_TITLE, "Operit Memory Library")
+        row.add(DocumentsContract.Root.COLUMN_TITLE, "Custard Memory Library")
         row.add(DocumentsContract.Root.COLUMN_SUMMARY, "Access memory items")
         row.add(DocumentsContract.Root.COLUMN_DOCUMENT_ID, DOC_ID_ROOT)
         row.add(DocumentsContract.Root.COLUMN_AVAILABLE_BYTES, 0L)
@@ -634,7 +634,7 @@ class MemoryDocumentsProvider : DocumentsProvider() {
                 val row = result.newRow()
                 row.add(DocumentsContract.Document.COLUMN_DOCUMENT_ID, DOC_ID_ROOT)
                 row.add(DocumentsContract.Document.COLUMN_MIME_TYPE, DocumentsContract.Document.MIME_TYPE_DIR)
-                row.add(DocumentsContract.Document.COLUMN_DISPLAY_NAME, "Operit Memory")
+                row.add(DocumentsContract.Document.COLUMN_DISPLAY_NAME, "Custard Memory")
                 row.add(DocumentsContract.Document.COLUMN_LAST_MODIFIED, 0L)
                 row.add(DocumentsContract.Document.COLUMN_FLAGS, 0)
                 row.add(DocumentsContract.Document.COLUMN_SIZE, 0L)

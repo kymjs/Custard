@@ -1,6 +1,6 @@
 # Custard PC Agent (Windows)
 
-Windows side helper project for Operit.
+Windows side helper project for Custard.
 
 - Local config UI: `http://127.0.0.1:58321`
 - Single-entry launcher: `custard_pc_agent.bat`

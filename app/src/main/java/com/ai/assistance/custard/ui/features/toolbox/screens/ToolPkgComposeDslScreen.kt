@@ -205,7 +205,7 @@ fun ToolPkgComposeDslToolScreen(
                                     "uiModuleId" to uiModuleId,
                                     "__custard_package_lang" to
                                         (if (language.isNotBlank()) language else "zh"),
-                                    "__operit_script_entry" to (scriptEntryPath ?: ""),
+                                    "__custard_script_entry" to (scriptEntryPath ?: ""),
                                     "moduleSpec" to buildModuleSpec(scriptEntryPath),
                                     "state" to (renderResult?.state ?: emptyMap<String, Any?>()),
                                     "memo" to (renderResult?.memo ?: emptyMap<String, Any?>())

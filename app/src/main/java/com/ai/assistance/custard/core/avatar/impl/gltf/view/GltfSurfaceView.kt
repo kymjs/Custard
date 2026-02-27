@@ -425,11 +425,11 @@ class GltfSurfaceView @JvmOverloads constructor(
 
     private fun resolveSourceModelFile(modelPath: String): File {
         val candidate = File(modelPath)
-        if (!candidate.name.startsWith(".operit_normalized_", ignoreCase = true)) {
+        if (!candidate.name.startsWith(".custard_normalized_", ignoreCase = true)) {
             return candidate
         }
 
-        val originalName = candidate.name.removePrefix(".operit_normalized_")
+        val originalName = candidate.name.removePrefix(".custard_normalized_")
         if (originalName.isBlank()) {
             return candidate
         }

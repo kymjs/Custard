@@ -112,7 +112,7 @@ class MnnModelDownloadManager private constructor(private val context: Context) 
         
         val MODEL_DIR = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-            "Operit/models/mnn"
+            "Custard/models/mnn"
         )
     }
 

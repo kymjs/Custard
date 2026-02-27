@@ -97,7 +97,7 @@ object MCPPluginParser {
         val candidate = paragraphs.firstOrNull { p ->
             p.length >= 6 &&
                 !p.startsWith("{") &&
-                !p.contains("operit-", ignoreCase = true)
+                !p.contains("custard-", ignoreCase = true)
         }
 
         return candidate?.take(300)?.trim().orEmpty()
@@ -165,7 +165,7 @@ object MCPPluginParser {
      * 解析隐藏在注释中的 JSON 元数据
      */
     private fun parseMCPMetadata(body: String): MCPMetadata? {
-        val prefix = "<!-- operit-mcp-json: "
+        val prefix = "<!-- custard-mcp-json: "
         val start = body.indexOf(prefix)
         if (start < 0) return null
 

@@ -484,7 +484,7 @@ def select_next_meta(metas: list[dict], current_sha: str) -> Optional[dict]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", default="AAswordman/OperitNightlyRelease")
+    ap.add_argument("--repo", default="AAswordman/CustardNightlyRelease")
     ap.add_argument("--tag", default=None)
     ap.add_argument("--meta", default=None, help="local meta json path (skip download)")
     ap.add_argument("--auto", action="store_true", help="auto apply patch chain to latest")

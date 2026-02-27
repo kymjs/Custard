@@ -205,7 +205,7 @@ def _rollback_to_apk(from_apk: Path, to_apk: Path) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", default="AAswordman/OperitNightlyRelease")
+    ap.add_argument("--repo", default="AAswordman/CustardNightlyRelease")
     ap.add_argument("--format", default="apkraw", choices=("apkraw", "apkzip", "opatch"))
     ap.add_argument("--from-version", default=None)
     ap.add_argument("--from-patch-index", type=int, default=None)

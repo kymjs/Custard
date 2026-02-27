@@ -129,10 +129,10 @@ class SkillRepository private constructor(private val context: Context) {
                     if (!newDirName.isNullOrBlank()) {
                         try {
                             File(skillsRootDir, newDirName)
-                                .resolve(".operit_repo_url")
+                                .resolve(".custard_repo_url")
                                 .writeText(repoUrl.trim())
                         } catch (e: Exception) {
-                            AppLogger.e(TAG, "Failed to write .operit_repo_url marker", e)
+                            AppLogger.e(TAG, "Failed to write .custard_repo_url marker", e)
                         }
                     }
                 }

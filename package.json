@@ -14,7 +14,7 @@
         "object-sizeof": "^2.6.1",
         "typescript": "5.9.3"
     },
-    "name": "operit",
+    "name": "custard",
     "version": "1.0.0",
     "keywords": [],
     "author": "",

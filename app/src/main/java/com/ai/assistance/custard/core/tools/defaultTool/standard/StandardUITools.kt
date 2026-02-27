@@ -531,7 +531,7 @@ open class StandardUITools(protected val context: Context) : ToolImplementations
     /**
      * Default screenshot implementation for the UI subagent.
      *
-     * It captures the current screen to /sdcard/Download/Operit/cleanOnExit,
+     * It captures the current screen to /sdcard/Download/Custard/cleanOnExit,
      * then registers the image in ImagePoolManager and returns a <link type="image" ...> tag.
      *
      * Subclasses can override this method if they have a more specialized screenshot pipeline.

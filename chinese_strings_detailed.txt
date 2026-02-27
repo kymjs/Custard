@@ -9,7 +9,7 @@ Files with Chinese strings: 148
 
 [DETAIL]
 ================================================================================
-FILE: app\src\main\java\com\ai\assistance\operit\ui\floating\ui\pet\AvatarEmotionManager.kt
+FILE: app\src\main\java\com\ai\assistance\custard\ui\floating\ui\pet\AvatarEmotionManager.kt
   remaining=21 total=24 excluded_logs=3 excluded_long=0
   L21:36 (2 chars) "开心"
   L21:42 (2 chars) "高兴"
@@ -33,7 +33,7 @@ FILE: app\src\main\java\com\ai\assistance\operit\ui\floating\ui\pet\AvatarEmotio
   L24:45 (2 chars) "脸红"
   L24:51 (4 chars) "不好意思"
 
-FILE: app\src\main\java\com\ai\assistance\operit\ui\features\toolbox\screens\autoglm\AutoGlmViewModel.kt
+FILE: app\src\main\java\com\ai\assistance\custard\ui\features\toolbox\screens\autoglm\AutoGlmViewModel.kt
   remaining=11 total=11 excluded_logs=0 excluded_long=0
   L172:37 (36 chars) "✅ 任务完成: ${finalLines.first().trim()}"
   L205:44 (11 chars) "yyyy年MM月dd日"
@@ -47,7 +47,7 @@ FILE: app\src\main\java\com\ai\assistance\operit\ui\features\toolbox\screens\aut
   L234:20 (7 chars) "💭 思考过程:"
   L246:20 (7 chars) "🎯 执行动作:"
 
-FILE: app\src\main\java\com\ai\assistance\operit\ui\features\token\preferences\UrlConfigManager.kt
+FILE: app\src\main\java\com\ai\assistance\custard\ui\features\token\preferences\UrlConfigManager.kt
   remaining=9 total=9 excluded_logs=0 excluded_long=0
   L104:21 (2 chars) "聊天"
   L105:25 (2 chars) "项目"
@@ -59,7 +59,7 @@ FILE: app\src\main\java\com\ai\assistance\operit\ui\features\token\preferences\U
   L111:24 (2 chars) "探索"
   L112:23 (2 chars) "创建"
 
-FILE: app\src\main\java\com\ai\assistance\operit\ui\features\packages\utils\MCPPluginParser.kt
+FILE: app\src\main\java\com\ai\assistance\custard\ui\features\packages\utils\MCPPluginParser.kt
   remaining=8 total=8 excluded_logs=0 excluded_long=0
   L22:9 (2 chars) "简介"
   L23:9 (2 chars) "描述"
@@ -70,7 +70,7 @@ FILE: app\src\main\java\com\ai\assistance\operit\ui\features\packages\utils\MCPP
   L146:93 (5 chars) "无描述信息"
   L157:62 (5 chars) "无描述信息"
 
-FILE: app\src\main\java\com\ai\assistance\operit\ui\features\packages\utils\SkillIssueParser.kt
+FILE: app\src\main\java\com\ai\assistance\custard\ui\features\packages\utils\SkillIssueParser.kt
   remaining=8 total=8 excluded_logs=0 excluded_long=0
   L18:9 (2 chars) "简介"
   L19:9 (2 chars) "描述"
@@ -81,7 +81,7 @@ FILE: app\src\main\java\com\ai\assistance\operit\ui\features\packages\utils\Skil
   L139:93 (5 chars) "无描述信息"
   L149:62 (5 chars) "无描述信息"
 
-FILE: app\src\main\java\com\ai\assistance\operit\ui\features\toolbox\screens\logcat\LogModels.kt
+FILE: app\src\main\java\com\ai\assistance\custard\ui\features\toolbox\screens\logcat\LogModels.kt
   remaining=8 total=8 excluded_logs=0 excluded_long=0
   L20:13 (2 chars) "详细"
   L21:11 (2 chars) "调试"
@@ -92,7 +92,7 @@ FILE: app\src\main\java\com\ai\assistance\operit\ui\features\toolbox\screens\log
   L26:12 (2 chars) "静默"
   L27:13 (2 chars) "未知"
 
-FILE: app\src\main\java\com\ai\assistance\operit\api\chat\library\ProblemLibrary.kt
+FILE: app\src\main\java\com\ai\assistance\custard\api\chat\library\ProblemLibrary.kt
   remaining=7 total=52 excluded_logs=45 excluded_long=0
   L757:30 (54 chars) "(出生日期|出生年月日|Birth Date|Date of Birth)[:：\\s]+([\\d-]+)"
   L758:30 (38 chars) "(出生年份|年龄|Birth year|Age)[:：\\s]+(\\d+)"
@@ -102,40 +102,40 @@ FILE: app\src\main\java\com\ai\assistance\operit\api\chat\library\ProblemLibrary
   L762:31 (30 chars) "(职业|Occupation)[:：\\s]+([^;]+)"
   L763:28 (83 chars) "(AI风格|期待的AI风格|偏好的AI风格|AI Style|Expected AI Style|Preferred AI Style)[:：\\s]+([^;]+)"
 
-FILE: app\src\main\java\com\ai\assistance\operit\data\converter\GenericJsonConverter.kt
+FILE: app\src\main\java\com\ai\assistance\custard\data\converter\GenericJsonConverter.kt
   remaining=3 total=3 excluded_logs=0 excluded_long=0
   L203:30 (2 chars) "用户"
   L204:48 (2 chars) "助手"
   L205:23 (2 chars) "系统"
 
-FILE: app\src\main\java\com\ai\assistance\operit\util\LocaleUtils.kt
+FILE: app\src\main\java\com\ai\assistance\custard\util\LocaleUtils.kt
   remaining=2 total=2 excluded_logs=0 excluded_long=0
   L31:63 (4 chars) "跟随系统"
   L32:43 (2 chars) "中文"
 
-FILE: app\src\main\java\com\ai\assistance\operit\data\mcp\plugins\MCPBridge.kt
+FILE: app\src\main\java\com\ai\assistance\custard\data\mcp\plugins\MCPBridge.kt
   remaining=2 total=40 excluded_logs=38 excluded_long=0
   L539:60 (32 chars) "命令[$cmdId: $cmdType]没有收到响应（独立连接）"
   L589:56 (26 chars) "命令[$cmdId: $cmdType]没有收到响应"
 
-FILE: app\src\main\java\com\ai\assistance\operit\util\stream\StreamGroup.kt
+FILE: app\src\main\java\com\ai\assistance\custard\util\stream\StreamGroup.kt
   remaining=2 total=7 excluded_logs=5 excluded_long=0
   L166:74 (6 chars) "标签必须设置"
   L169:77 (7 chars) "数据流必须设置"
 
-FILE: app\src\main\java\com\ai\assistance\operit\api\chat\llmprovider\LlamaProvider.kt
+FILE: app\src\main\java\com\ai\assistance\custard\api\chat\llmprovider\LlamaProvider.kt
   remaining=1 total=6 excluded_logs=5 excluded_long=0
   L549:13 (76 chars) "\n已启用 Tool Call 模式。\n调用工具时，请输出顶层为 "tool_calls" 的合法 JSON。\n仅可使用以下工具名：$toolNames\n"
 
-FILE: app\src\main\java\com\ai\assistance\operit\api\chat\plan\PlanModeManager.kt
+FILE: app\src\main\java\com\ai\assistance\custard\api\chat\plan\PlanModeManager.kt
   remaining=1 total=10 excluded_logs=8 excluded_long=1
   L289:16 (53 chars) "\n$PLAN_GENERATION_PROMPT\n\n用户请求：\n$userMessage\n        "
 
-FILE: app\src\main\java\com\ai\assistance\operit\data\converter\ChatFormatDetector.kt
+FILE: app\src\main\java\com\ai\assistance\custard\data\converter\ChatFormatDetector.kt
   remaining=1 total=1 excluded_logs=0 excluded_long=0
   L142:35 (61 chars) "^##\\s*(User|Assistant|AI|System|Model|用户|助手|系统|模型)[:：]?\\s*$"
 
-FILE: app\src\main\java\com\ai\assistance\operit\ui\features\workflow\viewmodel\WorkflowViewModel.kt
+FILE: app\src\main\java\com\ai\assistance\custard\ui\features\workflow\viewmodel\WorkflowViewModel.kt
   remaining=1 total=1 excluded_logs=0 excluded_long=0
   L915:30 (24 chars) ".*(打开|启动).*(对话|聊天|悬浮窗).*"
 

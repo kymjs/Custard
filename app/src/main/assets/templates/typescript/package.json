@@ -1,7 +1,7 @@
 {
-    "name": "operit-typescript-project",
+    "name": "custard-typescript-project",
     "version": "1.0.0",
-    "description": "TypeScript project created with Operit",
+    "description": "TypeScript project created with Custard",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
@@ -10,7 +10,7 @@
         "clean": "rm -rf dist"
     },
     "keywords": [
-        "operit",
+        "custard",
         "typescript"
     ],
     "author": "",

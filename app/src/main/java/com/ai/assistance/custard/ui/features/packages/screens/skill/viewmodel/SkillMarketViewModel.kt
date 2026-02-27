@@ -157,7 +157,7 @@ class SkillMarketViewModel(
     companion object {
         private const val TAG = "SkillMarketViewModel"
         private const val MARKET_REPO_OWNER = "AAswordman"
-        private const val MARKET_REPO_NAME = "OperitSkillMarket"
+        private const val MARKET_REPO_NAME = "CustardSkillMarket"
         private const val SKILL_LABEL = "skill-plugin"
         private const val MARKET_PAGE_SIZE = 50
     }
@@ -424,7 +424,7 @@ class SkillMarketViewModel(
             val installedNames = installed.keys.toSet()
             val installedRepoUrls = installed.values.mapNotNull { pkg ->
                 try {
-                    val marker = pkg.directory.resolve(".operit_repo_url")
+                    val marker = pkg.directory.resolve(".custard_repo_url")
                     if (marker.exists() && marker.isFile) {
                         marker.readText().trim().ifBlank { null }
                     } else {
@@ -693,12 +693,12 @@ class SkillMarketViewModel(
                 )
                 val json = Json { ignoreUnknownKeys = true; prettyPrint = false }
                 val metadataJson = json.encodeToString(metadata)
-                appendLine("<!-- operit-skill-json: $metadataJson -->")
+                appendLine("<!-- custard-skill-json: $metadataJson -->")
             } catch (e: Exception) {
                 AppLogger.e(TAG, "Failed to serialize skill metadata", e)
             }
 
-            appendLine("<!-- operit-parser-version: $version -->")
+            appendLine("<!-- custard-parser-version: $version -->")
             appendLine()
 
             appendLine(context.getString(R.string.skill_publish_body_section_skill_info))
@@ -741,7 +741,7 @@ class SkillMarketViewModel(
     }
 
     private fun parseSkillMetadata(body: String): SkillMetadata? {
-        val prefix = "<!-- operit-skill-json: "
+        val prefix = "<!-- custard-skill-json: "
         val start = body.indexOf(prefix)
         if (start < 0) return null
 

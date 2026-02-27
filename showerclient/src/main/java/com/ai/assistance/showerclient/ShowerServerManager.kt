@@ -68,7 +68,7 @@ object ShowerServerManager {
             )
         }
 
-        // 3) Copy the jar from /sdcard/Download/Operit to /data/local/tmp using shell identity,
+        // 3) Copy the jar from /sdcard/Download/Custard to /data/local/tmp using shell identity,
         // so that the resulting file is owned by the shell user.
         val copyCmd = "cp ${jarFile.absolutePath} $remoteJarPath"
         ShowerLog.d(TAG, "Copying Shower jar with shell identity using command: $copyCmd")
@@ -133,8 +133,8 @@ object ShowerServerManager {
      * around [ShellRunner] if needed.
      */
     private suspend fun copyJarToExternalDir(context: Context): File = withContext(Dispatchers.IO) {
-        // Reuse the same base directory as screenshots: /sdcard/Download/Operit
-        val baseDir = File("/sdcard/Download/Operit")
+        // Reuse the same base directory as screenshots: /sdcard/Download/Custard
+        val baseDir = File("/sdcard/Download/Custard")
         if (!baseDir.exists()) {
             baseDir.mkdirs()
         }

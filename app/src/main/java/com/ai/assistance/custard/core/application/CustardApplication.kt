@@ -63,7 +63,7 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
-/** Application class for Operit */
+/** Application class for Custard */
 class CustardApplication : Application(), ImageLoaderFactory, WorkConfiguration.Provider {
 
     companion object {

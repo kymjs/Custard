@@ -13,7 +13,7 @@ import com.ai.assistance.custard.services.FloatingChatService
 import com.ai.assistance.custard.ui.floating.FloatingMode
 
 /**
- * Operit 语音交互会话服务
+ * Custard 语音交互会话服务
  * 
  * 当用户触发助手时（如长按 Home 键），系统会创建这个服务的会话实例。
  * 我们在这里启动悬浮窗来提供 AI 助手功能。
@@ -21,7 +21,7 @@ import com.ai.assistance.custard.ui.floating.FloatingMode
 class CustardVoiceInteractionSessionService : VoiceInteractionSessionService() {
     
     companion object {
-        private const val TAG = "OperitSessionService"
+        private const val TAG = "CustardSessionService"
     }
     
     override fun onNewSession(args: Bundle?): VoiceInteractionSession {
@@ -30,12 +30,12 @@ class CustardVoiceInteractionSessionService : VoiceInteractionSessionService() {
     }
     
     /**
-     * Operit 的语音交互会话实现
+     * Custard 的语音交互会话实现
      */
     private class CustardVoiceInteractionSession(context: Context) : VoiceInteractionSession(context) {
         
         companion object {
-            private const val TAG = "OperitSession"
+            private const val TAG = "CustardSession"
         }
         
         override fun onShow(args: Bundle?, showFlags: Int) {

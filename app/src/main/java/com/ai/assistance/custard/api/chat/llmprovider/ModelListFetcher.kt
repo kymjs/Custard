@@ -180,7 +180,7 @@ object ModelListFetcher {
                             // OpenRouter需要添加特定请求头
                             AppLogger.d(TAG, "使用Bearer认证方式并添加OpenRouter特定请求头")
                             requestBuilder.addHeader("Authorization", "Bearer $apiKey")
-                            requestBuilder.addHeader("HTTP-Referer", "ai.assistance.operit")
+                            requestBuilder.addHeader("HTTP-Referer", "ai.assistance.custard")
                             requestBuilder.addHeader("X-Title", "Assistance App")
                         }
                         ApiProviderType.ANTHROPIC,
@@ -483,7 +483,7 @@ object ModelListFetcher {
             try {
                 val modelsDir = File(
                     Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-                    "Operit/models/mnn"
+                    "Custard/models/mnn"
                 )
                 
                 AppLogger.d(TAG, "读取MNN模型目录: ${modelsDir.absolutePath}")
@@ -531,7 +531,7 @@ object ModelListFetcher {
             try {
                 val modelsDir = File(
                     Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-                    "Operit/models/llama"
+                    "Custard/models/llama"
                 )
 
                 AppLogger.d(TAG, "读取llama.cpp模型目录: ${modelsDir.absolutePath}")

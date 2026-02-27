@@ -91,9 +91,9 @@ if %DEVICE_COUNT% equ 1 (
 
 REM File operations
 echo Creating directory structure...
-adb -s "!DEVICE_SERIAL!" shell mkdir -p "/sdcard/Android/data/com.ai.assistance.operit/js_temp"
+adb -s "!DEVICE_SERIAL!" shell mkdir -p "/sdcard/Android/data/com.ai.assistance.custard/js_temp"
 
-for %%F in ("%FILE_PATH%") do set "TARGET_FILE=/sdcard/Android/data/com.ai.assistance.operit/js_temp/%%~nxF"
+for %%F in ("%FILE_PATH%") do set "TARGET_FILE=/sdcard/Android/data/com.ai.assistance.custard/js_temp/%%~nxF"
 
 echo Pushing [%FILE_PATH%] to device...
 adb -s "!DEVICE_SERIAL!" push "%FILE_PATH%" "!TARGET_FILE!"
@@ -114,7 +114,7 @@ set "TARGET_ENV_FILE="
 set "HAS_ENV_FILE=false"
 if not "!ENV_FILE_PATH!"=="" (
     if exist "!ENV_FILE_PATH!" (
-        for %%E in ("!ENV_FILE_PATH!") do set "TARGET_ENV_FILE=/sdcard/Android/data/com.ai.assistance.operit/js_temp/%%~nxE"
+        for %%E in ("!ENV_FILE_PATH!") do set "TARGET_ENV_FILE=/sdcard/Android/data/com.ai.assistance.custard/js_temp/%%~nxE"
         echo Pushing env file [!ENV_FILE_PATH!] to device...
         adb -s "!DEVICE_SERIAL!" push "!ENV_FILE_PATH!" "!TARGET_ENV_FILE!"
         if errorlevel 1 (
@@ -131,9 +131,9 @@ set "PARAMS=!PARAMS:"=\"!"
 REM Execute JS function
 echo Executing [!FUNCTION_NAME!] with params: !PARAMS!
 if "!HAS_ENV_FILE!"=="true" (
-    adb -s "!DEVICE_SERIAL!" shell "am broadcast -a com.ai.assistance.operit.EXECUTE_JS -n com.ai.assistance.operit/.core.tools.javascript.ScriptExecutionReceiver --include-stopped-packages --es file_path '!TARGET_FILE!' --es function_name '!FUNCTION_NAME!' --es params '!PARAMS!' --es env_file_path '!TARGET_ENV_FILE!' --ez temp_file true --ez temp_env_file true"
+    adb -s "!DEVICE_SERIAL!" shell "am broadcast -a com.ai.assistance.custard.EXECUTE_JS -n com.ai.assistance.custard/.core.tools.javascript.ScriptExecutionReceiver --include-stopped-packages --es file_path '!TARGET_FILE!' --es function_name '!FUNCTION_NAME!' --es params '!PARAMS!' --es env_file_path '!TARGET_ENV_FILE!' --ez temp_file true --ez temp_env_file true"
 ) else (
-    adb -s "!DEVICE_SERIAL!" shell "am broadcast -a com.ai.assistance.operit.EXECUTE_JS -n com.ai.assistance.operit/.core.tools.javascript.ScriptExecutionReceiver --include-stopped-packages --es file_path '!TARGET_FILE!' --es function_name '!FUNCTION_NAME!' --es params '!PARAMS!' --ez temp_file true"
+    adb -s "!DEVICE_SERIAL!" shell "am broadcast -a com.ai.assistance.custard.EXECUTE_JS -n com.ai.assistance.custard/.core.tools.javascript.ScriptExecutionReceiver --include-stopped-packages --es file_path '!TARGET_FILE!' --es function_name '!FUNCTION_NAME!' --es params '!PARAMS!' --ez temp_file true"
 )
 
 echo Waiting for execution to complete...

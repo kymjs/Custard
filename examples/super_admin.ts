@@ -106,11 +106,11 @@ const superAdmin = (function () {
             return null;
         }
 
-        await Tools.Files.mkdir(OPERIT_CLEAN_ON_EXIT_DIR, true);
+        await Tools.Files.mkdir(CUSTARD_CLEAN_ON_EXIT_DIR, true);
 
         const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
         const rand = Math.floor(Math.random() * 1_000_000);
-        const filePath = `${OPERIT_CLEAN_ON_EXIT_DIR}/terminal_output_${timestamp}_${rand}.log`;
+        const filePath = `${CUSTARD_CLEAN_ON_EXIT_DIR}/terminal_output_${timestamp}_${rand}.log`;
 
         await Tools.Files.write(filePath, outputStr, false);
 
@@ -122,7 +122,7 @@ const superAdmin = (function () {
             context_preserved: true,
             output_saved_to: filePath,
             output_chars: outputStr.length,
-            operit_clean_on_exit_dir: OPERIT_CLEAN_ON_EXIT_DIR,
+            custard_clean_on_exit_dir: CUSTARD_CLEAN_ON_EXIT_DIR,
             hint: "Output is large and saved to file. Use read_file_part or grep_code to inspect it.",
         };
     }
@@ -252,7 +252,7 @@ const superAdmin = (function () {
                     : await Tools.System.terminal.create("super_admin_default_session");
             const sessionId = session.sessionId;
 
-            const marker = `__OPERIT_TERMINAL_WAIT_DONE_${Date.now()}_${Math.floor(Math.random() * 1_000_000)}__`;
+            const marker = `__CUSTARD_TERMINAL_WAIT_DONE_${Date.now()}_${Math.floor(Math.random() * 1_000_000)}__`;
             const waitCommand = `printf '${marker}\\n'`;
             const startedAt = Date.now();
             const result = await Tools.System.terminal.exec(sessionId, waitCommand, timeout);

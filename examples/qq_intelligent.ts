@@ -2,7 +2,7 @@
 METADATA
 {
     // QQ Intelligent Assistant Package
-    name: Experimental_qq_intelligent
+    name: Experimental_qq_intelligent
     display_name: {
       zh: "实验性 QQ 智能助手"
       en: "Experimental QQ Intelligent Assistant"
@@ -353,7 +353,7 @@ const QQIntelligent = (function () {
     }
 
     async function main() {
-        // let result = await find_and_reply({ message: "你好你好！我是OPERIT，很高兴认识你！", user_name: "韩韩韩", user_type: "contacts", click_send: true });
+        // let result = await find_and_reply({ message: "你好你好！我是CUSTARD，很高兴认识你！", user_name: "韩韩韩", user_type: "contacts", click_send: true });
         // await find_user({ user_name: "Wind", user_type: "contacts" });
         // await find_user({ user_name: "Dec", user_type: "groups" });
         // await Tools.System.sleep(1000);

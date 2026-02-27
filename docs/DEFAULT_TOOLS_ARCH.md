@@ -28,7 +28,7 @@
 
 ### 2.1 必改：工具 Schema / Prompt
 
-- **文件**：`app/src/main/java/com/ai/assistance/operit/core/config/SystemToolPrompts.kt`
+- **文件**：`app/src/main/java/com/ai/assistance/custard/core/config/SystemToolPrompts.kt`
 - **你要做的事**：
   - 修改对应工具的 `parametersStructured`（新增/删除/改名/required）
   - 更新 `description` / `details`（尤其是规则、示例、参数解释）
@@ -40,7 +40,7 @@
 
 ### 2.2 必改：工具注册（toolName -> executor）
 
-- **文件**：`app/src/main/java/com/ai/assistance/operit/core/tools/ToolRegistration.kt`
+- **文件**：`app/src/main/java/com/ai/assistance/custard/core/tools/ToolRegistration.kt`
 - **你要做的事**：
   - 确认工具名不变时，一般无需改注册，但要确认调用到的 executor 没变
   - 若工具名/分组变更，需要同步调整注册项
@@ -52,12 +52,12 @@
 ### 2.3 必改：Kotlin 执行实现（参数读取与校验）
 
 - **常见目录**：
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/defaultTool/standard/*`
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/defaultTool/debugger/*`
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/defaultTool/admin/*`
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/defaultTool/root/*`
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/defaultTool/accessbility/*`
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/defaultTool/ToolGetter.kt`（按权限级别选择具体实现）
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/defaultTool/standard/*`
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/defaultTool/debugger/*`
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/defaultTool/admin/*`
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/defaultTool/root/*`
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/defaultTool/accessbility/*`
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/defaultTool/ToolGetter.kt`（按权限级别选择具体实现）
 - **你要做的事**：
   - 将旧参数的读取逻辑替换为新参数（`tool.parameters.find { it.name == "..." }`）
   - 如果某个工具在 `debugger/root/admin/accessibility` 目录下有 override / 替代实现：这些实现里同样要同步更新参数读取与校验
@@ -70,7 +70,7 @@
 
 ### 2.4 必改：JS 侧工具封装（Tools.*）
 
-- **文件**：`app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsTools.kt`
+- **文件**：`app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsTools.kt`
 - **你要做的事**：
   - 更新对应的 JS wrapper 函数签名
   - 更新 wrapper 内部构造的 `params` 对象字段名

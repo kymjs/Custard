@@ -726,7 +726,7 @@ $readyUrls = $launchContext.ReadyUrls
 $launchId = [guid]::NewGuid().ToString()
 Set-Content -Path $activeLaunchPath -Value $launchId -Encoding ASCII
 
-$mutexName = "Local\OperitPcAgentLauncher"
+$mutexName = "Local\CustardPcAgentLauncher"
 $mutex = New-Object System.Threading.Mutex($false, $mutexName)
 $hasLock = $false
 $originalPath = $env:Path
@@ -889,7 +889,7 @@ try {
         Set-Content -Path $pidPath -Value ([string]$resolvedPid) -Encoding ASCII
     }
 
-    Write-Host "[OK] Operit PC Agent started on $url"
+    Write-Host "[OK] Custard PC Agent started on $url"
     Write-Log "OK" "Agent started: $url"
 
     $latestLaunchId = ""

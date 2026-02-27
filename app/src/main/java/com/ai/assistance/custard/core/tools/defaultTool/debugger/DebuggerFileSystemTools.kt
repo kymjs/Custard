@@ -59,10 +59,10 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
     }
     
     /**
-     * 判断路径是否为Operit应用的内部存储路径
+     * 判断路径是否为Custard应用的内部存储路径
      * 仅针对 /data/data/com.ai.assistance.custard 开头的路径返回true
      */
-    protected fun isOperitInternalPath(path: String): Boolean {
+    protected fun isCustardInternalPath(path: String): Boolean {
         val normalizedPath = path.trim()
         return normalizedPath.startsWith("/data/data/$CUSTARD_PACKAGE") ||
                normalizedPath.startsWith("/data/user/0/$CUSTARD_PACKAGE")
@@ -98,8 +98,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         val path = tool.parameters.find { it.name == "path" }?.value ?: ""
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super（AccessibilityFileSystemTools）的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super（AccessibilityFileSystemTools）的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.listFiles(tool)
         }
 
@@ -410,8 +410,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         val textOnly = tool.parameters.find { it.name == "text_only" }?.value?.toBoolean() ?: false
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.readFileFull(tool)
         }
 
@@ -530,8 +530,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         val path = tool.parameters.find { it.name == "path" }?.value ?: ""
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.readFile(tool)
         }
 
@@ -644,8 +644,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         val path = tool.parameters.find { it.name == "path" }?.value ?: ""
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.readFilePart(tool)
         }
         val startLineParam = tool.parameters.find { it.name == "start_line" }?.value?.toIntOrNull() ?: 1
@@ -781,7 +781,7 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
     ): ToolResult? {
         val file = File(path)
 
-        if (isOperitInternalPath(path)) {
+        if (isCustardInternalPath(path)) {
             return super.handleSpecialFileRead(tool, path, fileExt)
         }
         
@@ -856,8 +856,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         val content = tool.parameters.find { it.name == "content" }?.value ?: ""
         val append = tool.parameters.find { it.name == "append" }?.value?.toBoolean() ?: false
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.writeFile(tool)
         }
 
@@ -1081,8 +1081,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
 
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.deleteFile(tool)
         }
         val recursive = tool.parameters.find { it.name == "recursive" }?.value?.toBoolean() ?: false
@@ -1166,8 +1166,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
 
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.fileExists(tool)
         }
 
@@ -1256,8 +1256,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         PathValidator.validateAndroidPath(sourcePath, tool.name)?.let { return it }
         PathValidator.validateAndroidPath(destPath, tool.name)?.let { return it }
         
-        // 如果源文件或目标文件在Operit内部存储，使用super的高权限方法
-        if (isOperitInternalPath(sourcePath) || isOperitInternalPath(destPath)) {
+        // 如果源文件或目标文件在Custard内部存储，使用super的高权限方法
+        if (isCustardInternalPath(sourcePath) || isCustardInternalPath(destPath)) {
             return super.moveFile(tool)
         }
         PathValidator.validateAndroidPath(destPath, tool.name, "destination")?.let { return it }
@@ -1350,8 +1350,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         PathValidator.validateAndroidPath(sourcePath, tool.name, "source")?.let { return it }
         PathValidator.validateAndroidPath(destPath, tool.name, "destination")?.let { return it }
         
-        // 如果源文件或目标文件在Operit内部存储，使用super的高权限方法
-        if (isOperitInternalPath(sourcePath) || isOperitInternalPath(destPath)) {
+        // 如果源文件或目标文件在Custard内部存储，使用super的高权限方法
+        if (isCustardInternalPath(sourcePath) || isCustardInternalPath(destPath)) {
             return super.copyFile(tool)
         }
 
@@ -1506,8 +1506,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         }
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.makeDirectory(tool)
         }
         val createParents =
@@ -1636,7 +1636,7 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         val pattern = tool.parameters.find { it.name == "pattern" }?.value ?: ""
 
-        if (isOperitInternalPath(path)) {
+        if (isCustardInternalPath(path)) {
             return super.findFiles(tool)
         }
 
@@ -1816,8 +1816,8 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
 
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         
-        // 如果是Operit内部存储路径，使用super的高权限方法
-        if (isOperitInternalPath(path)) {
+        // 如果是Custard内部存储路径，使用super的高权限方法
+        if (isCustardInternalPath(path)) {
             return super.fileInfo(tool)
         }
 
@@ -1988,7 +1988,7 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         PathValidator.validateAndroidPath(sourcePath, tool.name, "source")?.let { return it }
         PathValidator.validateAndroidPath(zipPath, tool.name, "destination")?.let { return it }
 
-        if (isOperitInternalPath(sourcePath) || isOperitInternalPath(zipPath)) {
+        if (isCustardInternalPath(sourcePath) || isCustardInternalPath(zipPath)) {
             return super.zipFiles(tool)
         }
 
@@ -2209,7 +2209,7 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         PathValidator.validateAndroidPath(zipPath, tool.name, "source")?.let { return it }
         PathValidator.validateAndroidPath(destPath, tool.name, "destination")?.let { return it }
 
-        if (isOperitInternalPath(zipPath) || isOperitInternalPath(destPath)) {
+        if (isCustardInternalPath(zipPath) || isCustardInternalPath(destPath)) {
             return super.unzipFiles(tool)
         }
 
@@ -2525,7 +2525,7 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         val path = tool.parameters.find { it.name == "path" }?.value ?: ""
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
 
-        if (isOperitInternalPath(path)) {
+        if (isCustardInternalPath(path)) {
             return super.openFile(tool)
         }
 
@@ -2630,7 +2630,7 @@ open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTo
         PathValidator.validateAndroidPath(path, tool.name)?.let { return it }
         val title = tool.parameters.find { it.name == "title" }?.value ?: "Share File"
 
-        if (isOperitInternalPath(path)) {
+        if (isCustardInternalPath(path)) {
             return super.shareFile(tool)
         }
 

@@ -185,7 +185,7 @@ fun ChatBackupSettingsScreen() {
     var showModelConfigExportWarning by remember { mutableStateOf(false) }
     var exportedModelConfigPath by remember { mutableStateOf("") }
 
-    // Operit 目录备份文件统计
+    // Custard 目录备份文件统计
     var chatBackupFileCount by remember { mutableStateOf(0) }
     var characterCardBackupFileCount by remember { mutableStateOf(0) }
     var memoryBackupFileCount by remember { mutableStateOf(0) }
@@ -215,7 +215,7 @@ fun ChatBackupSettingsScreen() {
 
     // 导入格式选择
     var showImportFormatDialog by remember { mutableStateOf(false) }
-    var selectedImportFormat by remember { mutableStateOf(ChatFormat.OPERIT) }
+    var selectedImportFormat by remember { mutableStateOf(ChatFormat.CUSTARD) }
     var pendingImportUri by remember { mutableStateOf<Uri?>(null) }
 
     LaunchedEffect(activeProfileId) {
@@ -262,7 +262,7 @@ fun ChatBackupSettingsScreen() {
         }
     }
 
-    // 扫描 Operit 目录中的备份文件
+    // 扫描 Custard 目录中的备份文件
     LaunchedEffect(Unit) {
         scope.launch {
             isScanning = true
@@ -1287,7 +1287,7 @@ fun ChatBackupSettingsScreen() {
                             operationMessage = if (importResult.total > 0) {
                                 operationState = ChatHistoryOperation.IMPORTED
                                 val formatName = when (selectedImportFormat) {
-                                    ChatFormat.OPERIT -> context.getString(R.string.backup_format_operit)
+                                    ChatFormat.CUSTARD -> context.getString(R.string.backup_format_custard)
                                     ChatFormat.CHATGPT -> context.getString(R.string.backup_format_chatgpt)
                                     ChatFormat.CHATBOX -> context.getString(R.string.backup_format_chatbox)
                                     ChatFormat.MARKDOWN -> context.getString(R.string.backup_format_markdown)

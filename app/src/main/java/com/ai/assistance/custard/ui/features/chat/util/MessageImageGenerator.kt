@@ -152,7 +152,7 @@ object MessageImageGenerator {
                                         )
                                         .background(colorScheme.surface)
                                 ) {
-                                    // 顶部品牌栏：Logo + "Operit AI"
+                                    // 顶部品牌栏：Logo + "Custard AI"
                                     Row(
                                         modifier = Modifier
                                             .fillMaxWidth()
@@ -164,13 +164,13 @@ object MessageImageGenerator {
                                         // Logo
                                         Image(
                                             painter = painterResource(id = com.ai.assistance.custard.R.drawable.ic_launcher_foreground),
-                                            contentDescription = "Operit Logo",
+                                            contentDescription = "Custard Logo",
                                             modifier = Modifier.size(48.dp) // 减少 Logo 尺寸：64dp -> 48dp
                                         )
                                         Spacer(modifier = Modifier.width(2.dp))
                                         // 品牌名称
                                         Text(
-                                            text = "Operit AI",
+                                            text = "Custard AI",
                                             fontSize = 16.sp, // 减少字体大小：18sp -> 16sp
                                             fontWeight = FontWeight.Bold,
                                             color = colorScheme.onSurface

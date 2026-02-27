@@ -6,7 +6,7 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import com.ai.assistance.custard.core.tools.NotificationData
 
-object OperitNotificationStore {
+object CustardNotificationStore {
     private data class Entry(
         val key: String,
         val packageName: String,
@@ -109,17 +109,17 @@ class CustardNotificationListenerService : NotificationListenerService() {
     override fun onListenerConnected() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             try {
-                activeNotifications?.forEach { OperitNotificationStore.upsert(it) }
+                activeNotifications?.forEach { CustardNotificationStore.upsert(it) }
             } catch (_: Exception) {
             }
         }
     }
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {
-        OperitNotificationStore.upsert(sbn)
+        CustardNotificationStore.upsert(sbn)
     }
 
     override fun onNotificationRemoved(sbn: StatusBarNotification) {
-        OperitNotificationStore.remove(sbn)
+        CustardNotificationStore.remove(sbn)
     }
 }

@@ -4,8 +4,8 @@ package com.ai.assistance.custard.data.converter
  * 支持的聊天记录格式
  */
 enum class ChatFormat {
-    /** Operit 原生格式 */
-    OPERIT,
+    /** Custard 原生格式 */
+    CUSTARD,
     
     /** ChatGPT conversations.json 格式 */
     CHATGPT,
@@ -36,7 +36,7 @@ enum class ChatFormat {
  * 导出格式
  */
 enum class ExportFormat {
-    /** JSON 格式（Operit原生） */
+    /** JSON 格式（Custard原生） */
     JSON,
     
     /** Markdown 格式 */

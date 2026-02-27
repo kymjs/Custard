@@ -57,7 +57,7 @@ class MediaProjectionCaptureManager(private val context: Context, private val me
             val flags = DisplayManager.VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR
 
             virtualDisplay = mediaProjection.createVirtualDisplay(
-                    "OperitScreenCapture",
+                    "CustardScreenCapture",
                     width,
                     height,
                     densityDpi,

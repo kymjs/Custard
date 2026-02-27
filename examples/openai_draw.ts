@@ -1,6 +1,6 @@
 /* METADATA
 {
-  "name": "openai_draw",
+  "name": "openai_draw",
   "display_name": {
       "zh": "OpenAI 绘图",
       "en": "OpenAI Draw"
@@ -68,8 +68,8 @@ const openaiDraw = (function () {
 
     // Android 实际路径为 /sdcard/Download，对应系统中文名“下载”
     const DOWNLOAD_ROOT = "/sdcard/Download";
-    const OPERIT_DIR = `${DOWNLOAD_ROOT}/Operit`;
-    const DRAWS_DIR = `${OPERIT_DIR}/draws`;
+    const CUSTARD_DIR = `${DOWNLOAD_ROOT}/Custard`;
+    const DRAWS_DIR = `${CUSTARD_DIR}/draws`;
 
     function getApiKey(): string {
         const apiKey = getEnv("OPENAI_API_KEY");
@@ -128,7 +128,7 @@ const openaiDraw = (function () {
     }
 
     async function ensureDirectories() {
-        const dirs = [DOWNLOAD_ROOT, OPERIT_DIR, DRAWS_DIR];
+        const dirs = [DOWNLOAD_ROOT, CUSTARD_DIR, DRAWS_DIR];
         for (const dir of dirs) {
             try {
                 const result = await Tools.Files.mkdir(dir);

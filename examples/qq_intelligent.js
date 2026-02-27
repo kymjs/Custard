@@ -322,7 +322,7 @@ const QQIntelligent = (function () {
         return await get_history({ message_num: message_num });
     }
     async function main() {
-        // let result = await find_and_reply({ message: "你好你好！我是OPERIT，很高兴认识你！", user_name: "韩韩韩", user_type: "contacts", click_send: true });
+        // let result = await find_and_reply({ message: "你好你好！我是CUSTARD，很高兴认识你！", user_name: "韩韩韩", user_type: "contacts", click_send: true });
         // await find_user({ user_name: "Wind", user_type: "contacts" });
         // await find_user({ user_name: "Dec", user_type: "groups" });
         // await Tools.System.sleep(1000);

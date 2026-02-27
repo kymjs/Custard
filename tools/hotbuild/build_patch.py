@@ -436,7 +436,7 @@ def main() -> int:
     ap.add_argument("--from-patch-index", type=int, default=None)
     ap.add_argument("--to-patch-index", type=int, default=None)
     ap.add_argument("--block-size", type=int, default=4096)
-    ap.add_argument("--repo", default="AAswordman/OperitNightlyRelease")
+    ap.add_argument("--repo", default="AAswordman/CustardNightlyRelease")
     ap.add_argument("--tag", default=None)
     ap.add_argument("--token", default=None)
     ap.add_argument("--no-publish", action="store_true")

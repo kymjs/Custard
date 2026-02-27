@@ -96,7 +96,7 @@ try {
     $hasLock = $mutex.WaitOne(0)
     if (-not $hasLock) {
         Write-Log "WARN" "Launcher is running. Close launching flow and retry stop."
-        Write-Host "[WARN] Operit PC Agent is busy (launcher running)."
+        Write-Host "[WARN] Custard PC Agent is busy (launcher running)."
         exit 1
     }
 
@@ -107,11 +107,11 @@ try {
 
     $stopped = Stop-AgentProcess -Port $port
     if ($stopped) {
-        Write-Host "[OK] Operit PC Agent stopped (port $port)."
+        Write-Host "[OK] Custard PC Agent stopped (port $port)."
         Write-Log "OK" "Agent stopped on port $port"
     }
     else {
-        Write-Host "[OK] No running Operit PC Agent process found."
+        Write-Host "[OK] No running Custard PC Agent process found."
         Write-Log "INFO" "No running agent process found on port $port"
     }
 

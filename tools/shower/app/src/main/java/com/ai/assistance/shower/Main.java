@@ -56,7 +56,7 @@ public class Main {
     private static final int DEFAULT_PORT = 8986;
     private static final int DEFAULT_BIT_RATE = 4_000_000;
 
-    private static final String ACTION_SHOWER_BINDER_READY = "com.ai.assistance.operit.action.SHOWER_BINDER_READY";
+    private static final String ACTION_SHOWER_BINDER_READY = "com.ai.assistance.custard.action.SHOWER_BINDER_READY";
     private static final String EXTRA_BINDER_CONTAINER = "binder_container";
 
     private static volatile String sTargetPackageName;

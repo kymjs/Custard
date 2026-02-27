@@ -3,16 +3,16 @@
 ## 1. 现状定位（当前角色卡配置在哪里）
 
 ### 1.1 角色卡数据与存储
-- `app/src/main/java/com/ai/assistance/operit/data/model/CharacterCard.kt`
+- `app/src/main/java/com/ai/assistance/custard/data/model/CharacterCard.kt`
   - 当前角色卡结构：`id/name/description/characterSetting/openingStatement/otherContent/attachedTagIds/advancedCustomPrompt/marks/...`
-- `app/src/main/java/com/ai/assistance/operit/data/preferences/CharacterCardManager.kt`
+- `app/src/main/java/com/ai/assistance/custard/data/preferences/CharacterCardManager.kt`
   - 角色卡存储在 DataStore `character_cards`
   - Key 形如 `character_card_${id}_xxx`
   - 活跃角色卡：`active_character_card_id`
   - 提示词拼接入口：`combinePrompts(characterCardId, additionalTagIds)`
 
 ### 1.2 提示词管理界面
-- `app/src/main/java/com/ai/assistance/operit/ui/features/settings/screens/ModelPromptsSettingsScreen.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/settings/screens/ModelPromptsSettingsScreen.kt`
   - 当前 Tab 只有两页：角色卡 + 标签
   - 角色卡新增/编辑/删除/复制/导入导出都在这里
 

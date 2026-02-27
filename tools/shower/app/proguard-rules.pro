@@ -25,7 +25,7 @@
 }
 
 # Keep Shower binder IPC types so they are not obfuscated when used across
-# the shower-server.jar (shell process) and the Operit app process.
+# the shower-server.jar (shell process) and the Custard app process.
 -keep class com.ai.assistance.shower.ShowerBinderContainer {
     *;
 }

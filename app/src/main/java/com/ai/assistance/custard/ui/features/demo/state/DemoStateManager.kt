@@ -10,7 +10,7 @@ import com.ai.assistance.custard.util.AppLogger
 import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
-import com.ai.assistance.custard.core.tools.system.OperitTerminalManager
+import com.ai.assistance.custard.core.tools.system.CustardTerminalManager
 import com.ai.assistance.custard.core.tools.system.RootAuthorizer
 import com.ai.assistance.custard.data.repository.UIHierarchyManager
 import kotlinx.coroutines.CoroutineScope
@@ -126,10 +126,10 @@ class DemoStateManager(private val context: Context, private val coroutineScope:
         }
     }
 
-    fun toggleOperitTerminalWizard() {
+    fun toggleCustardTerminalWizard() {
         _uiState.update { currentState ->
             currentState.copy(
-                showOperitTerminalWizard = mutableStateOf(!currentState.showOperitTerminalWizard.value)
+                showCustardTerminalWizard = mutableStateOf(!currentState.showCustardTerminalWizard.value)
             )
         }
     }
@@ -224,9 +224,9 @@ class DemoStateManager(private val context: Context, private val coroutineScope:
                     updateShizukuInstalled = { _uiState.value.isShizukuInstalled.value = it },
                     updateShizukuRunning = { _uiState.value.isShizukuRunning.value = it },
                     updateShizukuPermission = { _uiState.value.hasShizukuPermission.value = it },
-                    updateOperitTerminalInstalled = { _uiState.value.isOperitTerminalInstalled.value = it },
-                    updateOperitTerminalRunning = { isOperitTerminalRunning -> 
-                        // Add logic if needed for OperitTerminal running state
+                    updateCustardTerminalInstalled = { _uiState.value.isCustardTerminalInstalled.value = it },
+                    updateCustardTerminalRunning = { isCustardTerminalRunning -> 
+                        // Add logic if needed for CustardTerminal running state
                     },
                     updateStoragePermission = { _uiState.value.hasStoragePermission.value = it },
                     updateLocationPermission = { _uiState.value.hasLocationPermission.value = it },
@@ -255,7 +255,7 @@ class DemoStateManager(private val context: Context, private val coroutineScope:
                 _uiState.value.showShizukuWizard.value = true
             }
 
-            // Check OperitTerminal status
+            // Check CustardTerminal status
             refreshNodejsPythonEnvironment()
 
             // 延迟300ms以确保UI能够刷新
@@ -335,8 +335,8 @@ suspend fun refreshPermissionsAndStatus(
     updateShizukuInstalled: (Boolean) -> Unit,
     updateShizukuRunning: (Boolean) -> Unit,
     updateShizukuPermission: (Boolean) -> Unit,
-    updateOperitTerminalInstalled: (Boolean) -> Unit,
-    updateOperitTerminalRunning: (Boolean) -> Unit,
+    updateCustardTerminalInstalled: (Boolean) -> Unit,
+    updateCustardTerminalRunning: (Boolean) -> Unit,
     updateStoragePermission: (Boolean) -> Unit,
     updateLocationPermission: (Boolean) -> Unit,
     updateOverlayPermission: (Boolean) -> Unit,
@@ -361,7 +361,7 @@ suspend fun refreshPermissionsAndStatus(
         }
     updateShizukuPermission(hasShizukuPermission)
 
-    // 检查NodeJS和Python环境是否就绪（替代OperitTerminal安装检查）
+    // 检查NodeJS和Python环境是否就绪（替代CustardTerminal安装检查）
     val isNodejsPythonEnvironmentReady = try {
         val sessionId = MCPSharedSession.getOrCreateSharedSession(context)
         if (sessionId != null) {
@@ -400,7 +400,7 @@ suspend fun refreshPermissionsAndStatus(
         AppLogger.e(TAG, "检查NodeJS和Python环境时出错", e)
         false
     }
-    updateOperitTerminalInstalled(isNodejsPythonEnvironmentReady)
+    updateCustardTerminalInstalled(isNodejsPythonEnvironmentReady)
 
     // 检查存储权限
     val hasStoragePermission =
@@ -457,7 +457,7 @@ data class DemoScreenState(
         val isShizukuInstalled: MutableState<Boolean> = mutableStateOf(false),
         val isShizukuRunning: MutableState<Boolean> = mutableStateOf(false),
         val hasShizukuPermission: MutableState<Boolean> = mutableStateOf(false),
-        val isOperitTerminalInstalled: MutableState<Boolean> = mutableStateOf(false),
+        val isCustardTerminalInstalled: MutableState<Boolean> = mutableStateOf(false),
         val hasStoragePermission: MutableState<Boolean> = mutableStateOf(false),
         val hasOverlayPermission: MutableState<Boolean> = mutableStateOf(false),
         val hasBatteryOptimizationExemption: MutableState<Boolean> = mutableStateOf(false),
@@ -474,7 +474,7 @@ data class DemoScreenState(
         val showSampleCommands: MutableState<Boolean> = mutableStateOf(false),
         val showAdbCommandExecutor: MutableState<Boolean> = mutableStateOf(false),
         val showShizukuWizard: MutableState<Boolean> = mutableStateOf(false),
-        val showOperitTerminalWizard: MutableState<Boolean> = mutableStateOf(false),
+        val showCustardTerminalWizard: MutableState<Boolean> = mutableStateOf(false),
         val showRootWizard: MutableState<Boolean> = mutableStateOf(false),
         val showAccessibilityWizard: MutableState<Boolean> = mutableStateOf(false),
         val showResultDialogState: MutableState<Boolean> = mutableStateOf(false),
@@ -500,10 +500,10 @@ fun getSampleAdbCommands(context: Context) =
                 "wm size" to context.getString(R.string.demo_cmd_check_resolution)
         )
 
-// Predefined OperitTerminal commands (previously Termux)
-fun getOperitTerminalSampleCommands(context: Context) =
+// Predefined CustardTerminal commands (previously Termux)
+fun getCustardTerminalSampleCommands(context: Context) =
         listOf(
-                "echo 'Hello OperitTerminal'" to context.getString(R.string.demo_cmd_echo_hello),
+                "echo 'Hello CustardTerminal'" to context.getString(R.string.demo_cmd_echo_hello),
                 "ls -la" to context.getString(R.string.demo_cmd_list_files),
                 "whoami" to context.getString(R.string.demo_cmd_show_user),
                 "apt update" to context.getString(R.string.demo_cmd_update_package_manager),

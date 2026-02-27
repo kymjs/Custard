@@ -210,13 +210,13 @@ const Web = (function () {
         if (!content || content.length <= MAX_INLINE_WEB_CONTENT_CHARS) {
             return payload;
         }
-        await Tools.Files.mkdir(OPERIT_CLEAN_ON_EXIT_DIR, true);
+        await Tools.Files.mkdir(CUSTARD_CLEAN_ON_EXIT_DIR, true);
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         const rand = Math.floor(Math.random() * 1000000);
         const safeSessionId = sanitizeSessionId(sessionId);
-        const filePath = `${OPERIT_CLEAN_ON_EXIT_DIR}/web_content_${safeSessionId}_${timestamp}_${rand}.txt`;
+        const filePath = `${CUSTARD_CLEAN_ON_EXIT_DIR}/web_content_${safeSessionId}_${timestamp}_${rand}.txt`;
         await Tools.Files.write(filePath, content, false);
-        return Object.assign(Object.assign({}, payload), { snapshot: '(saved_to_file)', snapshot_chars: content.length, snapshot_saved_to: filePath, operit_clean_on_exit_dir: OPERIT_CLEAN_ON_EXIT_DIR, hint: 'Content is large and saved to file. Use read_file_part or grep_code to inspect it.' });
+        return Object.assign(Object.assign({}, payload), { snapshot: '(saved_to_file)', snapshot_chars: content.length, snapshot_saved_to: filePath, custard_clean_on_exit_dir: CUSTARD_CLEAN_ON_EXIT_DIR, hint: 'Content is large and saved to file. Use read_file_part or grep_code to inspect it.' });
     }
     async function start(params = {}) {
         return toPayload(await Tools.Net.startWeb({

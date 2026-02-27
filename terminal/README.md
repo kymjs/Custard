@@ -1,6 +1,6 @@
 # Terminal Core Module
 
-This is a standalone Android module that provides the core functionality for the `Operit Terminal` application. It is designed as a reusable component, exposing its features through a centralized `TerminalManager` and a corresponding AIDL interface for inter-process communication.
+This is a standalone Android module that provides the core functionality for the `Custard Terminal` application. It is designed as a reusable component, exposing its features through a centralized `TerminalManager` and a corresponding AIDL interface for inter-process communication.
 
 ## Module Responsibilities
 

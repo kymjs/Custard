@@ -949,14 +949,14 @@ class ChatHistoryManager private constructor(private val context: Context) {
     }
 
     /**
-     * 导出所有聊天记录到「下载/Operit」目录（默认 JSON 格式）
+     * 导出所有聊天记录到「下载/Custard」目录（默认 JSON 格式）
      * @return 生成的文件绝对路径，失败时返回null
      */
     suspend fun exportChatHistoriesToDownloads(): String? =
         exportChatHistoriesToDownloads(ExportFormat.JSON)
 
     /**
-     * 导出所有聊天记录到「下载/Operit」目录（支持多种格式）
+     * 导出所有聊天记录到「下载/Custard」目录（支持多种格式）
      * @param format 导出格式
      * @return 生成的文件绝对路径，失败时返回null
      */
@@ -1080,7 +1080,7 @@ class ChatHistoryManager private constructor(private val context: Context) {
                                             }
                                             val content = buffer.toString("UTF-8")
                                             if (content.isNotBlank()) {
-                                                chatHistories.addAll(convertToOperitFormat(content, ChatFormat.MARKDOWN))
+                                                chatHistories.addAll(convertToCustardFormat(content, ChatFormat.MARKDOWN))
                                             }
                                         }
                                         zipStream.closeEntry()
@@ -1107,7 +1107,7 @@ class ChatHistoryManager private constructor(private val context: Context) {
                     AppLogger.d(TAG, "使用指定格式导入: $format")
                     
                     // 转换为 ChatHistory 列表
-                    chatHistories.addAll(convertToOperitFormat(content, format))
+                    chatHistories.addAll(convertToCustardFormat(content, format))
                 }
 
                 if (chatHistories.isEmpty()) {
@@ -1145,13 +1145,13 @@ class ChatHistoryManager private constructor(private val context: Context) {
         }
     
     /**
-     * 将内容转换为 Operit 格式
+     * 将内容转换为 Custard 格式
      */
-    private fun convertToOperitFormat(content: String, format: ChatFormat): List<ChatHistory> {
+    private fun convertToCustardFormat(content: String, format: ChatFormat): List<ChatHistory> {
         return try {
             when (format) {
-                ChatFormat.OPERIT -> {
-                    // 尝试直接解析为 Operit 格式
+                ChatFormat.CUSTARD -> {
+                    // 尝试直接解析为 Custard 格式
                     val json = Json {
                         ignoreUnknownKeys = true
                         isLenient = true

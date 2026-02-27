@@ -72,7 +72,7 @@ private constructor(
                     ServerType.WORKSPACE -> {
                         val workspaceRoot = File(
                             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
-                            "Operit/workspace"
+                            "Custard/workspace"
                         )
                         LocalWebServer(
                             context.applicationContext,
@@ -99,7 +99,7 @@ private constructor(
 
         private fun getComputerRootPath(): File {
             val downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-            return File(downloadDir, "Operit/computer")
+            return File(downloadDir, "Custard/computer")
         }
 
         private fun copyAssetsToDirectory(context: Context, assetDir: String, destDir: File) {

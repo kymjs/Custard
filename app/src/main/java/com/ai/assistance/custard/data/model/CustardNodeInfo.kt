@@ -7,9 +7,9 @@ import java.io.Serializable
  * 一个可序列化的数据类，用于替代AccessibilityNodeInfo，以便在进程间传递。
  * 它包含了节点的大部分关键信息，并且可以方便地通过Gson进行序列化和反序列化。
  */
-data class OperitNodeInfo(
+data class CustardNodeInfo(
     @SerializedName("children")
-    val children: List<OperitNodeInfo> = emptyList(),
+    val children: List<CustardNodeInfo> = emptyList(),
 
     @SerializedName("className")
     val className: String?,

@@ -9,7 +9,7 @@
 
 对应代码：
 
-- 接收入口：`app/src/main/java/com/ai/assistance/operit/integrations/tasker/WorkflowTaskerReceiver.kt`
+- 接收入口：`app/src/main/java/com/ai/assistance/custard/integrations/tasker/WorkflowTaskerReceiver.kt`
 - 匹配与触发：`WorkflowRepository.triggerWorkflowsByIntentEvent(intent)`
 
 ---
@@ -29,7 +29,7 @@
 
 Android 对隐式广播有各种限制（尤其是后台、Android 8+ 等）。
 
-为了确保广播能稳定投递给 Operit，推荐使用：
+为了确保广播能稳定投递给 Custard，推荐使用：
 
 - **显式广播**：指定 `component`（包名 + Receiver 类名）
 
@@ -39,9 +39,9 @@ Android 对隐式广播有各种限制（尤其是后台、Android 8+ 等）。
 
 ## 2. Receiver / Component 信息
 
-- **Receiver 类**：`com.ai.assistance.operit.integrations.tasker.WorkflowTaskerReceiver`
-- **包名**：`com.ai.assistance.operit`
-- **Component**：`com.ai.assistance.operit/.integrations.tasker.WorkflowTaskerReceiver`
+- **Receiver 类**：`com.ai.assistance.custard.integrations.tasker.WorkflowTaskerReceiver`
+- **包名**：`com.ai.assistance.custard`
+- **Component**：`com.ai.assistance.custard/.integrations.tasker.WorkflowTaskerReceiver`
 
 ---
 
@@ -51,7 +51,7 @@ Android 对隐式广播有各种限制（尤其是后台、Android 8+ 等）。
 
 - **类型**：Intent
 - **action**：填写你希望外部触发的 action，例如：
-  - `com.example.myapp.TRIGGER_OPERIT_WORKFLOW_A`
+  - `com.example.myapp.TRIGGER_CUSTARD_WORKFLOW_A`
 
 注意：
 
@@ -66,13 +66,13 @@ Android 对隐式广播有各种限制（尤其是后台、Android 8+ 等）。
 
 ```bash
 adb shell am broadcast \
-  -n com.ai.assistance.operit/.integrations.tasker.WorkflowTaskerReceiver \
-  -a com.example.myapp.TRIGGER_OPERIT_WORKFLOW_A \
+  -n com.ai.assistance.custard/.integrations.tasker.WorkflowTaskerReceiver \
+  -a com.example.myapp.TRIGGER_CUSTARD_WORKFLOW_A \
   --es message "hello from adb" \
   --es request_id "req-1001"
 ```
 
-- `-n` 指定 component，确保发给 Operit。
+- `-n` 指定 component，确保发给 Custard。
 - `-a` 为你在工作流 Trigger 里配置的 action。
 - `--es/--ez/--ei/...` 为 extras，会被工作流 TriggerNode 收集并输出。
 
@@ -82,7 +82,7 @@ adb shell am broadcast \
 
 ```bash
 adb shell am broadcast \
-  -a com.example.myapp.TRIGGER_OPERIT_WORKFLOW_A \
+  -a com.example.myapp.TRIGGER_CUSTARD_WORKFLOW_A \
   --es message "hello"
 ```
 
@@ -92,13 +92,13 @@ adb shell am broadcast \
 
 如果你的工作流 Trigger 里 `action` 配置的是默认值：
 
-- `com.ai.assistance.operit.TRIGGER_WORKFLOW`
+- `com.ai.assistance.custard.TRIGGER_WORKFLOW`
 
 那么可以使用：
 
 ```bash
 adb shell am broadcast \
-  -a com.ai.assistance.operit.TRIGGER_WORKFLOW \
+  -a com.ai.assistance.custard.TRIGGER_WORKFLOW \
   --es message "hello" \
   --es request_id "req-1002"
 ```
@@ -109,7 +109,7 @@ adb shell am broadcast \
 
 在内置的“Intent 触发 + 发送消息 + 回传广播”示范模板中，会使用工具节点 `send_broadcast` 回传结果：
 
-- **action**：`com.ai.assistance.operit.WORKFLOW_RESULT`
+- **action**：`com.ai.assistance.custard.WORKFLOW_RESULT`
 - **extra_key**：`result`
 - **extra_value**：来自 `send_message_to_ai` 节点的输出（字符串）
 
@@ -127,12 +127,12 @@ adb shell am broadcast \
 ### 6.1 用 Tasker 接收（最方便）
 
 - 在 Tasker 创建 Profile：Event -> System -> Intent Received
-- Action 填：`com.ai.assistance.operit.WORKFLOW_RESULT`
+- Action 填：`com.ai.assistance.custard.WORKFLOW_RESULT`
 - 在 Task 中读取变量（通常可直接用 `%result` 或从 extras 映射中取）
 
 ### 6.2 写一个最小接收 App / Receiver（用于调试）
 
-在你的测试 App 中注册一个 `BroadcastReceiver` 监听 `com.ai.assistance.operit.WORKFLOW_RESULT`，在 `onReceive()` 里读取：
+在你的测试 App 中注册一个 `BroadcastReceiver` 监听 `com.ai.assistance.custard.WORKFLOW_RESULT`，在 `onReceive()` 里读取：
 
 - `intent.getStringExtra("result")`
 

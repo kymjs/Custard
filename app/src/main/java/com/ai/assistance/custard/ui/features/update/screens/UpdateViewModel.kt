@@ -26,7 +26,7 @@ class UpdateViewModel(private val context: Context) : ViewModel() {
     
     companion object {
         private const val REPO_OWNER = "AAswordman"
-        private const val REPO_NAME = "Operit"
+        private const val REPO_NAME = "Custard"
     }
     
     init {

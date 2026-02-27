@@ -82,7 +82,7 @@ private val LightColorScheme =
 
 @SuppressLint("UnusedBoxWithConstraintsScope")
 @Composable
-fun OperitTheme(content: @Composable () -> Unit) {
+fun CustardTheme(content: @Composable () -> Unit) {
     val context = LocalContext.current
     val preferencesManager = remember { UserPreferencesManager.getInstance(context) }
     val coroutineScope = rememberCoroutineScope()
@@ -291,7 +291,7 @@ fun OperitTheme(content: @Composable () -> Unit) {
                                     prepare()
                                 } catch (e: Exception) {
                                     AppLogger.e(
-                                            "OperitTheme",
+                                            "CustardTheme",
                                             "Error loading video background: ${e.message}",
                                             e
                                     )
@@ -316,7 +316,7 @@ fun OperitTheme(content: @Composable () -> Unit) {
                 exoPlayer?.clearMediaItems()
                 exoPlayer?.release() 
             } catch (e: Exception) {
-                AppLogger.e("OperitTheme", "ExoPlayer释放错误", e)
+                AppLogger.e("CustardTheme", "ExoPlayer释放错误", e)
             }
         } 
     }
@@ -378,7 +378,7 @@ fun OperitTheme(content: @Composable () -> Unit) {
                     LaunchedEffect(painter) {
                         if (painter.state is AsyncImagePainter.State.Error) {
                             AppLogger.e(
-                                    "OperitTheme",
+                                    "CustardTheme",
                                     "Error loading background image from URI: $backgroundImageUri"
                             )
 
@@ -387,12 +387,12 @@ fun OperitTheme(content: @Composable () -> Unit) {
                                 val file = uri.path?.let { File(it) }
                                 if (file == null || !file.exists()) {
                                     AppLogger.e(
-                                            "OperitTheme",
+                                            "CustardTheme",
                                             "Internal file doesn't exist: ${file?.absolutePath}"
                                     )
                                 } else {
                                     AppLogger.e(
-                                            "OperitTheme",
+                                            "CustardTheme",
                                             "File exists but couldn't be loaded: ${file.absolutePath}, size: ${file.length()}"
                                     )
                                 }

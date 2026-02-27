@@ -35,7 +35,7 @@ import com.ai.assistance.custard.ui.components.CustomScaffold
 
 /**
  * 默认助手设置引导屏幕
- * 指导用户如何将 Operit 语音悬浮功能设置为系统默认助手
+ * 指导用户如何将 Custard 语音悬浮功能设置为系统默认助手
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

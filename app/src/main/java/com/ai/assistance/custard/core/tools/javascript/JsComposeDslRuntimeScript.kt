@@ -27,7 +27,7 @@ internal fun buildComposeDslRuntimeWrappedScript(script: String): String {
                 return __custard_wrap_compose_response(__bundle, __tree);
             }
 
-            function __operitResolveComposeEntry() {
+            function __custardResolveComposeEntry() {
                 try {
                     if (typeof module !== 'undefined' && module && module.exports) {
                         if (typeof module.exports.default === 'function') {
@@ -60,11 +60,11 @@ internal fun buildComposeDslRuntimeWrappedScript(script: String): String {
             }
 
             function __custard_render_compose_dsl(__runtimeOptions) {
-                if (typeof OperitComposeDslRuntime === 'undefined') {
-                    throw new Error('OperitComposeDslRuntime bridge is not initialized');
+                if (typeof CustardComposeDslRuntime === 'undefined') {
+                    throw new Error('CustardComposeDslRuntime bridge is not initialized');
                 }
-                var __bundle = OperitComposeDslRuntime.createContext(__runtimeOptions || {});
-                var __entry = __operitResolveComposeEntry();
+                var __bundle = CustardComposeDslRuntime.createContext(__runtimeOptions || {});
+                var __entry = __custardResolveComposeEntry();
                 if (typeof __entry !== 'function') {
                     throw new Error(
                         'compose_dsl entry function not found, expected default export or Screen function'

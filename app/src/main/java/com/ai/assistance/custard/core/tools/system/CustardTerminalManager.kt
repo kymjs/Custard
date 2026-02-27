@@ -11,11 +11,11 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.io.IOException
 
-object OperitTerminalManager {
+object CustardTerminalManager {
     const val PACKAGE_NAME = "com.ai.assistance.custard.terminal"
     private const val REPO_OWNER = "AAswordman"
-    private const val REPO_NAME = "OperitTerminal"
-    private const val TAG = "OperitTerminalManager"
+    private const val REPO_NAME = "CustardTerminal"
+    private const val TAG = "CustardTerminalManager"
 
     data class ReleaseInfo(
         val version: String,

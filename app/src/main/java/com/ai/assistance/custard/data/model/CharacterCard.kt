@@ -54,27 +54,27 @@ data class TavernCharacterData(
 data class TavernExtensions(
     val chub: TavernChubExtension? = null,
     val depth_prompt: TavernDepthPrompt? = null,
-    val operit: OperitTavernExtension? = null
+    val custard: CustardTavernExtension? = null
 )
 
-data class OperitTavernExtension(
-    val schema: String = "operit_character_card_v1",
-    val character_card: OperitCharacterCardPayload
+data class CustardTavernExtension(
+    val schema: String = "custard_character_card_v1",
+    val character_card: CustardCharacterCardPayload
 )
 
-data class OperitCharacterCardPayload(
+data class CustardCharacterCardPayload(
     val name: String = "",
     val description: String = "",
     val characterSetting: String = "",
     val openingStatement: String = "",
     val otherContent: String = "",
     val attachedTagIds: List<String> = emptyList(),
-    val attachedTags: List<OperitAttachedTagPayload> = emptyList(),
+    val attachedTags: List<CustardAttachedTagPayload> = emptyList(),
     val advancedCustomPrompt: String = "",
     val marks: String = ""
 )
 
-data class OperitAttachedTagPayload(
+data class CustardAttachedTagPayload(
     val id: String = "",
     val name: String = "",
     val description: String = "",

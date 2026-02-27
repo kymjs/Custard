@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "toolpkg_id": "com.operit.windows_bundle",
+  "toolpkg_id": "com.custard.windows_bundle",
   "version": "0.2.0",
   "display_name": {
     "zh": "Windows 工具包",

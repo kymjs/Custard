@@ -447,16 +447,16 @@ EOF
 configure_env_persistence() {
   local bashrc="$HOME/.bashrc"
   touch "$bashrc"
-  if ! grep -q "operit android env" "$bashrc"; then
+  if ! grep -q "custard android env" "$bashrc"; then
     cat >> "$bashrc" <<EOF
-# >>> operit android env >>>
+# >>> custard android env >>>
 export JAVA_HOME=$JAVA_HOME
 export ANDROID_HOME=$ANDROID_HOME
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=\$ANDROID_HOME/cmdline-tools/latest/bin:\$ANDROID_HOME/platform-tools:\$JAVA_HOME/bin:\$PATH
 export GRADLE_HOME=${GRADLE_HOME:-$HOME/gradle/gradle-8.7}
 export PATH=\$GRADLE_HOME/bin:\$PATH
-# <<< operit android env <<<
+# <<< custard android env <<<
 EOF
     log "Environment variables appended to ~/.bashrc"
   else

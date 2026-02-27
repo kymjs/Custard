@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 """
-Operit Python 项目
-欢迎使用 Operit 进行 Python 开发！
+Custard Python 项目
+欢迎使用 Custard 进行 Python 开发！
 """
 
 def main():
-    print("🚀 欢迎来到 Operit Python 项目！")
+    print("🚀 欢迎来到 Custard Python 项目！")
     print("=" * 50)
     print("这是一个 Python 项目模板，您可以：")
     print("  ✨ 编写和运行 Python 代码")
@@ -16,7 +16,7 @@ def main():
     print("=" * 50)
     
     # 示例代码
-    greeting = "Hello from Operit!"
+    greeting = "Hello from Custard!"
     print(f"\n{greeting}\n")
     
     # 简单的计算示例

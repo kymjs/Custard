@@ -485,10 +485,10 @@ private fun CategoryCard(
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Bold
                     )
-                    // Operit必须标签 - 第二行
+                    // Custard必须标签 - 第二行
                     if (category.id == "nodejs" || category.id == "python") {
                         Text(
-                            text = "(${context.getString(com.ai.assistance.custard.terminal.R.string.operit_required)})",
+                            text = "(${context.getString(com.ai.assistance.custard.terminal.R.string.custard_required)})",
                             color = Color(0xFFFFA500), // Orange color
                             fontSize = 8.sp,
                             fontWeight = FontWeight.Bold,

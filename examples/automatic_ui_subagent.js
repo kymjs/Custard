@@ -511,7 +511,7 @@ When the user asks you to complete a UI task (e.g. open an app, search content, 
  }
 */
 const UIAutomationSubAgentTools = (function () {
-    const CACHE_KEY = '__operit_ui_subagent_cached_agent_id';
+    const CACHE_KEY = '__custard_ui_subagent_cached_agent_id';
     function getCachedAgentId() {
         try {
             return globalThis[CACHE_KEY];

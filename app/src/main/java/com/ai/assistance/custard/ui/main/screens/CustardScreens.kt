@@ -1428,7 +1428,7 @@ sealed class Screen(
 }
 
 // 路由管理器
-object OperitRouter {
+object CustardRouter {
     // 处理返回导航
     fun handleBackNavigation(currentScreen: Screen): Screen? {
         return currentScreen.parentScreen

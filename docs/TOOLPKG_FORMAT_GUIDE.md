@@ -66,7 +66,7 @@ windows_control.toolpkg (ZIP 压缩包)
 ```json
 {
   "schema_version": 1,
-  "toolpkg_id": "com.operit.windows_bundle",
+  "toolpkg_id": "com.custard.windows_bundle",
   "version": "0.2.0",
   "display_name": {
     "zh": "Windows 工具包",
@@ -120,7 +120,7 @@ windows_control.toolpkg (ZIP 压缩包)
 | 字段 | 类型 | 必需 | 说明 |
 |------|------|------|------|
 | `schema_version` | number | 是 | 清单架构版本，当前为 `1` |
-| `toolpkg_id` | string | 是 | 包的唯一标识符，建议使用反向域名格式（如 `com.operit.windows_bundle`） |
+| `toolpkg_id` | string | 是 | 包的唯一标识符，建议使用反向域名格式（如 `com.custard.windows_bundle`） |
 | `version` | string | 否 | 包的版本号，建议使用语义化版本（如 `0.2.0`） |
 | `display_name` | LocalizedText | 否 | 包的显示名称，支持多语言 |
 | `description` | LocalizedText | 否 | 包的描述信息，支持多语言 |
@@ -604,7 +604,7 @@ const iconPath = await ctx.readResource('icon');
 ### 8.2 外部包
 
 用户可以通过以下方式导入外部包：
-1. 将 `.toolpkg` 文件复制到设备的 `Android/data/com.ai.assistance.operit/files/packages/` 目录
+1. 将 `.toolpkg` 文件复制到设备的 `Android/data/com.ai.assistance.custard/files/packages/` 目录
 2. 在应用中使用"导入包"功能
 
 ### 8.3 版本管理
@@ -619,7 +619,7 @@ const iconPath = await ctx.readResource('icon');
 
 ### 9.1 命名规范
 
-- **toolpkg_id**：使用反向域名格式，如 `com.operit.windows_bundle`
+- **toolpkg_id**：使用反向域名格式，如 `com.custard.windows_bundle`
 - **subpackage id**：使用小写字母和下划线，如 `windows_control`
 - **resource key**：使用小写字母和下划线，如 `pc_agent_zip`
 - **ui_module id**：使用小写字母和下划线，如 `windows_setup`
@@ -757,9 +757,9 @@ ls -lh app/src/main/assets/packages/windows_control.toolpkg
 ## 12. 参考资料
 
 - [脚本开发指南](./SCRIPT_DEV_GUIDE.md)：了解如何编写子包脚本
-- [PackageManager.kt](../app/src/main/java/com/ai/assistance/operit/core/tools/packTool/PackageManager.kt)：包管理器源码
-- [ToolPkgParser.kt](../app/src/main/java/com/ai/assistance/operit/core/tools/packTool/ToolPkgParser.kt)：解析器源码
-- [JsComposeDslBridge.kt](../app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsComposeDslBridge.kt)：Compose DSL 桥接
+- [PackageManager.kt](../app/src/main/java/com/ai/assistance/custard/core/tools/packTool/PackageManager.kt)：包管理器源码
+- [ToolPkgParser.kt](../app/src/main/java/com/ai/assistance/custard/core/tools/packTool/ToolPkgParser.kt)：解析器源码
+- [JsComposeDslBridge.kt](../app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsComposeDslBridge.kt)：Compose DSL 桥接
 
 ## 13. 更新日志
 

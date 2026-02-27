@@ -236,7 +236,7 @@
       "parameters": [
         { "name": "owner", "description": { "zh": "仓库 owner（默认 octocat）", "en": "Repository owner (default: octocat)." }, "type": "string", "required": false },
         { "name": "repo", "description": { "zh": "仓库名（默认 Hello-World）", "en": "Repository name (default: Hello-World)." }, "type": "string", "required": false },
-        { "name": "query", "description": { "zh": "搜索关键词（默认 operit）", "en": "Search keyword (default: operit)." }, "type": "string", "required": false }
+        { "name": "query", "description": { "zh": "搜索关键词（默认 custard）", "en": "Search keyword (default: custard)." }, "type": "string", "required": false }
       ]
     }
   ]
@@ -306,7 +306,7 @@ function defaultHeaders(extra) {
   const headers = {
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
-    "User-Agent": "Operit-Examples-GitHub"
+    "User-Agent": "Custard-Examples-GitHub"
   };
   const token = getToken();
   if (token) {
@@ -741,7 +741,7 @@ async function main(params) {
   try {
     const owner = String((params == null ? void 0 : params.owner) || "octocat");
     const repo = String((params == null ? void 0 : params.repo) || "Hello-World");
-    const query = String((params == null ? void 0 : params.query) || "operit");
+    const query = String((params == null ? void 0 : params.query) || "custard");
     const path = String((params == null ? void 0 : params.path) || "README.md");
     const enableWrite = (params == null ? void 0 : params.enable_write) === true;
     const baseUrl = getBaseUrl();
@@ -863,8 +863,8 @@ async function main(params) {
       writeSkipped("merge_pull_request", "Skipped: enable_write=false (write operation).");
     } else {
       const ts = Date.now();
-      const testBranch = `operit-test-${ts}`;
-      const testPath = `operit_test_${ts}.txt`;
+      const testBranch = `custard-test-${ts}`;
+      const testPath = `custard_test_${ts}.txt`;
       const baseBranch = (results.get_repository.ok ? (_c = results.get_repository.data) == null ? void 0 : _c.default_branch : void 0) || "main";
       results.create_branch = await run(
         "create_branch",
@@ -876,8 +876,8 @@ async function main(params) {
           owner,
           repo,
           path: testPath,
-          message: `operit test create file ${ts}`,
-          content: `operit github tools self-test ${ts}`,
+          message: `custard test create file ${ts}`,
+          content: `custard github tools self-test ${ts}`,
           content_encoding: "utf-8",
           branch: testBranch
         })
@@ -888,13 +888,13 @@ async function main(params) {
           owner,
           repo,
           path: testPath,
-          message: `operit test patch file ${ts}`,
+          message: `custard test patch file ${ts}`,
           patch: `[START-REPLACE]
 [OLD]
-operit github tools self-test ${ts}
+custard github tools self-test ${ts}
 [/OLD]
 [NEW]
-operit github tools self-test ${ts} (patched)
+custard github tools self-test ${ts} (patched)
 [/NEW]
 [END-REPLACE]`,
           branch: testBranch
@@ -905,7 +905,7 @@ operit github tools self-test ${ts} (patched)
         if (!sha) {
           throw new Error("Cannot infer sha from create_or_update_file response; pass sha explicitly if needed.");
         }
-        return deleteFile({ owner, repo, path: testPath, message: `operit test delete file ${ts}`, branch: testBranch, sha });
+        return deleteFile({ owner, repo, path: testPath, message: `custard test delete file ${ts}`, branch: testBranch, sha });
       });
       const canIssue = Boolean(token) && issueNumber !== void 0;
       if (!token) {
@@ -913,7 +913,7 @@ operit github tools self-test ${ts} (patched)
       } else {
         results.create_issue = await run(
           "create_issue",
-          async () => createIssue({ owner, repo, title: `operit self-test issue ${ts}`, body: `created by operit github tools self-test ${ts}` })
+          async () => createIssue({ owner, repo, title: `custard self-test issue ${ts}`, body: `created by custard github tools self-test ${ts}` })
         );
       }
       if (!canIssue) {
@@ -921,7 +921,7 @@ operit github tools self-test ${ts} (patched)
       } else {
         results.comment_issue = await run(
           "comment_issue",
-          async () => commentIssue({ owner, repo, issue_number: issueNumber, body: `operit self-test comment ${ts}` })
+          async () => commentIssue({ owner, repo, issue_number: issueNumber, body: `custard self-test comment ${ts}` })
         );
       }
       const prHead = (params == null ? void 0 : params.pr_head) ? String(params.pr_head) : "";
@@ -933,7 +933,7 @@ operit github tools self-test ${ts} (patched)
       } else {
         results.create_pull_request = await run(
           "create_pull_request",
-          async () => createPullRequest({ owner, repo, title: `operit self-test PR ${ts}`, head: prHead, base: prBase, body: `created by operit self-test ${ts}` })
+          async () => createPullRequest({ owner, repo, title: `custard self-test PR ${ts}`, head: prHead, base: prBase, body: `created by custard self-test ${ts}` })
         );
       }
       if (!token) {

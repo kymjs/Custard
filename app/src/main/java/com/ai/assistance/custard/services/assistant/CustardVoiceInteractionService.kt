@@ -6,15 +6,15 @@ import android.service.voice.VoiceInteractionService
 import com.ai.assistance.custard.util.AppLogger
 
 /**
- * Operit 语音交互服务
+ * Custard 语音交互服务
  * 
- * 这是让 Operit 能够被 Android 系统识别为数字助理应用的核心服务。
+ * 这是让 Custard 能够被 Android 系统识别为数字助理应用的核心服务。
  * 当用户长按 Home 键或触发其他助手调用方式时，系统会启动这个服务。
  */
 class CustardVoiceInteractionService : VoiceInteractionService() {
     
     companion object {
-        private const val TAG = "OperitVoiceInteraction"
+        private const val TAG = "CustardVoiceInteraction"
     }
     
     override fun onCreate() {

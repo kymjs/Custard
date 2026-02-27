@@ -95,7 +95,7 @@ def _http_json(
     headers: dict[str, str] = {
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
-        "User-Agent": "OperitTools/1.0 (import_anthropic_skills.py)",
+        "User-Agent": "CustardTools/1.0 (import_anthropic_skills.py)",
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -179,7 +179,7 @@ def _http_text(
 
     for attempt in range(retries):
         req = urllib.request.Request(url, method="GET")
-        req.add_header("User-Agent", "OperitTools/1.0 (import_anthropic_skills.py)")
+        req.add_header("User-Agent", "CustardTools/1.0 (import_anthropic_skills.py)")
         if token and host in ("api.github.com",):
             req.add_header("Authorization", f"Bearer {token}")
 
@@ -425,7 +425,7 @@ def _download_binary(url: str, out_path: Path, ctx: ssl.SSLContext, timeout_s: i
     last_error: Optional[BaseException] = None
     for attempt in range(retries):
         req = urllib.request.Request(url, method="GET")
-        req.add_header("User-Agent", "OperitTools/1.0 (import_anthropic_skills.py)")
+        req.add_header("User-Agent", "CustardTools/1.0 (import_anthropic_skills.py)")
         try:
             with urllib.request.urlopen(req, timeout=timeout_s, context=ctx) as resp:
                 out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -991,7 +991,7 @@ def _ai_generate_description(
 
     user_prompt = textwrap.dedent(
         f"""
-        Write a short Chinese description for an Operit Skill Market listing.
+        Write a short Chinese description for an Custard Skill Market listing.
 
         Constraints:
         - Output ONLY the description text, no Markdown headings, no lists.
@@ -1025,7 +1025,7 @@ def _ai_generate_description(
     return out
 
 
-def _build_operit_issue_body(description: str, repository_url: str, version: str) -> str:
+def _build_custard_issue_body(description: str, repository_url: str, version: str) -> str:
     metadata = {
         "description": description,
         "repositoryUrl": repository_url,
@@ -1037,8 +1037,8 @@ def _build_operit_issue_body(description: str, repository_url: str, version: str
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     lines: list[str] = []
-    lines.append(f"<!-- operit-skill-json: {json.dumps(metadata, ensure_ascii=False, separators=(',', ':'))} -->")
-    lines.append(f"<!-- operit-parser-version: {version} -->")
+    lines.append(f"<!-- custard-skill-json: {json.dumps(metadata, ensure_ascii=False, separators=(',', ':'))} -->")
+    lines.append(f"<!-- custard-parser-version: {version} -->")
     lines.append("")
     lines.append("## 📋 Skill 信息")
     lines.append("")
@@ -1052,7 +1052,7 @@ def _build_operit_issue_body(description: str, repository_url: str, version: str
 
     lines.append("## 📦 安装方式")
     lines.append("")
-    lines.append("1. 打开 Operit → 包管理 → Skills")
+    lines.append("1. 打开 Custard → 包管理 → Skills")
     lines.append("2. 点击「导入 Skill」→ 「从仓库导入」")
     lines.append(f"3. 输入仓库地址：`{repository_url}`")
     lines.append("4. 确认导入")
@@ -1062,7 +1062,7 @@ def _build_operit_issue_body(description: str, repository_url: str, version: str
     lines.append("")
     lines.append("| 项目 | 值 |")
     lines.append("|------|-----|")
-    lines.append("| 发布平台 | Operit Skill 市场 |")
+    lines.append("| 发布平台 | Custard Skill 市场 |")
     lines.append(f"| 解析版本 | {version} |")
     lines.append(f"| 发布时间 | {now_str} |")
     lines.append("| 状态 | ⏳ Pending Review |")
@@ -1176,7 +1176,7 @@ def _write_validate_progress(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Import skills from awesome-agent-skills into Operit Skill Market by creating GitHub issues."
+        description="Import skills from awesome-agent-skills into Custard Skill Market by creating GitHub issues."
     )
     parser.add_argument(
         "--env",
@@ -1185,7 +1185,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--target-repo",
-        default="AAswordman/OperitSkillMarket",
+        default="AAswordman/CustardSkillMarket",
         help="Target GitHub repo to create issues in",
     )
     parser.add_argument(
@@ -1534,7 +1534,7 @@ def main() -> int:
                 raise RuntimeError("AI returned empty description")
 
             title = _safe_title(_issue_title_name(skill.name))
-            body = _build_operit_issue_body(description=description, repository_url=repo_url, version=issue_version)
+            body = _build_custard_issue_body(description=description, repository_url=repo_url, version=issue_version)
             return {
                 "ok": True,
                 "skip": False,
@@ -1630,7 +1630,7 @@ def main() -> int:
             if not description:
                 raise RuntimeError("AI returned empty description")
 
-            body = _build_operit_issue_body(description=description, repository_url=repo_url, version=issue_version)
+            body = _build_custard_issue_body(description=description, repository_url=repo_url, version=issue_version)
 
             issue = _create_issue(
                 api_base=github_api_base,

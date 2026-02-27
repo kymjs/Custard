@@ -189,7 +189,7 @@ class UpdateManager private constructor(private val context: Context) {
                         if (matchResult != null) {
                             Pair(matchResult.groupValues[1], matchResult.groupValues[2])
                         } else {
-                            Pair("AAswordman", "Operit") // 默认值
+                            Pair("AAswordman", "Custard") // 默认值
                         }
 
                 val githubReleaseUtil = GithubReleaseUtil(context)
@@ -302,7 +302,7 @@ class UpdateManager private constructor(private val context: Context) {
         val api = GitHubApiService(context)
 
         val owner = "AAswordman"
-        val repo = "OperitNightlyRelease"
+        val repo = "CustardNightlyRelease"
 
         AppLogger.d(TAG, "tryFetchLatestPatchUpdate(): currentVersion=$currentVersion repo=$owner/$repo")
         val result = api.getRepositoryReleases(owner = owner, repo = repo, page = 1, perPage = 20)

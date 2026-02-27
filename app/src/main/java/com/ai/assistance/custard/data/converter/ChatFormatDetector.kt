@@ -83,10 +83,10 @@ object ChatFormatDetector {
             return ChatFormat.CHATGPT
         }
         
-        // Operit 格式特征: id, title, messages, createdAt
+        // Custard 格式特征: id, title, messages, createdAt
         if (keys.contains("id") && keys.contains("title") && 
             keys.contains("messages") && keys.contains("createdAt")) {
-            return ChatFormat.OPERIT
+            return ChatFormat.CUSTARD
         }
         
         // Claude 格式特征: uuid, chat_messages

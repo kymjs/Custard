@@ -63,7 +63,7 @@ fun PermissionLevelCard(
         isShizukuInstalled: Boolean,
         isShizukuRunning: Boolean,
         hasShizukuPermission: Boolean,
-        isOperitTerminalInstalled: Boolean,
+        isCustardTerminalInstalled: Boolean,
         isDeviceRooted: Boolean,
         hasRootAccess: Boolean,
         isAccessibilityProviderInstalled: Boolean, // 新增：提供者App是否已安装
@@ -75,7 +75,7 @@ fun PermissionLevelCard(
         onInstallAccessibilityProviderClick: () -> Unit, // 新增：安装提供者App的回调
         onLocationPermissionClick: () -> Unit,
         onShizukuClick: () -> Unit,
-        onOperitTerminalClick: () -> Unit,
+        onCustardTerminalClick: () -> Unit,
         onRootClick: () -> Unit,
         isRefreshing: Boolean = false,
         onRefresh: () -> Unit,
@@ -308,12 +308,12 @@ fun PermissionLevelCard(
                                             hasBatteryOptimizationExemption =
                                                     hasBatteryOptimizationExemption,
                                             hasLocationPermission = hasLocationPermission,
-                                            isOperitTerminalInstalled = isOperitTerminalInstalled,
+                                            isCustardTerminalInstalled = isCustardTerminalInstalled,
                                             onStoragePermissionClick = onStoragePermissionClick,
                                             onOverlayPermissionClick = onOverlayPermissionClick,
                                             onBatteryOptimizationClick = onBatteryOptimizationClick,
                                             onLocationPermissionClick = onLocationPermissionClick,
-                                            onOperitTerminalClick = onOperitTerminalClick
+                                            onCustardTerminalClick = onCustardTerminalClick
                                     )
                                 }
                         )
@@ -335,14 +335,14 @@ fun PermissionLevelCard(
                                             hasAccessibilityServiceEnabled =
                                                     hasAccessibilityServiceEnabled,
                                             isAccessibilityUpdateNeeded = isAccessibilityUpdateNeeded,
-                                            isOperitTerminalInstalled = isOperitTerminalInstalled,
+                                            isCustardTerminalInstalled = isCustardTerminalInstalled,
                                             onStoragePermissionClick = onStoragePermissionClick,
                                             onOverlayPermissionClick = onOverlayPermissionClick,
                                             onBatteryOptimizationClick = onBatteryOptimizationClick,
                                             onLocationPermissionClick = onLocationPermissionClick,
                                             onAccessibilityClick = onAccessibilityClick,
                                             onInstallAccessibilityProviderClick = onInstallAccessibilityProviderClick,
-                                            onOperitTerminalClick = onOperitTerminalClick
+                                            onCustardTerminalClick = onCustardTerminalClick
                                     )
                                 }
                         )
@@ -360,12 +360,12 @@ fun PermissionLevelCard(
                                             hasBatteryOptimizationExemption =
                                                     hasBatteryOptimizationExemption,
                                             hasLocationPermission = hasLocationPermission,
-                                            isOperitTerminalInstalled = isOperitTerminalInstalled,
+                                            isCustardTerminalInstalled = isCustardTerminalInstalled,
                                             onStoragePermissionClick = onStoragePermissionClick,
                                             onOverlayPermissionClick = onOverlayPermissionClick,
                                             onBatteryOptimizationClick = onBatteryOptimizationClick,
                                             onLocationPermissionClick = onLocationPermissionClick,
-                                            onOperitTerminalClick = onOperitTerminalClick
+                                            onCustardTerminalClick = onCustardTerminalClick
                                     )
                                 }
                         )
@@ -383,7 +383,7 @@ fun PermissionLevelCard(
                                             hasBatteryOptimizationExemption =
                                                     hasBatteryOptimizationExemption,
                                             hasLocationPermission = hasLocationPermission,
-                                            isOperitTerminalInstalled = isOperitTerminalInstalled,
+                                            isCustardTerminalInstalled = isCustardTerminalInstalled,
                                             isShizukuInstalled = isShizukuInstalled,
                                             isShizukuRunning = isShizukuRunning,
                                             hasShizukuPermission = hasShizukuPermission,
@@ -391,7 +391,7 @@ fun PermissionLevelCard(
                                             onOverlayPermissionClick = onOverlayPermissionClick,
                                             onBatteryOptimizationClick = onBatteryOptimizationClick,
                                             onLocationPermissionClick = onLocationPermissionClick,
-                                            onOperitTerminalClick = onOperitTerminalClick,
+                                            onCustardTerminalClick = onCustardTerminalClick,
                                             onShizukuClick = onShizukuClick
                                     )
                                 }
@@ -410,14 +410,14 @@ fun PermissionLevelCard(
                                             hasBatteryOptimizationExemption =
                                                     hasBatteryOptimizationExemption,
                                             hasLocationPermission = hasLocationPermission,
-                                            isOperitTerminalInstalled = isOperitTerminalInstalled,
+                                            isCustardTerminalInstalled = isCustardTerminalInstalled,
                                             isDeviceRooted = isDeviceRooted,
                                             hasRootAccess = hasRootAccess,
                                             onStoragePermissionClick = onStoragePermissionClick,
                                             onOverlayPermissionClick = onOverlayPermissionClick,
                                             onBatteryOptimizationClick = onBatteryOptimizationClick,
                                             onLocationPermissionClick = onLocationPermissionClick,
-                                            onOperitTerminalClick = onOperitTerminalClick,
+                                            onCustardTerminalClick = onCustardTerminalClick,
                                             onRootClick = onRootClick
                                     )
                                 }
@@ -569,12 +569,12 @@ private fun StandardPermissionSection(
         hasOverlayPermission: Boolean,
         hasBatteryOptimizationExemption: Boolean,
         hasLocationPermission: Boolean,
-        isOperitTerminalInstalled: Boolean,
+        isCustardTerminalInstalled: Boolean,
         onStoragePermissionClick: () -> Unit,
         onOverlayPermissionClick: () -> Unit,
         onBatteryOptimizationClick: () -> Unit,
         onLocationPermissionClick: () -> Unit,
-        onOperitTerminalClick: () -> Unit
+        onCustardTerminalClick: () -> Unit
 ) {
     Column {
         Text(
@@ -637,9 +637,9 @@ private fun StandardPermissionSection(
                 )
 
                 PermissionStatusItem(
-                        title = stringResource(R.string.operit_terminal),
-                        isGranted = isOperitTerminalInstalled,
-                        onClick = onOperitTerminalClick
+                        title = stringResource(R.string.custard_terminal),
+                        isGranted = isCustardTerminalInstalled,
+                        onClick = onCustardTerminalClick
                 )
             }
         }
@@ -655,14 +655,14 @@ private fun AccessibilityPermissionSection(
         isAccessibilityProviderInstalled: Boolean, // 新增
         hasAccessibilityServiceEnabled: Boolean,
         isAccessibilityUpdateNeeded: Boolean,
-        isOperitTerminalInstalled: Boolean,
+        isCustardTerminalInstalled: Boolean,
         onStoragePermissionClick: () -> Unit,
         onOverlayPermissionClick: () -> Unit,
         onBatteryOptimizationClick: () -> Unit,
         onLocationPermissionClick: () -> Unit,
         onAccessibilityClick: () -> Unit,
         onInstallAccessibilityProviderClick: () -> Unit, // 新增
-        onOperitTerminalClick: () -> Unit
+        onCustardTerminalClick: () -> Unit
 ) {
     Column {
         Text(
@@ -724,9 +724,9 @@ private fun AccessibilityPermissionSection(
                 )
 
                 PermissionStatusItem(
-                        title = stringResource(R.string.operit_terminal),
-                        isGranted = isOperitTerminalInstalled,
-                        onClick = onOperitTerminalClick
+                        title = stringResource(R.string.custard_terminal),
+                        isGranted = isCustardTerminalInstalled,
+                        onClick = onCustardTerminalClick
                 )
             }
         }
@@ -820,12 +820,12 @@ private fun AdminPermissionSection(
         hasOverlayPermission: Boolean,
         hasBatteryOptimizationExemption: Boolean,
         hasLocationPermission: Boolean,
-        isOperitTerminalInstalled: Boolean,
+        isCustardTerminalInstalled: Boolean,
         onStoragePermissionClick: () -> Unit,
         onOverlayPermissionClick: () -> Unit,
         onBatteryOptimizationClick: () -> Unit,
         onLocationPermissionClick: () -> Unit,
-        onOperitTerminalClick: () -> Unit
+        onCustardTerminalClick: () -> Unit
 ) {
     Column {
         Text(
@@ -919,9 +919,9 @@ private fun AdminPermissionSection(
                 )
 
                 PermissionStatusItem(
-                        title = stringResource(R.string.operit_terminal),
-                        isGranted = isOperitTerminalInstalled,
-                        onClick = onOperitTerminalClick
+                        title = stringResource(R.string.custard_terminal),
+                        isGranted = isCustardTerminalInstalled,
+                        onClick = onCustardTerminalClick
                 )
             }
         }
@@ -942,7 +942,7 @@ private fun DebuggerPermissionSection(
         hasOverlayPermission: Boolean,
         hasBatteryOptimizationExemption: Boolean,
         hasLocationPermission: Boolean,
-        isOperitTerminalInstalled: Boolean,
+        isCustardTerminalInstalled: Boolean,
         isShizukuInstalled: Boolean,
         isShizukuRunning: Boolean,
         hasShizukuPermission: Boolean,
@@ -950,7 +950,7 @@ private fun DebuggerPermissionSection(
         onOverlayPermissionClick: () -> Unit,
         onBatteryOptimizationClick: () -> Unit,
         onLocationPermissionClick: () -> Unit,
-        onOperitTerminalClick: () -> Unit,
+        onCustardTerminalClick: () -> Unit,
         onShizukuClick: () -> Unit
 ) {
     // 获取当前上下文
@@ -1027,9 +1027,9 @@ private fun DebuggerPermissionSection(
                 )
 
                 PermissionStatusItem(
-                        title = stringResource(R.string.operit_terminal),
-                        isGranted = isOperitTerminalInstalled,
-                        onClick = onOperitTerminalClick
+                        title = stringResource(R.string.custard_terminal),
+                        isGranted = isCustardTerminalInstalled,
+                        onClick = onCustardTerminalClick
                 )
             }
         }
@@ -1122,14 +1122,14 @@ private fun RootPermissionSection(
         hasOverlayPermission: Boolean,
         hasBatteryOptimizationExemption: Boolean,
         hasLocationPermission: Boolean,
-        isOperitTerminalInstalled: Boolean,
+        isCustardTerminalInstalled: Boolean,
         isDeviceRooted: Boolean,
         hasRootAccess: Boolean,
         onStoragePermissionClick: () -> Unit,
         onOverlayPermissionClick: () -> Unit,
         onBatteryOptimizationClick: () -> Unit,
         onLocationPermissionClick: () -> Unit,
-        onOperitTerminalClick: () -> Unit,
+        onCustardTerminalClick: () -> Unit,
         onRootClick: () -> Unit
 ) {
     Column {
@@ -1192,9 +1192,9 @@ private fun RootPermissionSection(
                 )
 
                 PermissionStatusItem(
-                        title = stringResource(R.string.operit_terminal),
-                        isGranted = isOperitTerminalInstalled,
-                        onClick = onOperitTerminalClick
+                        title = stringResource(R.string.custard_terminal),
+                        isGranted = isCustardTerminalInstalled,
+                        onClick = onCustardTerminalClick
                 )
             }
         }

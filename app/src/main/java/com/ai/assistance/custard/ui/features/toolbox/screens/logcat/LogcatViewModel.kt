@@ -135,7 +135,7 @@ class LogcatViewModel(private val context: Context) : ViewModel() {
             }
             val custardDir = File(downloadsDir, "custard")
             if (!custardDir.exists() && !custardDir.mkdirs()) {
-                throw Exception(context.getString(R.string.logcat_cannot_create_operit_dir))
+                throw Exception(context.getString(R.string.logcat_cannot_create_custard_dir))
             }
             val file = File(custardDir, fileName)
             FileWriter(file).use { it.write(content) }

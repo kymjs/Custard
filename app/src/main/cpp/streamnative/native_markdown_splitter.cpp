@@ -27,7 +27,7 @@ inline jintArray segmentsToJIntArray(JNIEnv* env, const std::vector<streamnative
 } // namespace
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_operit_util_streamnative_NativeMarkdownSplitter_nativeCreateBlockSession(
+Java_com_ai_assistance_custard_util_streamnative_NativeMarkdownSplitter_nativeCreateBlockSession(
         JNIEnv* /*env*/,
         jobject /*thiz*/
 ) {
@@ -36,7 +36,7 @@ Java_com_ai_assistance_operit_util_streamnative_NativeMarkdownSplitter_nativeCre
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_operit_util_streamnative_NativeMarkdownSplitter_nativeCreateInlineSession(
+Java_com_ai_assistance_custard_util_streamnative_NativeMarkdownSplitter_nativeCreateInlineSession(
         JNIEnv* /*env*/,
         jobject /*thiz*/
 ) {
@@ -45,7 +45,7 @@ Java_com_ai_assistance_operit_util_streamnative_NativeMarkdownSplitter_nativeCre
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_operit_util_streamnative_NativeMarkdownSplitter_nativeDestroySession(
+Java_com_ai_assistance_custard_util_streamnative_NativeMarkdownSplitter_nativeDestroySession(
         JNIEnv* /*env*/,
         jobject /*thiz*/,
         jlong handle
@@ -55,7 +55,7 @@ Java_com_ai_assistance_operit_util_streamnative_NativeMarkdownSplitter_nativeDes
 }
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_operit_util_streamnative_NativeMarkdownSplitter_nativePush(
+Java_com_ai_assistance_custard_util_streamnative_NativeMarkdownSplitter_nativePush(
         JNIEnv* env,
         jobject /*thiz*/,
         jlong handle,

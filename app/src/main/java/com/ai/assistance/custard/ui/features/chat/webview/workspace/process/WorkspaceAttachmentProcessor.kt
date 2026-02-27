@@ -640,7 +640,7 @@ object WorkspaceAttachmentProcessor {
         workspaceEnv: String?
     ): List<String> {
         val rules = mutableListOf<String>()
-        rules.addAll(listOf(".backup", ".operit"))
+        rules.addAll(listOf(".backup", ".custard"))
 
         if (workspaceEnv.isNullOrBlank()) {
             val workspaceDir = File(workspacePath)

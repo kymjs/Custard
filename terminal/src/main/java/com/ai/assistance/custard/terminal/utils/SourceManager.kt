@@ -147,7 +147,7 @@ class SourceManager(context: Context) {
         return """
         change_ubuntu_source(){
           cat <<'EOF' > ${'$'}UBUNTU_PATH/etc/apt/sources.list
-        # From Operit Settings - ${source.name}
+        # From Custard Settings - ${source.name}
         deb ${sourceUrl} noble main restricted universe multiverse
         deb ${sourceUrl} noble-updates main restricted universe multiverse
         deb ${sourceUrl} noble-backports main restricted universe multiverse

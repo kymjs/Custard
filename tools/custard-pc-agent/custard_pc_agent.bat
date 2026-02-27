@@ -26,7 +26,7 @@ set "EXIT_CODE=%ERRORLEVEL%"
 
 if not "%EXIT_CODE%"=="0" (
   echo.
-  echo [ERROR] Operit PC Agent launcher failed with code %EXIT_CODE%.
+  echo [ERROR] Custard PC Agent launcher failed with code %EXIT_CODE%.
   pause
 )
 

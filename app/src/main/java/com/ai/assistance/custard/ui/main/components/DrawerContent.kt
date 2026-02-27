@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.ai.assistance.custard.R
 import com.ai.assistance.custard.ui.common.NavItem
 import com.ai.assistance.custard.ui.main.NavGroup
-import com.ai.assistance.custard.ui.main.screens.OperitRouter
+import com.ai.assistance.custard.ui.main.screens.CustardRouter
 import com.ai.assistance.custard.ui.main.screens.Screen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -110,7 +110,7 @@ fun DrawerContent(
                                         selected = selectedItem == item,
                                         onClick = {
                                                 onScreenSelected(
-                                                        OperitRouter.getScreenForNavItem(item),
+                                                        CustardRouter.getScreenForNavItem(item),
                                                         item
                                                 )
                                                 scope.launch { drawerState.close() }
@@ -166,7 +166,7 @@ fun CollapsedDrawerContent(
                         IconButton(
                                 onClick = {
                                         onScreenSelected(
-                                                OperitRouter.getScreenForNavItem(item),
+                                                CustardRouter.getScreenForNavItem(item),
                                                 item
                                         )
                                 },

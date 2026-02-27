@@ -16,46 +16,46 @@
 
 ### 2.1 入口与页面承载
 
-- 顶栏代码按钮触发：`app/src/main/java/com/ai/assistance/operit/ui/features/chat/screens/AIChatScreen.kt`
+- 顶栏代码按钮触发：`app/src/main/java/com/ai/assistance/custard/ui/features/chat/screens/AIChatScreen.kt`
   - 调用 `actualViewModel.onWorkspaceButtonClick()`
   - 渲染 `WorkspaceScreen(...)`
-- 工作区页面分流：`app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/workspace/WorkspaceScreen.kt`
+- 工作区页面分流：`app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/workspace/WorkspaceScreen.kt`
   - 已绑定工作区 -> `WorkspaceManager`
   - 未绑定工作区 -> `WorkspaceSetup`
 
 ### 2.2 工作区绑定与服务控制
 
-- 主要入口：`app/src/main/java/com/ai/assistance/operit/ui/features/chat/viewmodel/ChatViewModel.kt`
+- 主要入口：`app/src/main/java/com/ai/assistance/custard/ui/features/chat/viewmodel/ChatViewModel.kt`
   - `bindChatToWorkspace(...)`
   - `unbindChatFromWorkspace(...)`
   - `updateWebServerForCurrentChat(...)`
   - `executeCommandInWorkspace(...)`
   - `onWorkspaceButtonClick()`
-- 持久化中间层：`app/src/main/java/com/ai/assistance/operit/services/core/ChatHistoryDelegate.kt`
+- 持久化中间层：`app/src/main/java/com/ai/assistance/custard/services/core/ChatHistoryDelegate.kt`
   - `bindChatToWorkspace(...)`
   - `unbindChatFromWorkspace(...)`
 - 存储层：
-  - `app/src/main/java/com/ai/assistance/operit/data/model/ChatEntity.kt`
-  - `app/src/main/java/com/ai/assistance/operit/data/model/ChatHistory.kt`
-  - `app/src/main/java/com/ai/assistance/operit/data/dao/ChatDao.kt`
-  - `app/src/main/java/com/ai/assistance/operit/data/repository/ChatHistoryManager.kt`
+  - `app/src/main/java/com/ai/assistance/custard/data/model/ChatEntity.kt`
+  - `app/src/main/java/com/ai/assistance/custard/data/model/ChatHistory.kt`
+  - `app/src/main/java/com/ai/assistance/custard/data/dao/ChatDao.kt`
+  - `app/src/main/java/com/ai/assistance/custard/data/repository/ChatHistoryManager.kt`
 
 ### 2.3 工作区初始化与模板
 
-- 初始化 UI：`app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/workspace/WorkspaceSetup.kt`
+- 初始化 UI：`app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/workspace/WorkspaceSetup.kt`
   - 创建模板目录
   - 选本地目录
   - SAF repo 书签（`repo:*` 环境）
-- 模板与目录工具：`app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/WorkspaceUtils.kt`
+- 模板与目录工具：`app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/WorkspaceUtils.kt`
 
 ### 2.4 compose_dsl 已有桥接能力
 
-- `ctx` 当前能力定义：`app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsComposeDslBridge.kt`
+- `ctx` 当前能力定义：`app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsComposeDslBridge.kt`
   - 已有：`useState/useMemo/callTool/getEnv/setEnv/readResource`、包管理、`resolveToolName`
   - 没有：工作区绑定、模板创建、repo 书签、工作区预览服务控制
 - Native 接口落点：
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsEngine.kt`
-  - `app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsNativeInterfaceDelegates.kt`
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsEngine.kt`
+  - `app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsNativeInterfaceDelegates.kt`
 
 ---
 
@@ -119,52 +119,52 @@
 
 ### 5.1 JS Bridge 层（必改）
 
-- `app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsComposeDslBridge.kt`
+- `app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsComposeDslBridge.kt`
   - 在 `ctx` 注入上述 workspace 方法。
-- `app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsEngine.kt`
+- `app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsEngine.kt`
   - 增加对应 `@JavascriptInterface` 方法。
-- `app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsNativeInterfaceDelegates.kt`
+- `app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsNativeInterfaceDelegates.kt`
   - 新增 workspace 相关 delegate 实现。
 
 建议新增一个分离文件（可选）：
 
-- `app/src/main/java/com/ai/assistance/operit/core/tools/javascript/JsWorkspaceInterfaceDelegates.kt`
+- `app/src/main/java/com/ai/assistance/custard/core/tools/javascript/JsWorkspaceInterfaceDelegates.kt`
   - 把 workspace 逻辑从通用 delegate 中拆分，避免继续膨胀。
 
 ### 5.2 工作区域服务层（高概率改）
 
-- `app/src/main/java/com/ai/assistance/operit/ui/features/chat/viewmodel/ChatViewModel.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/chat/viewmodel/ChatViewModel.kt`
   - 补充可供 bridge 直接调用的方法（获取当前 chat、绑定/解绑、server 控制、命令执行）。
-- `app/src/main/java/com/ai/assistance/operit/services/core/ChatHistoryDelegate.kt`
+- `app/src/main/java/com/ai/assistance/custard/services/core/ChatHistoryDelegate.kt`
   - 复用现有 bind/unbind；如需批量接口可补方法。
-- `app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/WorkspaceUtils.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/WorkspaceUtils.kt`
   - 暴露模板列表和创建入口，供 bridge 调用。
-- `app/src/main/java/com/ai/assistance/operit/data/preferences/ApiPreferences.kt`
+- `app/src/main/java/com/ai/assistance/custard/data/preferences/ApiPreferences.kt`
   - 复用 saf bookmark；如需按 `name` 删除或查找，可加便捷方法。
-- `app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/LocalWebServer.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/LocalWebServer.kt`
   - 可加 `getPreviewBaseUrl()` 这类便捷方法（减少硬编码 `8093`）。
 
 ### 5.3 UI 承载层（迁移阶段改）
 
-- `app/src/main/java/com/ai/assistance/operit/ui/features/chat/screens/AIChatScreen.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/chat/screens/AIChatScreen.kt`
   - 将当前 `WorkspaceScreen` 入口改为“工作区插件容器”入口。
-- `app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/workspace/WorkspaceScreen.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/workspace/WorkspaceScreen.kt`
   - 最终可被插件容器替换或仅保留过渡壳层。
-- `app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/workspace/WorkspaceSetup.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/workspace/WorkspaceSetup.kt`
   - 目标是迁出为插件 UI（完成迁移后可清理）。
-- `app/src/main/java/com/ai/assistance/operit/ui/features/chat/webview/workspace/WorkspaceManager.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/chat/webview/workspace/WorkspaceManager.kt`
   - 若要“整个工作区界面插件化”，此文件最终也进入清理范围。
-- `app/src/main/java/com/ai/assistance/operit/ui/features/toolbox/screens/ToolPkgComposeDslScreen.kt`
+- `app/src/main/java/com/ai/assistance/custard/ui/features/toolbox/screens/ToolPkgComposeDslScreen.kt`
   - 可抽出通用 `compose_dsl` 容器，以便聊天页复用，不必绑定 toolbox 导航场景。
 
 ### 5.4 数据层（大概率可复用）
 
 下面通常不需要 schema 改动，现有字段可直接复用：
 
-- `app/src/main/java/com/ai/assistance/operit/data/model/ChatEntity.kt`
-- `app/src/main/java/com/ai/assistance/operit/data/model/ChatHistory.kt`
-- `app/src/main/java/com/ai/assistance/operit/data/dao/ChatDao.kt`
-- `app/src/main/java/com/ai/assistance/operit/data/repository/ChatHistoryManager.kt`
+- `app/src/main/java/com/ai/assistance/custard/data/model/ChatEntity.kt`
+- `app/src/main/java/com/ai/assistance/custard/data/model/ChatHistory.kt`
+- `app/src/main/java/com/ai/assistance/custard/data/dao/ChatDao.kt`
+- `app/src/main/java/com/ai/assistance/custard/data/repository/ChatHistoryManager.kt`
 
 ---
 

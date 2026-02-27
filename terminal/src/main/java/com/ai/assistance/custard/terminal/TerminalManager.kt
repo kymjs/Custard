@@ -715,9 +715,9 @@ class TerminalManager private constructor(
         export UBUNTU=$UBUNTU_FILENAME
         export UBUNTU_NAME=$ubuntuName
         export USE_CHROOT=${if (prefs.getBoolean("chroot_enabled", false)) "1" else "0"}
-        export OPERIT_UID=$(id -u)
-        export OPERIT_GID=$(id -g)
-        export OPERIT_GROUPS=$(id -G | tr ' ' ',')
+        export CUSTARD_UID=$(id -u)
+        export CUSTARD_GID=$(id -g)
+        export CUSTARD_GROUPS=$(id -G | tr ' ' ',')
         export L_NOT_INSTALLED="not installed"
         export L_INSTALLING="installing"
         export L_INSTALLED="installed"
@@ -743,7 +743,7 @@ class TerminalManager private constructor(
 
         val installUbuntu = """
         install_ubuntu(){
-          OK_FILE="${'$'}UBUNTU_PATH/.operit_installed_ok"
+          OK_FILE="${'$'}UBUNTU_PATH/.custard_installed_ok"
           LOCK_DIR="${'$'}UBUNTU_PATH.install.lock"
           LOCK_PID_FILE="${'$'}LOCK_DIR/pid"
           TMP_DIR="${'$'}UBUNTU_PATH.install.tmp"
@@ -824,7 +824,7 @@ class TerminalManager private constructor(
               echo 'export ANDROID_DATA=/home/' >> "${'$'}TMP_DIR/root/.bashrc"
               mkdir -p "${'$'}TMP_DIR/etc" 2>/dev/null
               echo 'nameserver 8.8.8.8' > "${'$'}TMP_DIR/etc/resolv.conf"
-              echo "ok" > "${'$'}TMP_DIR/.operit_installed_ok" 2>/dev/null || true
+              echo "ok" > "${'$'}TMP_DIR/.custard_installed_ok" 2>/dev/null || true
 
               rm -rf "${'$'}UBUNTU_PATH" 2>/dev/null
               mv "${'$'}TMP_DIR" "${'$'}UBUNTU_PATH" 2>/dev/null
@@ -849,7 +849,7 @@ class TerminalManager private constructor(
         configure_sources(){
           # 配置APT源
           cat <<'EOF' > ${'$'}UBUNTU_PATH/etc/apt/sources.list
-        # From Operit Settings - ${aptSource.name}
+        # From Custard Settings - ${aptSource.name}
         deb ${aptSource.url} noble main restricted universe multiverse
         deb ${aptSource.url} noble-updates main restricted universe multiverse
         deb ${aptSource.url} noble-backports main restricted universe multiverse
@@ -932,15 +932,15 @@ class TerminalManager private constructor(
           if [ "${'$'}USE_CHROOT" = "1" ]; then
             CMD_FILE="${'$'}TMPDIR/command_to_exec"
             printf "%s" "${'$'}COMMAND_TO_EXEC" > "${'$'}CMD_FILE" 2>/dev/null || true
-            CHROOT_WRAPPER="${'$'}TMPDIR/operit_chroot_wrapper.sh"
+            CHROOT_WRAPPER="${'$'}TMPDIR/custard_chroot_wrapper.sh"
             cat > "${'$'}CHROOT_WRAPPER" <<'EOF'
         BIN="$1"
         UBUNTU_PATH="$2"
         CMD_FILE="$3"
         HOME_DIR="$4"
-        OPERIT_UID="$5"
-        OPERIT_GID="$6"
-        OPERIT_GROUPS="$7"
+        CUSTARD_UID="$5"
+        CUSTARD_GID="$6"
+        CUSTARD_GROUPS="$7"
         cleanup_mounts(){
           "${'$'}BIN/busybox" umount "${'$'}UBUNTU_PATH/dev/pts" 2>/dev/null || true
           "${'$'}BIN/busybox" umount "${'$'}UBUNTU_PATH/dev" 2>/dev/null || true
@@ -959,13 +959,13 @@ class TerminalManager private constructor(
         "${'$'}BIN/busybox" mount --bind /storage/emulated/0 "${'$'}UBUNTU_PATH/sdcard" 2>/dev/null || true
         "${'$'}BIN/busybox" mount --bind "${'$'}HOME_DIR" "${'$'}UBUNTU_PATH${'$'}HOME_DIR" 2>/dev/null || true
         COMMAND_TO_EXEC="$(cat "${'$'}CMD_FILE" 2>/dev/null)"
-        "${'$'}BIN/busybox" chroot "${'$'}UBUNTU_PATH" /usr/bin/env -i HOME=/root TERM=xterm-256color LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin "COMMAND_TO_EXEC=${'$'}COMMAND_TO_EXEC" "OPERIT_UID=${'$'}OPERIT_UID" "OPERIT_GID=${'$'}OPERIT_GID" "OPERIT_GROUPS=${'$'}OPERIT_GROUPS" /bin/bash -lc 'echo LOGIN_SUCCESSFUL; echo TERMINAL_READY; umask 0002; if [ -n "${'$'}OPERIT_GID" ]; then chown 0:"${'$'}OPERIT_GID" /root 2>/dev/null || true; chmod 2775 /root 2>/dev/null || true; fi; eval "${'$'}COMMAND_TO_EXEC"'
+        "${'$'}BIN/busybox" chroot "${'$'}UBUNTU_PATH" /usr/bin/env -i HOME=/root TERM=xterm-256color LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin "COMMAND_TO_EXEC=${'$'}COMMAND_TO_EXEC" "CUSTARD_UID=${'$'}CUSTARD_UID" "CUSTARD_GID=${'$'}CUSTARD_GID" "CUSTARD_GROUPS=${'$'}CUSTARD_GROUPS" /bin/bash -lc 'echo LOGIN_SUCCESSFUL; echo TERMINAL_READY; umask 0002; if [ -n "${'$'}CUSTARD_GID" ]; then chown 0:"${'$'}CUSTARD_GID" /root 2>/dev/null || true; chmod 2775 /root 2>/dev/null || true; fi; eval "${'$'}COMMAND_TO_EXEC"'
         ret=${'$'}?
         cleanup_mounts
         exit ${'$'}ret
         EOF
             chmod 700 "${'$'}CHROOT_WRAPPER" 2>/dev/null || true
-            exec su -c "sh \"${'$'}CHROOT_WRAPPER\" \"${'$'}BIN\" \"${'$'}UBUNTU_PATH\" \"${'$'}CMD_FILE\" \"${homeDir}\" \"${'$'}OPERIT_UID\" \"${'$'}OPERIT_GID\" \"${'$'}OPERIT_GROUPS\""
+            exec su -c "sh \"${'$'}CHROOT_WRAPPER\" \"${'$'}BIN\" \"${'$'}UBUNTU_PATH\" \"${'$'}CMD_FILE\" \"${homeDir}\" \"${'$'}CUSTARD_UID\" \"${'$'}CUSTARD_GID\" \"${'$'}CUSTARD_GROUPS\""
           fi
           exec ${'$'}BIN/proot \
             -0 \

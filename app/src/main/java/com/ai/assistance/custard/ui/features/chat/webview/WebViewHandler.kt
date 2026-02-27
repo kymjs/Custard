@@ -179,7 +179,7 @@ class WebViewHandler(private val context: Context) {
                 defaultTextEncodingName = "UTF-8"
 
                 // 设置用户代理，模拟PC版Edge浏览器以请求桌面版网站
-                userAgentString = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0 OperitWebView/1.0"
+                userAgentString = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0 CustardWebView/1.0"
             }
 
             // 注入Blob下载辅助JavaScript
@@ -576,8 +576,8 @@ class WebViewHandler(private val context: Context) {
         val js =
             """
         (function() {
-            if (window.__operitCorsProxyInjected) { return; }
-            window.__operitCorsProxyInjected = true;
+            if (window.__custardCorsProxyInjected) { return; }
+            window.__custardCorsProxyInjected = true;
             const proxyBase = 'http://localhost:${LocalWebServer.WORKSPACE_PORT}/api/proxy?url=';
             function shouldProxy(url) {
                 try {

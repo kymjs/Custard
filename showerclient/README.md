@@ -29,7 +29,7 @@ fun interface ShellRunner {
 在 App 模块中实现它，并在应用启动时注入：
 
 ```kotlin
-class OperitShowerShellRunner : ShellRunner {
+class CustardShowerShellRunner : ShellRunner {
     override suspend fun run(command: String, identity: ShellIdentity): ShellCommandResult {
         // 在这里调用你自己的 shell 执行器
         // 并把结果转换成 ShellCommandResult 返回
@@ -40,7 +40,7 @@ class YourApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        ShowerEnvironment.shellRunner = OperitShowerShellRunner()
+        ShowerEnvironment.shellRunner = CustardShowerShellRunner()
     }
 }
 ```
@@ -54,7 +54,7 @@ class YourApplication : Application() {
 本库已经在自身模块内置了 `shower-server.jar`：
 
 - 宿主 App **不需要** 再手动打包或拷贝任何 JAR 文件；
-- 运行时库会自动从自身 `assets` 中读取，并复制到 `/sdcard/Download/Operit/shower-server.jar`，再拷贝到 `/data/local/tmp/shower-server.jar`。
+- 运行时库会自动从自身 `assets` 中读取，并复制到 `/sdcard/Download/Custard/shower-server.jar`，再拷贝到 `/data/local/tmp/shower-server.jar`。
 
 ---
 
@@ -64,7 +64,7 @@ Shower server 启动后，会通过广播把 `IShowerService` 的 `IBinder` 发�
 
 广播协议（与主项目保持一致）：
 
- - **Action**：`com.ai.assistance.operit.action.SHOWER_BINDER_READY`
+ - **Action**：`com.ai.assistance.custard.action.SHOWER_BINDER_READY`
  - **Extra key**：`binder_container`
  - **Extra 类型**：`com.ai.assistance.shower.ShowerBinderContainer`（`Parcelable`，内部包含 `IBinder`）
 
@@ -81,7 +81,7 @@ class ShowerBinderReceiver : BroadcastReceiver() {
 
     companion object {
         const val ACTION_SHOWER_BINDER_READY =
-            "com.ai.assistance.operit.action.SHOWER_BINDER_READY"
+            "com.ai.assistance.custard.action.SHOWER_BINDER_READY"
         const val EXTRA_BINDER_CONTAINER = "binder_container"
     }
 }
@@ -94,7 +94,7 @@ class ShowerBinderReceiver : BroadcastReceiver() {
     android:name=".ShowerBinderReceiver"
     android:exported="true">
     <intent-filter>
-        <action android:name="com.ai.assistance.operit.action.SHOWER_BINDER_READY" />
+        <action android:name="com.ai.assistance.custard.action.SHOWER_BINDER_READY" />
     </intent-filter>
 </receiver>
 ```

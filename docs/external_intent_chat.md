@@ -1,10 +1,10 @@
 # External Intent API: `EXTERNAL_CHAT`
 
-本文档描述一个**独立于工作流系统**的外部交互接口：外部应用通过发送广播 Intent（`com.ai.assistance.operit.EXTERNAL_CHAT`）向 Custard 发起一次“发送消息给 AI”的请求，并通过另一个广播接收执行结果。
+本文档描述一个**独立于工作流系统**的外部交互接口：外部应用通过发送广播 Intent（`com.ai.assistance.custard.EXTERNAL_CHAT`）向 Custard 发起一次“发送消息给 AI”的请求，并通过另一个广播接收执行结果。
 
 该接口的实现位于：
 
-- `app/src/main/java/com/ai/assistance/operit/integrations/intent/ExternalChatReceiver.kt`
+- `app/src/main/java/com/ai/assistance/custard/integrations/intent/ExternalChatReceiver.kt`
 
 Manifest 注册：
 
@@ -14,8 +14,8 @@ Manifest 注册：
 
 ## 1. Action
 
-- **请求 Action**：`com.ai.assistance.operit.EXTERNAL_CHAT`
-- **默认回传 Action**：`com.ai.assistance.operit.EXTERNAL_CHAT_RESULT`
+- **请求 Action**：`com.ai.assistance.custard.EXTERNAL_CHAT`
+- **默认回传 Action**：`com.ai.assistance.custard.EXTERNAL_CHAT_RESULT`
 
 你也可以通过 `reply_action` 指定自定义回传 action。
 
@@ -34,7 +34,7 @@ Manifest 注册：
 | `show_floating` | `Boolean` | 否 | `false` | 是否启动/显示悬浮窗服务（会触发绑定并启动 `FloatingChatService`） |
 | `auto_exit_after_ms` | `Long` | 否 | `-1` | 当 `show_floating=true` 时：自动退出/关闭悬浮窗的超时（毫秒） |
 | `stop_after` | `Boolean` | 否 | `false` | 本次请求结束后是否停止对话服务（会 stop `FloatingChatService`） |
-| `reply_action` | `String` | 否 | `com.ai.assistance.operit.EXTERNAL_CHAT_RESULT` | 指定回传广播 action |
+| `reply_action` | `String` | 否 | `com.ai.assistance.custard.EXTERNAL_CHAT_RESULT` | 指定回传广播 action |
 | `reply_package` | `String` | 否 | - | 若指定，则回传广播会设置 `intent.setPackage(reply_package)`，用于避免结果被其他 App 接收 |
 
 ---
@@ -77,7 +77,7 @@ Custard 在处理完成后会发送一条广播（action 为 `reply_action` 或�
 
 ```bash
 adb shell am broadcast \
-  -a com.ai.assistance.operit.EXTERNAL_CHAT \
+  -a com.ai.assistance.custard.EXTERNAL_CHAT \
   --es request_id "req-001" \
   --es message "你好，帮我总结一下这段话" \
   --es group "workflow" \
@@ -90,7 +90,7 @@ adb shell am broadcast \
 
 ```bash
 adb shell am broadcast \
-  -a com.ai.assistance.operit.EXTERNAL_CHAT \
+  -a com.ai.assistance.custard.EXTERNAL_CHAT \
   --es request_id "req-002" \
   --es chat_id "YOUR_CHAT_ID" \
   --es message "继续刚才的话题"
@@ -102,7 +102,7 @@ adb shell am broadcast \
 
 ```bash
 adb shell am broadcast \
-  -a com.ai.assistance.operit.EXTERNAL_CHAT \
+  -a com.ai.assistance.custard.EXTERNAL_CHAT \
   --es request_id "req-003" \
   --es message "测试" \
   --ez create_if_none false
@@ -114,7 +114,7 @@ adb shell am broadcast \
 
 Custard 会在处理完成后发送广播回传：
 
-- 默认 action：`com.ai.assistance.operit.EXTERNAL_CHAT_RESULT`
+- 默认 action：`com.ai.assistance.custard.EXTERNAL_CHAT_RESULT`
 - 或者你在请求中指定的 `reply_action`
 
 注意：
@@ -140,7 +140,7 @@ Custard 会在处理完成后发送广播回传：
 ```kotlin
 class ExternalChatResultReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action != "com.ai.assistance.operit.EXTERNAL_CHAT_RESULT") return
+        if (intent.action != "com.ai.assistance.custard.EXTERNAL_CHAT_RESULT") return
 
         val requestId = intent.getStringExtra("request_id")
         val success = intent.getBooleanExtra("success", false)
@@ -165,7 +165,7 @@ class ExternalChatResultReceiver : BroadcastReceiver() {
     android:name=".ExternalChatResultReceiver"
     android:exported="true">
     <intent-filter>
-        <action android:name="com.ai.assistance.operit.EXTERNAL_CHAT_RESULT" />
+        <action android:name="com.ai.assistance.custard.EXTERNAL_CHAT_RESULT" />
     </intent-filter>
 </receiver>
 ```
@@ -178,7 +178,7 @@ class ExternalChatResultReceiver : BroadcastReceiver() {
 
 ```bash
 adb shell am broadcast \
-  -a com.ai.assistance.operit.EXTERNAL_CHAT \
+  -a com.ai.assistance.custard.EXTERNAL_CHAT \
   --es request_id "req-101" \
   --es message "hello" \
   --es reply_package "YOUR.APP.PACKAGE"

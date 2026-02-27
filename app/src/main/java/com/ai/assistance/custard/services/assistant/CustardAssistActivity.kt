@@ -9,7 +9,7 @@ import com.ai.assistance.custard.ui.floating.FloatingMode
 import com.ai.assistance.custard.util.AppLogger
 
 /**
- * Receives system ASSIST intents and forwards them to Operit's voice assistant entry.
+ * Receives system ASSIST intents and forwards them to Custard's voice assistant entry.
  */
 class CustardAssistActivity : Activity() {
 

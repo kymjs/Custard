@@ -736,7 +736,7 @@ class WorkspaceBackupManager(private val context: Context) {
 
     private suspend fun loadGitignoreRulesProvider(workspacePath: String, workspaceEnv: String?): List<String> {
         val rules = mutableListOf<String>()
-        rules.addAll(listOf(".backup", ".operit"))
+        rules.addAll(listOf(".backup", ".custard"))
 
         val gitignorePath = joinPath(workspacePath, ".gitignore")
         val readRes =

@@ -28,7 +28,7 @@ object AppLogger {
 
     // Log file configuration
     private const val LOG_DIR_NAME = "logs"
-    private const val LOG_FILE_NAME = "operit.log"
+    private const val LOG_FILE_NAME = "custard.log"
 
     // Simple date formatter for log lines
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)

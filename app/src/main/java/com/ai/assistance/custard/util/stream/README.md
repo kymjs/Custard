@@ -520,7 +520,7 @@ markdownStream.splitBy(blockPlugins).collect { blockGroup ->
 
 ### 可用的 Markdown 插件
 
-以下是 `com.ai.assistance.operit.util.stream.plugins` 包中提供的主要Markdown插件：
+以下是 `com.ai.assistance.custard.util.stream.plugins` 包中提供的主要Markdown插件：
 
 | 插件类 | 功能 | 主要构造参数 |
 | :--- | :--- | :--- |

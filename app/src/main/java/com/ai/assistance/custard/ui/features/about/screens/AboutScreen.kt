@@ -51,7 +51,7 @@ import kotlinx.coroutines.withContext
 import android.widget.Toast
 import java.io.File
 
-private const val GITHUB_PROJECT_URL = "https://github.com/AAswordman/Operit"
+private const val GITHUB_PROJECT_URL = "https://github.com/AAswordman/Custard"
 
 @Composable
 fun HtmlText(

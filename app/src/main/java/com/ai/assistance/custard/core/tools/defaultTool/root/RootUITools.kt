@@ -273,7 +273,7 @@ open class RootUITools(context: Context) : AdminUITools(context) {
             AppLogger.d(TAG, "Setting text to clipboard and pasting via ADB: $text")
             withContext(Dispatchers.Main) {
                 val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                clipboard.setPrimaryClip(ClipData.newPlainText("operit_input", text))
+                clipboard.setPrimaryClip(ClipData.newPlainText("custard_input", text))
             }
             delay(100)
 

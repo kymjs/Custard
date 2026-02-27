@@ -9,7 +9,7 @@ import java.io.File
 
 /**
  * Workspace configuration data classes
- * 定义工作区配置的数据结构，用于解析 .operit/config.json
+ * 定义工作区配置的数据结构，用于解析 .custard/config.json
  */
 
 @Serializable
@@ -75,7 +75,7 @@ object WorkspaceConfigReader {
      * @return 解析后的配置对象，如果不存在或解析失败则返回默认配置
      */
     fun readConfig(workspacePath: String): WorkspaceConfig {
-        val configFile = File(workspacePath, ".operit/config.json")
+        val configFile = File(workspacePath, ".custard/config.json")
         
         if (!configFile.exists()) {
             AppLogger.d(TAG, "Config file not found at ${configFile.absolutePath}, using default")
@@ -95,7 +95,7 @@ object WorkspaceConfigReader {
      * 检查工作区是否有配置文件
      */
     fun hasConfig(workspacePath: String): Boolean {
-        val configFile = File(workspacePath, ".operit/config.json")
+        val configFile = File(workspacePath, ".custard/config.json")
         return configFile.exists()
     }
 

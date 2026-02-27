@@ -126,7 +126,7 @@ class VirtualDisplayManager private constructor(private val context: Context) {
                     DisplayManager.VIRTUAL_DISPLAY_FLAG_PRESENTATION
 
             val vd = displayManager.createVirtualDisplay(
-                "OperitVirtualDisplay",
+                "CustardVirtualDisplay",
                 width,
                 height,
                 densityDpi,

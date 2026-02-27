@@ -32,7 +32,7 @@ import com.ai.assistance.custard.data.repository.UIHierarchyManager
 import com.ai.assistance.custard.ui.features.demo.components.*
 import com.ai.assistance.custard.ui.features.demo.viewmodel.ShizukuDemoViewModel
 import com.ai.assistance.custard.ui.features.demo.wizards.AccessibilityWizardCard
-import com.ai.assistance.custard.ui.features.demo.wizards.OperitTerminalWizardCard
+import com.ai.assistance.custard.ui.features.demo.wizards.CustardTerminalWizardCard
 import com.ai.assistance.custard.ui.features.demo.wizards.RootWizardCard
 import com.ai.assistance.custard.ui.features.demo.wizards.ShizukuWizardCard
 import kotlinx.coroutines.Dispatchers
@@ -144,7 +144,7 @@ fun ShizukuDemoScreen(
                 isShizukuInstalled = uiState.isShizukuInstalled.value,
                 isShizukuRunning = uiState.isShizukuRunning.value,
                 hasShizukuPermission = uiState.hasShizukuPermission.value,
-                isOperitTerminalInstalled = uiState.isOperitTerminalInstalled.value,
+                isCustardTerminalInstalled = uiState.isCustardTerminalInstalled.value,
                 isDeviceRooted = uiState.isDeviceRooted.value,
                 hasRootAccess = uiState.hasRootAccess.value,
                 isAccessibilityProviderInstalled = uiState.isAccessibilityProviderInstalled.value,
@@ -248,9 +248,9 @@ fun ShizukuDemoScreen(
                         viewModel.toggleShizukuWizard()
                     }
                 },
-                onOperitTerminalClick = {
+                onCustardTerminalClick = {
                     // 点击时总是打开向导
-                    viewModel.toggleOperitTerminalWizard()
+                    viewModel.toggleCustardTerminalWizard()
                 },
                 onRootClick = {
                     // 处理Root权限
@@ -267,7 +267,7 @@ fun ShizukuDemoScreen(
         )
 
         // 组合向导卡片到一个专门的设置区域 - 现在检查NodeJS和Python环境
-        val needOperitTerminalSetupGuide = !viewModel.isNodejsPythonEnvironmentReady.value
+        val needCustardTerminalSetupGuide = !viewModel.isNodejsPythonEnvironmentReady.value
 
         // 检查Shizuku版本状态 - 使用remember缓存结果，避免每次重组时重复调用
         val (installedVersion, bundledVersion, isUpdateNeeded) =
@@ -304,7 +304,7 @@ fun ShizukuDemoScreen(
                             isAccessibilityUpdateNeeded)
 
 
-        val needSetupGuide = needOperitTerminalSetupGuide || needShizukuSetupGuide || needRootSetupGuide || needAccessibilitySetupGuide
+        val needSetupGuide = needCustardTerminalSetupGuide || needShizukuSetupGuide || needRootSetupGuide || needAccessibilitySetupGuide
 
         if (needSetupGuide) {
             Spacer(modifier = Modifier.height(16.dp))
@@ -664,13 +664,13 @@ fun ShizukuDemoScreen(
             }
 
             // NodeJS和Python环境配置向导卡片
-            if (needOperitTerminalSetupGuide) {
-                OperitTerminalWizardCard(
+            if (needCustardTerminalSetupGuide) {
+                CustardTerminalWizardCard(
                     isPnpmInstalled = viewModel.isPnpmInstalled.value,
                     isPipInstalled = viewModel.isPythonInstalled.value,
                     isEnvironmentReady = viewModel.isNodejsPythonEnvironmentReady.value,
-                    showWizard = uiState.showOperitTerminalWizard.value,
-                    onToggleWizard = { viewModel.toggleOperitTerminalWizard() },
+                    showWizard = uiState.showCustardTerminalWizard.value,
+                    onToggleWizard = { viewModel.toggleCustardTerminalWizard() },
                     onOpenTerminalScreen = { 
                         // 跳转到TerminalSetup，直接显示配置界面
                         navigateTo?.invoke(Screen.TerminalSetup)

@@ -136,7 +136,7 @@ fun ChatHistorySettingsScreen() {
                 
                 // 2. 检查外部存储工作区（旧位置）
                 val downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                val externalWorkspaceDir = File(downloadDir, "Operit/workspace")
+                val externalWorkspaceDir = File(downloadDir, "Custard/workspace")
                 if (externalWorkspaceDir.exists() && externalWorkspaceDir.isDirectory) {
                     externalWorkspaceDir.listFiles { file -> file.isDirectory }?.forEach { dir ->
                         val fullPath = dir.absolutePath

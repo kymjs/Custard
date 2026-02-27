@@ -1070,7 +1070,7 @@ class ActionHandler(
                             if (text.isEmpty()) return@withAgentUiHiddenForAction ok()
                             val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager
                                 ?: return@withAgentUiHiddenForAction fail(message = "Clipboard unavailable")
-                            clipboard.setPrimaryClip(ClipData.newPlainText("operit_input", text))
+                            clipboard.setPrimaryClip(ClipData.newPlainText("custard_input", text))
                             delay(100)
                             val pasted = ShowerController.key(agentId, KeyEvent.KEYCODE_PASTE)
                             if (pasted) ok() else fail(message = "Shower PASTE failed")

@@ -34,7 +34,7 @@ export function defaultHeaders(extra?: Record<string, string>): Record<string, s
     const headers: Record<string, string> = {
         Accept: 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2022-11-28',
-        'User-Agent': 'Operit-Examples-GitHub'
+        'User-Agent': 'Custard-Examples-GitHub'
     };
 
     const token = getToken();

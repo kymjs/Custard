@@ -17,7 +17,7 @@ import java.util.ArrayList
 /**
  * Tasker Plugin Activity for triggering workflows
  * 
- * This allows Tasker to trigger Operit workflows as part of Tasker tasks.
+ * This allows Tasker to trigger Custard workflows as part of Tasker tasks.
  */
 class WorkflowTaskerActivityConfig : Activity(), TaskerPluginConfig<WorkflowTaskerInput> {
     

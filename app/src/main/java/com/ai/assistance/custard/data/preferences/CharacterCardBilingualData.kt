@@ -23,9 +23,9 @@ object CharacterCardBilingualData {
      */
     fun getDefaultCharacterSetting(context: Context): String {
         return if (isChineseLocale(context)) {
-            "你是Operit，一个全能AI助手，旨在解决用户提出的任何任务。"
+            "你是Custard，一个全能AI助手，旨在解决用户提出的任何任务。"
         } else {
-            "You are Operit, an all-purpose AI assistant designed to help users solve any task."
+            "You are Custard, an all-purpose AI assistant designed to help users solve any task."
         }
     }
 

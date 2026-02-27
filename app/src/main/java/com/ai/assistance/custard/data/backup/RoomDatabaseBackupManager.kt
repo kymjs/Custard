@@ -79,10 +79,10 @@ object RoomDatabaseBackupManager {
             AppLogger.w(TAG, "wal_checkpoint failed", e)
         }
 
-        val operitDir = CustardBackupDirs.roomDbDir()
+        val custardDir = CustardBackupDirs.roomDbDir()
 
-        val targetFile = File(operitDir, "${AUTO_BACKUP_FILE_PREFIX}${day}.zip")
-        val tmpFile = File(operitDir, "${targetFile.name}.tmp")
+        val targetFile = File(custardDir, "${AUTO_BACKUP_FILE_PREFIX}${day}.zip")
+        val tmpFile = File(custardDir, "${targetFile.name}.tmp")
 
         if (tmpFile.exists()) {
             tmpFile.delete()
@@ -121,11 +121,11 @@ object RoomDatabaseBackupManager {
             AppLogger.w(TAG, "wal_checkpoint failed", e)
         }
 
-        val operitDir = CustardBackupDirs.roomDbDir()
+        val custardDir = CustardBackupDirs.roomDbDir()
 
         val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"))
-        val targetFile = File(operitDir, "${MANUAL_BACKUP_FILE_PREFIX}${timestamp}.zip")
-        val tmpFile = File(operitDir, "${targetFile.name}.tmp")
+        val targetFile = File(custardDir, "${MANUAL_BACKUP_FILE_PREFIX}${timestamp}.zip")
+        val tmpFile = File(custardDir, "${targetFile.name}.tmp")
 
         if (tmpFile.exists()) {
             tmpFile.delete()

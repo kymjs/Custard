@@ -1,6 +1,6 @@
-# Operit TypeScript 项目
+# Custard TypeScript 项目
 
-这是一个使用 Operit 创建的 TypeScript + pnpm 项目。
+这是一个使用 Custard 创建的 TypeScript + pnpm 项目。
 
 ## 快速开始
 
@@ -35,7 +35,7 @@
 ├── dist/                 # 编译输出目录
 ├── package.json          # 项目配置
 ├── tsconfig.json         # TypeScript 配置
-└── .operit/config.json   # Operit 工作区配置
+└── .custard/config.json   # Custard 工作区配置
 ```
 
 ## 技术栈

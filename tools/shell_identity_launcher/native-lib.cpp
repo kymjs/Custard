@@ -136,7 +136,7 @@ int main(int argc, char *argv[]) {
     uid_t uid = getuid();
     if (uid != 0 && uid != 2000) {
         // 与 Shizuku starter 一致：要求以 root/su 身份运行，由 su/Magisk 自己决定 SELinux 域。
-        fprintf(stderr, "[operit_shell_exec] must run as root (uid 0) or shell (uid 2000), current uid=%d\n", (int)uid);
+        fprintf(stderr, "[custard_shell_exec] must run as root (uid 0) or shell (uid 2000), current uid=%d\n", (int)uid);
         return 1;
     }
 
@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
     char *cur_ctx = nullptr;
     se::getcon(&cur_ctx);
     if (cur_ctx) {
-        fprintf(stderr, "[operit_shell_exec] current selinux context (before drop): %s\n", cur_ctx);
+        fprintf(stderr, "[custard_shell_exec] current selinux context (before drop): %s\n", cur_ctx);
         se::freecon(cur_ctx);
     }
 
@@ -168,7 +168,7 @@ int main(int argc, char *argv[]) {
                 3011  // uhid
         };
         if (setgroups(sizeof(shell_groups) / sizeof(shell_groups[0]), shell_groups) != 0) {
-            perror("[operit_shell_exec] setgroups(shell) failed");
+            perror("[custard_shell_exec] setgroups(shell) failed");
         }
 
         if (setgid(2000) != 0) {
@@ -183,12 +183,12 @@ int main(int argc, char *argv[]) {
         // 在该域中尝试切换到 shell 的 SELinux 域。
         const char *target_ctx = "u:r:shell:s0";
         if (se::setcon(target_ctx) != 0) {
-            perror("[operit_shell_exec] setcon(u:r:shell:s0) failed");
+            perror("[custard_shell_exec] setcon(u:r:shell:s0) failed");
         } else {
             char *after_ctx = nullptr;
             se::getcon(&after_ctx);
             if (after_ctx) {
-                fprintf(stderr, "[operit_shell_exec] selinux context (after setcon): %s\n", after_ctx);
+                fprintf(stderr, "[custard_shell_exec] selinux context (after setcon): %s\n", after_ctx);
                 se::freecon(after_ctx);
             }
         }
@@ -199,12 +199,12 @@ int main(int argc, char *argv[]) {
     uid_t final_uid = getuid();
     gid_t final_gid = getgid();
     if (final_uid != 2000 || final_gid != 2000) {
-        fprintf(stderr, "[operit_shell_exec] failed to switch to shell identity (uid=2000,gid=2000); final uid=%d gid=%d\n",
+        fprintf(stderr, "[custard_shell_exec] failed to switch to shell identity (uid=2000,gid=2000); final uid=%d gid=%d\n",
                 (int)final_uid, (int)final_gid);
         return 1;
     }
 
-    fprintf(stderr, "[operit_shell_exec] running as uid=%d gid=%d\n", (int)final_uid, (int)final_gid);
+    fprintf(stderr, "[custard_shell_exec] running as uid=%d gid=%d\n", (int)final_uid, (int)final_gid);
 
     // 解析前缀形式的环境变量赋值（例如 CLASSPATH=...），然后直接 execvp 目标程序
     int cmd_index = 1;
@@ -226,7 +226,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (cmd_index >= argc) {
-        fprintf(stderr, "[operit_shell_exec] no command to exec after env vars\n");
+        fprintf(stderr, "[custard_shell_exec] no command to exec after env vars\n");
         return 1;
     }
 
