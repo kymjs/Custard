@@ -7,7 +7,6 @@ import android.content.Intent
 import android.webkit.MimeTypeMap
 import androidx.core.content.FileProvider
 import com.ai.assistance.custard.util.AppLogger
-import com.ai.assistance.custard.core.tools.AIToolHandler
 import com.ai.assistance.custard.core.tools.DirectoryListingData
 import com.ai.assistance.custard.core.tools.FileContentData
 import com.ai.assistance.custard.core.tools.FileExistsData
@@ -16,10 +15,8 @@ import com.ai.assistance.custard.core.tools.FileOperationData
 import com.ai.assistance.custard.core.tools.FilePartContentData
 import com.ai.assistance.custard.core.tools.FindFilesResultData
 import com.ai.assistance.custard.core.tools.StringResultData
-import com.ai.assistance.custard.core.tools.defaultTool.accessbility.AccessibilityFileSystemTools
 import com.ai.assistance.custard.core.tools.system.AndroidShellExecutor
 import com.ai.assistance.custard.data.model.AITool
-import com.ai.assistance.custard.data.model.ToolParameter
 import com.ai.assistance.custard.data.model.ToolResult
 import com.ai.assistance.custard.core.tools.defaultTool.PathValidator
 import java.io.BufferedInputStream
@@ -38,6 +35,7 @@ import java.util.zip.ZipOutputStream
 import kotlin.math.exp
 import com.ai.assistance.custard.util.FileUtils
 import com.ai.assistance.custard.core.tools.ToolProgressBus
+import com.ai.assistance.custard.core.tools.defaultTool.standard.StandardFileSystemTools
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
@@ -46,7 +44,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
 
 /** 调试者级别的文件系统工具，继承无障碍版本 */
-open class DebuggerFileSystemTools(context: Context) : AccessibilityFileSystemTools(context) {
+open class DebuggerFileSystemTools(context: Context) : StandardFileSystemTools(context) {
 
     // ApiPreferences 实例，用于动态获取配置
     /*private val apiPreferences: ApiPreferences by lazy {

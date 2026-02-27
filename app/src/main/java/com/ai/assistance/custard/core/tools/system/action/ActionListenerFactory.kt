@@ -30,7 +30,6 @@ class ActionListenerFactory {
                 AndroidPermissionLevel.ROOT -> RootActionListener(context)
                 AndroidPermissionLevel.ADMIN -> AdminActionListener(context)
                 AndroidPermissionLevel.DEBUGGER -> DebuggerActionListener(context)
-                AndroidPermissionLevel.ACCESSIBILITY -> AccessibilityActionListener(context)
                 AndroidPermissionLevel.STANDARD -> StandardActionListener(context)
             }
 
@@ -58,7 +57,6 @@ class ActionListenerFactory {
                 AndroidPermissionLevel.ROOT,
                 AndroidPermissionLevel.ADMIN,
                 AndroidPermissionLevel.DEBUGGER,
-                AndroidPermissionLevel.ACCESSIBILITY,
                 AndroidPermissionLevel.STANDARD
             )
 

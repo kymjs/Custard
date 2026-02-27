@@ -151,7 +151,6 @@ fun PermissionLevelCard(
                 val icon =
                         when (displayedPermissionLevel) {
                             AndroidPermissionLevel.STANDARD -> Icons.Default.Shield
-                            AndroidPermissionLevel.ACCESSIBILITY -> Icons.Default.Shield
                             AndroidPermissionLevel.ADMIN -> Icons.Default.Shield
                             AndroidPermissionLevel.DEBUGGER -> Icons.Default.Shield
                             AndroidPermissionLevel.ROOT -> Icons.Default.Lock
@@ -313,35 +312,6 @@ fun PermissionLevelCard(
                                             onOverlayPermissionClick = onOverlayPermissionClick,
                                             onBatteryOptimizationClick = onBatteryOptimizationClick,
                                             onLocationPermissionClick = onLocationPermissionClick,
-                                            onCustardTerminalClick = onCustardTerminalClick
-                                    )
-                                }
-                        )
-                    }
-                    AndroidPermissionLevel.ACCESSIBILITY -> {
-                        PermissionSectionContainer(
-                                isActive =
-                                        preferredPermissionLevel.value ==
-                                                AndroidPermissionLevel.ACCESSIBILITY,
-                                isCurrentlyDisplayed = true,
-                                content = {
-                                    AccessibilityPermissionSection(
-                                            hasStoragePermission = hasStoragePermission,
-                                            hasOverlayPermission = hasOverlayPermission,
-                                            hasBatteryOptimizationExemption =
-                                                    hasBatteryOptimizationExemption,
-                                            hasLocationPermission = hasLocationPermission,
-                                            isAccessibilityProviderInstalled = isAccessibilityProviderInstalled,
-                                            hasAccessibilityServiceEnabled =
-                                                    hasAccessibilityServiceEnabled,
-                                            isAccessibilityUpdateNeeded = isAccessibilityUpdateNeeded,
-                                            isCustardTerminalInstalled = isCustardTerminalInstalled,
-                                            onStoragePermissionClick = onStoragePermissionClick,
-                                            onOverlayPermissionClick = onOverlayPermissionClick,
-                                            onBatteryOptimizationClick = onBatteryOptimizationClick,
-                                            onLocationPermissionClick = onLocationPermissionClick,
-                                            onAccessibilityClick = onAccessibilityClick,
-                                            onInstallAccessibilityProviderClick = onInstallAccessibilityProviderClick,
                                             onCustardTerminalClick = onCustardTerminalClick
                                     )
                                 }
@@ -1265,8 +1235,6 @@ private fun getPermissionLevelDescription(level: AndroidPermissionLevel): String
     return when (level) {
         AndroidPermissionLevel.STANDARD ->
                 stringResource(id = R.string.permission_level_standard_full_desc)
-        AndroidPermissionLevel.ACCESSIBILITY ->
-                stringResource(id = R.string.permission_level_accessibility_full_desc)
         AndroidPermissionLevel.ADMIN ->
                 stringResource(id = R.string.permission_level_admin_full_desc)
         AndroidPermissionLevel.DEBUGGER ->
@@ -1283,8 +1251,6 @@ private fun PermissionLevelVisualDescription(level: AndroidPermissionLevel) {
                 when (level) {
                     AndroidPermissionLevel.STANDARD ->
                             stringResource(R.string.permission_level_standard)
-                    AndroidPermissionLevel.ACCESSIBILITY ->
-                            stringResource(R.string.permission_level_accessibility)
                     AndroidPermissionLevel.ADMIN -> stringResource(R.string.permission_level_admin)
                     AndroidPermissionLevel.DEBUGGER ->
                             stringResource(R.string.permission_level_debugger)
@@ -1304,8 +1270,6 @@ private fun PermissionLevelVisualDescription(level: AndroidPermissionLevel) {
                 when (level) {
                     AndroidPermissionLevel.STANDARD ->
                             stringResource(R.string.permission_level_standard_desc)
-                    AndroidPermissionLevel.ACCESSIBILITY ->
-                            stringResource(R.string.permission_level_accessibility_desc)
                     AndroidPermissionLevel.ADMIN ->
                             stringResource(R.string.permission_level_admin_desc)
                     AndroidPermissionLevel.DEBUGGER ->
@@ -1389,7 +1353,6 @@ private fun isFeatureSupported(
 ): Boolean {
     return when (level) {
         AndroidPermissionLevel.STANDARD -> inStandard
-        AndroidPermissionLevel.ACCESSIBILITY -> inAccessibility
         AndroidPermissionLevel.ADMIN -> inAdmin
         AndroidPermissionLevel.DEBUGGER -> inDebugger
         AndroidPermissionLevel.ROOT -> inRoot

@@ -1050,8 +1050,6 @@
     <string name="permission_guide_level_desc">请选择您偏好的权限级别，这将决定应用可以使用的功能范围</string>
     <string name="permission_guide_standard_title">标准权限</string>
     <string name="permission_guide_standard_desc">基本的应用运行权限，无需特殊权限</string>
-    <string name="permission_guide_accessibility_title">无障碍权限</string>
-    <string name="permission_guide_accessibility_desc">通过无障碍服务实现屏幕内容分析和模拟操作</string>
     <string name="permission_guide_debugger_title">调试权限</string>
     <string name="permission_guide_debugger_desc">通过Shizuku提供ADB级别的系统访问</string>
     <string name="permission_guide_root_title">Root权限</string>
@@ -1213,17 +1211,14 @@
     
     <!-- 权限级别描述 -->
     <string name="permission_level_standard">标准权限</string>
-    <string name="permission_level_accessibility">无障碍权限</string>
     <string name="permission_level_admin">管理员权限</string>
     <string name="permission_level_debugger">调试权限</string>
     <string name="permission_level_root">Root权限</string>
     <string name="permission_level_standard_desc">基本应用运行权限，无需系统特殊授权</string>
-    <string name="permission_level_accessibility_desc">增加了无障碍服务支持，可模拟屏幕操作</string>
     <string name="permission_level_admin_desc">添加设备管理员权限，可访问更多系统功能</string>
     <string name="permission_level_debugger_desc">通过Shizuku提供ADB级别的系统访问</string>
     <string name="permission_level_root_desc">超级用户权限，可执行任意系统操作</string>
     <string name="permission_level_standard_full_desc">标准权限：基本的应用运行权限，无需特殊权限</string>
-    <string name="permission_level_accessibility_full_desc">无障碍权限：允许应用模拟用户操作，需要开启无障碍服务</string>
     <string name="permission_level_admin_full_desc">管理员权限：允许应用访问更多系统功能，如位置服务等</string>
     <string name="permission_level_debugger_full_desc">调试权限：允许通过ADB调试功能进行高级操作，需要Shizuku服务</string>
     <string name="permission_level_root_full_desc">Root权限：允许应用以超级用户身份运行，需要设备已Root</string>

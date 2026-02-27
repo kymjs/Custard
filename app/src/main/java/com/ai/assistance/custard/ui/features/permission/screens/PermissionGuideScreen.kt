@@ -856,15 +856,6 @@ private fun PermissionLevelPage(
                     onClick = { onLevelSelected(AndroidPermissionLevel.STANDARD) }
             )
 
-            // 无障碍权限
-            PermissionLevelItem(
-                    level = AndroidPermissionLevel.ACCESSIBILITY,
-                    title = stringResource(R.string.permission_guide_accessibility_title),
-                    description = stringResource(R.string.permission_guide_accessibility_desc),
-                    isSelected = selectedLevel == AndroidPermissionLevel.ACCESSIBILITY,
-                    onClick = { onLevelSelected(AndroidPermissionLevel.ACCESSIBILITY) }
-            )
-
             // 调试权限
             PermissionLevelItem(
                     level = AndroidPermissionLevel.DEBUGGER,

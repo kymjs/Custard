@@ -297,14 +297,7 @@ fun ShizukuDemoScreen(
                 currentDisplayedPermissionLevel == AndroidPermissionLevel.ROOT &&
                         (!uiState.hasRootAccess.value)
     
-        val needAccessibilitySetupGuide =
-            currentDisplayedPermissionLevel == AndroidPermissionLevel.ACCESSIBILITY &&
-                    (!uiState.isAccessibilityProviderInstalled.value ||
-                            !uiState.hasAccessibilityServiceEnabled.value ||
-                            isAccessibilityUpdateNeeded)
-
-
-        val needSetupGuide = needCustardTerminalSetupGuide || needShizukuSetupGuide || needRootSetupGuide || needAccessibilitySetupGuide
+        val needSetupGuide = needCustardTerminalSetupGuide || needShizukuSetupGuide || needRootSetupGuide
 
         if (needSetupGuide) {
             Spacer(modifier = Modifier.height(16.dp))
@@ -336,39 +329,6 @@ fun ShizukuDemoScreen(
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
             )
-
-            // Accessibility向导卡片
-            if (needAccessibilitySetupGuide) {
-                AccessibilityWizardCard(
-                    isProviderInstalled = uiState.isAccessibilityProviderInstalled.value,
-                    isServiceEnabled = uiState.hasAccessibilityServiceEnabled.value,
-                    showWizard = uiState.showAccessibilityWizard.value,
-                    onToggleWizard = { viewModel.toggleAccessibilityWizard() },
-                    onInstallProvider = {
-                        scope.launch(Dispatchers.IO) {
-                            UIHierarchyManager.launchProviderInstall(context)
-                        }
-                    },
-                    onOpenAccessibilitySettings = {
-                        try {
-                            val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-                            context.startActivity(intent)
-                        } catch (e: Exception) {
-                            Toast.makeText(context, context.getString(R.string.cannot_open_accessibility_settings), Toast.LENGTH_SHORT).show()
-                        }
-                    },
-                    updateNeeded = isAccessibilityUpdateNeeded,
-                    installedVersion = accessibilityInstalledVersion,
-                    bundledVersion = accessibilityBundledVersion,
-                    onUpdateProvider = {
-                        scope.launch(Dispatchers.IO) {
-                            UIHierarchyManager.launchProviderInstall(context)
-                        }
-                    }
-                )
-                Spacer(modifier = Modifier.height(12.dp))
-            }
-
 
             // Root向导卡片 - 如果当前浏览的是ROOT权限级别且Root未获取
             if (needRootSetupGuide) {

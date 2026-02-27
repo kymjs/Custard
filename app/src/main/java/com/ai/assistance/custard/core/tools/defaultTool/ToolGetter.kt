@@ -1,7 +1,6 @@
 package com.ai.assistance.custard.core.tools.defaultTool
 
 import android.content.Context
-import com.ai.assistance.custard.core.tools.defaultTool.accessbility.*
 import com.ai.assistance.custard.core.tools.defaultTool.admin.*
 import com.ai.assistance.custard.core.tools.defaultTool.debugger.*
 import com.ai.assistance.custard.core.tools.defaultTool.root.*
@@ -22,7 +21,6 @@ object ToolGetter {
             AndroidPermissionLevel.ROOT -> RootFileSystemTools(context)
             AndroidPermissionLevel.ADMIN -> AdminFileSystemTools(context)
             AndroidPermissionLevel.DEBUGGER -> DebuggerFileSystemTools(context)
-            AndroidPermissionLevel.ACCESSIBILITY -> AccessibilityFileSystemTools(context)
             AndroidPermissionLevel.STANDARD -> StandardFileSystemTools(context)
             null -> StandardFileSystemTools(context) // 默认使用标准权限级别
         }
@@ -47,7 +45,6 @@ object ToolGetter {
             AndroidPermissionLevel.ROOT -> RootUITools(context)
             AndroidPermissionLevel.ADMIN -> AdminUITools(context)
             AndroidPermissionLevel.DEBUGGER -> DebuggerUITools(context)
-            AndroidPermissionLevel.ACCESSIBILITY -> AccessibilityUITools(context)
             AndroidPermissionLevel.STANDARD -> StandardUITools(context)
             null -> StandardUITools(context) // 默认使用标准权限级别
         }
@@ -63,7 +60,6 @@ object ToolGetter {
             AndroidPermissionLevel.ROOT -> RootSystemOperationTools(context)
             AndroidPermissionLevel.ADMIN -> AdminSystemOperationTools(context)
             AndroidPermissionLevel.DEBUGGER -> DebuggerSystemOperationTools(context)
-            AndroidPermissionLevel.ACCESSIBILITY -> AccessibilitySystemOperationTools(context)
             AndroidPermissionLevel.STANDARD -> StandardSystemOperationTools(context)
             null -> StandardSystemOperationTools(context) // 默认使用标准权限级别
         }
@@ -79,7 +75,6 @@ object ToolGetter {
             AndroidPermissionLevel.ROOT -> RootDeviceInfoToolExecutor(context)
             AndroidPermissionLevel.ADMIN -> AdminDeviceInfoToolExecutor(context)
             AndroidPermissionLevel.DEBUGGER -> DebuggerDeviceInfoToolExecutor(context)
-            AndroidPermissionLevel.ACCESSIBILITY -> AccessibilityDeviceInfoToolExecutor(context)
             AndroidPermissionLevel.STANDARD -> StandardDeviceInfoToolExecutor(context)
             null -> StandardDeviceInfoToolExecutor(context) // 默认使用标准权限级别
         }

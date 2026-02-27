@@ -24,7 +24,6 @@ class AndroidShellExecutor {
         private fun getPermissionLevelLabel(level: AndroidPermissionLevel): String {
             return when (level) {
                 AndroidPermissionLevel.STANDARD -> "STANDARD"
-                AndroidPermissionLevel.ACCESSIBILITY -> "ACCESSIBILITY"
                 AndroidPermissionLevel.DEBUGGER -> "DEBUGGER"
                 AndroidPermissionLevel.ADMIN -> "ADMIN"
                 AndroidPermissionLevel.ROOT -> "ROOT"

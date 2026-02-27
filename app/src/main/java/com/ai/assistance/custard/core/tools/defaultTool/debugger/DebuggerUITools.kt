@@ -11,7 +11,6 @@ import com.ai.assistance.custard.core.tools.SimplifiedUINode
 import com.ai.assistance.custard.core.tools.StringResultData
 import com.ai.assistance.custard.core.tools.UIActionResultData
 import com.ai.assistance.custard.core.tools.UIPageResultData
-import com.ai.assistance.custard.core.tools.defaultTool.accessbility.AccessibilityUITools
 import com.ai.assistance.custard.core.tools.defaultTool.standard.StandardUITools
 import com.ai.assistance.custard.core.tools.system.AndroidShellExecutor
 import com.ai.assistance.custard.data.model.AITool
@@ -26,7 +25,7 @@ import org.xmlpull.v1.XmlPullParserFactory
 import com.ai.assistance.custard.util.CustardPaths
 
 /** 调试级别的UI工具，通过Shell命令实现UI操作，继承无障碍版本 */
-open class DebuggerUITools(context: Context) : AccessibilityUITools(context) {
+open class DebuggerUITools(context: Context) : StandardUITools(context) {
 
     companion object {
         private const val TAG = "DebuggerUITools"

@@ -34,7 +34,6 @@ class ShellExecutorFactory {
                         AndroidPermissionLevel.ROOT -> RootShellExecutor(context)
                         AndroidPermissionLevel.ADMIN -> AdminShellExecutor(context)
                         AndroidPermissionLevel.DEBUGGER -> DebuggerShellExecutor(context)
-                        AndroidPermissionLevel.ACCESSIBILITY -> AccessibilityShellExecutor(context)
                         AndroidPermissionLevel.STANDARD -> StandardShellExecutor(context)
                     }
 
@@ -62,7 +61,6 @@ class ShellExecutorFactory {
                             AndroidPermissionLevel.ROOT,
                             AndroidPermissionLevel.ADMIN,
                             AndroidPermissionLevel.DEBUGGER,
-                            AndroidPermissionLevel.ACCESSIBILITY,
                             AndroidPermissionLevel.STANDARD
                     )
 

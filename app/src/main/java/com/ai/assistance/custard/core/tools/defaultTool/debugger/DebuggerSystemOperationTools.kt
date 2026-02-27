@@ -6,14 +6,14 @@ import com.ai.assistance.custard.core.tools.AppOperationData
 import com.ai.assistance.custard.core.tools.NotificationData
 import com.ai.assistance.custard.core.tools.StringResultData
 import com.ai.assistance.custard.core.tools.SystemSettingData
-import com.ai.assistance.custard.core.tools.defaultTool.accessbility.AccessibilitySystemOperationTools
+import com.ai.assistance.custard.core.tools.defaultTool.standard.StandardSystemOperationTools
 import com.ai.assistance.custard.core.tools.system.AndroidShellExecutor
 import com.ai.assistance.custard.data.model.AITool
 import com.ai.assistance.custard.data.model.ToolResult
 
 /** 调试级别的系统操作工具，继承无障碍版本, 并使用shell命令覆盖部分实现 */
 open class DebuggerSystemOperationTools(context: Context) :
-    AccessibilitySystemOperationTools(context) {
+    StandardSystemOperationTools(context) {
 
     private val TAG = "DebuggerSystemTools"
 
