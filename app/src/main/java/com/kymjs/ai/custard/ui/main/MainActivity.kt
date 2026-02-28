@@ -224,25 +224,30 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         lastOrientation = resources.configuration.orientation
         AppLogger.d(TAG, "onCreate: Android SDK version: ${Build.VERSION.SDK_INT}")
-
-        // Set window background to solid color to prevent system theme leaking through
         window.setBackgroundDrawableResource(android.R.color.black)
-
-        // Handle the intent that started the activity
         handleIntent(intent)
+        toolHandler = AIToolHandler.getInstance(this)
+        mcpRepository = MCPRepository(this)
+        anrMonitor = AnrMonitor(this, lifecycleScope)
+        preferencesManager = UserPreferencesManager.getInstance(this)
+        showPreferencesGuide = !preferencesManager.isPreferencesInitialized()
+        AppLogger.d(
+            TAG,
+            "初始化检查: 用户偏好已初始化=${!showPreferencesGuide}，将${if (showPreferencesGuide) "" else "不"}显示引导界面"
+        )
 
-        // 语言设置已在Application中初始化，这里无需重复
+        // 初始化协议偏好管理器
+        agreementPreferences = AgreementPreferences(this)
 
-        initializeComponents()
+        // 初始化数据迁移管理器
+        migrationManager = ChatHistoryMigrationManager(this)
         cleanTemporaryFiles()
         anrMonitor.start()
         setupPreferencesListener()
         configureDisplaySettings()
 
-        // 设置上下文以便获取插件元数据
         pluginLoadingState.setAppContext(this)
 
-        // 设置跳过加载的回调
         pluginLoadingState.setOnSkipCallback {
             AppLogger.d(TAG, "用户跳过了插件加载过程")
             Toast.makeText(this, getString(R.string.plugin_loading_skipped), Toast.LENGTH_SHORT).show()
@@ -262,8 +267,6 @@ class MainActivity : ComponentActivity() {
             // 配置变更时不重新检查，直接显示主界面
             initialChecksDone = true
         }
-
-        // 设置双击返回退出
         setupBackPressHandler()
     }
 
@@ -491,9 +494,7 @@ class MainActivity : ComponentActivity() {
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     val currentTime = System.currentTimeMillis()
-
                     if (currentTime - backPressedTime > backPressedInterval) {
-                        // 第一次点击，显示提示
                         backPressedTime = currentTime
                         Toast.makeText(
                             this@MainActivity,
@@ -501,7 +502,6 @@ class MainActivity : ComponentActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                     } else {
-                        // 第二次点击，退出应用
                         finish()
                     }
                 }
@@ -554,31 +554,6 @@ class MainActivity : ComponentActivity() {
             // 如果不是“转回去”，或者弹窗还未显示，则显示弹窗
             showOrientationChangeDialog = true
         }
-    }
-
-    // ======== 初始化组件 ========
-    private fun initializeComponents() {
-        // 初始化工具处理器（工具注册已在Application中完成）
-        toolHandler = AIToolHandler.getInstance(this)
-
-        // 初始化MCP仓库
-        mcpRepository = MCPRepository(this)
-
-        anrMonitor = AnrMonitor(this, lifecycleScope)
-
-        // 初始化用户偏好管理器并直接检查初始化状态
-        preferencesManager = UserPreferencesManager.getInstance(this)
-        showPreferencesGuide = !preferencesManager.isPreferencesInitialized()
-        AppLogger.d(
-            TAG,
-            "初始化检查: 用户偏好已初始化=${!showPreferencesGuide}，将${if (showPreferencesGuide) "" else "不"}显示引导界面"
-        )
-
-        // 初始化协议偏好管理器
-        agreementPreferences = AgreementPreferences(this)
-
-        // 初始化数据迁移管理器
-        migrationManager = ChatHistoryMigrationManager(this)
     }
 
     // ======== 检查通知权限 ========

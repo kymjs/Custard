@@ -1035,7 +1035,7 @@
 
     <string name="permission_guide_warning_title">权限授予不完整</string>
     <string name="permission_guide_warning_message">您尚未授予所有必要权限，这可能导致应用功能不完整或异常退出。</string>
-    <string name="permission_guide_warning_continue">继续</string>
+    <string name="permission_guide_warning_continue">仍要继续</string>
     <string name="permission_guide_warning_return">返回授权</string>
 
     <string name="permission_guide_level_title">选择权限级别</string>

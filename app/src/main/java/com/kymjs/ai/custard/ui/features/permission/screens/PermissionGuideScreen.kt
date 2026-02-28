@@ -193,6 +193,7 @@ fun PermissionGuideScreen(
             confirmButton = {
                 Button(
                     onClick = {
+                        showPermissionWarning = false
                         scope.launch {
                             pagerState.animateScrollToPage(PERMISSION_LEVEL_PAGE_INDEX)
                         }
