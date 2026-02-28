@@ -1034,18 +1034,18 @@
     <string name="permission_guide_all_granted">所有基础权限已授予，可以继续下一步</string>
 
     <string name="permission_guide_warning_title">权限授予不完整</string>
-    <string name="permission_guide_warning_message">您尚未授予所有必要权限，这可能导致应用功能不完整或异常退出。确定要继续吗？</string>
+    <string name="permission_guide_warning_message">您尚未授予所有必要权限，这可能导致应用功能不完整或异常退出。</string>
     <string name="permission_guide_warning_continue">继续</string>
     <string name="permission_guide_warning_return">返回授权</string>
 
     <string name="permission_guide_level_title">选择权限级别</string>
     <string name="permission_guide_level_desc">请选择您偏好的权限级别，这将决定应用可以使用的功能范围</string>
     <string name="permission_guide_standard_title">标准权限</string>
-    <string name="permission_guide_standard_desc">基本的应用运行权限，无需特殊权限</string>
-    <string name="permission_guide_debugger_title">调试权限</string>
-    <string name="permission_guide_debugger_desc">通过Shizuku提供ADB级别的系统访问</string>
+    <string name="permission_guide_standard_desc">基本应用权限，功能有限</string>
+    <string name="permission_guide_debugger_title">ADB调试权限</string>
+    <string name="permission_guide_debugger_desc">需要安装三方应用并连接电脑</string>
     <string name="permission_guide_root_title">Root权限</string>
-    <string name="permission_guide_root_desc">超级用户权限，可执行任意系统操作</string>
+    <string name="permission_guide_root_desc">可执行任意系统操作，但门槛较高</string>
     <string name="permission_guide_confirm">确认选择</string>
     <string name="permission_guide_change_anytime">您随时可以在设置中更改权限级别</string>
 

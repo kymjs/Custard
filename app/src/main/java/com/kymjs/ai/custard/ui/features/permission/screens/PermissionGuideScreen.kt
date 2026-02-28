@@ -5,6 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import com.kymjs.ai.custard.util.AppLogger
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -55,6 +57,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -64,7 +67,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -73,6 +75,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kymjs.ai.custard.R
 import com.kymjs.ai.custard.core.tools.system.AndroidPermissionLevel
@@ -92,6 +95,7 @@ fun PermissionGuideScreen(
     onComplete: () -> Unit
 ) {
     val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
     val scope = rememberCoroutineScope()
 
     // 状态
@@ -103,6 +107,19 @@ fun PermissionGuideScreen(
 
     // 初始化
     LaunchedEffect(Unit) { viewModel.checkPermissions(context) }
+
+    // 从系统设置页返回时刷新权限状态
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) {
+                viewModel.checkPermissions(context)
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+        }
+    }
 
     // 存储权限请求启动器 (适用于Android 10及以下版本)
     val storagePermissionLauncher =
@@ -176,7 +193,6 @@ fun PermissionGuideScreen(
             confirmButton = {
                 Button(
                     onClick = {
-                        showPermissionWarning = false
                         scope.launch {
                             pagerState.animateScrollToPage(PERMISSION_LEVEL_PAGE_INDEX)
                         }
@@ -384,23 +400,19 @@ fun PermissionGuideScreen(
 
             // 当前步骤文本
             Text(
-                text =
-                    when (pagerState.currentPage) {
-                        in 0 until INTRO_PAGES_COUNT ->
-                            stringResource(
-                                R.string.permission_guide_intro_page_indicator,
-                                pagerState.currentPage + 1,
-                                INTRO_PAGES_COUNT
-                            )
+                text = when (pagerState.currentPage) {
+                    in 0 until INTRO_PAGES_COUNT -> stringResource(
+                        R.string.permission_guide_intro_page_indicator,
+                        pagerState.currentPage + 1,
+                        INTRO_PAGES_COUNT
+                    )
 
-                        BASIC_PERMISSIONS_PAGE_INDEX ->
-                            stringResource(R.string.permission_guide_basic_permissions)
+                    BASIC_PERMISSIONS_PAGE_INDEX -> stringResource(R.string.permission_guide_basic_permissions)
 
-                        PERMISSION_LEVEL_PAGE_INDEX ->
-                            stringResource(R.string.permission_guide_permission_level)
+                    PERMISSION_LEVEL_PAGE_INDEX -> stringResource(R.string.permission_guide_permission_level)
 
-                        else -> ""
-                    },
+                    else -> ""
+                },
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
                 textAlign = TextAlign.Center,
@@ -414,8 +426,7 @@ fun PermissionGuideScreen(
                         scope.launch {
                             when {
                                 // 最后一页且已选择权限级别，完成设置
-                                pagerState.currentPage == PERMISSION_LEVEL_PAGE_INDEX &&
-                                        uiState.selectedPermissionLevel != null -> {
+                                pagerState.currentPage == PERMISSION_LEVEL_PAGE_INDEX -> {
                                     viewModel.savePermissionLevel()
                                 }
                                 // 在基础权限页但未获得所有权限时，显示警告对话框
@@ -430,13 +441,12 @@ fun PermissionGuideScreen(
                             }
                         }
                     },
-                    enabled =
-                        when (pagerState.currentPage) {
-                            in 0..BASIC_PERMISSIONS_PAGE_INDEX -> true // 介绍页和设置页总是可以前进
-                            PERMISSION_LEVEL_PAGE_INDEX ->
-                                uiState.selectedPermissionLevel != null // 权限级别页需要已选择级别
-                            else -> false
-                        }
+                    enabled = when (pagerState.currentPage) {
+                        in 0..BASIC_PERMISSIONS_PAGE_INDEX -> true // 介绍页和设置页总是可以前进
+                        PERMISSION_LEVEL_PAGE_INDEX ->
+                            uiState.selectedPermissionLevel != null // 权限级别页需要已选择级别
+                        else -> false
+                    }
                 ) {
                     Icon(
                         imageVector =
@@ -453,10 +463,9 @@ fun PermissionGuideScreen(
                                     MaterialTheme.colorScheme.primary
 
                                 pagerState.currentPage == BASIC_PERMISSIONS_PAGE_INDEX ->
-                                    MaterialTheme.colorScheme.primary // 基础权限页总是显示可点击状态
-                                pagerState.currentPage ==
-                                        PERMISSION_LEVEL_PAGE_INDEX &&
-                                        uiState.selectedPermissionLevel != null ->
+                                    MaterialTheme.colorScheme.primary
+
+                                pagerState.currentPage == PERMISSION_LEVEL_PAGE_INDEX ->
                                     MaterialTheme.colorScheme.primary
 
                                 else ->
@@ -692,11 +701,10 @@ private fun PermissionItem(
     onClick: () -> Unit
 ) {
     Row(
-        modifier =
-            Modifier
-                .fillMaxWidth()
-                .clickable(onClick = onClick)
-                .padding(vertical = 4.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+            .padding(vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -715,28 +723,25 @@ private fun PermissionItem(
         }
 
         Box(
-            modifier =
-                Modifier
-                    .size(24.dp)
-                    .background(
-                        color =
-                            if (isGranted)
-                                MaterialTheme.colorScheme.primary.copy(
-                                    alpha = 0.1f
-                                )
-                            else
-                                MaterialTheme.colorScheme.error.copy(
-                                    alpha = 0.1f
-                                ),
-                        shape = CircleShape
-                    )
-                    .border(
-                        width = 1.dp,
-                        color =
-                            if (isGranted) MaterialTheme.colorScheme.primary
-                            else MaterialTheme.colorScheme.error,
-                        shape = CircleShape
-                    ),
+            modifier = Modifier
+                .size(24.dp)
+                .background(
+                    color = if (isGranted) {
+                        MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+                    } else {
+                        MaterialTheme.colorScheme.error.copy(alpha = 0.1f)
+                    },
+                    shape = CircleShape
+                )
+                .border(
+                    width = 1.dp,
+                    color = if (isGranted) {
+                        MaterialTheme.colorScheme.primary
+                    } else {
+                        MaterialTheme.colorScheme.error
+                    },
+                    shape = CircleShape
+                ),
             contentAlignment = Alignment.Center
         ) {
             if (isGranted) {
@@ -764,6 +769,7 @@ private fun PermissionLevelPage(
     onLevelSelected: (AndroidPermissionLevel) -> Unit,
     onConfirm: () -> Unit
 ) {
+    onLevelSelected(selectedLevel ?: AndroidPermissionLevel.STANDARD)
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -795,16 +801,14 @@ private fun PermissionLevelPage(
         ) {
             // 标准权限
             PermissionLevelItem(
-                level = AndroidPermissionLevel.STANDARD,
                 title = stringResource(R.string.permission_guide_standard_title),
                 description = stringResource(R.string.permission_guide_standard_desc),
-                isSelected = selectedLevel == AndroidPermissionLevel.STANDARD,
+                isSelected = selectedLevel == null || selectedLevel == AndroidPermissionLevel.STANDARD,
                 onClick = { onLevelSelected(AndroidPermissionLevel.STANDARD) }
             )
 
             // 调试权限
             PermissionLevelItem(
-                level = AndroidPermissionLevel.DEBUGGER,
                 title = stringResource(R.string.permission_guide_debugger_title),
                 description = stringResource(R.string.permission_guide_debugger_desc),
                 isSelected = selectedLevel == AndroidPermissionLevel.DEBUGGER,
@@ -813,7 +817,6 @@ private fun PermissionLevelPage(
 
             // Root权限
             PermissionLevelItem(
-                level = AndroidPermissionLevel.ROOT,
                 title = stringResource(R.string.permission_guide_root_title),
                 description = stringResource(R.string.permission_guide_root_desc),
                 isSelected = selectedLevel == AndroidPermissionLevel.ROOT,
@@ -861,7 +864,6 @@ private fun PermissionLevelPage(
 
 @Composable
 private fun PermissionLevelItem(
-    level: AndroidPermissionLevel,
     title: String,
     description: String,
     isSelected: Boolean,
@@ -872,16 +874,16 @@ private fun PermissionLevelItem(
             .fillMaxWidth()
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(8.dp),
-        color =
-            if (isSelected) MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
-            else MaterialTheme.colorScheme.surface,
-        border =
-            if (isSelected)
-                androidx.compose.foundation.BorderStroke(
-                    1.dp,
-                    MaterialTheme.colorScheme.primary
-                )
-            else null
+        color = if (isSelected) {
+            MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+        } else {
+            MaterialTheme.colorScheme.surface
+        },
+        border = if (isSelected) {
+            androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
+        } else {
+            null
+        }
     ) {
         Row(
             modifier = Modifier
@@ -891,26 +893,25 @@ private fun PermissionLevelItem(
         ) {
             // 选择指示器
             Box(
-                modifier =
-                    Modifier
-                        .size(20.dp)
-                        .background(
-                            color =
-                                if (isSelected)
-                                    MaterialTheme.colorScheme.primary
-                                else Color.Transparent,
-                            shape = CircleShape
-                        )
-                        .border(
-                            width = 1.dp,
-                            color =
-                                if (isSelected)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.onSurface
-                                        .copy(alpha = 0.5f),
-                            shape = CircleShape
-                        ),
+                modifier = Modifier
+                    .size(20.dp)
+                    .background(
+                        color = if (isSelected) {
+                            MaterialTheme.colorScheme.primary
+                        } else {
+                            Color.Transparent
+                        },
+                        shape = CircleShape
+                    )
+                    .border(
+                        width = 1.dp,
+                        color = if (isSelected) {
+                            MaterialTheme.colorScheme.primary
+                        } else {
+                            MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                        },
+                        shape = CircleShape
+                    ),
                 contentAlignment = Alignment.Center
             ) {
                 if (isSelected) {
@@ -929,9 +930,11 @@ private fun PermissionLevelItem(
                 Text(
                     text = title,
                     style = MaterialTheme.typography.titleSmall,
-                    color =
-                        if (isSelected) MaterialTheme.colorScheme.primary
-                        else MaterialTheme.colorScheme.onSurface
+                    color = if (isSelected) {
+                        MaterialTheme.colorScheme.primary
+                    } else {
+                        MaterialTheme.colorScheme.onSurface
+                    }
                 )
 
                 Text(
