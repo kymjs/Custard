@@ -171,9 +171,29 @@ android {
             pickFirsts += "**/*.so"
         }
     }
-//    aaptOptions {
-//        noCompress += "tflite"
-//    }
+
+    // 强制使用兼容的版本
+    configurations.all {
+        resolutionStrategy {
+            force("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+            force("io.ktor:ktor-client-core:2.3.5")
+            force("io.ktor:ktor-client-cio:2.3.5")
+            force("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+            force("org.jetbrains.kotlin:kotlin-bom:1.9.22")
+            force("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+            force("org.jetbrains.kotlin:kotlin-stdlib-common:1.9.22")
+            force("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22")
+            force("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22")
+            force("org.jetbrains.kotlin:kotlin-reflect:1.9.22")
+            // Force BouncyCastle to use jdk18on version to avoid duplicate classes
+            force("org.bouncycastle:bcprov-jdk18on:1.78")
+        }
+    }
+
+    configurations.all {
+        exclude(group = "org.bouncycastle", module = "bcprov-jdk15to18")
+    }
+
 }
 
 dependencies {
@@ -349,12 +369,6 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
     debugImplementation(libs.compose.ui.test.manifest)
 
-    // Test dependencies
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.compose.bom))
-
     // Apache POI - for Document processing (DOC, DOCX, etc.)
     implementation(libs.poi)
     implementation(libs.poi.ooxml)
@@ -371,32 +385,6 @@ dependencies {
     // NanoHTTPD for local web server
     implementation(libs.nanohttpd)
 
-    // 添加测试依赖
-    testImplementation(libs.junit)
-    
-    // Android测试依赖
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.ui.test.junit4)
-    androidTestImplementation(libs.test.runner)
-    androidTestImplementation(libs.test.rules)
-    
-    // 协程测试依赖
-    testImplementation(libs.coroutines.test)
-    androidTestImplementation(libs.coroutines.test)
-    
-    // 模拟测试框架 - 保留现有的 mockito 并新增 mockk
-    testImplementation(libs.mockito.core)
-    testImplementation(libs.mockito.kotlin)
-    androidTestImplementation(libs.mockito.android)
-    
-    // // 新增的测试依赖 - mockk 和 kotlin-test
-    // testImplementation(libs.mockk)
-    // testImplementation(libs.ktor.server.test.host)
-    // testImplementation(libs.kotlinx.coroutines.debug)
-    // androidTestImplementation(libs.mockk)
-    
     implementation(libs.reorderable)
 
     // Swipe to reveal actions
@@ -417,29 +405,6 @@ dependencies {
         exclude(group = "io.ktor", module = "ktor-client-cio")
         exclude(group = "io.ktor", module = "ktor-serialization-kotlinx-json")
     }
-    
-    // 强制使用兼容的版本
-    configurations.all {
-        resolutionStrategy {
-            force("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
-            force("io.ktor:ktor-client-core:2.3.5") 
-            force("io.ktor:ktor-client-cio:2.3.5")
-            force("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
-            force("org.jetbrains.kotlin:kotlin-bom:1.9.22")
-            force("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
-            force("org.jetbrains.kotlin:kotlin-stdlib-common:1.9.22")
-            force("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22")
-            force("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22")
-            force("org.jetbrains.kotlin:kotlin-reflect:1.9.22")
-            // Force BouncyCastle to use jdk18on version to avoid duplicate classes
-            force("org.bouncycastle:bcprov-jdk18on:1.78")
-        }
-    }
-    
-    // Exclude bcprov-jdk15to18 from all configurations to avoid duplicate classes
-    configurations.all {
-        exclude(group = "org.bouncycastle", module = "bcprov-jdk15to18")
-    }
 
     // Security
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
@@ -452,7 +417,6 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
-
 
     // Accompanist
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.32.0")

@@ -25,13 +25,10 @@ import com.ai.assistance.custard.R
 import com.ai.assistance.custard.core.tools.system.AndroidPermissionLevel
 import com.ai.assistance.custard.ui.main.screens.Screen
 import com.ai.assistance.custard.ui.main.screens.ScreenNavigationHandler
-import com.ai.assistance.custard.core.tools.system.AccessibilityProviderInstaller
 import com.ai.assistance.custard.core.tools.system.ShizukuAuthorizer
 import com.ai.assistance.custard.core.tools.system.ShizukuInstaller
-import com.ai.assistance.custard.data.repository.UIHierarchyManager
 import com.ai.assistance.custard.ui.features.demo.components.*
 import com.ai.assistance.custard.ui.features.demo.viewmodel.ShizukuDemoViewModel
-import com.ai.assistance.custard.ui.features.demo.wizards.AccessibilityWizardCard
 import com.ai.assistance.custard.ui.features.demo.wizards.CustardTerminalWizardCard
 import com.ai.assistance.custard.ui.features.demo.wizards.RootWizardCard
 import com.ai.assistance.custard.ui.features.demo.wizards.ShizukuWizardCard
@@ -89,9 +86,6 @@ fun ShizukuDemoScreen(
         onDispose { ShizukuAuthorizer.removeStateChangeListener(shizukuListener) }
     }
 
-    // 预先加载一个空的UI状态，避免初始化时的卡顿
-    var isInitialized by remember { mutableStateOf(false) }
-
     // Initialize ViewModel
     LaunchedEffect(Unit) {
         // 显示加载指示器
@@ -102,9 +96,6 @@ fun ShizukuDemoScreen(
             // 将初始化任务拆分成多个小任务，避免长时间阻塞
             viewModel.initializeAsync(context)
         }
-
-        // 标记初始化完成
-        isInitialized = true
     }
 
     Column(
@@ -125,15 +116,6 @@ fun ShizukuDemoScreen(
             }
         }
 
-        // 检查无障碍服务版本状态
-        val (accessibilityInstalledVersion, accessibilityBundledVersion, isAccessibilityUpdateNeeded) =
-                remember(uiState.isRefreshing.value) {
-                    val installed = AccessibilityProviderInstaller.getInstalledVersion(context)
-                    val bundled = AccessibilityProviderInstaller.getBundledVersion(context)
-                    val needsUpdate = AccessibilityProviderInstaller.isUpdateNeeded(context)
-                    Triple(installed, bundled, needsUpdate)
-                }
-
         // 权限管理卡片
         PermissionLevelCard(
                 hasStoragePermission = uiState.hasStoragePermission.value,
@@ -147,15 +129,11 @@ fun ShizukuDemoScreen(
                 isCustardTerminalInstalled = uiState.isCustardTerminalInstalled.value,
                 isDeviceRooted = uiState.isDeviceRooted.value,
                 hasRootAccess = uiState.hasRootAccess.value,
-                isAccessibilityProviderInstalled = uiState.isAccessibilityProviderInstalled.value,
-                isAccessibilityUpdateNeeded = isAccessibilityUpdateNeeded,
                 isRefreshing = uiState.isRefreshing.value,
                 onRefresh = {
                     scope.launch(Dispatchers.IO) {
-                        // 手动刷新时，清除版本缓存以获取最新状态
-                        AccessibilityProviderInstaller.clearCache()
                         ShizukuInstaller.clearCache()
-                        AppLogger.d("ShizukuDemoScreen", "手动刷新：已清除无障碍和Shizuku版本缓存")
+                        AppLogger.d("ShizukuDemoScreen", "手动刷新：已清除Shizuku版本缓存")
                         viewModel.refreshStatus(context)
                     }
                 },
@@ -209,25 +187,6 @@ fun ShizukuDemoScreen(
                         context.startActivity(intent)
                     } catch (e: Exception) {
                                                     Toast.makeText(context, context.getString(R.string.cannot_open_battery_settings), Toast.LENGTH_SHORT).show()
-                    }
-                },
-                onAccessibilityClick = {
-                    try {
-                        val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-                        context.startActivity(intent)
-                    } catch (e: Exception) {
-                        Toast.makeText(context, context.getString(R.string.cannot_open_accessibility_settings), Toast.LENGTH_SHORT).show()
-                    }
-                },
-                onInstallAccessibilityProviderClick = {
-                    scope.launch(Dispatchers.IO) {
-                        if (!UIHierarchyManager.isProviderAppInstalled(context)) {
-                            UIHierarchyManager.launchProviderInstall(context)
-                        } else {
-                            withContext(Dispatchers.Main) {
-                                Toast.makeText(context, context.getString(R.string.accessibility_provider_installed), Toast.LENGTH_SHORT).show()
-                            }
-                        }
                     }
                 },
                 onLocationPermissionClick = {

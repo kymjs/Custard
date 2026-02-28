@@ -15,11 +15,9 @@ import com.ai.assistance.custard.core.tools.defaultTool.standard.StandardUITools
 import com.ai.assistance.custard.core.tools.system.AndroidShellExecutor
 import com.ai.assistance.custard.data.model.AITool
 import com.ai.assistance.custard.data.model.ToolResult
-import com.ai.assistance.custard.data.repository.UIHierarchyManager
 import java.io.StringReader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.json.JSONObject
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 import com.ai.assistance.custard.util.CustardPaths
@@ -45,11 +43,6 @@ open class DebuggerUITools(context: Context) : StandardUITools(context) {
 
     /** 使用Shell命令实现点击操作 */
     override suspend fun tap(tool: AITool): ToolResult {
-        if (!hasDisplayParam(tool) && UIHierarchyManager.isAccessibilityServiceEnabled(context)) {
-            AppLogger.d(TAG, "无障碍服务已启用，使用无障碍点击")
-            return super.tap(tool)
-        }
-
         val x = tool.parameters.find { it.name == "x" }?.value?.toIntOrNull()
         val y = tool.parameters.find { it.name == "y" }?.value?.toIntOrNull()
 
@@ -116,11 +109,6 @@ open class DebuggerUITools(context: Context) : StandardUITools(context) {
     }
 
     override suspend fun longPress(tool: AITool): ToolResult {
-        if (!hasDisplayParam(tool) && UIHierarchyManager.isAccessibilityServiceEnabled(context)) {
-            AppLogger.d(TAG, "无障碍服务已启用，使用无障碍长按")
-            return super.longPress(tool)
-        }
-
         val x = tool.parameters.find { it.name == "x" }?.value?.toIntOrNull()
         val y = tool.parameters.find { it.name == "y" }?.value?.toIntOrNull()
 
@@ -178,11 +166,6 @@ open class DebuggerUITools(context: Context) : StandardUITools(context) {
 
     /** 使用Shell命令实现滑动操作 */
     override suspend fun swipe(tool: AITool): ToolResult {
-        if (!hasDisplayParam(tool) && UIHierarchyManager.isAccessibilityServiceEnabled(context)) {
-            AppLogger.d(TAG, "无障碍服务已启用，使用无障碍滑动")
-            return super.swipe(tool)
-        }
-
         val startX = tool.parameters.find { it.name == "start_x" }?.value?.toIntOrNull()
         val startY = tool.parameters.find { it.name == "start_y" }?.value?.toIntOrNull()
         val endX = tool.parameters.find { it.name == "end_x" }?.value?.toIntOrNull()
@@ -253,11 +236,6 @@ open class DebuggerUITools(context: Context) : StandardUITools(context) {
 
     /** 使用Shell命令点击元素 */
     override suspend fun clickElement(tool: AITool): ToolResult {
-        if (!hasDisplayParam(tool) && UIHierarchyManager.isAccessibilityServiceEnabled(context)) {
-            AppLogger.d(TAG, "无障碍服务已启用，使用无障碍点击元素")
-            return super.clickElement(tool)
-        }
-
         val resourceId = tool.parameters.find { it.name == "resourceId" }?.value
         val className = tool.parameters.find { it.name == "className" }?.value
         val contentDesc = tool.parameters.find { it.name == "contentDesc" }?.value
@@ -336,11 +314,6 @@ open class DebuggerUITools(context: Context) : StandardUITools(context) {
 
     /** 使用Shell命令设置输入文本 */
     override suspend fun setInputText(tool: AITool): ToolResult {
-        if (!hasDisplayParam(tool) && UIHierarchyManager.isAccessibilityServiceEnabled(context)) {
-            AppLogger.d(TAG, "无障碍服务已启用，使用无障碍设置文本")
-            return super.setInputText(tool)
-        }
-
         val text = tool.parameters.find { it.name == "text" }?.value ?: ""
 
         try {
@@ -521,11 +494,6 @@ open class DebuggerUITools(context: Context) : StandardUITools(context) {
 
     /** 使用Shell命令获取页面信息 */
     override suspend fun getPageInfo(tool: AITool): ToolResult {
-        if (!hasDisplayParam(tool) && UIHierarchyManager.isAccessibilityServiceEnabled(context)) {
-            AppLogger.d(TAG, "无障碍服务已启用，使用无障碍获取页面信息")
-            return super.getPageInfo(tool)
-        }
-
         val format = tool.parameters.find { it.name == "format" }?.value ?: "xml"
         // detail kept for future use
         tool.parameters.find { it.name == "detail" }?.value ?: "summary"

@@ -22,7 +22,6 @@ import com.ai.assistance.custard.BuildConfig
 import com.ai.assistance.custard.R
 import com.ai.assistance.custard.core.chat.AIMessageManager
 import com.ai.assistance.custard.api.chat.AIForegroundService
-import com.ai.assistance.custard.core.config.SystemPromptConfig
 import com.ai.assistance.custard.core.tools.AIToolHandler
 import com.ai.assistance.custard.core.tools.system.AndroidShellExecutor
 import com.ai.assistance.custard.core.tools.system.Terminal
@@ -306,18 +305,6 @@ class CustardApplication : Application(), ImageLoaderFactory, WorkConfiguration.
             }
         }
 
-        // 在应用启动时尝试绑定无障碍服务提供者（解决后台绑定限制问题）
-        applicationScope.launch {
-            AppLogger.d(TAG, "【启动计时】开始预绑定无障碍服务提供者...")
-            val bindStartTime = System.currentTimeMillis()
-            try {
-                val bound = com.ai.assistance.custard.data.repository.UIHierarchyManager.bindToService(this@CustardApplication)
-                AppLogger.d(TAG, "【启动计时】无障碍服务预绑定完成（异步） - 结果: $bound, 耗时: ${System.currentTimeMillis() - bindStartTime}ms")
-            } catch (e: Exception) {
-                AppLogger.e(TAG, "无障碍服务预绑定失败", e)
-            }
-        }
-        
         val totalTime = System.currentTimeMillis() - startTime
         AppLogger.d(TAG, "【启动计时】应用启动全部完成 - 总耗时: ${totalTime}ms")
     }
