@@ -521,17 +521,12 @@ fun AIChatScreen(
                                 },
                                 onSendMessage = {
                                     if (currentChatId.isNullOrBlank()) {
-                                        Toast.makeText(
-                                            context,
-                                            R.string.chat_please_create_new_chat,
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    } else {
-                                        focusManager.clearFocus()
-                                        actualViewModel.sendUserMessage()
-                                        actualViewModel.resetAttachmentPanelState()
-                                        autoScrollToBottom = true
+                                        actualViewModel.createNewChat()
                                     }
+                                    focusManager.clearFocus()
+                                    actualViewModel.sendUserMessage()
+                                    actualViewModel.resetAttachmentPanelState()
+                                    autoScrollToBottom = true
                                 },
                                 onCancelMessage = { actualViewModel.cancelCurrentMessage() },
                                 isLoading = isLoading,
@@ -628,19 +623,12 @@ fun AIChatScreen(
                                 },
                                 onSendMessage = {
                                     if (currentChatId.isNullOrBlank()) {
-                                        Toast.makeText(
-                                            context,
-                                            context.getString(
-                                                R.string.chat_please_create_new_chat
-                                            ),
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    } else {
-                                        focusManager.clearFocus()
-                                        actualViewModel.sendUserMessage()
-                                        actualViewModel.resetAttachmentPanelState()
-                                        autoScrollToBottom = true
+                                        actualViewModel.createNewChat()
                                     }
+                                    focusManager.clearFocus()
+                                    actualViewModel.sendUserMessage()
+                                    actualViewModel.resetAttachmentPanelState()
+                                    autoScrollToBottom = true
                                 },
                                 onCancelMessage = { actualViewModel.cancelCurrentMessage() },
                                 isLoading = isLoading,
