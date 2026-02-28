@@ -24,12 +24,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.kymjs.ai.custard.R
@@ -60,7 +55,6 @@ import com.kymjs.ai.custard.data.api.GitHubApiService
 import com.kymjs.ai.custard.data.preferences.GitHubAuthPreferences
 import android.content.Intent
 import android.net.Uri
-import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
 
 class MainActivity : ComponentActivity() {
@@ -285,7 +279,7 @@ class MainActivity : ComponentActivity() {
         if (isGitHubOAuthCallback) {
             return
         }
-        
+
         // 如果是文件分享，立即处理
         if (intent?.action == Intent.ACTION_VIEW ||
             intent?.action == Intent.ACTION_SEND ||
@@ -309,7 +303,7 @@ class MainActivity : ComponentActivity() {
             }
             return
         }
-        
+
         // Handle opened and shared files
         when (intent?.action) {
             Intent.ACTION_VIEW -> {
@@ -324,6 +318,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+
             Intent.ACTION_SEND -> {
                 // Handle "Share" action
                 @Suppress("DEPRECATION")
@@ -347,6 +342,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+
             Intent.ACTION_SEND_MULTIPLE -> {
                 @Suppress("DEPRECATION")
                 val uris = if (Build.VERSION.SDK_INT >= 33) {
@@ -464,12 +460,12 @@ class MainActivity : ComponentActivity() {
             AppLogger.d(TAG, "No pending shared files to process")
             return
         }
-        
+
         AppLogger.d(TAG, "Processing ${uris.size} pending shared file(s)")
         uris.forEachIndexed { index, uri ->
             AppLogger.d(TAG, "  [$index] URI: $uri")
         }
-        
+
         lifecycleScope.launch {
             try {
                 // Pass the URIs to the chat screen via SharedFileHandler
@@ -491,21 +487,25 @@ class MainActivity : ComponentActivity() {
     // 配置双击返回退出的处理器
     private fun setupBackPressHandler() {
         onBackPressedDispatcher.addCallback(
-                this,
-                object : OnBackPressedCallback(true) {
-                    override fun handleOnBackPressed() {
-                        val currentTime = System.currentTimeMillis()
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    val currentTime = System.currentTimeMillis()
 
-                        if (currentTime - backPressedTime > backPressedInterval) {
-                            // 第一次点击，显示提示
-                            backPressedTime = currentTime
-                            Toast.makeText(this@MainActivity, getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT).show()
-                        } else {
-                            // 第二次点击，退出应用
-                            finish()
-                        }
+                    if (currentTime - backPressedTime > backPressedInterval) {
+                        // 第一次点击，显示提示
+                        backPressedTime = currentTime
+                        Toast.makeText(
+                            this@MainActivity,
+                            getString(R.string.press_back_again_to_exit),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        // 第二次点击，退出应用
+                        finish()
                     }
                 }
+            }
         )
     }
 
@@ -529,7 +529,10 @@ class MainActivity : ComponentActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        AppLogger.d(TAG, "onConfigurationChanged: new orientation=${newConfig.orientation}, last orientation=${lastOrientation}")
+        AppLogger.d(
+            TAG,
+            "onConfigurationChanged: new orientation=${newConfig.orientation}, last orientation=${lastOrientation}"
+        )
 
         // 屏幕方向变化时，确保加载界面不可见
         pluginLoadingState.hide()
@@ -547,7 +550,7 @@ class MainActivity : ComponentActivity() {
                 showOrientationChangeDialog = false
                 return
             }
-            
+
             // 如果不是“转回去”，或者弹窗还未显示，则显示弹窗
             showOrientationChangeDialog = true
         }
@@ -567,8 +570,8 @@ class MainActivity : ComponentActivity() {
         preferencesManager = UserPreferencesManager.getInstance(this)
         showPreferencesGuide = !preferencesManager.isPreferencesInitialized()
         AppLogger.d(
-                TAG,
-                "初始化检查: 用户偏好已初始化=${!showPreferencesGuide}，将${if(showPreferencesGuide) "" else "不"}显示引导界面"
+            TAG,
+            "初始化检查: 用户偏好已初始化=${!showPreferencesGuide}，将${if (showPreferencesGuide) "" else "不"}显示引导界面"
         )
 
         // 初始化协议偏好管理器
@@ -587,6 +590,7 @@ class MainActivity : ComponentActivity() {
                 ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED -> {
                     AppLogger.d(TAG, "通知权限已授予")
                 }
+
                 shouldShowRequestPermissionRationale(permission) -> {
                     // 用户之前拒绝过，显示说明并再次请求
                     AppLogger.d(TAG, "需要显示通知权限说明")
@@ -597,6 +601,7 @@ class MainActivity : ComponentActivity() {
                     ).show()
                     notificationPermissionLauncher.launch(permission)
                 }
+
                 else -> {
                     // 直接请求权限
                     AppLogger.d(TAG, "请求通知权限")
@@ -616,8 +621,8 @@ class MainActivity : ComponentActivity() {
         AppLogger.d(TAG, "当前权限级别: $permissionLevel")
         showPermissionGuide = permissionLevel == null
         AppLogger.d(
-                TAG,
-                "权限级别检查: 已设置=${!showPermissionGuide}, 将${if(showPermissionGuide) "" else "不"}显示权限引导界面"
+            TAG,
+            "权限级别检查: 已设置=${!showPermissionGuide}, 将${if (showPermissionGuide) "" else "不"}显示权限引导界面"
         )
     }
 
@@ -671,8 +676,8 @@ class MainActivity : ComponentActivity() {
 
         // 启用硬件加速以提高渲染性能
         window.setFlags(
-                android.view.WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
-                android.view.WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
+            android.view.WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+            android.view.WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
         )
     }
 
@@ -689,40 +694,40 @@ class MainActivity : ComponentActivity() {
                         // 检查是否需要显示用户协议
                         if (!agreementPreferences.isAgreementAccepted()) {
                             AgreementScreen(
-                                    onAgreementAccepted = {
-                                        agreementPreferences.setAgreementAccepted(true)
-                                        // 协议接受后，检查权限级别设置
-                                        lifecycleScope.launch {
-                                            // 确保使用非阻塞方式更新UI
-                                            delay(300) // 短暂延迟确保UI状态更新
-                                            checkPermissionLevelSet()
-                                            // 重新设置应用内容
-                                            setAppContent()
-                                        }
+                                onAgreementAccepted = {
+                                    agreementPreferences.setAgreementAccepted(true)
+                                    // 协议接受后，检查权限级别设置
+                                    lifecycleScope.launch {
+                                        // 确保使用非阻塞方式更新UI
+                                        delay(300) // 短暂延迟确保UI状态更新
+                                        checkPermissionLevelSet()
+                                        // 重新设置应用内容
+                                        setAppContent()
                                     }
+                                }
                             )
                         }
                         // 检查是否需要显示数据迁移界面
                         else if (showMigrationScreen) {
                             MigrationScreen(
-                                    migrationManager = migrationManager,
-                                    onComplete = {
-                                        showMigrationScreen = false
-                                        // 迁移完成后，启动插件加载
-                                        startPluginLoading()
-                                        // 重新设置应用内容
-                                        setAppContent()
-                                    }
+                                migrationManager = migrationManager,
+                                onComplete = {
+                                    showMigrationScreen = false
+                                    // 迁移完成后，启动插件加载
+                                    startPluginLoading()
+                                    // 重新设置应用内容
+                                    setAppContent()
+                                }
                             )
                         }
                         // 检查是否需要显示权限引导界面
                         else if (showPermissionGuide) {
                             PermissionGuideScreen(
-                                    onComplete = {
-                                        showPermissionGuide = false
-                                        // 权限设置完成后，重新设置应用内容
-                                        setAppContent()
-                                    }
+                                onComplete = {
+                                    showPermissionGuide = false
+                                    // 权限设置完成后，重新设置应用内容
+                                    setAppContent()
+                                }
                             )
                         }
                         // 显示主应用界面
@@ -730,24 +735,24 @@ class MainActivity : ComponentActivity() {
                             // 处理待处理的分享文件
                             processPendingSharedFiles()
                             processPendingSharedLinks()
-                            
+
                             CompositionLocalProvider(LocalPluginLoadingState provides pluginLoadingState) {
                                 // 主应用界面 (始终存在于底层)
                                 CustardApp(
-                                        initialNavItem =
-                                                when {
-                                                    showPreferencesGuide -> NavItem.UserPreferencesGuide
-                                                    else -> NavItem.AiChat
-                                                },
-                                        toolHandler = toolHandler
+                                    initialNavItem =
+                                        when {
+                                            showPreferencesGuide -> NavItem.UserPreferencesGuide
+                                            else -> NavItem.AiChat
+                                        },
+                                    toolHandler = toolHandler
                                 )
                             }
                         }
                     }
                     // 插件加载界面 (带有淡出效果) - 始终在最上层
                     PluginLoadingScreenWithState(
-                            loadingState = pluginLoadingState,
-                            modifier = Modifier.zIndex(10f) // 确保加载界面在最上层
+                        loadingState = pluginLoadingState,
+                        modifier = Modifier.zIndex(10f) // 确保加载界面在最上层
                     )
                 }
 
@@ -775,12 +780,12 @@ class MainActivity : ComponentActivity() {
 
         // 观察更新状态
         updateManager.updateStatus.observe(
-                this,
-                Observer { status ->
-                    if (status is UpdateStatus.Available) {
-                        showUpdateNotification(status)
-                    }
+            this,
+            Observer { status ->
+                if (status is UpdateStatus.Available) {
+                    showUpdateNotification(status)
                 }
+            }
         )
 
         // 自动检查更新
@@ -796,11 +801,11 @@ class MainActivity : ComponentActivity() {
         updateCheckPerformed = true
 
         val appVersion =
-                try {
-                    packageManager.getPackageInfo(packageName, 0).versionName
-                } catch (e: PackageManager.NameNotFoundException) {
-                    getString(R.string.unknown_value)
-                }
+            try {
+                packageManager.getPackageInfo(packageName, 0).versionName
+            } catch (e: PackageManager.NameNotFoundException) {
+                getString(R.string.unknown_value)
+            }
 
         // 使用UpdateManager检查更新
         lifecycleScope.launch {
@@ -815,11 +820,11 @@ class MainActivity : ComponentActivity() {
 
     private fun showUpdateNotification(updateInfo: UpdateStatus.Available) {
         val currentVersion =
-                try {
-                    packageManager.getPackageInfo(packageName, 0).versionName
-                } catch (e: Exception) {
-                    getString(R.string.unknown_value)
-                }
+            try {
+                packageManager.getPackageInfo(packageName, 0).versionName
+            } catch (e: Exception) {
+                getString(R.string.unknown_value)
+            }
 
         AppLogger.d(TAG, "发现新版本: ${updateInfo.newVersion}，当前版本: $currentVersion")
 
@@ -852,11 +857,11 @@ class MainActivity : ComponentActivity() {
     private fun getDeviceRefreshRate(): Float {
         val windowManager = getSystemService(WINDOW_SERVICE) as android.view.WindowManager
         val display =
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    display
-                } else {
-                    @Suppress("DEPRECATION") windowManager.defaultDisplay
-                }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                display
+            } else {
+                @Suppress("DEPRECATION") windowManager.defaultDisplay
+            }
 
         var refreshRate = 60f // Default refresh rate
 
@@ -908,8 +913,8 @@ class MainActivity : ComponentActivity() {
                         } else if (file.isFile) {
                             // 保留根目录下的 .nomedia 文件，其余全部删除
                             val isRootNoMedia =
-                                    (file.parentFile?.absolutePath == tempDir.absolutePath &&
-                                            file.name == ".nomedia")
+                                (file.parentFile?.absolutePath == tempDir.absolutePath &&
+                                        file.name == ".nomedia")
                             if (!isRootNoMedia && file.delete()) {
                                 deletedCount++
                             }

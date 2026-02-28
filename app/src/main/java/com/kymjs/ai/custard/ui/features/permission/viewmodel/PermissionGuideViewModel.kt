@@ -29,7 +29,6 @@ class PermissionGuideViewModel : ViewModel() {
     
     // 步骤枚举
     enum class Step {
-        WELCOME,
         BASIC_PERMISSIONS,
         PERMISSION_LEVEL
     }
@@ -151,7 +150,7 @@ class PermissionGuideViewModel : ViewModel() {
     
     // UI状态数据类
     data class UiState(
-        val currentStep: Step = Step.WELCOME,
+        val currentStep: Step = Step.BASIC_PERMISSIONS,
         val hasStoragePermission: Boolean = false,
         val hasOverlayPermission: Boolean = false,
         val hasBatteryOptimizationExemption: Boolean = false,

@@ -36,13 +36,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kymjs.ai.custard.R
 import com.kymjs.ai.custard.core.tools.AIToolHandler
@@ -72,18 +69,13 @@ import com.kymjs.ai.custard.ui.main.components.LocalAppBarContentColor
 import com.kymjs.ai.custard.ui.main.screens.GestureStateHolder
 import com.kymjs.ai.custard.ui.main.SharedFileHandler
 import java.io.File
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.sample
 import com.kymjs.ai.custard.data.preferences.CharacterCardManager
 import com.kymjs.ai.custard.ui.main.components.LocalIsCurrentScreen
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.delay
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.unit.Constraints
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -314,8 +306,6 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
     }
 
     // Modern chat UI colors - Cursor风格
-    val backgroundColor =
-            if (hasBackgroundImage) Color.Transparent else MaterialTheme.colorScheme.background
     val userMessageColor = MaterialTheme.colorScheme.primaryContainer
     val aiMessageColor = MaterialTheme.colorScheme.surface
     val userTextColor = MaterialTheme.colorScheme.onPrimaryContainer
@@ -379,8 +369,6 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
             // This is handled by the ViewModel
         }
     }
-    // 判断是否有默认配置可用
-    val hasDefaultConfig = apiKey.isNotBlank()
 
     // 确定是否显示配置界面的最终逻辑
     val showConfig = shouldShowConfigDialog && !ConfigurationStateHolder.hasConfirmedDefaultInSession
@@ -440,7 +428,6 @@ val actualViewModel: ChatViewModel = viewModel ?: viewModel { ChatViewModel(cont
             hasEverShownWebView = true
         }
     }
-    val view = LocalView.current
 
     // 当手势状态改变时，通知父组件
     LaunchedEffect(chatScreenGestureConsumed, showWebView) {

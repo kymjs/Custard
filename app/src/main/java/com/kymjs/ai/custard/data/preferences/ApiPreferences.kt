@@ -182,20 +182,9 @@ class ApiPreferences private constructor(private val context: Context) {
         const val DEFAULT_TOOL_PROMPT_VISIBILITY_JSON = "{}"
 
         // API 配置默认值
-        const val DEFAULT_API_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
-        const val DEFAULT_MODEL_NAME = "deepseek-chat"
-        private const val ENCODED_API_KEY = "c2stNmI4NTYyMjUzNmFjNDhjMDgwYzUwNDhhYjVmNWQxYmQ="
-        val DEFAULT_API_KEY: String by lazy { decodeApiKey(ENCODED_API_KEY) }
-
-        private fun decodeApiKey(encodedKey: String): String {
-            return try {
-                android.util.Base64.decode(encodedKey, android.util.Base64.NO_WRAP)
-                    .toString(Charsets.UTF_8)
-            } catch (e: Exception) {
-                com.kymjs.ai.custard.util.AppLogger.e("ApiPreferences", "Failed to decode API key", e)
-                ""
-            }
-        }
+        const val DEFAULT_API_ENDPOINT = "https://api.minimaxi.com/v1"
+        const val DEFAULT_MODEL_NAME = "MiniMax-M2.5"
+        const val DEFAULT_API_KEY = ""
     }
 
     @Serializable
