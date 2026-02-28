@@ -182,18 +182,18 @@ static jstring bytesUtf8ToJstring(JNIEnv * env, const std::string & bytes) {
 #if !(defined(CUSTARD_HAS_LLAMA_CPP) && CUSTARD_HAS_LLAMA_CPP)
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeIsAvailable(JNIEnv * env, jclass clazz) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeIsAvailable(JNIEnv * env, jclass clazz) {
     return JNI_FALSE;
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeGetUnavailableReason(JNIEnv * env, jclass clazz) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeGetUnavailableReason(JNIEnv * env, jclass clazz) {
     const char * msg = "llama.cpp native backend is not built. Ensure llama/third_party/llama.cpp submodule exists and CMake links target 'llama'.";
     return env->NewStringUTF(msg);
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeCreateSession(JNIEnv * env, jclass clazz, jstring pathModel, jint nThreads, jint nCtx) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeCreateSession(JNIEnv * env, jclass clazz, jstring pathModel, jint nThreads, jint nCtx) {
     (void) env;
     (void) clazz;
     (void) pathModel;
@@ -203,21 +203,21 @@ Java_com_ai_assistance_llama_LlamaNative_nativeCreateSession(JNIEnv * env, jclas
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeReleaseSession(JNIEnv * env, jclass clazz, jlong sessionPtr) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeReleaseSession(JNIEnv * env, jclass clazz, jlong sessionPtr) {
     (void) env;
     (void) clazz;
     (void) sessionPtr;
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeCancel(JNIEnv * env, jclass clazz, jlong sessionPtr) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeCancel(JNIEnv * env, jclass clazz, jlong sessionPtr) {
     (void) env;
     (void) clazz;
     (void) sessionPtr;
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeCountTokens(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring text) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeCountTokens(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring text) {
     (void) env;
     (void) clazz;
     (void) sessionPtr;
@@ -226,7 +226,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeCountTokens(JNIEnv * env, jclass 
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeSetSamplingParams(
+Java_com_kymjs_ai_llama_LlamaNative_nativeSetSamplingParams(
         JNIEnv * env,
         jclass clazz,
         jlong sessionPtr,
@@ -252,7 +252,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeSetSamplingParams(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeApplyChatTemplate(
+Java_com_kymjs_ai_llama_LlamaNative_nativeApplyChatTemplate(
         JNIEnv * env,
         jclass clazz,
         jlong sessionPtr,
@@ -269,7 +269,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeApplyChatTemplate(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeGenerateStream(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring prompt, jint maxTokens, jobject callback) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeGenerateStream(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring prompt, jint maxTokens, jobject callback) {
     (void) env;
     (void) clazz;
     (void) sessionPtr;
@@ -280,7 +280,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeGenerateStream(JNIEnv * env, jcla
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeSetToolCallGrammar(
+Java_com_kymjs_ai_llama_LlamaNative_nativeSetToolCallGrammar(
         JNIEnv * env,
         jclass clazz,
         jlong sessionPtr,
@@ -296,7 +296,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeSetToolCallGrammar(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeClearToolCallGrammar(JNIEnv * env, jclass clazz, jlong sessionPtr) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeClearToolCallGrammar(JNIEnv * env, jclass clazz, jlong sessionPtr) {
     (void) env;
     (void) clazz;
     (void) sessionPtr;
@@ -437,20 +437,20 @@ static bool tokenToPiece(const llama_vocab * vocab, llama_token token, std::stri
 } // namespace
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeIsAvailable(JNIEnv * env, jclass clazz) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeIsAvailable(JNIEnv * env, jclass clazz) {
     (void) env;
     (void) clazz;
     return JNI_TRUE;
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeGetUnavailableReason(JNIEnv * env, jclass clazz) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeGetUnavailableReason(JNIEnv * env, jclass clazz) {
     (void) clazz;
     return env->NewStringUTF("");
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeCreateSession(JNIEnv * env, jclass clazz, jstring pathModel, jint nThreads, jint nCtx) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeCreateSession(JNIEnv * env, jclass clazz, jstring pathModel, jint nThreads, jint nCtx) {
     (void) clazz;
     ensureBackendInit();
 
@@ -512,7 +512,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeCreateSession(JNIEnv * env, jclas
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeReleaseSession(JNIEnv * env, jclass clazz, jlong sessionPtr) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeReleaseSession(JNIEnv * env, jclass clazz, jlong sessionPtr) {
     (void) env;
     (void) clazz;
 
@@ -538,7 +538,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeReleaseSession(JNIEnv * env, jcla
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeCancel(JNIEnv * env, jclass clazz, jlong sessionPtr) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeCancel(JNIEnv * env, jclass clazz, jlong sessionPtr) {
     (void) env;
     (void) clazz;
     if (sessionPtr == 0) return;
@@ -547,7 +547,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeCancel(JNIEnv * env, jclass clazz
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeCountTokens(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring text) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeCountTokens(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring text) {
     (void) clazz;
     if (sessionPtr == 0) return 0;
     auto * session = reinterpret_cast<LlamaSessionNative *>(sessionPtr);
@@ -558,7 +558,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeCountTokens(JNIEnv * env, jclass 
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeSetSamplingParams(
+Java_com_kymjs_ai_llama_LlamaNative_nativeSetSamplingParams(
         JNIEnv * env,
         jclass clazz,
         jlong sessionPtr,
@@ -594,7 +594,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeSetSamplingParams(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeSetToolCallGrammar(
+Java_com_kymjs_ai_llama_LlamaNative_nativeSetToolCallGrammar(
         JNIEnv * env,
         jclass clazz,
         jlong sessionPtr,
@@ -647,7 +647,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeSetToolCallGrammar(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeClearToolCallGrammar(JNIEnv * env, jclass clazz, jlong sessionPtr) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeClearToolCallGrammar(JNIEnv * env, jclass clazz, jlong sessionPtr) {
     (void) env;
     (void) clazz;
 
@@ -673,7 +673,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeClearToolCallGrammar(JNIEnv * env
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeApplyChatTemplate(
+Java_com_kymjs_ai_llama_LlamaNative_nativeApplyChatTemplate(
     JNIEnv * env,
     jclass clazz,
     jlong sessionPtr,
@@ -736,7 +736,7 @@ Java_com_ai_assistance_llama_LlamaNative_nativeApplyChatTemplate(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_llama_LlamaNative_nativeGenerateStream(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring prompt, jint maxTokens, jobject callback) {
+Java_com_kymjs_ai_llama_LlamaNative_nativeGenerateStream(JNIEnv * env, jclass clazz, jlong sessionPtr, jstring prompt, jint maxTokens, jobject callback) {
     (void) clazz;
 
     if (sessionPtr == 0 || callback == nullptr) return JNI_FALSE;

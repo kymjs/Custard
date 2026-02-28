@@ -76,7 +76,7 @@ jstring stringToJstring(JNIEnv* env, const std::string& str) {
 // =======================
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeCreateLlm(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeCreateLlm(
     JNIEnv* env, jclass clazz, jstring jconfigPath) {
     
     std::string configPath = jstringToString(env, jconfigPath);
@@ -103,7 +103,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeCreateLlm(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeCountTokens(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeCountTokens(
     JNIEnv* env, jclass clazz, jlong llmPtr, jstring jtext) {
 
     if (llmPtr == 0) return 0;
@@ -121,7 +121,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeCountTokens(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeLoadLlm(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeLoadLlm(
     JNIEnv* env, jclass clazz, jlong llmPtr) {
     
     if (llmPtr == 0) return JNI_FALSE;
@@ -146,7 +146,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeLoadLlm(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeReleaseLlm(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeReleaseLlm(
     JNIEnv* env, jclass clazz, jlong llmPtr) {
     
     if (llmPtr == 0) return;
@@ -167,7 +167,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeReleaseLlm(
 // =======================
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeTokenize(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeTokenize(
     JNIEnv* env, jclass clazz, jlong llmPtr, jstring jtext) {
     
     if (llmPtr == 0) return nullptr;
@@ -194,7 +194,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeTokenize(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeDetokenize(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeDetokenize(
     JNIEnv* env, jclass clazz, jlong llmPtr, jint token) {
     
     if (llmPtr == 0) return nullptr;
@@ -217,7 +217,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeDetokenize(
 // =======================
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeGenerate(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeGenerate(
     JNIEnv* env, jclass clazz, 
     jlong llmPtr, 
     jstring jprompt,
@@ -273,7 +273,7 @@ struct StreamContext {
 };
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeGenerateStream(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeGenerateStream(
     JNIEnv* env, jclass clazz,
     jlong llmPtr,
     jobject jhistory,
@@ -547,7 +547,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeGenerateStream(
 // =======================
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeCancel(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeCancel(
     JNIEnv* env, jclass clazz, jlong llmPtr) {
     
     if (llmPtr == 0) return;
@@ -562,7 +562,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeCancel(
 // =======================
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeApplyChatTemplate(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeApplyChatTemplate(
     JNIEnv* env, jclass clazz,
     jlong llmPtr,
     jstring juserContent) {
@@ -582,7 +582,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeApplyChatTemplate(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeApplyChatTemplateWithHistory(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeApplyChatTemplateWithHistory(
     JNIEnv* env, jclass clazz,
     jlong llmPtr,
     jobject jhistory) {
@@ -633,7 +633,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeApplyChatTemplateWithHistory(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeCountTokensWithHistory(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeCountTokensWithHistory(
     JNIEnv* env, jclass clazz,
     jlong llmPtr,
     jobject jhistory) {
@@ -689,7 +689,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeCountTokensWithHistory(
 // =======================
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeReset(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeReset(
     JNIEnv* env, jclass clazz, jlong llmPtr) {
     
     if (llmPtr == 0) return;
@@ -709,7 +709,7 @@ Java_com_ai_assistance_mnn_MNNLlmNative_nativeReset(
 // =======================
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_mnn_MNNLlmNative_nativeSetConfig(
+Java_com_kymjs_ai_mnn_MNNLlmNative_nativeSetConfig(
     JNIEnv* env, jclass clazz, jlong llmPtr, jstring jconfigJson) {
     
     if (llmPtr == 0) return JNI_FALSE;

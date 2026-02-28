@@ -15,7 +15,7 @@
 #include <memory>
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_mnn_MNNNetNative_nativeCreateNetFromFile(JNIEnv *env, jclass type, jstring modelName_) {
+Java_com_kymjs_ai_mnn_MNNNetNative_nativeCreateNetFromFile(JNIEnv *env, jclass type, jstring modelName_) {
     const char *modelName = env->GetStringUTFChars(modelName_, 0);
     auto interpreter      = MNN::Interpreter::createFromFile(modelName);
     env->ReleaseStringUTFChars(modelName_, modelName);
@@ -24,7 +24,7 @@ Java_com_ai_assistance_mnn_MNNNetNative_nativeCreateNetFromFile(JNIEnv *env, jcl
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_mnn_MNNNetNative_nativeCreateNetFromBuffer(JNIEnv *env, jclass type, jbyteArray jbuffer) {
+Java_com_kymjs_ai_mnn_MNNNetNative_nativeCreateNetFromBuffer(JNIEnv *env, jclass type, jbyteArray jbuffer) {
     if (nullptr == jbuffer) {
         return 0;
     }
@@ -37,7 +37,7 @@ Java_com_ai_assistance_mnn_MNNNetNative_nativeCreateNetFromBuffer(JNIEnv *env, j
     return (jlong)interpreter;
 }
 
-extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeReleaseNet(JNIEnv *env, jclass type,
+extern "C" JNIEXPORT jlong JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeReleaseNet(JNIEnv *env, jclass type,
                                                                                              jlong netPtr) {
     if (0 == netPtr) {
         return 0;
@@ -46,7 +46,7 @@ extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativ
     return 0;
 }
 
-extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeCreateSession(
+extern "C" JNIEXPORT jlong JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeCreateSession(
     JNIEnv *env, jclass type, jlong netPtr, jint forwardType, jint numThread, jobjectArray jsaveTensors,
     jobjectArray joutputTensors) {
     MNN::ScheduleConfig config;
@@ -90,7 +90,7 @@ extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativ
     return (jlong)session;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeReleaseSession(JNIEnv *env,
+extern "C" JNIEXPORT void JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeReleaseSession(JNIEnv *env,
                                                                                                 jclass type,
                                                                                                 jlong netPtr,
                                                                                                 jlong sessionPtr) {
@@ -99,7 +99,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     net->releaseSession(session);
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeRunSession(JNIEnv *env, jclass type,
+extern "C" JNIEXPORT jint JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeRunSession(JNIEnv *env, jclass type,
                                                                                             jlong netPtr,
                                                                                             jlong sessionPtr) {
     auto net     = (MNN::Interpreter *)netPtr;
@@ -107,7 +107,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     return net->runSession(session);
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeRunSessionWithCallback(
+extern "C" JNIEXPORT jint JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeRunSessionWithCallback(
     JNIEnv *env, jclass type, jlong netPtr, jlong sessionPtr, jobjectArray nameArray, jlongArray jtensoraddrs) {
     int nameSize   = env->GetArrayLength(nameArray);
     int tensorSize = env->GetArrayLength(jtensoraddrs);
@@ -158,7 +158,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     return 0;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeReshapeSession(JNIEnv *env,
+extern "C" JNIEXPORT jint JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeReshapeSession(JNIEnv *env,
                                                                                                 jclass type,
                                                                                                 jlong netPtr,
                                                                                                 jlong sessionPtr) {
@@ -168,7 +168,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     return 0;
 }
 
-extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeGetSessionInput(
+extern "C" JNIEXPORT jlong JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeGetSessionInput(
     JNIEnv *env, jclass type, jlong netPtr, jlong sessionPtr, jstring name_) {
     auto net     = (MNN::Interpreter *)netPtr;
     auto session = (MNN::Session *)sessionPtr;
@@ -183,7 +183,7 @@ extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativ
     return (jlong)tensor;
 }
 
-extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeGetSessionOutput(
+extern "C" JNIEXPORT jlong JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeGetSessionOutput(
     JNIEnv *env, jclass type, jlong netPtr, jlong sessionPtr, jstring name_) {
     auto net     = (MNN::Interpreter *)netPtr;
     auto session = (MNN::Session *)sessionPtr;
@@ -196,7 +196,7 @@ extern "C" JNIEXPORT jlong JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativ
     return (jlong)tensor;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeReshapeTensor(JNIEnv *env, jclass type,
+extern "C" JNIEXPORT void JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeReshapeTensor(JNIEnv *env, jclass type,
                                                                                                jlong netPtr,
                                                                                                jlong tensorPtr,
                                                                                                jintArray dims_) {
@@ -212,7 +212,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     env->ReleaseIntArrayElements(dims_, dims, 0);
 }
 
-extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeSetInputIntData(
+extern "C" JNIEXPORT void JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeSetInputIntData(
     JNIEnv *env, jclass type, jlong netPtr, jlong tensorPtr, jintArray data_) {
     auto tensor = (MNN::Tensor *)tensorPtr;
 
@@ -226,7 +226,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     env->ReleaseIntArrayElements(data_, data, 0);
 }
 
-extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeSetInputFloatData(
+extern "C" JNIEXPORT void JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeSetInputFloatData(
     JNIEnv *env, jclass type, jlong netPtr, jlong tensorPtr, jfloatArray data_) {
     auto tensor = (MNN::Tensor *)tensorPtr;
 
@@ -241,7 +241,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
 }
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_mnn_MNNNetNative_nativeTensorGetDimensions(JNIEnv *env, jclass type, jlong tensorPtr) {
+Java_com_kymjs_ai_mnn_MNNNetNative_nativeTensorGetDimensions(JNIEnv *env, jclass type, jlong tensorPtr) {
     auto tensor     = (MNN::Tensor *)tensorPtr;
     auto dimensions = tensor->buffer().dimensions;
 
@@ -255,7 +255,7 @@ Java_com_ai_assistance_mnn_MNNNetNative_nativeTensorGetDimensions(JNIEnv *env, j
     return result;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeTensorGetUINT8Data(JNIEnv *env,
+extern "C" JNIEXPORT jint JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeTensorGetUINT8Data(JNIEnv *env,
                                                                                                     jclass type,
                                                                                                     jlong tensorPtr,
                                                                                                     jbyteArray jdest) {
@@ -286,7 +286,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     return JNI_TRUE;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeTensorGetIntData(JNIEnv *env,
+extern "C" JNIEXPORT jint JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeTensorGetIntData(JNIEnv *env,
                                                                                                   jclass type,
                                                                                                   jlong tensorPtr,
                                                                                                   jintArray dest) {
@@ -317,7 +317,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     return JNI_TRUE;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeTensorGetData(JNIEnv *env, jclass type,
+extern "C" JNIEXPORT jint JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeTensorGetData(JNIEnv *env, jclass type,
                                                                                                jlong tensorPtr,
                                                                                                jfloatArray dest) {
     auto tensor = reinterpret_cast<MNN::Tensor *>(tensorPtr);
@@ -342,7 +342,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_ai_assistance_mnn_MNNNetNative_native
     return JNI_TRUE;
 }
 
-extern "C" JNIEXPORT jboolean JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeConvertBufferToTensor(
+extern "C" JNIEXPORT jboolean JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeConvertBufferToTensor(
     JNIEnv *env, jclass type, jbyteArray jbufferData, jint jwidth, jint jheight, jlong tensorPtr, jint srcType,
     jint destFormat, jint filterType, jint wrap, jfloatArray matrixValue_, jfloatArray mean_, jfloatArray normal_) {
     jbyte *bufferData = env->GetByteArrayElements(jbufferData, NULL);
@@ -392,7 +392,7 @@ extern "C" JNIEXPORT jboolean JNICALL Java_com_ai_assistance_mnn_MNNNetNative_na
     return JNI_TRUE;
 }
 
-extern "C" JNIEXPORT jboolean JNICALL Java_com_ai_assistance_mnn_MNNNetNative_nativeConvertBitmapToTensor(
+extern "C" JNIEXPORT jboolean JNICALL Java_com_kymjs_ai_mnn_MNNNetNative_nativeConvertBitmapToTensor(
     JNIEnv *env, jclass type, jobject srcBitmap, jlong tensorPtr, jint destFormat, jint filterType, jint wrap,
     jfloatArray matrixValue_, jfloatArray mean_, jfloatArray normal_) {
     MNN::CV::ImageProcess::Config config;

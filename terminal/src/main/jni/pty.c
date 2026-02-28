@@ -21,7 +21,7 @@
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, TAG, __VA_ARGS__)
 
 JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_custard_terminal_Pty_00024Companion_createSubprocess(JNIEnv *env, jobject thiz,
+Java_com_kymjs_ai_custard_terminal_Pty_00024Companion_createSubprocess(JNIEnv *env, jobject thiz,
                                                                           jobjectArray cmdarray,
                                                                           jobjectArray envarray,
                                                                           jstring workingDir) {
@@ -127,7 +127,7 @@ Java_com_ai_assistance_custard_terminal_Pty_00024Companion_createSubprocess(JNIE
 }
 
 JNIEXPORT jint JNICALL
-Java_com_ai_assistance_custard_terminal_Pty_00024Companion_waitFor(JNIEnv *env, jobject thiz, jint pid) {
+Java_com_kymjs_ai_custard_terminal_Pty_00024Companion_waitFor(JNIEnv *env, jobject thiz, jint pid) {
     int status;
     waitpid(pid, &status, 0);
     if (WIFEXITED(status)) {
@@ -145,7 +145,7 @@ Java_com_ai_assistance_custard_terminal_Pty_00024Companion_waitFor(JNIEnv *env, 
  *  bit 3: IEXTEN - enable extended input processing
  */
 JNIEXPORT jint JNICALL
-Java_com_ai_assistance_custard_terminal_Pty_00024Companion_getTerminalFlags(JNIEnv *env, jobject thiz, jint fd) {
+Java_com_kymjs_ai_custard_terminal_Pty_00024Companion_getTerminalFlags(JNIEnv *env, jobject thiz, jint fd) {
     struct termios tt;
     if (tcgetattr(fd, &tt) != 0) {
         LOGE("tcgetattr failed for fd %d", fd);
@@ -173,7 +173,7 @@ Java_com_ai_assistance_custard_terminal_Pty_00024Companion_getTerminalFlags(JNIE
  * 返回值：可读字节数，-1 表示错误
  */
 JNIEXPORT jint JNICALL
-Java_com_ai_assistance_custard_terminal_Pty_00024Companion_getAvailableBytes(JNIEnv *env, jobject thiz, jint fd) {
+Java_com_kymjs_ai_custard_terminal_Pty_00024Companion_getAvailableBytes(JNIEnv *env, jobject thiz, jint fd) {
     int available = 0;
     if (ioctl(fd, FIONREAD, &available) != 0) {
         LOGE("ioctl FIONREAD failed for fd %d", fd);
@@ -191,7 +191,7 @@ Java_com_ai_assistance_custard_terminal_Pty_00024Companion_getAvailableBytes(JNI
  * 返回值：0 表示成功，-1 表示失败
  */
 JNIEXPORT jint JNICALL
-Java_com_ai_assistance_custard_terminal_Pty_setPtyWindowSize(JNIEnv *env, jobject thiz, jint fd, jint rows, jint cols) {
+Java_com_kymjs_ai_custard_terminal_Pty_setPtyWindowSize(JNIEnv *env, jobject thiz, jint fd, jint rows, jint cols) {
     struct winsize ws;
     ws.ws_row = rows;
     ws.ws_col = cols;

@@ -20,20 +20,20 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.ai.assistance.shower.Main {
+-keep class com.kymjs.ai.shower.Main {
     public static void main(java.lang.String[]);
 }
 
 # Keep Shower binder IPC types so they are not obfuscated when used across
 # the shower-server.jar (shell process) and the Custard app process.
--keep class com.ai.assistance.shower.ShowerBinderContainer {
+-keep class com.kymjs.ai.shower.ShowerBinderContainer {
     *;
 }
 
--keep class com.ai.assistance.shower.IShowerService {
+-keep class com.kymjs.ai.shower.IShowerService {
     *;
 }
 
--keep class com.ai.assistance.shower.IShowerVideoSink {
+-keep class com.kymjs.ai.shower.IShowerVideoSink {
     *;
 }

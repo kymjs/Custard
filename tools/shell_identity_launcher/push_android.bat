@@ -87,10 +87,10 @@ adb shell su -c "rm -f %SHOWER_LOG%"
 
 echo.
 echo [INFO] Killing existing Shower server (if any) ...
-adb shell su -c "pkill -f com.ai.assistance.shower.Main >/dev/null 2>&1 || true"
+adb shell su -c "pkill -f com.kymjs.ai.shower.Main >/dev/null 2>&1 || true"
 
 echo [INFO] Starting Shower server via custard_shell_exec (native launcher) ...
-adb shell su -c "%DEVICE_PATH% CLASSPATH=%REMOTE_CLASSPATH% app_process / com.ai.assistance.shower.Main"
+adb shell su -c "%DEVICE_PATH% CLASSPATH=%REMOTE_CLASSPATH% app_process / com.kymjs.ai.shower.Main"
 if errorlevel 1 (
     echo [WARN] Failed to start Shower server via custard_shell_exec; please check manually.
 ) else (

@@ -49,12 +49,12 @@ rem === 4. 使用 app_process 在 adb 环境中启动 Shower server ===
 set REMOTE_CLASSPATH=%REMOTE_DIR%/%REMOTE_JAR%
 
 echo [3/4] Killing existing Shower server (if any) ...
-adb shell "pkill -f com.ai.assistance.shower.Main >/dev/null 2>&1 || true"
+adb shell "pkill -f com.kymjs.ai.shower.Main >/dev/null 2>&1 || true"
 
 echo [4/4] Starting Shower server via app_process ...
-rem 与 scrcpy 类似：CLASSPATH=/data/local/tmp/shower-server.jar app_process / com.ai.assistance.shower.Main
-echo adb shell "CLASSPATH=%REMOTE_CLASSPATH% app_process / com.ai.assistance.shower.Main &"
-adb shell "CLASSPATH=%REMOTE_CLASSPATH% app_process / com.ai.assistance.shower.Main &"
+rem 与 scrcpy 类似：CLASSPATH=/data/local/tmp/shower-server.jar app_process / com.kymjs.ai.shower.Main
+echo adb shell "CLASSPATH=%REMOTE_CLASSPATH% app_process / com.kymjs.ai.shower.Main &"
+adb shell "CLASSPATH=%REMOTE_CLASSPATH% app_process / com.kymjs.ai.shower.Main &"
 if errorlevel 1 (
     echo [ERROR] 无法通过 app_process 启动 Shower server。
     exit /b 1
@@ -73,7 +73,7 @@ echo 来测试虚拟屏幕创建和销毁逻辑。
 
 echo.
 echo 若需要停止该进程，可在設備上通過 WebSocket 發送 STOP 或使用:
-echo   adb shell pkill -f com.ai.assistance.shower.Main
+echo   adb shell pkill -f com.kymjs.ai.shower.Main
 
 echo.
 endlocal

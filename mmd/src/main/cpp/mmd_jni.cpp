@@ -1376,7 +1376,7 @@ jobjectArray buildStringArray(JNIEnv* env, const std::vector<std::string>& value
 } // namespace
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeIsAvailable(JNIEnv*, jclass) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeIsAvailable(JNIEnv*, jclass) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     return JNI_TRUE;
 #else
@@ -1385,7 +1385,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeIsAvailable(JNIEnv*, jclass) {
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeGetUnavailableReason(JNIEnv* env, jclass) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeGetUnavailableReason(JNIEnv* env, jclass) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     return stringToJString(env, "");
 #else
@@ -1394,12 +1394,12 @@ Java_com_ai_assistance_mmd_MmdNative_nativeGetUnavailableReason(JNIEnv* env, jcl
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeGetLastError(JNIEnv* env, jclass) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeGetLastError(JNIEnv* env, jclass) {
     return stringToJString(env, getLastErrorCopy());
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeReadModelName(JNIEnv* env, jclass, jstring pathModel) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeReadModelName(JNIEnv* env, jclass, jstring pathModel) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string modelPath = jstringToString(env, pathModel);
     if (modelPath.empty()) {
@@ -1424,7 +1424,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeReadModelName(JNIEnv* env, jclass, js
 }
 
 extern "C" JNIEXPORT jlongArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeReadModelSummary(JNIEnv* env, jclass, jstring pathModel) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeReadModelSummary(JNIEnv* env, jclass, jstring pathModel) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string modelPath = jstringToString(env, pathModel);
     if (modelPath.empty()) {
@@ -1462,7 +1462,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeReadModelSummary(JNIEnv* env, jclass,
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeReadMotionModelName(JNIEnv* env, jclass, jstring pathMotion) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeReadMotionModelName(JNIEnv* env, jclass, jstring pathMotion) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string motionPath = jstringToString(env, pathMotion);
     if (motionPath.empty()) {
@@ -1487,7 +1487,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeReadMotionModelName(JNIEnv* env, jcla
 }
 
 extern "C" JNIEXPORT jlongArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeReadMotionSummary(JNIEnv* env, jclass, jstring pathMotion) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeReadMotionSummary(JNIEnv* env, jclass, jstring pathMotion) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string motionPath = jstringToString(env, pathMotion);
     if (motionPath.empty()) {
@@ -1523,7 +1523,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeReadMotionSummary(JNIEnv* env, jclass
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeReadMotionMaxFrame(JNIEnv* env, jclass, jstring pathMotion) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeReadMotionMaxFrame(JNIEnv* env, jclass, jstring pathMotion) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string motionPath = jstringToString(env, pathMotion);
     if (motionPath.empty()) {
@@ -1549,7 +1549,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeReadMotionMaxFrame(JNIEnv* env, jclas
 }
 
 extern "C" JNIEXPORT jfloatArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewAnimatedMesh(JNIEnv* env, jclass, jstring pathModel, jstring pathMotion, jfloat frame) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeBuildPreviewAnimatedMesh(JNIEnv* env, jclass, jstring pathModel, jstring pathMotion, jfloat frame) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string modelPath = jstringToString(env, pathModel);
     const std::string motionPath = jstringToString(env, pathMotion);
@@ -1588,7 +1588,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewAnimatedMesh(JNIEnv* env,
 }
 
 extern "C" JNIEXPORT jfloatArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewAnimatedMeshAuto(
+Java_com_kymjs_ai_mmd_MmdNative_nativeBuildPreviewAnimatedMeshAuto(
     JNIEnv* env,
     jclass,
     jstring pathModel,
@@ -1642,7 +1642,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewAnimatedMeshAuto(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeRenderPreviewFrame(
+Java_com_kymjs_ai_mmd_MmdNative_nativeRenderPreviewFrame(
     JNIEnv* env,
     jclass,
     jstring pathModel,
@@ -1912,7 +1912,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeRenderPreviewFrame(
 }
 
 extern "C" JNIEXPORT jfloatArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewMesh(JNIEnv* env, jclass, jstring pathModel) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeBuildPreviewMesh(JNIEnv* env, jclass, jstring pathModel) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string modelPath = jstringToString(env, pathModel);
     if (modelPath.empty()) {
@@ -1944,7 +1944,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewMesh(JNIEnv* env, jclass,
 }
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewBatches(JNIEnv* env, jclass, jstring pathModel) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeBuildPreviewBatches(JNIEnv* env, jclass, jstring pathModel) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string modelPath = jstringToString(env, pathModel);
     if (modelPath.empty()) {
@@ -1976,7 +1976,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeBuildPreviewBatches(JNIEnv* env, jcla
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeReadPreviewTexturePath(JNIEnv* env, jclass, jstring pathModel) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeReadPreviewTexturePath(JNIEnv* env, jclass, jstring pathModel) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string modelPath = jstringToString(env, pathModel);
     if (modelPath.empty()) {
@@ -2007,7 +2007,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeReadPreviewTexturePath(JNIEnv* env, j
 }
 
 extern "C" JNIEXPORT jobjectArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeReadPreviewTexturePaths(JNIEnv* env, jclass, jstring pathModel) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeReadPreviewTexturePaths(JNIEnv* env, jclass, jstring pathModel) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string modelPath = jstringToString(env, pathModel);
     if (modelPath.empty()) {
@@ -2039,7 +2039,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeReadPreviewTexturePaths(JNIEnv* env, 
 }
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeDecodeImageSize(JNIEnv* env, jclass, jstring pathImage) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeDecodeImageSize(JNIEnv* env, jclass, jstring pathImage) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string imagePath = jstringToString(env, pathImage);
     if (imagePath.empty()) {
@@ -2077,7 +2077,7 @@ Java_com_ai_assistance_mmd_MmdNative_nativeDecodeImageSize(JNIEnv* env, jclass, 
 }
 
 extern "C" JNIEXPORT jbyteArray JNICALL
-Java_com_ai_assistance_mmd_MmdNative_nativeDecodeImageRgba(JNIEnv* env, jclass, jstring pathImage) {
+Java_com_kymjs_ai_mmd_MmdNative_nativeDecodeImageRgba(JNIEnv* env, jclass, jstring pathImage) {
 #if defined(CUSTARD_HAS_SABA) && CUSTARD_HAS_SABA
     const std::string imagePath = jstringToString(env, pathImage);
     if (imagePath.empty()) {

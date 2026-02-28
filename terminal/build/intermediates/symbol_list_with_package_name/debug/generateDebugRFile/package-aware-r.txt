@@ -1,4 +1,4 @@
-com.ai.assistance.custard.terminal
+com.kymjs.ai.custard.terminal
 font jetbrains_mono_nerd_font_regular
 string add
 string add_custom_source_title

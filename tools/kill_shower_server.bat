@@ -11,7 +11,7 @@ if errorlevel 1 (
 
 rem === 1. 在设备上杀掉 Shower server 进程 ===
 echo [INFO] Killing Shower server process on device...
-adb shell "pkill -f com.ai.assistance.shower.Main >/dev/null 2>&1 || true"
+adb shell "pkill -f com.kymjs.ai.shower.Main >/dev/null 2>&1 || true"
 if errorlevel 1 (
     echo [ERROR] 无法发送 kill 命令，请确认设备已连接并授权调试。
     exit /b 1

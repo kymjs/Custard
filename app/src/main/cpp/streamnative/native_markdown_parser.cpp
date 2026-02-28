@@ -472,7 +472,7 @@ static jintArray blocksToIntArray(JNIEnv* env, const std::vector<BlockNode>& blo
 } // namespace
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_custard_util_streamnative_NativeMarkdownParser_nativeParseMarkdown(
+Java_com_kymjs_ai_custard_util_streamnative_NativeMarkdownParser_nativeParseMarkdown(
         JNIEnv* env,
         jobject /*thiz*/,
         jstring content

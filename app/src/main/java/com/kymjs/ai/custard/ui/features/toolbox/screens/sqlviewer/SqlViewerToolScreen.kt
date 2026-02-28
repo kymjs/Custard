@@ -1,0 +1,19 @@
+package com.kymjs.ai.custard.ui.features.toolbox.screens.sqlviewer
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import com.kymjs.ai.custard.ui.components.CustomScaffold
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SqlViewerToolScreen(navController: NavController) {
+    CustomScaffold { paddingValues ->
+        Box(modifier = Modifier.padding(paddingValues)) {
+            SqlViewerScreen(navController = navController)
+        }
+    }
+}

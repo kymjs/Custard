@@ -43,7 +43,7 @@ std::vector<std::string> jstringArrayToVector(JNIEnv* env, jobjectArray jarray) 
 
 // 创建Module从文件
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeCreateModuleFromFile(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeCreateModuleFromFile(
     JNIEnv* env, jclass clazz,
     jstring jfilePath,
     jobjectArray jinputs,
@@ -122,7 +122,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeCreateModuleFromFile(
 
 // 释放Module
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeReleaseModule(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeReleaseModule(
     JNIEnv* env, jclass clazz, jlong modulePtr) {
     
     if (modulePtr == 0) {
@@ -140,7 +140,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeReleaseModule(
 
 // 前向推理
 extern "C" JNIEXPORT jlongArray JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeForward(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeForward(
     JNIEnv* env, jclass clazz,
     jlong modulePtr,
     jlongArray jinputVarPtrs) {
@@ -191,7 +191,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeForward(
 
 // 创建输入VARP
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeCreateInputVar(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeCreateInputVar(
     JNIEnv* env, jclass clazz,
     jintArray jshape,
     jint dataFormat,
@@ -225,7 +225,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeCreateInputVar(
 
 // 设置VARP数据（float）
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeSetVarFloatData(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeSetVarFloatData(
     JNIEnv* env, jclass clazz,
     jlong varPtr,
     jfloatArray jdata) {
@@ -257,7 +257,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeSetVarFloatData(
 
 // 设置VARP数据（int）
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeSetVarIntData(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeSetVarIntData(
     JNIEnv* env, jclass clazz,
     jlong varPtr,
     jintArray jdata) {
@@ -289,7 +289,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeSetVarIntData(
 
 // 获取VARP数据（float）
 extern "C" JNIEXPORT jfloatArray JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeGetVarFloatData(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeGetVarFloatData(
     JNIEnv* env, jclass clazz, jlong varPtr) {
     
     if (varPtr == 0) {
@@ -328,7 +328,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeGetVarFloatData(
 
 // 获取VARP形状
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeGetVarShape(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeGetVarShape(
     JNIEnv* env, jclass clazz, jlong varPtr) {
     
     if (varPtr == 0) {
@@ -358,7 +358,7 @@ Java_com_ai_assistance_mnn_MNNModuleNative_nativeGetVarShape(
 
 // 释放VARP
 extern "C" JNIEXPORT void JNICALL
-Java_com_ai_assistance_mnn_MNNModuleNative_nativeReleaseVar(
+Java_com_kymjs_ai_mnn_MNNModuleNative_nativeReleaseVar(
     JNIEnv* env, jclass clazz, jlong varPtr) {
     
     if (varPtr == 0) {

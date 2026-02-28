@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.assistance.custard.terminal"
+    namespace = "com.kymjs.ai.custard.terminal"
     compileSdk = 34
 
     defaultConfig {

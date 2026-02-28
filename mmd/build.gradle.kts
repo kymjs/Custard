@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.assistance.mmd"
+    namespace = "com.kymjs.ai.mmd"
     compileSdk = 34
 
     defaultConfig {

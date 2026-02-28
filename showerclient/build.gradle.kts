@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.assistance.showerclient"
+    namespace = "com.kymjs.ai.showerclient"
     compileSdk = 34
 
     defaultConfig {

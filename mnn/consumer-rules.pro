@@ -6,7 +6,7 @@
 }
 
 # Keep MNN public API
--keep public class com.ai.assistance.mnn.** {
+-keep public class com.kymjs.ai.mnn.** {
     public *;
 }
 

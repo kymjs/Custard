@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.assistance.llama"
+    namespace = "com.kymjs.ai.llama"
     compileSdk = 34
 
     defaultConfig {

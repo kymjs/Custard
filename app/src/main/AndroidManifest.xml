@@ -62,7 +62,7 @@
 
     <queries>
         <!-- 允许查询和绑定到无障碍服务提供者应用 -->
-        <package android:name="com.ai.assistance.custard.provider" />
+        <package android:name="com.kymjs.ai.custard.provider" />
     </queries>
 
     <application
@@ -138,7 +138,7 @@
         <!-- Workspace Documents Provider for SAF -->
         <provider
             android:name=".provider.WorkspaceDocumentsProvider"
-            android:authorities="com.ai.assistance.custard.documents.workspace"
+            android:authorities="com.kymjs.ai.custard.documents.workspace"
             android:exported="true"
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS">
@@ -149,7 +149,7 @@
 
         <provider
             android:name=".provider.MemoryDocumentsProvider"
-            android:authorities="com.ai.assistance.custard.documents.memory"
+            android:authorities="com.kymjs.ai.custard.documents.memory"
             android:exported="true"
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS">
@@ -299,7 +299,7 @@
             android:name=".core.tools.javascript.ScriptExecutionReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.ai.assistance.custard.EXECUTE_JS" />
+                <action android:name="com.kymjs.ai.custard.EXECUTE_JS" />
             </intent-filter>
         </receiver>
 
@@ -307,7 +307,7 @@
             android:name=".integrations.intent.ExternalChatReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.ai.assistance.custard.EXTERNAL_CHAT" />
+                <action android:name="com.kymjs.ai.custard.EXTERNAL_CHAT" />
             </intent-filter>
         </receiver>
 
@@ -315,7 +315,7 @@
             android:name=".data.updates.PatchInstallReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.ai.assistance.custard.action.INSTALL_PATCH_APK" />
+                <action android:name="com.kymjs.ai.custard.action.INSTALL_PATCH_APK" />
             </intent-filter>
         </receiver>
         
@@ -343,7 +343,7 @@
             android:name=".core.tools.agent.ShowerBinderReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.ai.assistance.custard.action.SHOWER_BINDER_READY" />
+                <action android:name="com.kymjs.ai.custard.action.SHOWER_BINDER_READY" />
             </intent-filter>
         </receiver>
         
@@ -364,7 +364,7 @@
             android:exported="true"
             android:enabled="true">
             <intent-filter>
-                <action android:name="com.ai.assistance.custard.TRIGGER_WORKFLOW" />
+                <action android:name="com.kymjs.ai.custard.TRIGGER_WORKFLOW" />
                 <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
             </intent-filter>
         </receiver>

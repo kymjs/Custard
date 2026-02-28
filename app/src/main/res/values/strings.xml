@@ -899,7 +899,7 @@
     <string name="copy_path">复制路径</string>
     <string name="path_copied_to_clipboard">路径已复制到剪贴板</string>
     <string name="open_file_manager">打开文件管理器</string>
-    <string name="navigate_to_external_files">请导航到Android/data/com.ai.assistance.custard/files/packages目录</string>
+    <string name="navigate_to_external_files">请导航到Android/data/com.kymjs.ai.custard/files/packages目录</string>
     <string name="package_js_only">仅支持 JavaScript(.js) 和 ToolPkg(.toolpkg) 文件</string>
     <string name="pkg_toolpkg_subpackages">ToolPkg 子包</string>
     <string name="pkg_toolpkg_version">版本：%1$s</string>

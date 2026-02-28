@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.assistance.mnn"
+    namespace = "com.kymjs.ai.mnn"
     compileSdk = 34
 
     defaultConfig {

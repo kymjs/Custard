@@ -4,7 +4,7 @@
     "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.ai.assistance.custard.terminal",
+  "applicationId": "com.kymjs.ai.custard.terminal",
   "variantName": "debug",
   "elements": [
     {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ai.assistance.custard.terminal" >
+    package="com.kymjs.ai.custard.terminal" >
 
     <uses-sdk android:minSdkVersion="26" />
 
@@ -11,8 +11,8 @@
 
         <!-- Ubuntu File System Documents Provider for SAF -->
         <provider
-            android:name="com.ai.assistance.custard.terminal.provider.UbuntuDocumentsProvider"
-            android:authorities="com.ai.assistance.custard.documents.ubuntu"
+            android:name="com.kymjs.ai.custard.terminal.provider.UbuntuDocumentsProvider"
+            android:authorities="com.kymjs.ai.custard.documents.ubuntu"
             android:exported="true"
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS" >
@@ -22,7 +22,7 @@
         </provider>
 
         <service
-            android:name="com.ai.assistance.custard.terminal.service.TerminalService"
+            android:name="com.kymjs.ai.custard.terminal.service.TerminalService"
             android:enabled="true"
             android:exported="false" />
     </application>

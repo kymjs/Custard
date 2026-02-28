@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.assistance.shower"
+    namespace = "com.kymjs.ai.shower"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.ai.assistance.shower"
+        applicationId = "com.kymjs.ai.shower"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

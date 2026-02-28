@@ -24,9 +24,9 @@
 -keep class rikka.shizuku.** { *; }
 
 # 保留 Shower 相关 Binder IPC 类型，确保与 shower-server.jar 的类名保持一致
--keep class com.ai.assistance.shower.ShowerBinderContainer { *; }
--keep class com.ai.assistance.shower.IShowerService { *; }
--keep class com.ai.assistance.shower.IShowerVideoSink { *; }
+-keep class com.kymjs.ai.shower.ShowerBinderContainer { *; }
+-keep class com.kymjs.ai.shower.IShowerService { *; }
+-keep class com.kymjs.ai.shower.IShowerVideoSink { *; }
 
 # 保留自定义的 UserService 类及 AIDL 接口
 -keep class com.lyneon.cytoidinfoquerier.service.FileService { *; }

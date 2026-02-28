@@ -19,7 +19,7 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.ai.assistance.custard"
+    namespace = "com.kymjs.ai.custard"
     compileSdk = 34
 
     signingConfigs {
@@ -50,7 +50,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.ai.assistance.custard"
+        applicationId = "com.kymjs.ai.custard"
         minSdk = 26
         targetSdk = 34
         versionCode = 39

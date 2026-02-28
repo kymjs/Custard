@@ -11,10 +11,10 @@
 }
 
 # Keep MNN classes
--keep class com.ai.assistance.mnn.** { *; }
+-keep class com.kymjs.ai.mnn.** { *; }
 
 # Keep MNN enums
--keepclassmembers enum com.ai.assistance.mnn.** {
+-keepclassmembers enum com.kymjs.ai.mnn.** {
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }

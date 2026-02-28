@@ -9,13 +9,13 @@ plugins {
 }
 
 android {
-    namespace = "com.ai.assistance.custard.desktop"
+    namespace = "com.kymjs.ai.custard.desktop"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.ai.assistance.custard.desktop"
+        applicationId = "com.kymjs.ai.custard.desktop"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
