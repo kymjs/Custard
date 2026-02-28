@@ -131,10 +131,7 @@ sealed class Screen(
                 onGestureConsumed: (Boolean) -> Unit
         ) {
             AIChatScreen(
-                    padding = PaddingValues(0.dp),
                     viewModel = null,
-                    isFloatingMode = false,
-                    hasBackgroundImage = hasBackgroundImage,
                     onNavigateToTokenConfig = { navigateTo(TokenConfig) },
                     onNavigateToSettings = {
                         navigateTo(Settings)
@@ -144,8 +141,6 @@ sealed class Screen(
                     onNavigateToModelConfig = { navigateTo(ModelConfig) },
                     onNavigateToModelPrompts = { navigateTo(ModelPromptsSettings) },
                     onNavigateToPackageManager = { navigateTo(Packages) },
-                    onLoading = onLoading,
-                    onError = onError,
                     onGestureConsumed = onGestureConsumed
             )
         }

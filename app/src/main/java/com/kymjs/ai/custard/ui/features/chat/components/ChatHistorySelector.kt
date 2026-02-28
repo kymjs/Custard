@@ -1331,7 +1331,7 @@ fun ChatHistorySelector(
                 Text(stringResource(R.string.new_chat))
             }
             IconButton(
-                onClick = { showNewGroupDialog = true },
+                onClick = {  },
                 modifier = Modifier.size(40.dp)
             ) {
                 Icon(
