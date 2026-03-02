@@ -102,7 +102,7 @@ class ScreenCaptureService : Service() {
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Screen Capture Active")
             .setContentText("Custard is capturing screen content")
-            .setSmallIcon(R.drawable.ic_launcher_foreground) // Ensure this resource exists, fallback if not
+            .setSmallIcon(R.drawable.icon) // Ensure this resource exists, fallback if not
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .build()
     }

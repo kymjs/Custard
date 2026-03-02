@@ -128,7 +128,7 @@ class UIDebuggerService : Service(), ViewModelStoreOwner {
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("UI Debugger Active")
             .setContentText("Tap to manage the UI debugger overlay.")
-            .setSmallIcon(R.drawable.ic_launcher_foreground) // Replace with a real icon
+            .setSmallIcon(R.drawable.icon) // Replace with a real icon
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .build()
     }

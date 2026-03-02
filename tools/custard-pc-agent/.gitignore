@@ -1,5 +1,0 @@
-logs/*.log
-data/agent.pid
-data/runtime.json
-data/active_launch.id
-data/config.json

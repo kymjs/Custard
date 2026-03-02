@@ -163,7 +163,7 @@ object MessageImageGenerator {
                                     ) {
                                         // Logo
                                         Image(
-                                            painter = painterResource(id = com.kymjs.ai.custard.R.drawable.ic_launcher_foreground),
+                                            painter = painterResource(id = R.drawable.icon),
                                             contentDescription = "Custard Logo",
                                             modifier = Modifier.size(48.dp) // 减少 Logo 尺寸：64dp -> 48dp
                                         )
