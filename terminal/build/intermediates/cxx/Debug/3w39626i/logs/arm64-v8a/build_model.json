@@ -8,9 +8,9 @@
     "triple": "aarch64-linux-android",
     "llvmTriple": "aarch64-none-linux-android"
   },
-  "cxxBuildFolder": "/Users/kymjs/code/0oslab/Custard/terminal/.cxx/Debug/3w39626i/arm64-v8a",
-  "soFolder": "/Users/kymjs/code/0oslab/Custard/terminal/build/intermediates/cxx/Debug/3w39626i/obj/arm64-v8a",
-  "soRepublishFolder": "/Users/kymjs/code/0oslab/Custard/terminal/build/intermediates/cmake/debug/obj/arm64-v8a",
+  "cxxBuildFolder": "/Users/kymjs/Documents/Custard/terminal/.cxx/Debug/3w39626i/arm64-v8a",
+  "soFolder": "/Users/kymjs/Documents/Custard/terminal/build/intermediates/cxx/Debug/3w39626i/obj/arm64-v8a",
+  "soRepublishFolder": "/Users/kymjs/Documents/Custard/terminal/build/intermediates/cmake/debug/obj/arm64-v8a",
   "abiPlatformVersion": 26,
   "cmake": {
     "effectiveConfiguration": {
@@ -31,13 +31,13 @@
     "implicitBuildTargetSet": [],
     "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "module": {
-      "cxxFolder": "/Users/kymjs/code/0oslab/Custard/terminal/.cxx",
-      "intermediatesBaseFolder": "/Users/kymjs/code/0oslab/Custard/terminal/build/intermediates",
-      "intermediatesFolder": "/Users/kymjs/code/0oslab/Custard/terminal/build/intermediates/cxx",
+      "cxxFolder": "/Users/kymjs/Documents/Custard/terminal/.cxx",
+      "intermediatesBaseFolder": "/Users/kymjs/Documents/Custard/terminal/build/intermediates",
+      "intermediatesFolder": "/Users/kymjs/Documents/Custard/terminal/build/intermediates/cxx",
       "gradleModulePathName": ":terminal",
-      "moduleRootFolder": "/Users/kymjs/code/0oslab/Custard/terminal",
-      "moduleBuildFile": "/Users/kymjs/code/0oslab/Custard/terminal/build.gradle.kts",
-      "makeFile": "/Users/kymjs/code/0oslab/Custard/terminal/src/main/jni/CMakeLists.txt",
+      "moduleRootFolder": "/Users/kymjs/Documents/Custard/terminal",
+      "moduleBuildFile": "/Users/kymjs/Documents/Custard/terminal/build.gradle.kts",
+      "makeFile": "/Users/kymjs/Documents/Custard/terminal/src/main/jni/CMakeLists.txt",
       "buildSystem": "CMAKE",
       "ndkFolder": "/Users/kymjs/Library/Android/sdk/ndk/27.0.12077973",
       "ndkFolderBeforeSymLinking": "/Users/kymjs/Library/Android/sdk/ndk/27.0.12077973",
@@ -148,10 +148,9 @@
         "SYSTEM": {}
       },
       "project": {
-        "rootBuildGradleFolder": "/Users/kymjs/code/0oslab/Custard",
+        "rootBuildGradleFolder": "/Users/kymjs/Documents/Custard",
         "sdkFolder": "/Users/kymjs/Library/Android/sdk",
         "isBuildOnlyTargetAbiEnabled": true,
-        "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },
@@ -168,12 +167,12 @@
   "buildSettings": {
     "environmentVariables": []
   },
-  "prefabFolder": "/Users/kymjs/code/0oslab/Custard/terminal/.cxx/Debug/3w39626i/prefab/arm64-v8a",
+  "prefabFolder": "/Users/kymjs/Documents/Custard/terminal/.cxx/Debug/3w39626i/prefab/arm64-v8a",
   "isActiveAbi": true,
   "fullConfigurationHash": "3w39626i64a5x4m6i262h1h2v5gt3y291i5e5o236n134r3g2s3q5h373q5bi",
   "fullConfigurationHashKey": "# Values used to calculate the hash in this folder name.\n# Should not depend on the absolute path of the project itself.\n#   - AGP: 8.13.1.\n#   - $NDK is the path to NDK 27.0.12077973.\n#   - $PROJECT is the path to the parent folder of the root Gradle build file.\n#   - $ABI is the ABI to be built with. The specific value doesn\u0027t contribute to the value of the hash.\n#   - $HASH is the hash value computed from this text.\n#   - $CMAKE is the path to CMake 3.22.1.\n#   - $NINJA is the path to Ninja.\n-H$PROJECT/terminal/src/main/jni\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d26\n-DANDROID_PLATFORM\u003dandroid-26\n-DANDROID_ABI\u003d$ABI\n-DCMAKE_ANDROID_ARCH_ABI\u003d$ABI\n-DANDROID_NDK\u003d$NDK\n-DCMAKE_ANDROID_NDK\u003d$NDK\n-DCMAKE_TOOLCHAIN_FILE\u003d$NDK/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d$NINJA\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d$PROJECT/terminal/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d$PROJECT/terminal/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_BUILD_TYPE\u003dDebug\n-B$PROJECT/terminal/.cxx/Debug/$HASH/$ABI\n-GNinja",
   "configurationArguments": [
-    "-H/Users/kymjs/code/0oslab/Custard/terminal/src/main/jni",
+    "-H/Users/kymjs/Documents/Custard/terminal/src/main/jni",
     "-DCMAKE_SYSTEM_NAME\u003dAndroid",
     "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
     "-DCMAKE_SYSTEM_VERSION\u003d26",
@@ -184,11 +183,11 @@
     "-DCMAKE_ANDROID_NDK\u003d/Users/kymjs/Library/Android/sdk/ndk/27.0.12077973",
     "-DCMAKE_TOOLCHAIN_FILE\u003d/Users/kymjs/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake",
     "-DCMAKE_MAKE_PROGRAM\u003d/Users/kymjs/Library/Android/sdk/cmake/3.22.1/bin/ninja",
-    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/kymjs/code/0oslab/Custard/terminal/build/intermediates/cxx/Debug/3w39626i/obj/arm64-v8a",
-    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/kymjs/code/0oslab/Custard/terminal/build/intermediates/cxx/Debug/3w39626i/obj/arm64-v8a",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/kymjs/Documents/Custard/terminal/build/intermediates/cxx/Debug/3w39626i/obj/arm64-v8a",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/kymjs/Documents/Custard/terminal/build/intermediates/cxx/Debug/3w39626i/obj/arm64-v8a",
     "-DCMAKE_BUILD_TYPE\u003dDebug",
-    "-B/Users/kymjs/code/0oslab/Custard/terminal/.cxx/Debug/3w39626i/arm64-v8a",
+    "-B/Users/kymjs/Documents/Custard/terminal/.cxx/Debug/3w39626i/arm64-v8a",
     "-GNinja"
   ],
-  "intermediatesParentFolder": "/Users/kymjs/code/0oslab/Custard/terminal/build/intermediates/cxx/Debug/3w39626i"
+  "intermediatesParentFolder": "/Users/kymjs/Documents/Custard/terminal/build/intermediates/cxx/Debug/3w39626i"
 }

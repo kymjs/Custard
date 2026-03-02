@@ -5,44 +5,44 @@
 5    <uses-sdk android:minSdkVersion="26" />
 6
 7    <uses-permission android:name="android.permission.INTERNET" />
-7-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:4:5-67
-7-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:4:22-64
+7-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:4:5-67
+7-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:4:22-64
 8    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-8-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:5:5-79
-8-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:5:22-76
+8-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:5:5-79
+8-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:5:22-76
 9
 10    <application>
-10-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:7:5-24:19
+10-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:7:5-24:19
 11
 12        <!-- Ubuntu File System Documents Provider for SAF -->
 13        <provider
-13-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:9:9-18:20
+13-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:9:9-18:20
 14            android:name="com.kymjs.ai.custard.terminal.provider.UbuntuDocumentsProvider"
-14-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:10:13-61
+14-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:10:13-61
 15            android:authorities="com.kymjs.ai.custard.documents.ubuntu"
-15-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:11:13-72
+15-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:11:13-72
 16            android:exported="true"
-16-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:12:13-36
+16-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:12:13-36
 17            android:grantUriPermissions="true"
-17-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:13:13-47
+17-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:13:13-47
 18            android:permission="android.permission.MANAGE_DOCUMENTS" >
-18-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:14:13-69
+18-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:14:13-69
 19            <intent-filter>
-19-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:15:13-17:29
+19-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:15:13-17:29
 20                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
-20-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:16:17-84
-20-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:16:25-81
+20-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:16:17-84
+20-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:16:25-81
 21            </intent-filter>
 22        </provider>
 23
 24        <service
-24-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:20:9-23:40
+24-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:20:9-23:40
 25            android:name="com.kymjs.ai.custard.terminal.service.TerminalService"
-25-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:21:13-52
+25-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:21:13-52
 26            android:enabled="true"
-26-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:22:13-35
+26-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:22:13-35
 27            android:exported="false" />
-27-->/Users/kymjs/code/0oslab/Custard/terminal/src/main/AndroidManifest.xml:23:13-37
+27-->/Users/kymjs/Documents/Custard/terminal/src/main/AndroidManifest.xml:23:13-37
 28    </application>
 29
 30</manifest>

@@ -1,4 +1,4 @@
 /Users/kymjs/Library/Android/sdk/cmake/3.22.1/bin/ninja \
   -C \
-  /Users/kymjs/code/0oslab/Custard/terminal/.cxx/Debug/3w39626i/arm64-v8a \
+  /Users/kymjs/Documents/Custard/terminal/.cxx/Debug/3w39626i/arm64-v8a \
   pty
