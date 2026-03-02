@@ -45,7 +45,7 @@ object PatchUpdateInstaller {
     const val EXTRA_APK_PATH = "extra_apk_path"
     const val EXTRA_PATCH_VERSION = "extra_patch_version"
 
-    private const val PATCH_OWNER = "AAswordman"
+    private const val PATCH_OWNER = "kymjs"
     private const val PATCH_REPO = "CustardNightlyRelease"
 
     private const val PROBE_TIMEOUT_MS = 2500

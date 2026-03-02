@@ -57,7 +57,6 @@ sealed class NavItem(val route: String, val titleResId: Int, val icon: ImageVect
         object Toolbox : NavItem("toolbox", R.string.toolbox, Icons.Default.Apps)
         object About : NavItem("about", R.string.nav_about, Icons.Default.Info)
         object Mcp : NavItem("mcp", R.string.mcp, Icons.Default.Cloud)
-        object UpdateHistory : NavItem("update_history", R.string.update_history, Icons.Default.History)
         object Agreement :
                 NavItem("agreement", R.string.nav_item_agreement, Icons.Default.Description)
         object Help : NavItem("help", R.string.nav_help, Icons.AutoMirrored.Filled.Help)

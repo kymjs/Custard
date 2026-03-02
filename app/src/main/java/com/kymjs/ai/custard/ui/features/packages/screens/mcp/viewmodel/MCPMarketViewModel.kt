@@ -196,7 +196,7 @@ class MCPMarketViewModel(
 
     companion object {
         private const val TAG = "MCPMarketViewModel"
-        private const val MARKET_REPO_OWNER = "AAswordman"
+        private const val MARKET_REPO_OWNER = "kymjs"
         private const val MARKET_REPO_NAME = "CustardMCPMarket"
         private const val MCP_PLUGIN_LABEL = "mcp-plugin"
         private const val MARKET_PAGE_SIZE = 50

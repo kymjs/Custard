@@ -16,9 +16,9 @@ import java.util.regex.Pattern
 class UpdateChecker(private val context: Context) {
 
     companion object {
-        private const val GITHUB_API_URL = "https://api.github.com/repos/AAswordman/CustardTerminal/tags"
-        const val GITHUB_REPO_URL = "https://github.com/AAswordman/CustardTerminal"
-        const val GITHUB_RELEASES_URL = "https://github.com/AAswordman/CustardTerminal/releases"
+        private const val GITHUB_API_URL = "https://api.github.com/repos/kymjs/CustardTerminal/tags"
+        const val GITHUB_REPO_URL = "https://github.com/kymjs/CustardTerminal"
+        const val GITHUB_RELEASES_URL = "https://github.com/kymjs/CustardTerminal/releases"
     }
 
     sealed class UpdateResult {

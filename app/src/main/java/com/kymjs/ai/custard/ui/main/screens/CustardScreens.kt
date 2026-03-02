@@ -518,11 +518,7 @@ sealed class Screen(
                 onError: (String) -> Unit,
                 onGestureConsumed: (Boolean) -> Unit
         ) {
-            AboutScreen(
-                navigateToUpdateHistory = {
-                    navigateTo(UpdateHistory)
-                }
-            )
+            AboutScreen()
         }
     }
 
@@ -541,22 +537,6 @@ sealed class Screen(
             com.kymjs.ai.custard.ui.features.agreement.screens.AgreementScreen(
                     onAgreementAccepted = onGoBack
             )
-        }
-    }
-
-    data object UpdateHistory : Screen(navItem = NavItem.UpdateHistory) {
-        @Composable
-        override fun Content(
-            navController: NavController,
-            navigateTo: ScreenNavigationHandler,
-            updateNavItem: NavItemChangeHandler,
-            onGoBack: () -> Unit,
-            hasBackgroundImage: Boolean,
-            onLoading: (Boolean) -> Unit,
-            onError: (String) -> Unit,
-            onGestureConsumed: (Boolean) -> Unit
-        ) {
-            UpdateScreen(onNavigateToThemeSettings = { navigateTo(ThemeSettings) })
         }
     }
 
@@ -1424,11 +1404,6 @@ sealed class Screen(
 
 // 路由管理器
 object CustardRouter {
-    // 处理返回导航
-    fun handleBackNavigation(currentScreen: Screen): Screen? {
-        return currentScreen.parentScreen
-    }
-
     // 根据NavItem获取对应的Screen
     fun getScreenForNavItem(navItem: NavItem): Screen {
         return when (navItem) {
@@ -1444,7 +1419,6 @@ object CustardRouter {
             NavItem.UserPreferencesGuide -> Screen.UserPreferencesGuide()
             NavItem.AssistantConfig -> Screen.AssistantConfig
             NavItem.Agreement -> Screen.Agreement
-            NavItem.UpdateHistory -> Screen.UpdateHistory
             NavItem.Workflow -> Screen.Workflow
             else -> Screen.AiChat
         }

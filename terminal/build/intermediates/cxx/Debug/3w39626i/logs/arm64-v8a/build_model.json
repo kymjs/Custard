@@ -151,6 +151,7 @@
         "rootBuildGradleFolder": "/Users/kymjs/Documents/Custard",
         "sdkFolder": "/Users/kymjs/Library/Android/sdk",
         "isBuildOnlyTargetAbiEnabled": true,
+        "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },

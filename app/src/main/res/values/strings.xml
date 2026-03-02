@@ -14,7 +14,6 @@
     <string name="nav_settings">设置</string>
     <string name="nav_tool_permissions">工具权限</string>
     <string name="nav_about">关于</string>
-    <string name="update_history">更新历史</string>
     <string name="update_load_failed">加载失败</string>
     <string name="update_latest">最新</string>
     <string name="update_view_release">查看发布</string>
@@ -82,7 +81,7 @@
     <string name="floating_thinking_2">思考中...</string>
     <string name="floating_didnt_hear_clearly">没有听清</string>
     <string name="floating_hello">你好</string>
-    <string name="nav_help">使用手册</string>
+    <string name="nav_help">使用介绍</string>
 
     <!-- Color Picker -->
     <string name="colorpicker_select_primary">选择主色</string>
@@ -504,8 +503,8 @@
     <string name="about_title">关于 Custard</string>
     <string name="about_version">版本: %1$s</string>
     <string name="about_description">Custard 是一个 AI Agent 应用，完全独立运行，你可以理解为 OpenClaw 的 Android 版，拥有强大的工具调用能力。</string>
-    <string name="about_developer">开发者: &lt;a href="https://github.com/AAswordman"&gt;AAswordman&lt;/a&gt;</string>
-    <string name="about_contact">联系我们: aaswordsman@foxmail.com</string>
+    <string name="about_developer">开源实验室: &lt;a href="https://kymjs.com"&gt;kymjs.com&lt;/a&gt;</string>
+    <string name="about_contact">联系我们: kymjs123@gmail.com</string>
     <string name="about_website">&lt;a href="https://github.com/kymjs/Custard"&gt;GitHub: https://github.com/kymjs/Custard&lt;/a&gt;</string>
     <string name="about_copyright">© 2025 - 2026 Custard. 保留所有权利。</string>
     <string name="star_on_github">在 GitHub 点个 Star</string>

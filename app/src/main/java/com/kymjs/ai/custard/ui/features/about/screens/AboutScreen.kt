@@ -51,7 +51,7 @@ import kotlinx.coroutines.withContext
 import android.widget.Toast
 import java.io.File
 
-private const val GITHUB_PROJECT_URL = "https://github.com/AAswordman/Custard"
+private const val GITHUB_PROJECT_URL = "https://github.com/kymjs/Custard"
 
 @Composable
 fun HtmlText(
@@ -374,9 +374,7 @@ private fun SettingsRow(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AboutScreen(
-    navigateToUpdateHistory: () -> Unit
-) {
+fun AboutScreen() {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
@@ -632,67 +630,6 @@ fun AboutScreen(
             }
 
             item {
-                val updateSubtitle = when (val status = updateStatus) {
-                    is UpdateStatus.Available -> context.getString(R.string.new_version, appVersion, status.newVersion)
-                    is UpdateStatus.PatchAvailable -> context.getString(R.string.new_version, appVersion, status.newVersion)
-                    is UpdateStatus.UpToDate -> context.getString(R.string.already_latest_version, appVersion)
-                    is UpdateStatus.Error -> status.message
-                    is UpdateStatus.Checking -> context.getString(R.string.checking_updates)
-                    else -> null
-                }
-
-                SettingsGroup {
-                    SettingsRow(
-                        icon = Icons.Default.Update,
-                        iconTint = MaterialTheme.colorScheme.primary,
-                        title = stringResource(id = R.string.check_for_updates),
-                        subtitleText = updateSubtitle,
-                        trailing = {
-                            if (updateStatus is UpdateStatus.Checking) {
-                                CircularProgressIndicator(
-                                    strokeWidth = 2.dp,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            } else {
-                                Icon(
-                                    imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                                    contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                        },
-                        onClick = {
-                            when (updateStatus) {
-                                is UpdateStatus.Available,
-                                is UpdateStatus.PatchAvailable,
-                                is UpdateStatus.UpToDate,
-                                is UpdateStatus.Error -> showUpdateDialog = true
-                                is UpdateStatus.Checking -> Unit
-                                else -> checkForUpdates()
-                            }
-                        }
-                    )
-
-                    HorizontalDivider(modifier = Modifier.padding(start = 66.dp))
-
-                    SettingsRow(
-                        icon = Icons.Default.NewReleases,
-                        iconTint = MaterialTheme.colorScheme.tertiary,
-                        title = stringResource(id = R.string.beta_plan),
-                        subtitleText = stringResource(id = R.string.beta_plan_desc),
-                        trailing = {
-                            Switch(
-                                checked = betaEnabled,
-                                onCheckedChange = { enabled ->
-                                    scope.launch { preferences.saveBetaPlanEnabled(enabled) }
-                                }
-                            )
-                        }
-                    )
-                }
-            }
-
-            item {
                 SettingsGroup {
                     SettingsRow(
                         icon = Icons.Default.Language,
@@ -719,15 +656,6 @@ fun AboutScreen(
                             }
                             context.startActivity(intent)
                         }
-                    )
-
-                    HorizontalDivider(modifier = Modifier.padding(start = 66.dp))
-
-                    SettingsRow(
-                        icon = Icons.Default.History,
-                        iconTint = MaterialTheme.colorScheme.secondary,
-                        title = stringResource(R.string.update_log),
-                        onClick = { navigateToUpdateHistory() }
                     )
 
                     HorizontalDivider(modifier = Modifier.padding(start = 66.dp))

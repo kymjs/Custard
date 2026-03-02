@@ -115,7 +115,7 @@
     <string name="package_uv_desc">一个用 Rust 编写的极速 Python 包安装器</string>
     <string name="package_uv_name">uv</string>
     <string name="project_address_title">项目地址</string>
-    <string name="project_name">AAswordman/CustardTerminal</string>
+    <string name="project_name">kymjs/CustardTerminal</string>
     <string name="refresh_size">刷新</string>
     <string name="refresh_size_calculating">计算中…</string>
     <string name="reset_confirm">确定重置</string>

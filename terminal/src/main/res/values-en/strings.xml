@@ -78,7 +78,7 @@
     
     <!-- Project Section -->
     <string name="project_address_title">Project Repository</string>
-    <string name="project_name">AAswordman/CustardTerminal</string>
+    <string name="project_name">kymjs/CustardTerminal</string>
     <string name="visit_project">Visit</string>
     <string name="check_updates">Check</string>
     <string name="update_now">Update</string>

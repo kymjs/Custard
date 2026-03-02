@@ -197,8 +197,7 @@ fun CustardApp(initialNavItem: NavItem = NavItem.AiChat, toolHandler: AIToolHand
             listOfNotNull(
                 NavItem.Settings,
                 NavItem.Help,
-                NavItem.About,
-                NavItem.UpdateHistory
+                NavItem.About
             )
         )
     )

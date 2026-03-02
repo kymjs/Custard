@@ -156,7 +156,7 @@ class SkillMarketViewModel(
 
     companion object {
         private const val TAG = "SkillMarketViewModel"
-        private const val MARKET_REPO_OWNER = "AAswordman"
+        private const val MARKET_REPO_OWNER = "kymjs"
         private const val MARKET_REPO_NAME = "CustardSkillMarket"
         private const val SKILL_LABEL = "skill-plugin"
         private const val MARKET_PAGE_SIZE = 50

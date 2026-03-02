@@ -32,9 +32,7 @@ fun HelpScreen(onBackPressed: () -> Unit = {}) {
     var isLoading by remember { mutableStateOf(true) }
     val helpUrls = remember {
         listOf(
-            "https://custard.aaswordsman.org",
-            "https://custard.dev.tc",
-            "https://aaswordman.github.io/CustardWeb/"
+            "https://kymjs.com",
         )
     }
     var currentUrlIndex by remember { mutableStateOf(0) }
@@ -48,24 +46,28 @@ fun HelpScreen(onBackPressed: () -> Unit = {}) {
             repeat(helpUrls.size) { add(false) }
         }
     }
-    var showMirrorDialog by remember { mutableStateOf(true) }
+    var showMirrorDialog by remember { mutableStateOf(helpUrls.size > 1) }
     val focusRequester = remember { FocusRequester() }
     val isCurrentScreen = LocalIsCurrentScreen.current
-    
+
     // 创建WebView实例
-    val webView = remember { 
+    val webView = remember {
         WebViewConfig.createWebView(context).apply {
             webViewClient = object : WebViewClient() {
-                override fun onPageStarted(view: WebView?, url: String?, favicon: android.graphics.Bitmap?) {
+                override fun onPageStarted(
+                    view: WebView?,
+                    url: String?,
+                    favicon: android.graphics.Bitmap?
+                ) {
                     super.onPageStarted(view, url, favicon)
                     isLoading = true
                 }
-                
+
                 override fun onPageFinished(view: WebView?, url: String?) {
                     super.onPageFinished(view, url)
                     isLoading = false
                 }
-                
+
                 override fun onReceivedError(
                     view: WebView?,
                     errorCode: Int,
@@ -116,7 +118,7 @@ fun HelpScreen(onBackPressed: () -> Unit = {}) {
                 .focusRequester(focusRequester)
                 .focusable()
         )
-        
+
         // 加载指示器
         if (isLoading) {
             Box(
@@ -160,7 +162,11 @@ fun HelpScreen(onBackPressed: () -> Unit = {}) {
                             val latency = latencies.getOrNull(index)
                             val completed = pingCompleted.getOrNull(index) ?: false
                             val latencyText = when {
-                                latency != null -> stringResource(R.string.help_mirror_latency_ms, latency)
+                                latency != null -> stringResource(
+                                    R.string.help_mirror_latency_ms,
+                                    latency
+                                )
+
                                 completed -> stringResource(R.string.help_mirror_latency_timeout)
                                 else -> stringResource(R.string.help_mirror_latency_testing)
                             }
