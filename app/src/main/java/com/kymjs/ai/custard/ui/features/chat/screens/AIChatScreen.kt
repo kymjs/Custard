@@ -210,53 +210,8 @@ fun AIChatScreen(
     val isWorkspaceOpen by actualViewModel.isWorkspaceOpen.collectAsState()
     val showWorkspaceFileSelector by actualViewModel.showWorkspaceFileSelector.collectAsState()
 
-    // 添加模型建议对话框状态
-    var showModelSuggestionDialog by remember { mutableStateOf(false) }
-
     // 添加记忆文件夹选择对话框状态
     var showMemoryFolderDialog by remember { mutableStateOf(false) }
-
-    // 当模型名称加载后，检查是否为建议更换的模型
-    LaunchedEffect(modelName) {
-        if (modelName.isNotBlank() && modelName.contains("deepseek-r1-0528-qwen3-8b:free", ignoreCase = true)) {
-            showModelSuggestionDialog = true
-        }
-    }
-
-    // 模型建议对话框
-    if (showModelSuggestionDialog) {
-        AlertDialog(
-            onDismissRequest = { showModelSuggestionDialog = false },
-            title = { Text(stringResource(R.string.model_suggestion_title)) },
-            text = { Text(stringResource(R.string.model_suggestion_message)) },
-            confirmButton = {
-                Row {
-                    TextButton(onClick = {
-                        showModelSuggestionDialog = false
-                        // 如果用户已输入token，直接保存配置
-                        actualViewModel.updateApiKey(ApiPreferences.DEFAULT_API_KEY)
-                        actualViewModel.updateApiEndpoint(ApiPreferences.DEFAULT_API_ENDPOINT)
-                        actualViewModel.updateModelName(ApiPreferences.DEFAULT_MODEL_NAME)
-                        actualViewModel.updateApiProviderType(ApiProviderType.DEEPSEEK)
-                        actualViewModel.saveApiSettings()
-
-                        // 新增：重置状态以重新显示配置界面
-                        ConfigurationStateHolder.hasConfirmedDefaultInSession = false
-                        actualViewModel.showConfigurationScreen()
-
-                    }) {
-                        Text(stringResource(R.string.change_model))
-                    }
-                }
-            },
-            dismissButton = {
-                TextButton(onClick = { showModelSuggestionDialog = false }) {
-                    Text(stringResource(R.string.ignore))
-                }
-            }
-        )
-    }
-
 
     // 添加WebView刷新相关状态
     val webViewRefreshCounter by actualViewModel.webViewRefreshCounter.collectAsState()
@@ -442,18 +397,18 @@ fun AIChatScreen(
     LaunchedEffect(isCurrentScreen, showWebView, showAiComputer, appBarContentColor) {
         if (isCurrentScreen) {
             setTopBarActions {
-                // AI电脑模式切换按钮
-                IconButton(onClick = { actualViewModel.onAiComputerButtonClick() }) {
-                    Icon(
-                        imageVector = Icons.Default.Terminal,
-                        contentDescription = stringResource(R.string.ai_computer),
-                        tint = if (showAiComputer) {
-                            MaterialTheme.colorScheme.primaryContainer
-                        } else {
-                            appBarContentColor
-                        }
-                    )
-                }
+//                // AI电脑模式切换按钮
+//                IconButton(onClick = { actualViewModel.onAiComputerButtonClick() }) {
+//                    Icon(
+//                        imageVector = Icons.Default.Terminal,
+//                        contentDescription = stringResource(R.string.ai_computer),
+//                        tint = if (showAiComputer) {
+//                            MaterialTheme.colorScheme.primaryContainer
+//                        } else {
+//                            appBarContentColor
+//                        }
+//                    )
+//                }
 
                 // Web开发模式切换按钮
                 IconButton(onClick = { actualViewModel.onWorkspaceButtonClick() }) {

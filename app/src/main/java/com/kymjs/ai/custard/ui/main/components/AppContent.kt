@@ -85,26 +85,26 @@ private enum class ScreenVisibility {
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalAnimationApi::class)
 @Composable
 fun AppContent(
-        currentScreen: Screen,
-        selectedItem: NavItem,
-        useTabletLayout: Boolean,
-        isTabletSidebarExpanded: Boolean,
-        isLoading: Boolean,
-        navController: NavController,
-        scope: CoroutineScope,
-        drawerState: androidx.compose.material3.DrawerState,
-        showFpsCounter: Boolean,
-        onScreenChange: (Screen) -> Unit,
-        onNavItemChange: (NavItem) -> Unit,
-        onToggleSidebar: () -> Unit,
-        navigateToTokenConfig: () -> Unit,
-        onLoading: (Boolean) -> Unit = {},
-        onError: (String) -> Unit = {},
-        onGestureConsumed: (Boolean) -> Unit = {},
-        canGoBack: Boolean,
-        onGoBack: () -> Unit,
-        isNavigatingBack: Boolean = false,
-        actions: @Composable RowScope.() -> Unit = {}
+    currentScreen: Screen,
+    selectedItem: NavItem,
+    useTabletLayout: Boolean,
+    isTabletSidebarExpanded: Boolean,
+    isLoading: Boolean,
+    navController: NavController,
+    scope: CoroutineScope,
+    drawerState: androidx.compose.material3.DrawerState,
+    showFpsCounter: Boolean,
+    onScreenChange: (Screen) -> Unit,
+    onNavItemChange: (NavItem) -> Unit,
+    onToggleSidebar: () -> Unit,
+    navigateToTokenConfig: () -> Unit,
+    onLoading: (Boolean) -> Unit = {},
+    onError: (String) -> Unit = {},
+    onGestureConsumed: (Boolean) -> Unit = {},
+    canGoBack: Boolean,
+    onGoBack: () -> Unit,
+    isNavigatingBack: Boolean = false,
+    actions: @Composable RowScope.() -> Unit = {}
 ) {
     // Get background image state
     val context = LocalContext.current
@@ -115,46 +115,46 @@ fun AppContent(
     }
     val preferencesManager = UserPreferencesManager.getInstance(context)
     val useBackgroundImage =
-            preferencesManager.useBackgroundImage.collectAsState(initial = false).value
+        preferencesManager.useBackgroundImage.collectAsState(initial = false).value
     val backgroundImageUri =
-            preferencesManager.backgroundImageUri.collectAsState(initial = null).value
+        preferencesManager.backgroundImageUri.collectAsState(initial = null).value
     val hasBackgroundImage = useBackgroundImage && backgroundImageUri != null
 
     // Get toolbar transparency setting
     val toolbarTransparent =
-            preferencesManager.toolbarTransparent.collectAsState(initial = false).value
-    
+        preferencesManager.toolbarTransparent.collectAsState(initial = false).value
+
     // Get AppBar custom color settings
     val useCustomAppBarColor =
-            preferencesManager.useCustomAppBarColor.collectAsState(initial = false).value
+        preferencesManager.useCustomAppBarColor.collectAsState(initial = false).value
     val customAppBarColor =
-            preferencesManager.customAppBarColor.collectAsState(initial = null).value
+        preferencesManager.customAppBarColor.collectAsState(initial = null).value
 
     // Get AppBar content color settings
     val forceAppBarContentColor =
-            preferencesManager.forceAppBarContentColor.collectAsState(initial = false).value
+        preferencesManager.forceAppBarContentColor.collectAsState(initial = false).value
     val appBarContentColorMode =
-            preferencesManager.appBarContentColorMode.collectAsState(
-                            initial = UserPreferencesManager.APP_BAR_CONTENT_COLOR_MODE_LIGHT
-                    )
-                    .value
+        preferencesManager.appBarContentColorMode.collectAsState(
+            initial = UserPreferencesManager.APP_BAR_CONTENT_COLOR_MODE_LIGHT
+        )
+            .value
 
     val appBarContentColor =
-            if (forceAppBarContentColor) {
-                when (appBarContentColorMode) {
-                    UserPreferencesManager.APP_BAR_CONTENT_COLOR_MODE_LIGHT -> Color.White
-                    UserPreferencesManager.APP_BAR_CONTENT_COLOR_MODE_DARK -> Color.Black
-                    else -> MaterialTheme.colorScheme.onPrimary
-                }
-            } else {
-                MaterialTheme.colorScheme.onPrimary
+        if (forceAppBarContentColor) {
+            when (appBarContentColorMode) {
+                UserPreferencesManager.APP_BAR_CONTENT_COLOR_MODE_LIGHT -> Color.White
+                UserPreferencesManager.APP_BAR_CONTENT_COLOR_MODE_DARK -> Color.Black
+                else -> MaterialTheme.colorScheme.onPrimary
             }
+        } else {
+            MaterialTheme.colorScheme.onPrimary
+        }
 
     // 获取聊天历史管理器
     val chatHistoryManager = ChatHistoryManager.getInstance(context)
     val currentChatId = chatHistoryManager.currentChatIdFlow.collectAsState(initial = null).value
     val chatHistories =
-            chatHistoryManager.chatHistoriesFlow.collectAsState(initial = emptyList()).value
+        chatHistoryManager.chatHistoriesFlow.collectAsState(initial = emptyList()).value
 
     // Get custom chat title from preferences
     val customChatTitle by preferencesManager.customChatTitle.collectAsState(initial = null)
@@ -162,11 +162,11 @@ fun AppContent(
 
     // 当前聊天标题
     val currentChatTitle =
-            if (currentChatId != null) {
-                chatHistories.find { it.id == currentChatId }?.title ?: ""
-            } else {
-                ""
-            }
+        if (currentChatId != null) {
+            chatHistories.find { it.id == currentChatId }?.title ?: ""
+        } else {
+            ""
+        }
 
     // 屏幕缓存 Map - 保存已访问过的屏幕，使其状态得以保留
     val screenCache = remember { mutableStateMapOf<String, @Composable () -> Unit>() }
@@ -199,8 +199,6 @@ fun AppContent(
         Scaffold(
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
             topBar = {
-                // 单一工具栏 - 使用小型化的设计
-                // 使用 windowInsets 参数让 TopAppBar 自己处理状态栏的 insets
                 SmallTopAppBar(
                     windowInsets = WindowInsets.statusBars,
                     title = {
@@ -208,19 +206,19 @@ fun AppContent(
                             // 使用Screen的标题或导航项的标题
                             Text(
                                 text =
-                                when {
-                                    // 如果是AI对话界面且有自定义标题，则优先显示
-                                    currentScreen is Screen.AiChat && !customChatTitle.isNullOrEmpty() ->
-                                        customChatTitle!!
-                                    // 优先使用Screen的标题
-                                    currentScreen.getTitle().isNotBlank() ->
-                                        currentScreen.getTitle()
-                                    // 回退到导航项的标题资源
-                                    selectedItem.titleResId != 0 ->
-                                        stringResource(id = selectedItem.titleResId)
-                                    // 最后的默认值
-                                    else -> ""
-                                },
+                                    when {
+                                        // 如果是AI对话界面且有自定义标题，则优先显示
+                                        currentScreen is Screen.AiChat && !customChatTitle.isNullOrEmpty() ->
+                                            customChatTitle!!
+                                        // 优先使用Screen的标题
+                                        currentScreen.getTitle().isNotBlank() ->
+                                            currentScreen.getTitle()
+                                        // 回退到导航项的标题资源
+                                        selectedItem.titleResId != 0 ->
+                                            stringResource(id = selectedItem.titleResId)
+                                        // 最后的默认值
+                                        else -> ""
+                                    },
                                 fontWeight = FontWeight.SemiBold,
                                 fontSize = 14.sp,
                                 color = appBarContentColor
@@ -263,31 +261,38 @@ fun AppContent(
                                     else Icons.Default.Menu
                                 else Icons.Default.Menu,
                                 contentDescription =
-                                when {
-                                    canGoBack -> stringResource(R.string.app_content_navigate_back)
-                                    useTabletLayout ->
-                                        if (isTabletSidebarExpanded) stringResource(R.string.app_content_collapse_sidebar)
-                                        else stringResource(R.string.app_content_expand_sidebar)
-                                    else -> stringResource(id = R.string.menu)
-                                },
+                                    when {
+                                        canGoBack -> stringResource(R.string.app_content_navigate_back)
+                                        useTabletLayout -> {
+                                            if (isTabletSidebarExpanded) {
+                                                stringResource(R.string.app_content_collapse_sidebar)
+                                            } else {
+                                                stringResource(R.string.app_content_expand_sidebar)
+                                            }
+                                        }
+
+                                        else -> stringResource(id = R.string.menu)
+                                    },
                                 tint = appBarContentColor
                             )
                         }
                     },
                     actions = actions,
                     colors =
-                    TopAppBarDefaults.smallTopAppBarColors(
-                        containerColor =
-                        when {
-                            toolbarTransparent -> Color.Transparent
-                            useCustomAppBarColor && customAppBarColor != null -> Color(customAppBarColor)
-                            else -> MaterialTheme.colorScheme.primary
-                        },
-                        titleContentColor = appBarContentColor,
-                        navigationIconContentColor = appBarContentColor,
-                        actionIconContentColor = appBarContentColor
-                    ),
-                    // Scaffold会处理 insets, 这里不再需要手动添加 modifier
+                        TopAppBarDefaults.smallTopAppBarColors(
+                            containerColor =
+                                when {
+                                    toolbarTransparent -> Color.Transparent
+                                    useCustomAppBarColor && customAppBarColor != null -> Color(
+                                        customAppBarColor
+                                    )
+
+                                    else -> MaterialTheme.colorScheme.primary
+                                },
+                            titleContentColor = appBarContentColor,
+                            navigationIconContentColor = appBarContentColor,
+                            actionIconContentColor = appBarContentColor
+                        ),
                 )
             },
             containerColor = Color.Transparent
@@ -297,11 +302,14 @@ fun AppContent(
             Surface(
                 modifier = Modifier
                     .padding(innerPadding)
-                    .padding(bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding())
+                    .padding(
+                        bottom = WindowInsets.navigationBars.asPaddingValues()
+                            .calculateBottomPadding()
+                    )
                     .fillMaxSize(),
                 color =
-                if (hasBackgroundImage) Color.Transparent
-                else MaterialTheme.colorScheme.background
+                    if (hasBackgroundImage) Color.Transparent
+                    else MaterialTheme.colorScheme.background
             ) {
                 if (isLoading) {
                     // 加载中状态
@@ -398,7 +406,8 @@ fun AppContent(
 
                                 // 使用 LaunchedEffect 在 isCurrentScreen 状态变化后更新可见性
                                 LaunchedEffect(isCurrentScreen) {
-                                    visibility = if (isCurrentScreen) ScreenVisibility.VISIBLE else ScreenVisibility.HIDDEN
+                                    visibility =
+                                        if (isCurrentScreen) ScreenVisibility.VISIBLE else ScreenVisibility.HIDDEN
                                 }
 
                                 // 使用 updateTransition 来处理动画状态
@@ -418,7 +427,8 @@ fun AppContent(
 
                                 Box(
                                     modifier =
-                                        Modifier.fillMaxSize()
+                                        Modifier
+                                            .fillMaxSize()
                                             .zIndex(if (isCurrentScreen) 1f else 0f)
                                             .graphicsLayer { this.alpha = alpha }
                                 ) {

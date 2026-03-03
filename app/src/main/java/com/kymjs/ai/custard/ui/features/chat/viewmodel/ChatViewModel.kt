@@ -107,12 +107,7 @@ class ChatViewModel(private val context: Context) : ViewModel() {
     private val toolPermissionSystem = ToolPermissionSystem.getInstance(context)
 
     // 终端管理器（用于执行工作区命令）
-    @RequiresApi(Build.VERSION_CODES.O)
-    private val terminal: Terminal? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        Terminal.getInstance(context)
-    } else {
-        null
-    }
+    private val terminal: Terminal = Terminal.getInstance(context)
 
     // 工作区终端会话映射表：workspacePath -> sessionId
     private val workspaceTerminalSessions = mutableMapOf<String, String>()

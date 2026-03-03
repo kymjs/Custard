@@ -204,15 +204,9 @@ class MainActivity : ComponentActivity() {
         val config = Configuration(newBase.resources.configuration)
 
         // 设置语言配置
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            val localeList = LocaleList(locale)
-            LocaleList.setDefault(localeList)
-            config.setLocales(localeList)
-        } else {
-            @Suppress("DEPRECATION")
-            config.locale = locale
-            Locale.setDefault(locale)
-        }
+        val localeList = LocaleList(locale)
+        LocaleList.setDefault(localeList)
+        config.setLocales(localeList)
 
         // 使用createConfigurationContext创建新的本地化上下文
         val context = newBase.createConfigurationContext(config)
