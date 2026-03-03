@@ -417,29 +417,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    // ======== 检查数据迁移 ========
-    private fun checkMigrationNeeded() {
-        lifecycleScope.launch {
-            try {
-                // 检查是否需要迁移数据
-                val needsMigration = migrationManager.needsMigration()
-                AppLogger.d(TAG, "数据迁移检查: 需要迁移=$needsMigration")
-
-                if (needsMigration) {
-                    showMigrationScreen = true
-                    setAppContent()
-                } else {
-                    // 不需要迁移，显示插件加载界面
-                    startPluginLoading()
-                }
-            } catch (e: Exception) {
-                AppLogger.e(TAG, "数据迁移检查失败", e)
-                // 检查失败，跳过迁移直接加载插件
-                startPluginLoading()
-            }
-        }
-    }
-
     // ======== 启动插件加载 ========
     private fun startPluginLoading() {
         // 显示插件加载界面

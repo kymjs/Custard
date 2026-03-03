@@ -549,7 +549,7 @@
 
     <!-- Token Info Dialog -->
     <string name="token_info_title">获取 MiniMax Token</string>
-    <string name="token_info_content">你将会前往 MiniMax 官网。我们内置 MiniMax 官网访问，是因为我们认为其为国内使用性价比最高的API。\n\n使用我的邀请码，可以享受9折优惠。</string>
+    <string name="token_info_content">你将会前往 MiniMax 官网。内置 MiniMax 官网访问，用 MiniMax 单纯是因为他便宜，量大管饱。\n\n使用我的邀请码，可以享受9折优惠。</string>
     <string name="token_info_cancel">取消</string>
     <string name="token_info_confirm">复制链接</string>
 

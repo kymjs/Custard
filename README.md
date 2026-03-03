@@ -44,7 +44,7 @@
 
 ### 流式 Markdown 渲染
 
-自研高性能流式 Markdown 渲染引擎，基于 KMP（Knuth-Morris-Pratt）算法进行线性时间复杂度的模式匹配，采用插件化架构和两阶段解析（块级 + 内联），配合 `BatchNodeUpdater` 批量更新 Compose UI，实现丝滑的"打字机"效果。详见 [RENDERER_ARCH.md](docs/RENDERER_ARCH.md)。
+自研高性能流式 Markdown 渲染引擎，基于 KMP（Knuth-Morris-Pratt）算法进行线性时间复杂度的模式匹配，采用插件化架构和两阶段解析（块级 + 内联），配合 `BatchNodeUpdater` 批量更新 Compose UI，实现丝滑的"打字机"效果。
 
 ### 虚拟形象
 
@@ -56,7 +56,7 @@
 
 ### 记忆系统
 
-基于向量检索（HNSW）+ 关键词 + 图谱关联的混合记忆架构，候选评分公式为 $S(m) = S_{kw} + S_{rev} + S_{sem}^{norm} + S_{graph}$，实现长期对话记忆的智能召回。详见 [memory_candidate_scoring_formula.md](docs/memory_candidate_scoring_formula.md)。
+基于向量检索（HNSW）+ 关键词 + 图谱关联的混合记忆架构，候选评分公式为 $S(m) = S_{kw} + S_{rev} + S_{sem}^{norm} + S_{graph}$，实现长期对话记忆的智能召回。
 
 ### 工作流引擎
 

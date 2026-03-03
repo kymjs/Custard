@@ -123,15 +123,14 @@ fun AIChatScreen(
     }
 
     // 添加麦克风权限请求启动器
-    val requestMicrophonePermissionLauncher =
-        rememberLauncherForActivityResult(
-            contract = ActivityResultContracts.RequestPermission()
-        ) { isGranted ->
-            if (!isGranted) {
-                Toast.makeText(context, context.getString(R.string.microphone_permission_denied), Toast.LENGTH_SHORT)
-                    .show()
-            }
+    val requestMicrophonePermissionLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (!isGranted) {
+            Toast.makeText(context, context.getString(R.string.microphone_permission_denied), Toast.LENGTH_SHORT)
+                .show()
         }
+    }
 
     // Get background image state
     val preferencesManager = remember { UserPreferencesManager.getInstance(context) }
@@ -376,22 +375,19 @@ fun AIChatScreen(
     LaunchedEffect(inputStyle, showWebView, showAiComputer, hostActivity) {
         val window = hostActivity?.window
         if (window != null) {
-            val shouldUseChatLocalImeHandling =
-                inputStyle == UserPreferencesManager.INPUT_STYLE_AGENT &&
-                        !showWebView &&
-                        !showAiComputer
+            val shouldUseChatLocalImeHandling = inputStyle == UserPreferencesManager.INPUT_STYLE_AGENT
+                    && !showWebView && !showAiComputer
             val shouldUseWorkspaceImeResize = showWebView || showAiComputer
-            val targetSoftInputMode =
-                if (shouldUseChatLocalImeHandling) {
-                    // 聊天输入页：由 Compose 局部位移处理输入法
-                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING
-                } else if (shouldUseWorkspaceImeResize) {
-                    // 工作区/终端等页面：使用系统 resize，避免输入框被键盘遮挡
-                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
-                } else {
-                    // 常规页面保持 pan，与 Manifest 默认行为一致
-                    WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
-                }
+            val targetSoftInputMode = if (shouldUseChatLocalImeHandling) {
+                // 聊天输入页：由 Compose 局部位移处理输入法
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING
+            } else if (shouldUseWorkspaceImeResize) {
+                // 工作区/终端等页面：使用系统 resize，避免输入框被键盘遮挡
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+            } else {
+                // 常规页面保持 pan，与 Manifest 默认行为一致
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
+            }
             window.setSoftInputMode(targetSoftInputMode)
         }
     }
@@ -421,15 +417,14 @@ fun AIChatScreen(
 
     // 处理文件选择器请求
     val fileChooserRequest by actualViewModel.uiStateDelegate.fileChooserRequest.collectAsState()
-    val fileChooserLauncher =
-        rememberLauncherForActivityResult(
-            contract = ActivityResultContracts.StartActivityForResult()
-        ) { result ->
-            // 处理文件选择结果
-            actualViewModel.handleFileChooserResult(result.resultCode, result.data)
-            // 清除请求
-            actualViewModel.uiStateDelegate.clearFileChooserRequest()
-        }
+    val fileChooserLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        // 处理文件选择结果
+        actualViewModel.handleFileChooserResult(result.resultCode, result.data)
+        // 清除请求
+        actualViewModel.uiStateDelegate.clearFileChooserRequest()
+    }
 
     // 启动文件选择器
     LaunchedEffect(fileChooserRequest) {
@@ -448,32 +443,28 @@ fun AIChatScreen(
         if (isCurrentScreen) {
             setTopBarActions {
                 // AI电脑模式切换按钮
-                IconButton(
-                    onClick = {
-                        actualViewModel.onAiComputerButtonClick()
-                    }
-                ) {
+                IconButton(onClick = { actualViewModel.onAiComputerButtonClick() }) {
                     Icon(
                         imageVector = Icons.Default.Terminal,
                         contentDescription = stringResource(R.string.ai_computer),
-                        tint =
-                            if (showAiComputer) MaterialTheme.colorScheme.primaryContainer
-                            else appBarContentColor
+                        tint = if (showAiComputer) {
+                            MaterialTheme.colorScheme.primaryContainer
+                        } else {
+                            appBarContentColor
+                        }
                     )
                 }
 
                 // Web开发模式切换按钮
-                IconButton(
-                    onClick = {
-                        actualViewModel.onWorkspaceButtonClick()
-                    }
-                ) {
+                IconButton(onClick = { actualViewModel.onWorkspaceButtonClick() }) {
                     Icon(
                         imageVector = Icons.Default.Code,
                         contentDescription = stringResource(R.string.code_editor),
-                        tint =
-                            if (showWebView) MaterialTheme.colorScheme.primaryContainer
-                            else appBarContentColor
+                        tint = if (showWebView) {
+                            MaterialTheme.colorScheme.primaryContainer
+                        } else {
+                            appBarContentColor
+                        }
                     )
                 }
             }
@@ -520,13 +511,12 @@ fun AIChatScreen(
                                     actualViewModel.updateUserMessage(it)
                                 },
                                 onSendMessage = {
-                                    if (currentChatId.isNullOrBlank()) {
-                                        actualViewModel.createNewChat()
+                                    if (!currentChatId.isNullOrBlank()) {
+                                        focusManager.clearFocus()
+                                        actualViewModel.sendUserMessage()
+                                        actualViewModel.resetAttachmentPanelState()
+                                        autoScrollToBottom = true
                                     }
-                                    focusManager.clearFocus()
-                                    actualViewModel.sendUserMessage()
-                                    actualViewModel.resetAttachmentPanelState()
-                                    autoScrollToBottom = true
                                 },
                                 onCancelMessage = { actualViewModel.cancelCurrentMessage() },
                                 isLoading = isLoading,
@@ -622,13 +612,12 @@ fun AIChatScreen(
                                     actualViewModel.updateUserMessage(it)
                                 },
                                 onSendMessage = {
-                                    if (currentChatId.isNullOrBlank()) {
-                                        actualViewModel.createNewChat()
+                                    if (!currentChatId.isNullOrBlank()) {
+                                        focusManager.clearFocus()
+                                        actualViewModel.sendUserMessage()
+                                        actualViewModel.resetAttachmentPanelState()
+                                        autoScrollToBottom = true
                                     }
-                                    focusManager.clearFocus()
-                                    actualViewModel.sendUserMessage()
-                                    actualViewModel.resetAttachmentPanelState()
-                                    autoScrollToBottom = true
                                 },
                                 onCancelMessage = { actualViewModel.cancelCurrentMessage() },
                                 isLoading = isLoading,
