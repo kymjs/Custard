@@ -444,7 +444,6 @@ class ChatViewModel(private val context: Context) : ViewModel() {
             },
             onScrollToBottom = { messageProcessingDelegate.scrollToBottom() }
         )
-        checkIfShouldCreateNewChat()
         // Then initialize message processing delegate
         messageProcessingDelegate = MessageProcessingDelegate(
             context = context,
@@ -551,15 +550,6 @@ class ChatViewModel(private val context: Context) : ViewModel() {
     private fun setupAttachmentDelegateToastCollection() {
         viewModelScope.launch {
             attachmentDelegate.toastEvent.collect { message -> uiStateDelegate.showToast(message) }
-        }
-    }
-
-    private fun checkIfShouldCreateNewChat() {
-        viewModelScope.launch {
-            // 检查历史记录加载后是否需要创建新聊天
-            if (chatHistoryDelegate.checkIfShouldCreateNewChat() && isConfigured.value) {
-                chatHistoryDelegate.createNewChat()
-            }
         }
     }
 

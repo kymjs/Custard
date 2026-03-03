@@ -277,15 +277,6 @@ class ChatHistoryDelegate(
         AppLogger.d(TAG, "开场白同步完成，聊天ID: $chatId")
     }
 
-    /** 检查是否应该创建新聊天，确保同步 */
-    fun checkIfShouldCreateNewChat(): Boolean {
-        // 只有当历史记录和当前对话ID都已加载，且未创建过初始对话时才检查
-        if (!isInitialized.get() || _currentChatId.value == null) {
-            return false
-        }
-        return true
-    }
-
     /** 创建新的聊天 */
     fun createNewChat(
         characterCardName: String? = null,
