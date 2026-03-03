@@ -1,0 +1,164 @@
+name: mnn_release
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  setup:
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    outputs:
+      VERSION: ${{ steps.get_version.outputs.VERSION }}
+    steps:
+    - name: get-version
+      id: get_version
+      run: |
+        if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+          # 提取标签版本号
+          echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        else
+          # 如果不是标签，则设置版本为 'dev'
+          echo "VERSION=dev" >> $GITHUB_OUTPUT
+        fi
+
+  linux-release:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    env:
+      PACKAGENAME: mnn_${{ needs.setup.outputs.VERSION }}_linux_x64_cpu_opencl
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - name: build
+      run: |
+        # j24 -> j4 avoid ld signal 9
+        sed -i "s/-j24/-j4/g" package_scripts/linux/build_lib.sh
+        ./package_scripts/linux/build_lib.sh -o ${{ env.PACKAGENAME }}/lib -b opencl -s -c
+    - name: package
+      run: |
+        rm -f ${{ env.PACKAGENAME }}.zip
+        zip -9 -y -r ${{ env.PACKAGENAME }}.zip ${{ env.PACKAGENAME }}
+    - name: upload-zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifact-${{ env.PACKAGENAME }}
+        path: ${{ env.PACKAGENAME }}.zip
+
+  windows-release:
+    needs: [setup]
+    runs-on: windows-latest
+    env:
+      PACKAGENAME: mnn_${{ needs.setup.outputs.VERSION }}_windows_x64_cpu_opencl
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: using msvc
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: build
+      run: powershell .\package_scripts\win\build_lib_release.ps1 -path ${{ env.PACKAGENAME }}
+    - name: package
+      run: 7z a -r ${{ env.PACKAGENAME }}.zip ${{ env.PACKAGENAME }}
+    - name: upload-zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifact-${{ env.PACKAGENAME }}
+        path: ${{ env.PACKAGENAME }}.zip
+
+  macos-release:
+    needs: [setup]
+    runs-on: macos-latest
+    env:
+      PACKAGENAME: mnn_${{ needs.setup.outputs.VERSION }}_macos_x64_arm82_cpu_opencl_metal
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    - name: build
+      run: ./package_scripts/mac/buildFrameWork.sh -DLLM_SUPPORT_VISION=true -DMNN_BUILD_OPENCV=true -DMNN_IMGCODECS=true -DMNN_LOW_MEMORY=true -DMNN_CPU_WEIGHT_DEQUANT_GEMM=true -DMNN_BUILD_LLM=true -DMNN_SUPPORT_TRANSFORMER_FUSE=true -DLLM_SUPPORT_AUDIO=true -DMNN_BUILD_AUDIO=true
+    - name: package
+      run: |
+        rm -rf ${{ env.PACKAGENAME }}
+        mv MNN-MacOS-CPU-GPU ${{ env.PACKAGENAME }}
+        rm -f ${{ env.PACKAGENAME }}.zip
+        zip -9 -y -r ${{ env.PACKAGENAME }}.zip ${{ env.PACKAGENAME }}
+    - name: upload-zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifact-${{ env.PACKAGENAME }}
+        path: ${{ env.PACKAGENAME }}.zip
+
+  android-release:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    env:
+      PACKAGENAME: mnn_${{ needs.setup.outputs.VERSION }}_android_armv7_armv8_cpu_opencl_vulkan
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - name: build
+      run: ./package_scripts/android/build.sh -o ${{ env.PACKAGENAME }}
+    - name: package
+      run: |
+        rm -f ${{ env.PACKAGENAME }}.zip
+        zip -9 -y -r ${{ env.PACKAGENAME }}.zip ${{ env.PACKAGENAME }}
+    - name: upload-zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifact-${{ env.PACKAGENAME }}
+        path: ${{ env.PACKAGENAME }}.zip
+
+  ios-release:
+    needs: [setup]
+    runs-on: macos-latest
+    env:
+      PACKAGENAME: mnn_${{ needs.setup.outputs.VERSION }}_ios_armv82_cpu_metal_coreml
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    - name: build
+      run: |
+        brew install coreutils
+        ./package_scripts/ios/buildiOS.sh -DLLM_SUPPORT_VISION=true -DMNN_BUILD_OPENCV=true -DMNN_IMGCODECS=true -DMNN_LOW_MEMORY=true -DMNN_CPU_WEIGHT_DEQUANT_GEMM=true -DMNN_BUILD_LLM=true -DMNN_SUPPORT_TRANSFORMER_FUSE=true -DLLM_SUPPORT_AUDIO=true -DMNN_BUILD_AUDIO=true
+
+    - name: package
+      run: |
+        rm -f ${{ env.PACKAGENAME }}.zip
+        zip -9 -y -r ${{ env.PACKAGENAME }}.zip MNN-iOS-CPU-GPU/Static/MNN.framework
+    - name: upload-zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: artifact-${{ env.PACKAGENAME }}
+        path: ${{ env.PACKAGENAME }}.zip
+
+  upload-release:
+    name: upload_to_release
+    needs: [linux-release, windows-release, macos-release, android-release, ios-release]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        pattern: artifact-*
+        path: assert
+        merge-multiple: true
+
+    - name: show file
+      run: ls assert
+
+    - uses: xresloader/upload-to-github-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        file: assert/*.zip
+        tags: true
+        draft: true

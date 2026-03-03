@@ -1,0 +1,37 @@
+layout(set = 0, binding = 0) writeonly buffer outputBuffer{
+    FLOAT4 data[];
+}uOutput;
+
+layout(set = 0, binding = 1) readonly buffer inputBuffer{
+    FLOAT4 data[];
+}uInput;
+
+layout(set = 0, binding = 2) readonly buffer scaleBuffer{
+    FLOAT4 data[];
+}uScale;
+
+layout(set = 0, binding = 3) readonly buffer biasBuffer{
+    FLOAT4 data[];
+}uBias;
+
+layout(set = 0, binding = 4) uniform constBuffer{
+    ivec4 imgSize;
+}uConst;
+
+layout(local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+
+void main()
+{
+    int posIndex = int(gl_GlobalInvocationID.x);
+
+    if(posIndex < uConst.imgSize.w)
+    {
+        int channelIndex = posIndex / uConst.imgSize.x;
+        FLOAT4 scale = uScale.data[channelIndex];
+        FLOAT4 bias = uBias.data[channelIndex];
+
+        FLOAT4 color = uInput.data[posIndex];
+        FLOAT4 res = color * scale + bias;
+        uOutput.data[posIndex] = res;
+    }
+}

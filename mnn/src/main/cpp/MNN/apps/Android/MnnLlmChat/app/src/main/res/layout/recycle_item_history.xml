@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:orientation="vertical"
+    android:minHeight="56dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:paddingLeft="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/text_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?colorOnSurface"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        tools:text="AI聊天记录演示文本内容，这里应该显示最后一条消息的前100个字符" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/model_avatar_view"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="6dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_model_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?colorOnSurfaceVariant"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:alpha="0.5"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="Qwen" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- 时间戳 -->
+        <TextView
+            android:id="@+id/text_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?colorOnSurfaceVariant"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif"
+            android:alpha="0.5"
+            tools:text="2小时前" />
+
+        <!-- 删除按钮 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iv_delete_history"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:contentDescription="删除聊天记录"
+            app:icon="@drawable/ic_u_delete"
+            app:iconSize="14dp"
+            app:iconTint="?colorOnSurfaceVariant"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="?colorSurfaceVariant" />
+
+    </LinearLayout>
+
+</LinearLayout>
