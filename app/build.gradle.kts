@@ -196,6 +196,27 @@ android {
         exclude(group = "org.bouncycastle", module = "bcprov-jdk15to18")
     }
 
+    // 将内置 adb-ui MCP 复制到 generated assets，供打包进 APK（需先执行 mcp-servers/adb-ui 的 npm run build）
+    val adbUiSourceDir = rootProject.file("mcp-servers/adb-ui")
+    val adbUiGeneratedDir = file("$buildDir/generated/mcp_plugins_adb_ui")
+    tasks.register<Copy>("copyAdbUiToAssets") {
+        description = "Copy built adb-ui MCP server into assets for packaging"
+        group = "custard"
+        from(adbUiSourceDir) {
+            include("package.json")
+            include("dist/index.js")
+            include("dist/adb.js")
+        }
+        into(File(adbUiGeneratedDir, "mcp_plugins/adb-ui"))
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+    sourceSets.named("main") {
+        assets.srcDirs(adbUiGeneratedDir)
+    }
+    tasks.matching { it.name.startsWith("merge") && it.name.endsWith("Assets") }.configureEach {
+        dependsOn("copyAdbUiToAssets")
+    }
+
 }
 
 dependencies {

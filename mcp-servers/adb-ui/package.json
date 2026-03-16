@@ -1,0 +1,27 @@
+{
+  "name": "adb-ui-mcp",
+  "version": "1.0.0",
+  "description": "MCP server: get Android UI tree via ADB and simulate tap on views",
+  "main": "dist/index.js",
+  "bin": {
+    "adb-ui-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "keywords": ["mcp", "adb", "android", "uiautomator", "ui-automation"],
+  "author": "",
+  "license": "LGPL-3.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}

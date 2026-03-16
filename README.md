@@ -43,7 +43,7 @@
 
 ### MCP 协议支持
 
-实现 MCP（Model Context Protocol）SDK 0.7.0，`MCPRepository` 负责连接 MCP Server 并将远程工具注册到本地 `AIToolHandler`，实现与外部工具生态的无缝对接。
+实现 MCP（Model Context Protocol）SDK 0.7.0，`MCPRepository` 负责连接 MCP Server 并将远程工具注册到本地 `AIToolHandler`，实现与外部工具生态的无缝对接。仓库内提供 **adb-ui** MCP（`mcp-servers/adb-ui`）：通过 ADB 获取设备屏幕 UI 树并解析后模拟点击对应 view，适合在 PC 端连接设备进行 UI 自动化。
 
 ### 流式 Markdown 渲染
 
@@ -87,6 +87,7 @@ Custard/
 ├── mnn/              # MNN 端侧推理引擎
 ├── llama/            # llama.cpp 端侧推理引擎
 ├── mmd/              # MMD 模型渲染引擎
+├── mcp-servers/      # 内置 MCP 服务（如 adb-ui：ADB UI 树与点击；构建 app 前需在 adb-ui 目录执行 npm run build）
 └── showerclient/     # Shower IPC 客户端
 ```
 

@@ -6482,6 +6482,8 @@
 
     <!-- MCPLocalServer -->
     <string name="mcp_local_auto_detected_server">通过配置文件自动识别的 MCP 服务器</string>
+    <string name="mcp_builtin_adb_ui_description">通过 ADB 获取设备 UI 树并模拟点击</string>
+    <string name="mcp_builtin_adb_ui_long_description">内置 MCP：在已连接 ADB 的环境（如 PC 或 Termux）中运行，提供 get_ui_tree、click_view、tap 工具，用于获取当前屏幕 UI 层级并点击指定 view。</string>
     <string name="mcp_local_json_format_error">JSON 格式错误: %1$s</string>
     <string name="mcp_local_no_mcp_servers_field">配置中没有找到 mcpServers 字段</string>
     <string name="mcp_local_mcp_servers_empty">配置中 mcpServers 为空</string>

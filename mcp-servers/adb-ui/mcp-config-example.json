@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "adb-ui": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/Custard/mcp-servers/adb-ui/dist/index.js"]
+    }
+  }
+}

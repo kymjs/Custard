@@ -11,6 +11,7 @@ import com.kymjs.ai.custard.data.mcp.plugins.MCPStarter
 import com.kymjs.ai.custard.data.model.AITool
 import com.kymjs.ai.custard.data.model.ToolParameter
 import com.kymjs.ai.custard.util.CustardPaths
+import com.kymjs.ai.custard.util.AssetCopyUtils
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import com.google.gson.reflect.TypeToken
@@ -265,9 +266,74 @@ class MCPLocalServer private constructor(private val context: Context) {
             // 为新配置的服务器初始化状态
             initializeMissingServerStatus()
 
+            // 内置 adb-ui MCP：复制资源并合并默认配置，使编译后可直接调用
+            coroutineScope.launch {
+                ensureBuiltinAdbUiPlugin()
+            }
+
             AppLogger.d(TAG, "配置加载完成 - MCP服务器: ${_mcpConfig.value.mcpServers.size}, 插件元数据: ${_mcpConfig.value.pluginMetadata.size}")
         } catch (e: Exception) {
             AppLogger.e(TAG, "加载配置时出错", e)
+        }
+    }
+
+    /** 内置 adb-ui MCP 的插件 ID（与 mcp_plugins 目录名及 Bridge cwd 一致） */
+    private val builtinAdbUiPluginId = "adb-ui"
+
+    /**
+     * 确保内置 adb-ui MCP 可用：从 assets 复制到 mcp_plugins 目录（若尚未存在），并合并进 mcp_config。
+     * 这样 Android 工程编译后即可在 MCP 列表中看到并部署/启用 adb-ui，无需用户手动添加配置。
+     */
+    private suspend fun ensureBuiltinAdbUiPlugin() = withContext(Dispatchers.IO) {
+        try {
+            val assetSubdir = "mcp_plugins/$builtinAdbUiPluginId"
+            val entries = context.assets.list(assetSubdir) ?: return@withContext
+            if (entries.isEmpty()) return@withContext
+
+            val pluginsDir = CustardPaths.mcpPluginsDir()
+            val targetDir = File(pluginsDir, builtinAdbUiPluginId)
+            val distIndex = File(targetDir, "dist/index.js")
+            if (!distIndex.exists()) {
+                AssetCopyUtils.copyAssetDirRecursive(context, assetSubdir, targetDir, overwrite = false)
+                AppLogger.d(TAG, "已从 assets 复制内置 adb-ui MCP 到 ${targetDir.absolutePath}")
+            }
+
+            if (!_mcpConfig.value.mcpServers.containsKey(builtinAdbUiPluginId)) {
+                _mcpConfig.update { config ->
+                    val newServers = config.mcpServers.toMutableMap()
+                    newServers[builtinAdbUiPluginId] = MCPConfig.ServerConfig(
+                        command = "node",
+                        args = listOf("dist/index.js"),
+                        disabled = false,
+                        autoApprove = null,
+                        env = emptyMap()
+                    )
+                    val newMetadata = config.pluginMetadata.toMutableMap()
+                    if (!newMetadata.containsKey(builtinAdbUiPluginId)) {
+                        newMetadata[builtinAdbUiPluginId] = PluginMetadata(
+                            id = builtinAdbUiPluginId,
+                            name = "Adb Ui",
+                            description = context.getString(R.string.mcp_builtin_adb_ui_description),
+                            logoUrl = null,
+                            author = "Custard",
+                            isInstalled = true,
+                            version = "1.0.0",
+                            updatedAt = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date()),
+                            longDescription = context.getString(R.string.mcp_builtin_adb_ui_long_description),
+                            repoUrl = "",
+                            type = "local",
+                            endpoint = null,
+                            connectionType = "httpStream"
+                        )
+                    }
+                    config.copy(mcpServers = newServers, pluginMetadata = newMetadata)
+                }
+                saveMCPConfig()
+                initializeMissingServerStatus()
+                AppLogger.d(TAG, "已合并内置 adb-ui MCP 配置")
+            }
+        } catch (e: Exception) {
+            AppLogger.e(TAG, "ensureBuiltinAdbUiPlugin 失败", e)
         }
     }
     
