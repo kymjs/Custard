@@ -3,9 +3,10 @@
 
 ## 奶黄包 (Custard)
 
-<div align="center">  
+
 你可以把奶黄包看作是 [OpenClaw](https://github.com/nicepkg/OpenClaw) 的手机版本，拥有强大的工具调用能力，可以在手机上以 AI Agent 的方式与系统深度交互，完成从对话、自动化操作到代码执行等各种任务。
 
+<div align="center">  
   以猫之名，赋 AI 以灵
 
 > **关于名字**：奶黄包，是为了纪念一只因心脏病离开的加菲猫而命名。
