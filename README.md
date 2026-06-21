@@ -4,14 +4,9 @@
 ## 奶黄包 (Custard)
 
 <div align="center">  
+你可以把奶黄包看作是 [OpenClaw](https://github.com/nicepkg/OpenClaw) 的手机版本，拥有强大的工具调用能力，可以在手机上以 AI Agent 的方式与系统深度交互，完成从对话、自动化操作到代码执行等各种任务。
 
-**一个完全独立运行的 Android AI Agent 应用**
-
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-[![Android](https://img.shields.io/badge/Android-8.0%2B-green.svg)](https://kymjs.com)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-purple.svg)](https://kymjs.com)
-
-你可以把奶黄包看作是 [OpenClaw](https://github.com/nicepkg/OpenClaw) 的 Android 版本，拥有强大的工具调用能力，可以在手机上以 AI Agent 的方式与系统深度交互，完成从对话、自动化操作到代码执行等各种任务。
+  以猫之名，赋 AI 以灵
 
 > **关于名字**：奶黄包，是为了纪念一只因心脏病离开的加菲猫而命名。
 
@@ -33,8 +28,116 @@
 
 ---
 
-<div align="center">
 
-**奶黄包** — 以猫之名，赋 AI 以灵
+## Custard 2.0 预告
 
-</div>
+**注意**：第二代 Custard 暂时仅支持邀请试用，当然如果您愿意花钱试用，只需200块，你就是金主爸爸，微信：kymjs123。 
+
+### 新增桌面端PC，让手机控制更自然(当然，脱离桌面端也能单独运行)。
+
+开放生态，让其他 Agent 也能直接控制手机。  
+Custard 用 **H.264 硬件编码** 画面跟手、延迟低。你在 Mac 上用鼠标点、键盘打，手机立刻响应——像在用一块外接触摸屏。
+
+### 插线就能用，不折腾 WiFi
+
+- **USB 连接**：数据线插上，点「USB 连接」，免配网
+- **WiFi 直连**：同一局域网也行
+
+两种通道都支持远程触控和键盘输入，日常开发、演示、远程协助都顺手。
+
+### Mac ↔ 手机剪贴板互通
+
+电脑上复制的链接、代码、文字，手机粘贴就有；手机复制的内容，Mac 也能直接拿到。**跨设备协作少切一次屏。**
+
+### 为大模型而生的「眼睛」和「手」
+
+Custard 不只是投屏工具，它给 AI 装上了：
+
+| 能力 | 说明 |
+|------|------|
+| **读屏** | 获取当前界面结构、前台应用，可选附带截图 |
+| **点击 / 滑动** | 百分比坐标，AI 不用猜像素 |
+| **输入文字** | 支持中文（奶黄包输入法） |
+| **开应用** | 说「打开微信」就行 |
+| **Home / 返回** | 系统导航一键完成 |
+| **剪贴板读写** | 跨设备传内容 |
+
+内置聊天、Cursor Skill、MCP、本地 HTTP API——**同一套能力，多种用法**，你用什么 AI 工具都能接上。
+
+### 安全在本机
+
+Agent API 只监听 `127.0.0.1`，不暴露到公网。Token 鉴权、工具开关、操作审计日志——**你能控什么、AI 能做什么，一目了然。**
+
+---
+
+## 三分钟上手
+
+### 1. 安装 Custard
+
+1. Mac 打开 **CustardMac**，连接手机会自动安装 **Custard Android**
+2. 手机开启无障碍服务，授权屏幕录制
+3. USB 或 WiFi 连接成功（CustardMac 显示已连接）
+
+### 2. 安装本 Skill
+
+在 CustardMac 的 **Agent 端口** 页面：
+
+1. 开启 Agent API
+2. 点击 **「安装 Skill」**
+
+或手动：
+
+```bash
+git clone --depth 1 https://github.com/kymjs/Custard-Skill.git \
+  ~/.cursor/skills/custard-phone-control
+```
+
+然后在 `scripts/config.env` 里填入 CustardMac 显示的 Token。
+
+### 3. 验证
+
+```bash
+bash ~/.cursor/skills/custard-phone-control/scripts/custard-tool status
+```
+
+看到 `phone_connected: true`，就可以在 Cursor 里让 AI 操作手机了。
+
+---
+
+## 试试这些指令
+
+在 Cursor 对话里直接说（需本机 Agent，Cloud Agent 无法访问 localhost）：
+
+```
+帮我看一下手机现在在什么界面
+```
+
+```
+打开微信，点搜索框，输入「奶黄包」
+```
+
+```
+把手机剪贴板的内容读给我
+```
+
+AI 会自动调用读屏、点击、输入等能力——**你描述目标，它执行步骤。**
+
+---
+
+## 常见问题
+
+**Q：iPhone 手机能用吗？**  
+目前仅支持 **Android**，也在做 **iOS**、**Harmony**版本，但**iOS**复杂度更高，需要等一段时间。  
+
+**Q：必须安装 Agent 才能用 Custard 吗？**  
+不必须，Custard 本身就是一个 Agent，完全不需要其他 Agent。
+
+**Q：支持哪些三方 Agent？**  
+Custard 已适配的 Agent 有：Hermes、OpenClaw、Cursor、Codex。其他国产Agent没有做单独测试，但理论上也能支持。
+
+**Q：Cloud Agent 能用吗？**  
+不能。API 在本机，请用 **本机 Agent**。
+
+**Q：银行或股票证券 App 能调用吗？**  
+部分安全界面（FLAG_SECURE）无法截图或读 UI，这是系统限制。大部分证券 APP 都能正常使用。
+
