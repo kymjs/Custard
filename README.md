@@ -1,11 +1,6 @@
 [![OSL](https://cdn.kymjs.com:8843/qiniu/image/logo3.png)](https://kymjs.com/works/)
 =================
 
-## 奶黄包 (Custard)
-
-
-一个专用于**操作手机**的 AI Agent。可独立运行，也可以作为扩展提供给其他Agent调用，拥有强大的工具调用能力。  
-
 <div align="center">  
   以猫之名，赋 AI 以灵
 
@@ -13,7 +8,9 @@
 
 </div>
 
----
+## 奶黄包 (Custard)
+
+一个专用于**操作手机**的 AI Agent。可独立运行，也可以作为扩展提供给其他Agent调用，拥有强大的工具调用能力。  
 
 ## 特殊许可
 
