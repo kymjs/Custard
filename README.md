@@ -4,7 +4,7 @@
 ## 奶黄包 (Custard)
 
 
-你可以把奶黄包看作是 [OpenClaw](https://github.com/nicepkg/OpenClaw) 的手机版本，拥有强大的工具调用能力，可以在手机上以 AI Agent 的方式与系统深度交互，完成从对话、自动化操作到代码执行等各种任务。
+一个专用于**操作手机**的 AI Agent。可独立运行，也可以作为扩展提供给其他Agent调用，拥有强大的工具调用能力。  
 
 <div align="center">  
   以猫之名，赋 AI 以灵
