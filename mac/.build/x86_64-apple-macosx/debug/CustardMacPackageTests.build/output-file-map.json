@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/master.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/runner.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/runner.swiftdeps"
+  }
+}

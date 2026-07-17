@@ -1,0 +1,335 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/master.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbCommandParser.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbManager.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentAuditLog.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortManager.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortPaths.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortSettingsView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentRequestGate.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentScreenshotStore.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppPreferences.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppUpdateChecker.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BasicSettingsView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BlackFrameDetector.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatMessage.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ClipboardTool.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionConfigView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionManager.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ContentView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ControlView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardMacApp.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardTheme.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardToolRegistry.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DashboardCard.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DebugMode.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/H264Decoder.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/HomeView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/InstalledAppTool.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyCaptureView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyMapper.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyboardInputTool.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMContextReducer.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMService.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMTools.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LocateControlTool.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Logger.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelConfigView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelProviderProfile.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/PhoneControlTool.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Protocol.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenCaptureTool.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenContextProvider.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenTapTool.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenToolServer.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketCommandExecutor.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketConnection.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TapCoordinateExperience.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TaskExperience.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ToolsManagementView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiHierarchySummarizer.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeNode.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeOverlayView.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeResolver.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ViewDebugSummarizer.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor.swiftdeps"
+  }
+}

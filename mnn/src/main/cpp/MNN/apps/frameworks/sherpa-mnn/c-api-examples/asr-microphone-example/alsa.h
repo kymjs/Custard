@@ -1,1 +1,0 @@
-../../sherpa-onnx/csrc/alsa.h

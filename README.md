@@ -1,17 +1,6 @@
 [![OSL](https://cdn.kymjs.com:8843/qiniu/image/logo3.png)](https://kymjs.com/works/)
 =================
 
-<div align="center">  
-  以猫之名，赋 AI 以灵
-
-> **关于名字**：奶黄包，是为了纪念一只因心脏病离开的加菲猫而命名。
-
-</div>
-
-<br>
-
-奶黄包 (Custard)：是一个专用于**操作手机**的 AI Agent。可独立运行，也可以作为扩展提供给其他Agent调用，拥有强大的工具调用能力。  
-
 ## 特殊许可
 
 特殊授权许可声明：本项目所有代码仅面向中国大陆地区授权(不含港澳台海南)可免费使用。如有使用在中国大陆之外地区，需缴纳一千万人民币的一次性使用授权费。本使用定义为对源代码、图片资源、及其衍生编译的文本和二进制产物的所有行为，包括不限于学习、教育、商业使用。  
@@ -23,11 +12,21 @@
 
 <br>
 
-## Custard 2.0 预告
+<div align="center">  
+  以猫之名，赋 AI 以灵  
 
-演示视频请见：[【硬核打工手册的作品】Agent 控制手机 手机端的 Agent，能单独... ](https://v.douyin.com/BOnxPZU09WM)
+**关于名字**：奶黄包，是为了纪念一只因心脏病离开的加菲猫而命名。
 
-**注意**：第二代 Custard 暂时仅支持邀请试用，当然如果您愿意花钱试用，只需200块，你就是金主爸爸，微信：kymjs123。 
+</div>
+
+<br>
+
+一个专用于**操作手机**的 AI Agent。可独立运行，也可以作为扩展提供给其他Agent调用，拥有强大的工具调用能力。  
+
+* 演示视频：[【硬核打工手册的作品】Agent 控制手机 手机端的 Agent，能单独... ](https://v.douyin.com/BOnxPZU09WM)
+* 应用下载：[https://github.com/kymjs/Custard/releases](https://github.com/kymjs/Custard/releases)
+
+
 
 ### 新增桌面端PC，让手机控制更自然(当然，脱离桌面端也能单独运行)。
 

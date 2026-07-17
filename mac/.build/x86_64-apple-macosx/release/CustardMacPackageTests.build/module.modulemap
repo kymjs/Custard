@@ -1,0 +1,4 @@
+module CustardMacPackageTests {
+    header "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/release/CustardMacPackageTests.build/CustardMacPackageTests-Swift.h"
+    requires objc
+}

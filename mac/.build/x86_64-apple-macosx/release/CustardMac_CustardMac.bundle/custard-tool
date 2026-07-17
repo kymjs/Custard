@@ -1,0 +1,220 @@
+#!/usr/bin/env bash
+# 奶黄包手机控制 CLI — 供 Agent Skill 调用本地 Agent API
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=/dev/null
+[[ -f "$SCRIPT_DIR/config.env" ]] && source "$SCRIPT_DIR/config.env"
+
+HOST="${CUSTARD_TOOL_HOST:-127.0.0.1}"
+PORT="${CUSTARD_TOOL_PORT:-27184}"
+TOKEN="${CUSTARD_AGENT_TOKEN:-}"
+BASE="http://${HOST}:${PORT}"
+TOOL_SOURCE="${CUSTARD_TOOL_SOURCE:-agent}"
+SKILL_ROOT="${CUSTARD_SKILL_DIR:-$(cd "$SCRIPT_DIR/.." && pwd)}"
+SCREEN_CACHE_DIR="${CUSTARD_SCREEN_CACHE:-$SKILL_ROOT/cache}"
+
+require_cmd() {
+  command -v "$1" >/dev/null 2>&1 || {
+    echo "Error: required command not found: $1" >&2
+    exit 1
+  }
+}
+
+json_string() {
+  require_cmd python3
+  python3 -c 'import json,sys; print(json.dumps(sys.argv[1]))' "$1"
+}
+
+api_request() {
+  local method="$1"
+  local path="$2"
+  local body="${3:-}"
+  local max_time="${4:-30}"
+
+  require_cmd curl
+
+  local tmp http_code
+  tmp="$(mktemp)"
+
+  local -a curl_args=(-sS --connect-timeout 3 --max-time "$max_time")
+  curl_args+=(-H "X-Custard-Tool-Source: $TOOL_SOURCE")
+  if [[ -n "$TOKEN" ]]; then
+    curl_args+=(-H "X-Custard-Agent-Token: $TOKEN")
+  fi
+
+  if [[ "$method" == "GET" ]]; then
+    http_code="$(curl "${curl_args[@]}" -o "$tmp" -w "%{http_code}" "${BASE}${path}")"
+  else
+    http_code="$(curl "${curl_args[@]}" -X POST \
+      -H "Content-Type: application/json" \
+      -d "$body" \
+      -o "$tmp" -w "%{http_code}" "${BASE}${path}")"
+  fi
+
+  if [[ "$http_code" -ge 400 ]]; then
+    echo "HTTP $http_code from ${BASE}${path}" >&2
+    if [[ -s "$tmp" ]]; then
+      cat "$tmp" >&2
+      echo >&2
+    fi
+    rm -f "$tmp"
+    exit 1
+  fi
+
+  cat "$tmp"
+  rm -f "$tmp"
+}
+
+api_save_binary() {
+  local path="$1"
+  local url_path="$2"
+  local max_time="${3:-90}"
+
+  require_cmd curl
+
+  local http_code
+  local -a curl_args=(-sS --connect-timeout 3 --max-time "$max_time")
+  curl_args+=(-H "X-Custard-Tool-Source: $TOOL_SOURCE")
+  if [[ -n "$TOKEN" ]]; then
+    curl_args+=(-H "X-Custard-Agent-Token: $TOKEN")
+  fi
+
+  http_code="$(curl "${curl_args[@]}" -o "$path" -w "%{http_code}" "${BASE}${url_path}")"
+
+  if [[ "$http_code" -ge 400 ]]; then
+    echo "HTTP $http_code from ${BASE}${url_path}" >&2
+    if [[ -s "$path" ]]; then
+      cat "$path" >&2
+      echo >&2
+    fi
+    rm -f "$path"
+    exit 1
+  fi
+}
+
+merge_screen_json_with_screenshot() {
+  local meta_json="$1"
+  local screenshot_path="$2"
+  local inline_base64="${3:-0}"
+
+  require_cmd python3
+  python3 - "$meta_json" "$screenshot_path" "$inline_base64" <<'PY'
+import base64
+import json
+import sys
+
+meta = json.loads(sys.argv[1])
+path = sys.argv[2]
+inline = sys.argv[3] == "1"
+
+meta["has_screenshot"] = True
+meta["screenshot_path"] = path
+meta.pop("screenshot_base64", None)
+
+if inline:
+    with open(path, "rb") as f:
+        meta["screenshot_base64"] = base64.b64encode(f.read()).decode("ascii")
+
+print(json.dumps(meta, ensure_ascii=False))
+PY
+}
+
+validate_tap_action() {
+  local action="$1"
+  case "$action" in
+    tap|double_tap|long_press) return 0 ;;
+    *)
+      echo "Error: invalid action '$action'. Use tap, double_tap, or long_press." >&2
+      exit 1
+      ;;
+  esac
+}
+
+cmd="${1:-}"
+shift || true
+
+case "$cmd" in
+  get_screen)
+    screenshot=0
+    inline_base64=0
+    for arg in "$@"; do
+      case "$arg" in
+        --screenshot|-s) screenshot=1 ;;
+        --inline) inline_base64=1 ;;
+      esac
+    done
+    if [[ "$screenshot" == 1 ]]; then
+      mkdir -p "$SCREEN_CACHE_DIR"
+      screenshot_path="$SCREEN_CACHE_DIR/latest-screen.png"
+      meta="$(api_request GET "/screen" "" 90)"
+      api_save_binary "$screenshot_path" "/screen.png" 90
+      merge_screen_json_with_screenshot "$meta" "$screenshot_path" "$inline_base64"
+    else
+      api_request GET "/screen"
+    fi
+    ;;
+  list_apps)
+    api_request GET "/tool/list_installed_apps"
+    ;;
+  open_app)
+    [[ $# -gt 0 ]] || { echo "Usage: custard-tool open_app <包名或应用名>" >&2; exit 1; }
+    name="$*"
+    api_request POST "/tool/open_app" "{\"package_or_name\":$(json_string "$name")}"
+    ;;
+  tap)
+    x="${1:-}" y="${2:-}" action="${3:-tap}"
+    [[ -n "$x" && -n "$y" ]] || { echo "Usage: custard-tool tap <x> <y> [tap|double_tap|long_press]" >&2; exit 1; }
+    validate_tap_action "$action"
+    api_request POST "/tool/tap_screen" "{\"x\":$x,\"y\":$y,\"action\":\"$action\"}"
+    ;;
+  read_clipboard)
+    api_request GET "/tool/read_clipboard"
+    ;;
+  write_clipboard)
+    [[ $# -gt 0 ]] || { echo "Usage: custard-tool write_clipboard <文本>" >&2; exit 1; }
+    text="$*"
+    api_request POST "/tool/write_clipboard" "{\"text\":$(json_string "$text")}"
+    ;;
+  type_text)
+    [[ $# -gt 0 ]] || { echo "Usage: custard-tool type_text <文本>" >&2; exit 1; }
+    text="$*"
+    api_request POST "/tool/type_text" "{\"text\":$(json_string "$text")}"
+    ;;
+  press_home)
+    api_request POST "/tool/press_home" "{}"
+    ;;
+  press_back)
+    api_request POST "/tool/press_back" "{}"
+    ;;
+  status)
+    api_request GET "/agent/status"
+    ;;
+  help|--help|-h|"")
+    cat <<'EOF'
+custard-tool — 奶黄包 Agent API 命令行
+
+  get_screen [--screenshot] [--inline]  屏幕状态；截图写入 cache 并返回 screenshot_path
+  list_apps                             已安装应用列表（需 ADB）
+  open_app <名称或包名>                 打开应用
+  tap <x> <y> [action]                  像素坐标点击（action: tap|double_tap|long_press）
+  read_clipboard                        读剪贴板
+  write_clipboard <文本>                写剪贴板
+  type_text <文本>                      输入文本（支持空格；多行建议引号包裹）
+  press_home / press_back               系统键
+  status                                API 与手机连接状态
+
+config.env:
+  CUSTARD_AGENT_TOKEN   奶黄包 Token
+  CUSTARD_SKILL_DIR     Skill 安装目录（安装时自动写入）
+  CUSTARD_TOOL_HOST     默认 127.0.0.1
+  CUSTARD_TOOL_PORT     默认 27184
+  CUSTARD_TOOL_SOURCE   默认 agent（对应 MCP 工具开关）
+  CUSTARD_SCREEN_CACHE  截图缓存目录（默认 <skill>/cache）
+EOF
+    ;;
+  *)
+    echo "Unknown command: $cmd" >&2
+    exit 1
+    ;;
+esac

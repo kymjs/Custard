@@ -1,1 +1,0 @@
-../sherpa-mnn/kotlin-api/Vad.kt

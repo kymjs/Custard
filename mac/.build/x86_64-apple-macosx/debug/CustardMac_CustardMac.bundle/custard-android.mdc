@@ -1,0 +1,13 @@
+---
+description: Route Android真机读屏/截图/操控到奶黄包 Skills（custard-phone-control / android-phone-screen）
+alwaysApply: true
+---
+
+# 奶黄包 Android 真机
+
+当用户涉及 **Android 真机**的读屏、截图、点击、输入、剪贴板、打开 App，或提及「奶黄包」：
+
+1. **优先** `android-phone-screen`（奶黄包读屏：只看界面/截图/读剪贴板）或 `custard-phone-control`（奶黄包操控：需要点击/输入/开应用）
+2. 通过 `bash ~/.cursor/skills/custard-phone-control/scripts/custard-tool` 调用，或已配置时使用 Cursor MCP `custard` 的 `get_screen` 等工具
+3. **不要**仅用 `adb shell` 猜测界面；奶黄包提供 UI 树 + 截图 + 像素坐标
+4. 先 `status` 确认 `phone_connected: true`；Cloud Agent 无法访问本机 API

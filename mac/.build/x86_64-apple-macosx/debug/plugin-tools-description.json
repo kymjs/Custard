@@ -1,0 +1,2036 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.xctest/Contents/MacOS/CustardMacPackageTests",
+      "packagePath" : "/Users/kymjs/code/ai/custard/mac",
+      "productName" : "CustardMacPackageTests"
+    }
+  ],
+  "copyCommands" : {
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/AppIcon.jpg" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/AppIcon.jpg"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/AppIcon.jpg"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/SKILL.md" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/SKILL.md"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/SKILL.md"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/android-phone-screen.skill.md" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/android-phone-screen/android-phone-screen.skill.md"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/android-phone-screen.skill.md"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/app-release.apk" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/android/app-release.apk"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/app-release.apk"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/config.env.example" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/scripts/config.env.example"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/config.env.example"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/custard-android.mdc" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/templates/custard-android.mdc"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/custard-android.mdc"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/custard-mcp-server.mjs" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/scripts/custard-mcp-server.mjs"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/custard-mcp-server.mjs"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/custard-tool" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/scripts/custard-tool"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/custard-tool"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/examples.md" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/examples.md"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/examples.md"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/install.sh" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/install.sh"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/install.sh"
+        }
+      ]
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/reference.md" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Resources/custard-phone-control/reference.md"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac_CustardMac.bundle/reference.md"
+        }
+      ]
+    }
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.CustardMac-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/sources",
+      "importPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbCommandParser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentAuditLog.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortPaths.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortSettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentRequestGate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentScreenshotStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppPreferences.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppUpdateChecker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BasicSettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BlackFrameDetector.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatMessage.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ClipboardTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionConfigView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ControlView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardMacApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardTheme.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardToolRegistry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DashboardCard.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DebugMode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/H264Decoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/HomeView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/InstalledAppTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyCaptureView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyMapper.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyboardInputTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMContextReducer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMTools.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LocateControlTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Logger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelConfigView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelProviderProfile.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/PhoneControlTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Protocol.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenCaptureTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenContextProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenTapTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenToolServer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketCommandExecutor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketConnection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TapCoordinateExperience.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TaskExperience.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ToolsManagementView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiHierarchySummarizer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeNode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeOverlayView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeResolver.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ViewDebugSummarizer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<CustardMac-x86_64-apple-macosx15.0-debug.module-resources>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "CustardMac",
+      "moduleOutputPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules/CustardMac.swiftmodule",
+      "objects" : [
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer.swift.o",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "CustardMac_main",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "mac"
+      ],
+      "outputFileMapPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules/CustardMac.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbCommandParser.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbManager.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentAuditLog.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortManager.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortPaths.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortSettingsView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentRequestGate.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentScreenshotStore.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppPreferences.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppUpdateChecker.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BasicSettingsView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BlackFrameDetector.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatMessage.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ClipboardTool.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionConfigView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionManager.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ContentView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ControlView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardMacApp.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardTheme.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardToolRegistry.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DashboardCard.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DebugMode.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/H264Decoder.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/HomeView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/InstalledAppTool.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyCaptureView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyMapper.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyboardInputTool.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMContextReducer.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMService.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMTools.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LocateControlTool.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Logger.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelConfigView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelProviderProfile.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/PhoneControlTool.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Protocol.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenCaptureTool.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenContextProvider.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenTapTool.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenToolServer.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketCommandExecutor.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketConnection.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TapCoordinateExperience.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TaskExperience.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ToolsManagementView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiHierarchySummarizer.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeNode.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeOverlayView.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeResolver.swift",
+        "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ViewDebugSummarizer.swift",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DerivedSources/resource_bundle_accessor.swift"
+      ],
+      "tempsPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.CustardMacPackageTests-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/sources",
+      "importPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules/CustardMacTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "CustardMacPackageTests",
+      "moduleOutputPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules/CustardMacPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/CustardMacPackageTests-Swift.h",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "mac"
+      ],
+      "outputFileMapPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules/CustardMacPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.CustardMacTests-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/sources",
+      "importPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Tests/CustardMacTests/LocateControlMatchingTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "CustardMacTests",
+      "moduleOutputPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules/CustardMacTests.swiftmodule",
+      "objects" : [
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/LocateControlMatchingTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx14.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "mac"
+      ],
+      "outputFileMapPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/LocateControlMatchingTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules/CustardMacTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/kymjs/code/ai/custard/mac/Tests/CustardMacTests/LocateControlMatchingTests.swift"
+      ],
+      "tempsPath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "CustardMac" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CustardMac",
+      "-package-name",
+      "mac",
+      "-incremental",
+      "-c",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbCommandParser.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbManager.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentAuditLog.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortManager.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortPaths.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortSettingsView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentRequestGate.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentScreenshotStore.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppPreferences.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppUpdateChecker.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BasicSettingsView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BlackFrameDetector.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatMessage.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ClipboardTool.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionConfigView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionManager.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ContentView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ControlView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardMacApp.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardTheme.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardToolRegistry.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DashboardCard.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DebugMode.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/H264Decoder.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/HomeView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/InstalledAppTool.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyCaptureView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyMapper.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyboardInputTool.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMContextReducer.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMService.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMTools.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LocateControlTool.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Logger.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelConfigView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelProviderProfile.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/PhoneControlTool.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Protocol.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenCaptureTool.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenContextProvider.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenTapTool.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenToolServer.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketCommandExecutor.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketConnection.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TapCoordinateExperience.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TaskExperience.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ToolsManagementView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiHierarchySummarizer.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeNode.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeOverlayView.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeResolver.swift",
+      "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ViewDebugSummarizer.swift",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DerivedSources/resource_bundle_accessor.swift",
+      "-I",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "CustardMac_main",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "mac",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "CustardMacPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CustardMacPackageTests",
+      "-package-name",
+      "mac",
+      "-incremental",
+      "-c",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/CustardMacPackageTests-Swift.h",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "mac",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "CustardMacTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CustardMacTests",
+      "-package-name",
+      "mac",
+      "-incremental",
+      "-c",
+      "/Users/kymjs/code/ai/custard/mac/Tests/CustardMacTests/LocateControlMatchingTests.swift",
+      "-I",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx14.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "mac",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "CustardMac" : [
+
+    ],
+    "CustardMacPackageTests" : [
+      "CustardMacTests",
+      "CustardMac"
+    ],
+    "CustardMacTests" : [
+      "CustardMac"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "enableAllTraits" : false
+  },
+  "writeCommands" : {
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac-entitlement.plist"
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbCommandParser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AdbManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentAuditLog.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortPaths.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentPortSettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentRequestGate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AgentScreenshotStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppPreferences.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/AppUpdateChecker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BasicSettingsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/BlackFrameDetector.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatMessage.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ChatView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ClipboardTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionConfigView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ConnectionManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ControlView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardMacApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardTheme.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/CustardToolRegistry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DashboardCard.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/DebugMode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/H264Decoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/HomeView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/InstalledAppTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyCaptureView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyMapper.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/KeyboardInputTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMContextReducer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LLMTools.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/LocateControlTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Logger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelConfigView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ModelProviderProfile.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/PhoneControlTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/Protocol.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenCaptureTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenContextProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenTapTool.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenToolServer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ScreenView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketCommandExecutor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/SocketConnection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TapCoordinateExperience.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/TaskExperience.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ToolsManagementView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiHierarchySummarizer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeNode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeOverlayView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/UiTreeResolver.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Sources/CustardMac/ViewDebugSummarizer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DerivedSources/resource_bundle_accessor.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/sources"
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.product/Objects.LinkFileList"
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/sources"
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbCommandParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AdbManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentAuditLog.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortPaths.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentPortSettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentRequestGate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AgentScreenshotStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppPreferences.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/AppUpdateChecker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BasicSettingsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/BlackFrameDetector.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatMessage.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ChatView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ClipboardTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ConnectionManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ControlView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardMacApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardTheme.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/CustardToolRegistry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DashboardCard.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/DebugMode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/H264Decoder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/HomeView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/InstalledAppTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyCaptureView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyMapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/KeyboardInputTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMContextReducer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LLMTools.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/LocateControlTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Logger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelConfigView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ModelProviderProfile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/PhoneControlTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/Protocol.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenCaptureTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenContextProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenTapTool.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenToolServer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ScreenView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketCommandExecutor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/SocketConnection.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TapCoordinateExperience.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/TaskExperience.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ToolsManagementView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiHierarchySummarizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeNode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeOverlayView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/UiTreeResolver.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/ViewDebugSummarizer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMac.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/LocateControlMatchingTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/kymjs/code/ai/custard/mac/Tests/CustardMacTests/LocateControlMatchingTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/CustardMacTests.build/sources"
+    },
+    "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

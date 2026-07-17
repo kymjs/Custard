@@ -1,6 +1,0 @@
-SourcePackages
-build-*
-*.xcworkspace
-!build-*.sh
-*.lock
-docs

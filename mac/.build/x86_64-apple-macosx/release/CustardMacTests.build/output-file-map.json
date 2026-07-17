@@ -1,0 +1,12 @@
+{
+  "": {
+    "dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/release/CustardMacTests.build/CustardMacTests.d",
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/release/CustardMacTests.build/CustardMacTests.o",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/release/CustardMacTests.build/master.swiftdeps"
+  },
+  "/Users/kymjs/code/ai/custard/mac/Tests/CustardMacTests/LocateControlMatchingTests.swift": {
+    "object": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/release/CustardMacTests.build/LocateControlMatchingTests.swift.o",
+    "swiftmodule": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/release/CustardMacTests.build/LocateControlMatchingTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/kymjs/code/ai/custard/mac/.build/x86_64-apple-macosx/release/CustardMacTests.build/LocateControlMatchingTests.swiftdeps"
+  }
+}
