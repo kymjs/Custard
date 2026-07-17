@@ -1,13 +1,15 @@
-# Build and package CustardMac as 奶黄包.app (uses prebuilt dist/app-release.apk).
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+# Build and package CustardMac as 奶黄包.app on v* tags, then publish to GitHub Releases.
+# Uses prebuilt dist/app-release.apk (no Android Gradle build on CI).
 
 name: Swift
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -44,8 +46,20 @@ jobs:
         MAC_RESOURCES_DIR="${MAC_DIR}/Sources/CustardMac/Resources"
         OUTPUT_DIR="${ROOT_DIR}/dist"
         APP_PATH="${OUTPUT_DIR}/${APP_DISPLAY_NAME}.app"
+        VERSION_FILE="${MAC_DIR}/VERSION"
 
-        echo "==> Building ${BINARY_NAME} (Release)..."
+        if [[ ! -f "${VERSION_FILE}" ]]; then
+          echo "error: version file not found at ${VERSION_FILE}" >&2
+          exit 1
+        fi
+        APP_VERSION="$(tr -d '[:space:]' < "${VERSION_FILE}")"
+        if [[ ! "${APP_VERSION}" =~ ^[0-9]+(\.[0-9]+)*$ ]]; then
+          echo "error: invalid version in ${VERSION_FILE}: '${APP_VERSION}'" >&2
+          exit 1
+        fi
+        BUNDLE_VERSION="${APP_VERSION##*.}"
+
+        echo "==> Building ${BINARY_NAME} (Release) version ${APP_VERSION}..."
         cd "${MAC_DIR}"
         swift build -c release
         BIN_DIR="$(swift build -c release --show-bin-path)"
@@ -95,9 +109,9 @@ jobs:
             <key>CFBundlePackageType</key>
             <string>APPL</string>
             <key>CFBundleShortVersionString</key>
-            <string>1.0.5</string>
+            <string>${APP_VERSION}</string>
             <key>CFBundleVersion</key>
-            <string>5</string>
+            <string>${BUNDLE_VERSION}</string>
             <key>LSMinimumSystemVersion</key>
             <string>13.0</string>
             <key>NSHighResolutionCapable</key>
@@ -120,3 +134,9 @@ jobs:
       with:
         name: naihuangbao-mac-app
         path: dist/奶黄包.app.zip
+
+    - name: Publish GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: dist/奶黄包.app.zip
+        generate_release_notes: true
