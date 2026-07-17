@@ -86,21 +86,12 @@ Agent API 只监听 `127.0.0.1`，不暴露到公网。Token 鉴权、工具开�
 2. 手机开启无障碍服务，授权屏幕录制
 3. USB 或 WiFi 连接成功（CustardMac 显示已连接）
 
-### 2. 安装本 Skill
+### 2. (可选) 给其他 Agent 配置 Skill
 
-在 CustardMac 的 **Agent 端口** 页面：
+如下图，在其他 Agent，例如 OpenClaw、WorkBuddy、Hermes、Cursor、Codex等对话框中，输入下图中复制的提示词即可。
 
-1. 开启 Agent API
-2. 点击 **「安装 Skill」**
+<img width="2186" height="1628" alt="image" src="https://github.com/user-attachments/assets/6a143386-1d0d-446c-b7c3-9d1cfbb32fe9" />
 
-或手动：
-
-```bash
-git clone --depth 1 https://github.com/kymjs/Custard-Skill.git \
-  ~/.cursor/skills/custard-phone-control
-```
-
-然后在 `scripts/config.env` 里填入 CustardMac 显示的 Token。
 
 ### 3. 验证
 
@@ -114,14 +105,18 @@ bash ~/.cursor/skills/custard-phone-control/scripts/custard-tool status
 
 ## 试试这些指令
 
-在 Cursor 对话里直接说（需本机 Agent，Cloud Agent 无法访问 localhost）：
+在**编程Agent**(Cursor、Codex等)中对话里直接说：
 
 ```
 帮我看一下手机现在在什么界面
 ```
 
 ```
-打开微信，点搜索框，输入「奶黄包」
+写完这个需求，你可以用奶黄包打开对应功能界面验证刚刚写的需求是否正常工作
+```
+
+```
+打开微信，给张涛发 200 的红包，我的支付密码是123456
 ```
 
 ```
@@ -149,7 +144,8 @@ Custard 已适配的 Agent 有：Hermes、OpenClaw、Cursor、Codex。其他国�
 不能。API 在本机，请用 **本机 Agent**。
 
 **Q：银行或股票证券 App 能调用吗？**  
-部分安全界面（FLAG_SECURE）无法截图或读 UI，这是系统限制。大部分证券 APP 都能正常使用。
+部分安全界面（FLAG_SECURE）无法截图或读 UI，这是系统限制。大部分证券 APP 都能正常使用，如果你的模型足够强，可以考虑让他替你理财（投资有风险，AI有风险），盈亏自负。
+
 
 
 ## 以下为部分运行截图
