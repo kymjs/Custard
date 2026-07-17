@@ -24,14 +24,19 @@
 一个专用于**操作手机**的 AI Agent。可独立运行，也可以作为扩展提供给其他Agent调用，拥有强大的工具调用能力。  
 
 * 演示视频：[【硬核打工手册的作品】Agent 控制手机 手机端的 Agent，能单独... ](https://v.douyin.com/BOnxPZU09WM)
-* 应用下载：[https://github.com/kymjs/Custard/releases](https://github.com/kymjs/Custard/releases)
+* 应用下载：点击下方图例中的压缩包即可 [https://github.com/kymjs/Custard/releases](https://github.com/kymjs/Custard/releases)  
+
+<img width="1770" height="1026" alt="image" src="https://github.com/user-attachments/assets/d102fe77-2fe1-4a79-bb0c-90ede6eb3cf7" />
 
 
+<br>
 
 ### 新增桌面端PC，让手机控制更自然(当然，脱离桌面端也能单独运行)。
 
 开放生态，让其他 Agent 也能直接控制手机。  
 Custard 用 **H.264 硬件编码** 画面跟手、延迟低。你在 Mac 上用鼠标点、键盘打，手机立刻响应——像在用一块外接触摸屏。
+
+<br>
 
 ### 插线就能用，不折腾 WiFi
 
@@ -40,9 +45,13 @@ Custard 用 **H.264 硬件编码** 画面跟手、延迟低。你在 Mac 上用�
 
 两种通道都支持远程触控和键盘输入，日常开发、演示、远程协助都顺手。
 
+<br>
+
 ### Mac ↔ 手机剪贴板互通
 
 电脑上复制的链接、代码、文字，手机粘贴就有；手机复制的内容，Mac 也能直接拿到。**跨设备协作少切一次屏。**
+
+<br>
 
 ### 为大模型而生的「眼睛」和「手」
 
@@ -59,11 +68,15 @@ Custard 不只是投屏工具，它给 AI 装上了：
 
 内置聊天、Cursor Skill、MCP、本地 HTTP API——**同一套能力，多种用法**，你用什么 AI 工具都能接上。
 
+<br>
+
 ### 安全在本机
 
 Agent API 只监听 `127.0.0.1`，不暴露到公网。Token 鉴权、工具开关、操作审计日志——**你能控什么、AI 能做什么，一目了然。**
 
 ---
+
+<br>
 
 ## 三分钟上手
 
@@ -118,6 +131,8 @@ bash ~/.cursor/skills/custard-phone-control/scripts/custard-tool status
 AI 会自动调用读屏、点击、输入等能力——**你描述目标，它执行步骤。**
 
 ---
+
+<br>
 
 ## 常见问题
 
