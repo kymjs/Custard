@@ -151,3 +151,13 @@ Custard 已适配的 Agent 有：Hermes、OpenClaw、Cursor、Codex。其他国�
 **Q：银行或股票证券 App 能调用吗？**  
 部分安全界面（FLAG_SECURE）无法截图或读 UI，这是系统限制。大部分证券 APP 都能正常使用。
 
+
+## 以下为部分运行截图
+<img width="2186" height="1628" alt="image" src="https://github.com/user-attachments/assets/9a5f04f8-755e-4b35-8751-78ffd5453ed9" />
+
+<img width="2186" height="1628" alt="image" src="https://github.com/user-attachments/assets/c20c1709-3b1f-469b-94be-972a2b0d7e4f" />
+
+<img width="2186" height="1628" alt="image" src="https://github.com/user-attachments/assets/587c9639-8503-420b-a822-45eb3f75e49a" />
+
+
+
