@@ -1,4 +1,4 @@
-# This workflow will build a Swift project
+# Build and package CustardMac as 奶黄包.app (uses prebuilt dist/app-release.apk).
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
 name: Swift
@@ -16,7 +16,107 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
+
+    - name: Prepare Android APK
+      run: |
+        set -euo pipefail
+        if [[ ! -f dist/app-release.apk ]]; then
+          echo "error: dist/app-release.apk not found; commit the prebuilt APK for CI packaging" >&2
+          exit 1
+        fi
+        mkdir -p mac/Sources/CustardMac/Resources/android
+        cp dist/app-release.apk mac/Sources/CustardMac/Resources/android/app-release.apk
+        echo "synced dist/app-release.apk -> mac/Sources/CustardMac/Resources/android/app-release.apk"
+
     - name: Run tests
+      working-directory: mac
       run: swift test -v
+
+    - name: Build and package app
+      run: |
+        set -euo pipefail
+        ROOT_DIR="${GITHUB_WORKSPACE}"
+        MAC_DIR="${ROOT_DIR}/mac"
+        BINARY_NAME="CustardMac"
+        APP_DISPLAY_NAME="奶黄包"
+        BUNDLE_ID="com.kymjs.custard"
+        ICON_ICNS="${MAC_DIR}/Resources/AppIcon.icns"
+        MAC_RESOURCES_DIR="${MAC_DIR}/Sources/CustardMac/Resources"
+        OUTPUT_DIR="${ROOT_DIR}/dist"
+        APP_PATH="${OUTPUT_DIR}/${APP_DISPLAY_NAME}.app"
+
+        echo "==> Building ${BINARY_NAME} (Release)..."
+        cd "${MAC_DIR}"
+        swift build -c release
+        BIN_DIR="$(swift build -c release --show-bin-path)"
+        BINARY="${BIN_DIR}/${BINARY_NAME}"
+
+        if [[ ! -f "${BINARY}" ]]; then
+          echo "error: binary not found at ${BINARY}" >&2
+          exit 1
+        fi
+
+        echo "==> Creating app bundle at ${APP_PATH}..."
+        rm -rf "${APP_PATH}"
+        mkdir -p "${APP_PATH}/Contents/MacOS"
+        mkdir -p "${APP_PATH}/Contents/Resources"
+
+        cp "${BINARY}" "${APP_PATH}/Contents/MacOS/${BINARY_NAME}"
+        chmod +x "${APP_PATH}/Contents/MacOS/${BINARY_NAME}"
+
+        if [[ -f "${ICON_ICNS}" ]]; then
+          cp "${ICON_ICNS}" "${APP_PATH}/Contents/Resources/AppIcon.icns"
+        fi
+
+        rsync -a \
+          --exclude 'AppIcon.icns' \
+          "${MAC_RESOURCES_DIR}/" \
+          "${APP_PATH}/Contents/Resources/"
+
+        cat > "${APP_PATH}/Contents/Info.plist" <<EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+        <dict>
+            <key>CFBundleDevelopmentRegion</key>
+            <string>zh-Hans</string>
+            <key>CFBundleDisplayName</key>
+            <string>${APP_DISPLAY_NAME}</string>
+            <key>CFBundleExecutable</key>
+            <string>${BINARY_NAME}</string>
+            <key>CFBundleIconFile</key>
+            <string>AppIcon</string>
+            <key>CFBundleIdentifier</key>
+            <string>${BUNDLE_ID}</string>
+            <key>CFBundleInfoDictionaryVersion</key>
+            <string>6.0</string>
+            <key>CFBundleName</key>
+            <string>${APP_DISPLAY_NAME}</string>
+            <key>CFBundlePackageType</key>
+            <string>APPL</string>
+            <key>CFBundleShortVersionString</key>
+            <string>1.0.5</string>
+            <key>CFBundleVersion</key>
+            <string>5</string>
+            <key>LSMinimumSystemVersion</key>
+            <string>13.0</string>
+            <key>NSHighResolutionCapable</key>
+            <true/>
+            <key>NSPrincipalClass</key>
+            <string>NSApplication</string>
+        </dict>
+        </plist>
+        EOF
+
+        echo "==> Zipping app bundle..."
+        ditto -c -k --keepParent "${APP_PATH}" "${OUTPUT_DIR}/${APP_DISPLAY_NAME}.app.zip"
+
+        echo "==> Done!"
+        echo "    ${APP_PATH}"
+        echo "    Android APK: ${APP_PATH}/Contents/Resources/android/app-release.apk"
+
+    - name: Upload app artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: naihuangbao-mac-app
+        path: dist/奶黄包.app.zip
