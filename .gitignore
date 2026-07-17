@@ -104,6 +104,9 @@ Icon
 # Built application files
 *.apk
 *.ap_
+# Keep prebuilt APK for Mac app CI packaging / release
+!dist/
+!dist/app-release.apk
 
 # Files for ART and Dalvik VM
 *.dex
